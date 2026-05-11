@@ -88,7 +88,7 @@ export function ProcessSection() {
                 transition={{ 
                   delay: index * 0.15,
                   duration: 0.7,
-                  ease: [0.22, 1, 0.36, 1]
+                  ease: [0.22, 1, 0.36, 1] as const
                 }}
                 className="group relative"
               >

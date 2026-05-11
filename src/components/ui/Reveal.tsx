@@ -48,7 +48,7 @@ export const Reveal = ({
       y: 0,
       transition: {
         duration: duration,
-        ease: [0.22, 1, 0.36, 1]
+        ease: [0.22, 1, 0.36, 1] as const
       }
     }
   };
@@ -88,7 +88,7 @@ export const RevealItem = ({ children }: { children: React.ReactNode }) => {
       y: 0,
       transition: {
         duration: 0.5,
-        ease: [0.22, 1, 0.36, 1]
+        ease: [0.22, 1, 0.36, 1] as const
       }
     }
   };

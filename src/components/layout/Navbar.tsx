@@ -32,7 +32,7 @@ export function Navbar() {
       <motion.nav 
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] as const }}
         className={`max-w-6xl mx-auto rounded-full transition-all duration-500 border border-white/20 shadow-elevation4 backdrop-blur-xl ${
           scrolled 
             ? 'bg-white/80 py-3 px-8' 
