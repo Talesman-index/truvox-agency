@@ -24,9 +24,9 @@ export const Marquee = ({
       transition: {
         x: {
           repeat: Infinity,
-          repeatType: "loop",
+          repeatType: "loop" as const,
           duration: speed,
-          ease: "linear",
+          ease: "linear" as const,
         },
       },
     },
