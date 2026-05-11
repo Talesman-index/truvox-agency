@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --brand-main: #C14326;
+  --brand-hover: #A0341E;
+  --brand-light: #E8682A;
+  --brand-secondary: #0DB4B4;
+  --brand-secondary-hover: #099A9A;
+
+  --bg-surface: #FFFFFF;
+  --bg-section-alt: #FBF8F6;
+  --bg-dark: #1A0800;
+  --bg-dark-alt: #120600;
+  --bg-card: #FFFFFF;
+  --bg-card-tint: rgba(193, 67, 38, 0.06);
+
+  --text-primary: #1A0800;
+  --text-body: #454545;
+  --text-muted: #6B6B6B;
+  --text-white: #FFFFFF;
+
+  --border-light: #EBEBEB;
+  --border-brand: #C94B2D;
+  
+  --gradient-brand: linear-gradient(135deg, #C94B2D, #E8682A);
+  --gradient-hero: radial-gradient(ellipse at 65% 40%, rgba(193, 67, 38, 0.14) 0%, transparent 65%);
+  --gradient-text: linear-gradient(135deg, #B53F24, #C94B2D);
+
+  --font-poppins: "Poppins", sans-serif;
+
+}
+
+@layer base {
+  body {
+    @apply bg-surface text-body font-poppins antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-primary font-bold;
+  }
+}
+
+@layer components {
+  .gradient-text {
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .btn-primary {
+    @apply relative overflow-hidden text-white px-8 py-4 rounded-pill transition-all duration-300 text-lg font-bold;
+    background: var(--brand-main);
+    box-shadow: 0px 4px 12px rgba(193, 67, 38, 0.30);
+  }
+
+  .btn-primary:hover {
+    background: var(--brand-hover);
+    box-shadow: 0px 6px 16px rgba(201, 75, 45, 0.40);
+    transform: translateY(-2px);
+  }
+
+  .btn-primary::after {
+    content: '';
+    @apply absolute top-0 -left-full w-full h-full;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: all 0.6s ease;
+  }
+
+  .btn-primary:hover::after {
+    @apply left-full;
+  }
+
+  .btn-secondary {
+    @apply bg-white px-8 py-4 rounded-pill transition-all duration-300 text-lg font-bold;
+    color: var(--brand-main);
+    border: 2px solid var(--brand-main);
+  }
+
+  .btn-secondary:hover {
+    color: var(--brand-hover);
+    border-color: var(--brand-hover);
+    background: #FBF8F6;
+    transform: translateY(-2px);
+  }
+
+  .btn-ghost {
+    @apply bg-transparent text-white border border-white/40 px-7 py-3.5 rounded-pill hover:border-white/80 hover:bg-white/10 transition-all duration-200;
+  }
+
+  .card-service {
+    @apply bg-white p-8 md:p-7 rounded-2xl border border-light transition-all duration-300;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05);
+  }
+
+  .card-service:hover {
+    box-shadow: 0px 8px 32px rgba(193, 67, 38, 0.20);
+    border-color: var(--brand-main);
+    transform: translateY(-8px);
+  }
+
+  .section-divider {
+    @apply h-[1px] opacity-30;
+    background: linear-gradient(90deg, transparent, var(--brand-main), transparent);
+  }
+
+  .tag-label {
+    color: var(--brand-main);
+    @apply font-bold uppercase tracking-widest text-[10px];
+  }
+
+  .logo-terracotta {
+    filter: invert(38%) sepia(85%) saturate(1478%) hue-rotate(345deg) brightness(88%) contrast(92%);
+  }
+}
+
