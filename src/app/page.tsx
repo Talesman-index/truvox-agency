@@ -31,28 +31,28 @@ export default function Home() {
           {/* Top Badge */}
           <Reveal>
             <div className="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-white/5 border border-white/20 text-white/50 text-[9px] font-black uppercase tracking-[0.4em] mb-10">
-              <Zap size={12} className="text-brand-main" /> OPTIMIZED FOR CONVERSION
+              <Zap size={12} className="text-brand-main" /> BUILT FOR EXCELLENCE
             </div>
           </Reveal>
 
           {/* Centered Typography */}
           <div className="space-y-8">
             <h1 className="text-5xl md:text-7xl lg:text-[84px] font-black leading-[0.98] tracking-tighter text-white">
-              Landing pages <br />
-              that turn <br />
-              visitors into <span className="text-brand-main">customers.</span>
+              Digital authority <br />
+              built for the <br />
+              <span className="text-brand-main">ambitious.</span>
             </h1>
             
             <Reveal delay={0.4}>
               <p className="text-base md:text-lg text-white/50 max-w-xl mx-auto leading-relaxed font-medium">
-                Every page is designed with a strategic and aesthetic approach: custom design, clear structure, and a powerful message to maximize your conversions.
+                We craft high-end digital experiences that translate your expertise into trust, and your trust into measurable growth.
               </p>
             </Reveal>
 
             <Reveal delay={0.6}>
               <div className="pt-8">
                 <Button variant="primary" size="lg" className="px-10 py-5 rounded-2xl shadow-brand text-sm font-black uppercase tracking-widest">
-                  Boost my conversions
+                  Elevate my presence
                 </Button>
               </div>
             </Reveal>

@@ -59,9 +59,10 @@ export default function AboutPage() {
       <section className="py-40 md:py-60 px-6 bg-darkAlt relative border-y border-white/5">
         <div className="max-w-6xl mx-auto">
           <Reveal>
-            <h2 className="text-4xl md:text-7xl font-black text-white leading-[1.05] tracking-tighter max-w-4xl">
-              We don&apos;t just build websites. <br />
-              We build <span className="text-brand-main">systems of trust</span> that convert your authority into <span className="text-brand-main">real results.</span>
+            <h2 className="text-4xl md:text-7xl font-black text-white leading-[1.05] tracking-tighter max-w-5xl">
+              We don&apos;t build websites. <br />
+              We build systems of trust <br />
+              that drive real results.
             </h2>
           </Reveal>
           
