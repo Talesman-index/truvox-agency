@@ -21,11 +21,8 @@ export default function Home() {
     <main className="flex-grow">
       {/* HERO SECTION - Refined Editorial Structure */}
       <section className="relative min-h-screen flex items-center px-6 pt-32 pb-20 overflow-hidden bg-dark">
-        {/* Animated Background Effects */}
-        <div className="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden">
-          <div className="absolute top-[-20%] left-[-10%] w-[60%] h-[60%] bg-brand-main/10 rounded-full blur-[150px]" />
-          <div className="absolute bottom-[-20%] right-[-10%] w-[50%] h-[50%] bg-brand-main/5 rounded-full blur-[120px]" />
-        </div>
+        {/* Refined Radial Background Effect */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden bg-gradient-hero z-10" />
 
         <div className="max-w-4xl mx-auto w-full relative z-20 text-center pb-24 md:pb-32">
           {/* Top Badge */}
