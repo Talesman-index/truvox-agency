@@ -9,11 +9,11 @@ export default {
     extend: {
       colors: {
         brand: {
-          main: "#C14326",
-          hover: "#8E2E1A",
-          light: "#E8682A",
-          secondary: "#0DB4B4",
-          "secondary-hover": "#099A9A",
+          main: "#0DB4B4",
+          hover: "#099A9A",
+          light: "#E0F5F5",
+          secondary: "#C14326",
+          "secondary-hover": "#8E2E1A",
         },
         primary: "#1A0800",
         surface: "#FFFFFF",
@@ -35,13 +35,13 @@ export default {
         elevation2: "0px 4px 12px rgba(0, 0, 0, 0.08)",
         elevation3: "0px 6px 16px rgba(0, 0, 0, 0.12)",
         elevation4: "0px 8px 24px rgba(0, 0, 0, 0.15)",
-        elevation5: "0px 8px 32px rgba(193, 67, 38, 0.20)",
-        brand: "0px 4px 12px rgba(193, 67, 38, 0.30)",
-        brandHover: "0px 6px 16px rgba(193, 67, 38, 0.40)",
+        elevation5: "0px 8px 32px rgba(13, 180, 180, 0.20)",
+        brand: "0px 4px 12px rgba(13, 180, 180, 0.30)",
+        brandHover: "0px 6px 16px rgba(13, 180, 180, 0.40)",
       },
       backgroundImage: {
-        "gradient-brand": "linear-gradient(135deg, #C94B2D, #E8682A)",
-        "gradient-text": "linear-gradient(135deg, #C94B2D, #E8682A)",
+        "gradient-brand": "linear-gradient(135deg, #0DB4B4, #099A9A)",
+        "gradient-text": "linear-gradient(135deg, #0DB4B4, #099A9A)",
       },
     },
 
