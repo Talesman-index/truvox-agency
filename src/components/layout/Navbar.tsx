@@ -44,7 +44,7 @@ export function Navbar() {
           <img 
             src="/assets/truvox-logo.png" 
             alt="TRUVOX Logo" 
-            className="h-7 md:h-8 w-auto object-contain transition-transform duration-300 group-hover:scale-105 logo-terracotta"
+            className="h-7 md:h-8 w-auto object-contain transition-transform duration-300 group-hover:scale-105 logo-black"
           />
         </Link>
 

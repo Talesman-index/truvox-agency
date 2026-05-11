@@ -21,13 +21,14 @@ export default function Home() {
     <main className="flex-grow">
       {/* HERO SECTION - Refined Editorial Structure */}
       <section className="relative min-h-screen flex items-center px-6 pt-32 pb-20 overflow-hidden bg-dark">
-        {/* Refined Radial Background Effect */}
-        <div className="absolute inset-0 pointer-events-none overflow-hidden bg-gradient-hero z-10" />
+        {/* Animated Background Effects */}
+        <div className="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden bg-gradient-hero-dark">
+        </div>
 
         <div className="max-w-4xl mx-auto w-full relative z-20 text-center pb-24 md:pb-32">
           {/* Top Badge */}
           <Reveal>
-            <div className="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-white/5 border border-white/20 text-white/50 text-[9px] font-black uppercase tracking-[0.4em] mb-10">
+            <div className="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-white/5 border border-white/10 text-white/55 text-[9px] font-black uppercase tracking-[0.16em] mb-10">
               <Zap size={12} className="text-brand-main" /> BUILT FOR EXCELLENCE
             </div>
           </Reveal>
@@ -125,7 +126,7 @@ export default function Home() {
                       src={`/assets/icons3d/${service.icon}`} 
                       alt={service.title}
                       fill
-                      className="object-contain filter drop-shadow(0 12px 24px rgba(201,75,45,0.25))"
+                      className="object-contain filter drop-shadow(0 12px 24px rgba(13,180,180,0.30))"
                     />
                   </div>
                   <h3 className="text-2xl font-black mb-4 text-primary">{service.title}</h3>
@@ -237,9 +238,7 @@ export default function Home() {
       <section className="py-20 md:py-32 px-6">
         <Reveal>
           <div className="max-w-6xl mx-auto bg-dark rounded-[40px] md:rounded-[80px] p-12 md:p-32 text-center space-y-12 relative overflow-hidden shadow-elevation5">
-            <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
-               <div className="absolute top-0 left-0 w-64 h-64 bg-brand-main/20 blur-[100px]"></div>
-               <div className="absolute bottom-0 right-0 w-64 h-64 bg-brand-light/20 blur-[100px]"></div>
+            <div className="absolute top-0 left-0 w-full h-full pointer-events-none bg-gradient-hero-dark">
             </div>
             
             <div className="relative z-10 space-y-8">

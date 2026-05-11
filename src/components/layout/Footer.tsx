@@ -53,8 +53,9 @@ export function Footer() {
         </h2>
       </div>
 
-      {/* Top Gradient Blur */}
+      {/* Top Gradient Blurs */}
       <div className="absolute top-0 left-0 w-full h-[500px] bg-gradient-to-b from-brand-main/20 via-brand-main/5 to-transparent pointer-events-none z-0"></div>
+      <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-brand-secondary/20 blur-[180px] rounded-full pointer-events-none z-0"></div>
 
       <div className="max-w-[1440px] mx-auto px-10 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-16 lg:gap-8 mb-32">
@@ -64,7 +65,7 @@ export function Footer() {
               <img 
                 src="/assets/truvox-logo.png" 
                 alt="TRUVOX Logo" 
-                className="h-10 w-auto opacity-90 logo-terracotta"
+                className="h-10 w-auto opacity-90 logo-white"
               />
             </Link>
             
@@ -73,7 +74,7 @@ export function Footer() {
                 <motion.a
                   key={i}
                   href={social.href}
-                  whileHover={{ y: -5, color: '#C94B2D', opacity: 1 }}
+                  whileHover={{ y: -5, color: '#0DB4B4', opacity: 1 }}
                   className="text-white/40 hover:text-brand-main transition-all duration-300"
                   aria-label={social.name}
                 >
