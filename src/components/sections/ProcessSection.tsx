@@ -12,8 +12,6 @@ const services = [
   { name: 'Web & Mobile Development', icon: <Smartphone size={24} /> },
   { name: 'Marketing & Data Strategy', icon: <Database size={24} /> },
   { name: 'Brand Identity Systems', icon: <Palette size={24} /> },
-  { name: 'SaaS Platform Building', icon: <Globe size={24} /> },
-  { name: 'E-commerce Experiences', icon: <BarChart size={24} /> },
 ];
 
 export function ProcessSection() {

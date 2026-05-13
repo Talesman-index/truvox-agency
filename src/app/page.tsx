@@ -6,6 +6,7 @@ import { PortfolioSection } from "@/components/sections/PortfolioSection";
 import { PricingSection } from "@/components/sections/PricingSection";
 import { MethodologySection } from "@/components/sections/MethodologySection";
 import { ProcessSection } from "@/components/sections/ProcessSection";
+import { AboutSection } from "@/components/sections/AboutSection";
 import Image from "next/image";
 import { Check, X as Close, ArrowRight, Plus } from "lucide-react";
 import { Reveal, RevealItem } from "@/components/ui/Reveal";
@@ -45,9 +46,9 @@ export default function Home() {
           </motion.p>
 
           <motion.div 
-            initial={{ opacity: 0, scale: 0.98 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.4, delay: 0.2 }}
+            initial={{ opacity: 0, y: 30, scale: 0.98 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ duration: 1.2, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
             className="relative w-full max-w-[1100px] aspect-[16/8] rounded-[40px] overflow-hidden mt-0 mb-20 shadow-2xl border border-border-subtle"
           >
              <Image 
@@ -68,59 +69,18 @@ export default function Home() {
 
 
 
+      {/* ABOUT SECTION */}
+      <AboutSection />
+
       {/* SERVICES SECTION */}
       <ProcessSection />
 
-      {/* METHODOLOGY SECTION */}
-      <MethodologySection />
 
       {/* PORTFOLIO SECTION */}
       <PortfolioSection />
 
-      {/* TEAM SECTION */}
-      <section className="py-24 md:py-32 px-6 bg-bg-sectionAlt">
-        <div className="max-w-[1200px] mx-auto">
-          <Reveal>
-            <div className="flex justify-between items-end mb-20">
-              <div className="max-w-2xl">
-                <Badge variant="lime" rotation={-2} className="mb-8">The Founders</Badge>
-                <h2 className="text-[45px] md:text-[55px] font-medium text-text-heading leading-[1.1] tracking-tight">
-                  Two Experts. One Shared Vision For Your <span className="gradient-text italic">Growth.</span>
-                </h2>
-              </div>
-              <div className="w-12 h-12 rounded-full border border-brand-main/20 flex items-center justify-center text-brand-main">
-                 <Plus size={20} />
-              </div>
-            </div>
-          </Reveal>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
-            {[
-              { name: 'Aïda S.', role: 'Marketing & Data Strategy', img: '/assets/team/aida.jpg' },
-              { name: 'Shalom T.', role: 'Product Design & Dev', img: '/assets/team/shalom.jpg' },
-              { name: 'Jordan R.', role: 'Visual Specialist', img: '/assets/team/member-3.jpg' },
-              { name: 'Alex M.', role: 'Growth Expert', img: '/assets/team/member-4.jpg' },
-            ].map((member, i) => (
-              <RevealItem key={i} delay={i * 0.1}>
-                <div className="group relative overflow-hidden rounded-[30px] bg-bg-card aspect-[3/4] shadow-lg border border-border-subtle">
-                   <Image 
-                     src={member.img} 
-                     alt={member.name} 
-                     fill 
-                     className="object-cover opacity-80 grayscale group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500"
-                   />
-                   <div className="absolute bottom-6 left-6 right-6">
-                      <div className="bg-bg-card/80 backdrop-blur-md p-4 rounded-[20px] text-center border border-white/10">
-                         <div className="text-[18px] font-bold text-white">{member.name}</div>
-                         <div className="text-[14px] text-text-muted">{member.role}</div>
-                      </div>
-                   </div>
-                </div>
-              </RevealItem>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* METHODOLOGY SECTION */}
+      <MethodologySection />
 
       {/* PRICING SECTION */}
       <PricingSection />
