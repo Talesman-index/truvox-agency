@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/Button";
 import { PortfolioSection } from "@/components/sections/PortfolioSection";
 import { PricingSection } from "@/components/sections/PricingSection";
 import { MethodologySection } from "@/components/sections/MethodologySection";
+import { ProcessSection } from "@/components/sections/ProcessSection";
 import Image from "next/image";
 import { Check, X as Close, ArrowRight, Plus } from "lucide-react";
 import { Reveal, RevealItem } from "@/components/ui/Reveal";
@@ -66,6 +67,10 @@ export default function Home() {
       </section>
 
 
+
+      {/* SERVICES SECTION */}
+      <ProcessSection />
+
       {/* METHODOLOGY SECTION */}
       <MethodologySection />
 
@@ -93,8 +98,8 @@ export default function Home() {
             {[
               { name: 'Aïda S.', role: 'Marketing & Data Strategy', img: '/assets/team/aida.jpg' },
               { name: 'Shalom T.', role: 'Product Design & Dev', img: '/assets/team/shalom.jpg' },
-              { name: 'Collaborator', role: 'Visual Specialist', img: '/assets/team/member-3.jpg' },
-              { name: 'Partner', role: 'Growth Expert', img: '/assets/team/member-4.jpg' },
+              { name: 'Jordan R.', role: 'Visual Specialist', img: '/assets/team/member-3.jpg' },
+              { name: 'Alex M.', role: 'Growth Expert', img: '/assets/team/member-4.jpg' },
             ].map((member, i) => (
               <RevealItem key={i} delay={i * 0.1}>
                 <div className="group relative overflow-hidden rounded-[30px] bg-bg-card aspect-[3/4] shadow-lg border border-border-subtle">
