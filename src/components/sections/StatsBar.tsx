@@ -34,8 +34,8 @@ export const StatsBar = () => {
             />
           </motion.div>
           {/* Sparkles */}
-          <div className="absolute -bottom-4 -left-4 w-12 h-12 bg-brand-main/10 blur-xl rounded-full"></div>
-          <div className="absolute -top-4 -right-4 w-12 h-12 bg-brand-main/5 blur-xl rounded-full"></div>
+          <div className="absolute -bottom-4 -left-4 w-12 h-12 bg-brand-main/10 blur-xl rounded-full pointer-events-none"></div>
+          <div className="absolute -top-4 -right-4 w-12 h-12 bg-brand-main/5 blur-xl rounded-full pointer-events-none"></div>
         </div>
 
         {/* Stats Grid */}
