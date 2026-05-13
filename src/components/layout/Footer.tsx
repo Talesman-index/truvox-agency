@@ -44,9 +44,9 @@ export const Footer = () => {
             <div className="space-y-10">
               <h5 className="text-[12px] font-bold uppercase tracking-[0.2em] text-brand-main">Navigation</h5>
               <ul className="space-y-4">
-                <li><Link href="/" className="text-[16px] font-medium hover:text-brand-main transition-colors text-text-body">Home</Link></li>
                 <li><Link href="/about" className="text-[16px] font-medium hover:text-brand-main transition-colors text-text-body">About Us</Link></li>
                 <li><Link href="/projects" className="text-[16px] font-medium hover:text-brand-main transition-colors text-text-body">Projects</Link></li>
+                <li><Link href="/blog" className="text-[16px] font-medium hover:text-brand-main transition-colors text-text-body">Blog</Link></li>
                 <li><Link href="/#methodology" className="text-[16px] font-medium hover:text-brand-main transition-colors text-text-body">Our Methodology</Link></li>
                 <li><Link href="/#pricing" className="text-[16px] font-medium hover:text-brand-main transition-colors text-text-body">Pricing</Link></li>
               </ul>
@@ -76,6 +76,7 @@ export const Footer = () => {
                 <div className="space-y-2">
                    <div className="text-[14px] font-bold text-text-muted uppercase tracking-widest">Studio</div>
                    <div className="text-[18px] font-semibold text-text-heading">Charlotte, North Carolina</div>
+                   <div className="text-[14px] text-brand-main/80 font-medium">Available for projects worldwide</div>
                 </div>
               </div>
             </div>

@@ -13,16 +13,105 @@ import { Reveal, RevealItem } from "@/components/ui/Reveal";
 import { Badge } from "@/components/ui/Badge";
 
 export default function Home() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Truvox Agency",
+    "description": "Web design agency for small businesses in Charlotte, NC",
+    "url": "https://truvox-agency.vercel.app",
+    "logo": "https://truvox-agency.vercel.app/assets/logo.png",
+    "image": "https://truvox-agency.vercel.app/assets/bg/hero-team.jpg",
+    "telephone": "",
+    "email": "dafiashalom@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Charlotte",
+      "addressRegion": "NC",
+      "addressCountry": "US"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 35.2271,
+      "longitude": -80.8431
+    },
+    "openingHours": "Mo-Fr 09:00-18:00",
+    "priceRange": "$$",
+    "serviceArea": {
+      "@type": "City",
+      "name": "Charlotte"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Web Design Services",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Website Creation" }},
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "UI/UX Design" }},
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Website Redesign" }},
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Digital Strategy" }}
+      ]
+    },
+    "sameAs": []
+  };
+
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do we start a project together?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Start by booking a free consultation. We'll discuss your business goals, budget, and timeline to define the right approach for your project."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is your high-fidelity design philosophy?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We believe every pixel matters. Our designs are strategic, not decorative — built to guide visitors toward action and reflect your brand's true value."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do you use data to drive design?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We analyze user behavior, conversion patterns, and competitor benchmarks to make every design decision backed by real-world performance data."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you provide long-term support?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Our Growth and Enterprise plans include ongoing support. We also offer flexible maintenance packages for all clients after launch."
+        }
+      }
+    ]
+  };
+
   return (
     <main className="flex-grow bg-bg-primary">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
+      
       {/* HERO SECTION - DARK & NEON GREEN STYLE */}
       <section className="relative min-h-screen flex flex-col items-center pt-32 md:pt-48 pb-20 px-4 md:px-6 overflow-hidden bg-bg-dark">
         <div className="max-w-[1200px] mx-auto w-full relative z-20 flex flex-col items-center text-center">
           
           <div className="relative mb-16">
-            <h1 className="w-full text-balance tracking-tight mb-4 break-words px-4">
-              Elevating Digital Authority Through <span className="gradient-text italic pr-[0.1em]">Strategic Design.</span>
-            </h1>
+            <h1 className="sr-only">Web Design Agency for Small Businesses in Charlotte, NC</h1>
+            <h2 className="text-5xl md:text-7xl lg:text-[90px] font-medium text-white leading-[1.0] tracking-tight mb-4 break-words px-4">
+              Elevating Digital Authority Through <span className="gradient-text italic">Strategic Design.</span>
+            </h2>
             
             {/* Floating Badges */}
             <div className="absolute -top-24 left-4 sm:-top-12 sm:-left-24 hidden lg:block">

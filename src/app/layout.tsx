@@ -9,8 +9,34 @@ const archivo = Archivo({
 });
 
 export const metadata: Metadata = {
-  title: "Truvox | Designing trust. Building digital presence.",
-  description: "Digital agency for small businesses. We create clean, strategic websites that build credibility and turn visitors into clients.",
+  title: "Truvox | Web Design Agency for Small Businesses in Charlotte, NC",
+  description: "Truvox is a Charlotte-based web design agency helping small businesses attract more clients with clean, strategic, high-converting websites. Get a free consultation.",
+  keywords: "web design Charlotte NC, small business website, digital agency Charlotte, website design North Carolina",
+  alternates: {
+    canonical: "https://truvox-agency.vercel.app/",
+  },
+  openGraph: {
+    title: "Truvox | Web Design Agency for Small Businesses in Charlotte, NC",
+    description: "We create clean, strategic websites that build credibility and turn visitors into clients. Based in Charlotte, NC.",
+    url: "https://truvox-agency.vercel.app/",
+    siteName: "Truvox Agency",
+    images: [
+      {
+        url: "https://truvox-agency.vercel.app/assets/og/truvox-og.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Truvox Agency Charlotte NC",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Truvox | Web Design Agency Charlotte NC",
+    description: "Strategic web design for small businesses. Clean, high-converting websites.",
+    images: ["https://truvox-agency.vercel.app/assets/og/truvox-og.jpg"],
+  },
 };
 
 import { Navbar } from "@/components/layout/Navbar";

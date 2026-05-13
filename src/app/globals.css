@@ -116,6 +116,11 @@ html, body {
     @apply bg-clip-text text-transparent bg-gradient-to-r from-[#00FF85] to-[#80FFD0];
   }
 
+  .gradient-text.italic {
+    padding-right: 0.15em;
+    display: inline-block;
+  }
+
   .input-zailab {
     @apply bg-transparent border-none border-b border-[var(--border-subtle)] h-[38px] px-0 py-1 text-[18px] text-white font-normal focus:outline-none focus:border-[var(--brand-main)] placeholder-[var(--text-muted)] w-full;
   }
