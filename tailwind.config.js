@@ -9,44 +9,50 @@ export default {
     extend: {
       colors: {
         brand: {
-          main: "#0DB4B4",
-          hover: "#099A9A",
-          light: "#38D9C4",
-          dark: "#077A7A",
+          main: "var(--brand-main)",
+          hover: "var(--brand-hover)",
+          light: "var(--brand-light)",
+          burgundy: "var(--brand-main)", // Fallback for components still using old names
+          purple: "var(--bg-primary)",
+          purpleAlt: "var(--bg-section-alt)",
         },
-        primary: "#0D1520",
-        surface: "#FFFFFF",
-        sectionAlt: "#F5FAFA",
-        dark: "#0D1520",
-        darkAlt: "#0A1018",
-        body: "#5E5E5E",
-        muted: "#8A8A8A",
-        light: "#EBEBEB",
+        accent: {
+          lime: "var(--brand-main)",
+          pink: "var(--brand-main)",
+          sage: "var(--brand-main)",
+          mint: "var(--brand-main)",
+        },
+        bg: {
+          primary: "var(--bg-primary)",
+          sectionAlt: "var(--bg-section-alt)",
+          dark: "var(--bg-dark)",
+          card: "var(--bg-card)",
+          cardTint: "var(--bg-card-tint)",
+          blush: "var(--bg-section-alt)", // Fallback
+        },
+        text: {
+          heading: "var(--text-heading)",
+          body: "var(--text-body)",
+          muted: "var(--text-muted)",
+          white: "var(--text-white)",
+        },
+        border: {
+          subtle: "var(--border-subtle)",
+          brand: "var(--border-brand)",
+        },
       },
       fontFamily: {
-        poppins: ["var(--font-poppins)", "sans-serif"],
+        archivo: ["var(--font-archivo)", "sans-serif"],
       },
       borderRadius: {
-        pill: "1440px",
+        sm: "2px",
+        organic: "70px",
+        pill: "40px",
       },
       boxShadow: {
-        elevation1: "0px 2px 8px rgba(0, 0, 0, 0.04)",
-        elevation2: "0px 4px 12px rgba(0, 0, 0, 0.08)",
-        elevation3: "0px 6px 16px rgba(0, 0, 0, 0.12)",
-        elevation4: "0px 8px 24px rgba(0, 0, 0, 0.15)",
-        elevation5: "0px 8px 32px rgba(13, 180, 180, 0.20)",
-        brand: "0px 4px 12px rgba(13, 180, 180, 0.30)",
-        brandHover: "0px 6px 16px rgba(13, 180, 180, 0.40)",
-        cta: "0 4px 24px rgba(13, 180, 180, 0.40)",
-      },
-      backgroundImage: {
-        "gradient-brand": "linear-gradient(135deg, #0DB4B4, #38D9C4)",
-        "gradient-text": "linear-gradient(135deg, #0DB4B4, #38D9C4)",
-        "gradient-hero-dark": "radial-gradient(ellipse at 65% 40%, rgba(13,180,180,0.18) 0%, transparent 65%)",
-        "gradient-hero-light": "radial-gradient(ellipse at 65% 40%, rgba(13,180,180,0.10) 0%, transparent 65%)",
+        glow: "0px 8px 32px rgba(0, 255, 133, 0.20)",
       },
     },
-
   },
   plugins: [],
 };

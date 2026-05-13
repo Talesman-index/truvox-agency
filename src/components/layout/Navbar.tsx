@@ -1,118 +1,97 @@
 'use client';
 
-import Link from 'next/link';
-import { Button } from '@/components/ui/Button';
 import { useState, useEffect } from 'react';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Magnetic } from '@/components/ui/Magnetic';
+import { Menu, X } from 'lucide-react';
+import { Button } from '@/components/ui/Button';
+import { TruvoxLogo } from '@/components/ui/TruvoxLogo';
 
-export function Navbar() {
+export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
+      setScrolled(window.scrollY > 50);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const navLinks = [
-    { name: 'Services', href: '/#services', hasDropdown: false },
-    { name: 'Portfolio', href: '/#portfolio', hasDropdown: false },
-    { name: 'Process', href: '/#process', hasDropdown: false },
-    { name: 'Pricing', href: '/#pricing', hasDropdown: false },
-    { name: 'About', href: '/about', hasDropdown: false },
+    { name: 'Home', href: '/' },
+    { name: 'Portfolio', href: '/#projects' },
+    { name: 'Methodology', href: '/#methodology' },
+    { name: 'Pricing', href: '/#pricing' },
+    { name: 'About', href: '/about' },
   ];
 
   return (
-    <div className="fixed top-6 left-0 right-0 z-50 px-6">
-      <motion.nav 
-        initial={{ y: -100, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] as const }}
-        className={`max-w-6xl mx-auto rounded-full transition-all duration-500 border border-white/20 shadow-elevation4 backdrop-blur-xl ${
-          scrolled 
-            ? 'bg-white/80 py-3 px-8' 
-            : 'bg-white/60 py-4 px-10'
-        } flex items-center justify-between`}
-      >
-        {/* Logo */}
-        <Link href="/" className="flex items-center group">
-          <img 
-            src="/assets/truvox-logo.png" 
-            alt="TRUVOX Logo" 
-            className="h-7 md:h-8 w-auto object-contain transition-transform duration-300 group-hover:scale-105 logo-black"
-          />
+    <nav 
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-6 md:px-12 py-6 ${
+        scrolled ? 'bg-bg-primary/90 backdrop-blur-xl border-b border-white/5 py-4' : 'bg-transparent'
+      }`}
+    >
+      <div className="max-w-[1200px] mx-auto flex items-center justify-between">
+        <Link href="/" className="flex items-center gap-2">
+          <TruvoxLogo className="text-white hover:opacity-80 transition-opacity" width={140} height={40} />
         </Link>
 
-        {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-8">
+        {/* Desktop Links */}
+        <div className="hidden md:flex items-center gap-10">
           {navLinks.map((link) => (
-            <Link
-              key={link.name}
+            <Link 
+              key={link.name} 
               href={link.href}
-              className="text-sm font-semibold text-primary/80 hover:text-brand-main transition-colors duration-300 flex items-center gap-1 group"
+              className="text-[12px] font-bold uppercase tracking-[0.2em] text-white/50 hover:text-brand-main transition-colors duration-200"
             >
               {link.name}
-              {link.hasDropdown && <ChevronDown size={14} className="group-hover:rotate-180 transition-transform duration-300" />}
             </Link>
           ))}
+          <Link href="/contact">
+            <Button variant="primary" className="bg-brand-main text-bg-primary px-10 h-[50px] rounded-full text-[12px] font-bold uppercase tracking-widest hover:bg-brand-hover transition-all shadow-[0_0_20px_rgba(0,255,133,0.3)]">
+              Talk to us
+            </Button>
+          </Link>
         </div>
 
-        {/* Action Button */}
-        <div className="hidden md:block">
-          <Magnetic strength={0.3}>
-            <Link href="/contact">
-              <Button variant="primary" size="sm" className="px-6 py-2.5 rounded-full text-[10px] font-black uppercase tracking-[0.2em]">
-                Start the Journey
-              </Button>
-            </Link>
-          </Magnetic>
-        </div>
-
-        {/* Mobile Menu Toggle */}
+        {/* Mobile Toggle */}
         <button 
-          className="md:hidden text-primary p-2"
+          className="md:hidden text-white"
           onClick={() => setIsOpen(!isOpen)}
         >
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
+          {isOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
-      </motion.nav>
+      </div>
 
-      {/* Mobile Menu Drawer */}
+      {/* Mobile Menu */}
       <AnimatePresence>
         {isOpen && (
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.95 }}
-            className="absolute top-20 left-6 right-6 bg-white rounded-3xl shadow-elevation5 border border-light p-8 md:hidden"
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            className="absolute top-full left-0 w-full bg-bg-card border-t border-white/5 p-6 md:hidden flex flex-col gap-6 shadow-2xl"
           >
-            <div className="flex flex-col gap-6">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.name}
-                  href={link.href}
-                  onClick={() => setIsOpen(false)}
-                  className="text-xl font-bold text-primary"
-                >
-                  {link.name}
-                </Link>
-              ))}
-              <div className="h-[1px] bg-light w-full"></div>
-              <Link href="/contact" onClick={() => setIsOpen(false)}>
-                <Button variant="primary" className="w-full py-4 text-sm font-black uppercase tracking-widest">
-                  Start the Journey
-                </Button>
+            {navLinks.map((link) => (
+              <Link 
+                key={link.name} 
+                href={link.href}
+                onClick={() => setIsOpen(false)}
+                className="text-[12px] font-bold uppercase tracking-widest text-white/70 hover:text-brand-main"
+              >
+                {link.name}
               </Link>
-            </div>
+            ))}
+            <Link href="/contact" onClick={() => setIsOpen(false)}>
+              <Button variant="primary" className="bg-brand-main text-bg-primary w-full h-[50px] rounded-full text-[12px] font-bold uppercase tracking-widest">
+                Talk to us
+              </Button>
+            </Link>
           </motion.div>
         )}
       </AnimatePresence>
-
-    </div>
+    </nav>
   );
-}
+};

@@ -1,117 +1,161 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { useRef } from 'react';
 import Image from 'next/image';
+import { Reveal, RevealItem } from '@/components/ui/Reveal';
+import { Button } from '@/components/ui/Button';
+import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
+import { Badge } from '@/components/ui/Badge';
 
 const projects = [
   {
-    title: 'SAGANA AGENCY',
-    category: 'EDITORIAL DESIGN',
-    description: "Immersive platform establishing the digital authority of bold creative studios through disruptive design.",
+    id: "01",
+    title: 'Sagana Agency',
+    category: 'Design Studio',
+    tags: ['Disruptive', 'Immersive', 'Authority'],
+    description: 'Immersive platform establishing the digital authority of bold creative studios through disruptive design.',
     image: '/assets/portfolio/sagana.png',
-    link: 'https://www.sagana-agency.com/'
+    link: 'https://www.sagana-agency.com/',
   },
   {
-    title: 'SMART PETRI DISH',
-    category: 'HEALTH-TECH',
-    description: "MVP development of an intelligent system for decentralized health screening. A major innovation validated by experts.",
+    id: "02",
+    title: 'Smart Petri Dish',
+    category: 'Health Tech',
+    tags: ['Innovation', 'MVP', 'Decentralized'],
+    description: 'MVP development of an intelligent system for decentralized health screening. A major innovation validated by experts.',
     image: '/assets/portfolio/spd.png',
-    link: 'https://spd-zeta.vercel.app/'
+    link: 'https://spd-zeta.vercel.app/',
   },
   {
-    title: 'VORTEX STUDIO',
-    category: 'SOUND EXPERIENCE',
-    description: "Interactive solution exploring the boundaries of experimental sound design and digital storytelling.",
+    id: "03",
+    title: 'Vortex Studio',
+    category: 'Audio Experience',
+    tags: ['Sound Design', 'Storytelling', 'Interactive'],
+    description: 'Interactive solution exploring the boundaries of experimental sound design and digital storytelling.',
     image: '/assets/portfolio/vortex.webp',
-    link: 'https://www.behance.net/gallery/218017715/Mobile-App-to-buy-fuel'
+    link: '#',
   },
   {
-    title: 'FORUM GRANDES ÉCOLES',
-    category: 'EVENT DESIGN',
-    description: "Visual identity and digital support for one of the largest student gatherings in France.",
-    image: '/assets/portfolio/forum.png',
-    link: '#'
+    id: "04",
+    title: 'Tavares',
+    category: 'Director & Art Director',
+    tags: ['Cinematic', 'Editorial', 'Visual Poetry'],
+    description: 'Immersive cinematic portfolio for a visionary director, blending high-end editorial aesthetics with disruptive storytelling.',
+    image: '/assets/portfolio/tavares-cinematic.png',
+    link: 'https://portfolio-tavares.vercel.app/',
   },
 ];
 
-export function PortfolioSection() {
+const ProjectCard = ({ project, index }: { project: any; index: number }) => {
   return (
-    <section id="portfolio" className="py-24 md:py-40 px-6 max-w-[1440px] mx-auto">
-      {/* Section Header */}
-      <div className="mb-20 md:mb-32">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="space-y-4"
-        >
-          <div className="flex items-center gap-4">
-            <div className="h-[1px] w-12 bg-brand-main"></div>
-            <span className="text-brand-main font-bold uppercase tracking-[0.4em] text-xs">
-              Latest Work
-            </span>
+    <RevealItem delay={index * 0.1}>
+      <Link 
+        href={project.link} 
+        target={project.link.startsWith('http') ? "_blank" : undefined}
+        rel="noopener noreferrer"
+        className="group block space-y-6"
+      >
+        {/* Image Container - Framer Style (Clean, Rounded, Overflow hidden) */}
+        <div className="relative aspect-[16/10] w-full overflow-hidden rounded-[32px] bg-bg-card border border-white/5 group-hover:border-brand-main/30 transition-all duration-700">
+          <Image 
+            src={project.image} 
+            alt={project.title} 
+            fill 
+            unoptimized
+            className="object-cover transition-all duration-1000 group-hover:scale-105"
+          />
+          {/* Subtle Glow Overlay */}
+          <div className="absolute inset-0 bg-brand-main/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+          
+          {/* Floating Icon Link */}
+          <div className="absolute top-6 right-6 w-12 h-12 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 group-hover:translate-x-0 translate-x-4 transition-all duration-500">
+            <ArrowUpRight size={20} />
           </div>
-          <h2 className="text-5xl md:text-8xl font-black text-primary tracking-tighter leading-none">
-            Selected <span className="gradient-text">work</span>
-          </h2>
-        </motion.div>
-      </div>
+        </div>
 
-      {/* 2-Column Grid with updated images and projects */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-        {projects.map((project, index) => (
-          <motion.div
-            key={project.title}
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: index * 0.1 }}
-            className="group flex flex-col bg-white rounded-[12px] overflow-hidden border border-light hover:shadow-elevation5 hover:border-brand-main transition-all duration-500"
-          >
-            {/* Rectangle Image Zone - Fixed 420px height */}
-            <div className="w-full h-[420px] relative overflow-hidden bg-sectionAlt">
-              <Image 
-                src={project.image} 
-                alt={project.title}
-                fill
-                className="object-cover object-top block group-hover:scale-105 transition-transform duration-1000"
-                sizes="(max-width: 768px) 100vw, 45vw"
-                priority={index < 2}
-              />
+        {/* Metadata - Webflow/Framer Style (Tags + Description) */}
+        <div className="px-2 space-y-4">
+          <div className="flex flex-wrap items-center justify-between gap-4">
+            <h3 className="text-[24px] md:text-[28px] font-medium text-text-heading tracking-tight group-hover:text-brand-main transition-colors">
+              {project.title}
+            </h3>
+            
+            {/* Tags Row */}
+            <div className="flex items-center gap-2">
+               {project.tags.map((tag: string, i: number) => (
+                 <span 
+                   key={i} 
+                   className="text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full border border-white/10 text-text-muted group-hover:border-brand-main/30 group-hover:text-brand-main transition-all"
+                 >
+                   {tag}
+                 </span>
+               ))}
             </div>
+          </div>
 
-            {/* Content Zone */}
-            <div className="flex flex-col flex-1 p-8 md:p-[24px_28px_32px]">
-              <div className="flex items-center gap-3 mb-6">
-                <span className="text-brand-main font-black text-xs">0{index + 1}</span>
-                <div className="h-[1px] w-8 bg-light"></div>
-                <span className="text-muted font-bold text-[10px] uppercase tracking-widest">{project.category}</span>
-              </div>
-              
-              <h3 className="text-2xl md:text-3xl font-black text-primary mb-4 tracking-tighter uppercase leading-none group-hover:text-brand-main transition-colors">
-                {project.title}
-              </h3>
-              
-              <p className="text-body text-base leading-relaxed mb-10 flex-1">
-                {project.description}
-              </p>
+          <p className="text-[16px] text-text-muted leading-relaxed max-w-lg">
+            {project.description}
+          </p>
+          
+          <div className="pt-2">
+             <div className="w-full h-[1px] bg-white/5 group-hover:bg-brand-main/20 transition-colors"></div>
+          </div>
+        </div>
+      </Link>
+    </RevealItem>
+  );
+};
 
-              <div className="pt-6 border-t border-light flex justify-end">
-                <a 
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-[11px] font-black uppercase tracking-widest text-primary hover:text-brand-main transition-colors"
-                >
-                  View Project <ArrowUpRight size={16} className="text-brand-main" />
-                </a>
-              </div>
+export const PortfolioSection = () => {
+  return (
+    <section id="projects" className="py-24 md:py-32 px-6 bg-bg-primary">
+      <div className="max-w-[1200px] mx-auto">
+        {/* Minimalist Header */}
+        <Reveal>
+          <div className="flex flex-col md:flex-row items-baseline justify-between gap-6 mb-20 md:mb-28">
+            <div className="space-y-4">
+              <Badge variant="lime" rotation={-2} className="mb-4">Selected Work</Badge>
+              <h2 className="text-[40px] md:text-[60px] font-medium text-text-heading leading-tight tracking-tight">
+                Design <span className="gradient-text italic">Manifesto.</span>
+              </h2>
             </div>
-          </motion.div>
-        ))}
-      </div>
+            <p className="text-text-muted text-[14px] font-medium uppercase tracking-[0.2em] md:text-right max-w-xs">
+              Curated selection of our most impactful digital architecture.
+            </p>
+          </div>
+        </Reveal>
 
+        {/* Grid Layout - Clean 2-column staggered */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-20">
+          {projects.map((project, i) => (
+            <ProjectCard key={i} project={project} index={i} />
+          ))}
+        </div>
+
+        {/* View All Button */}
+        <Reveal delay={0.4}>
+          <div className="mt-20 flex justify-center">
+            <Button variant="secondary" className="group border-white/10 text-white hover:border-brand-main hover:text-brand-main h-[60px] px-10 rounded-full text-[14px] font-bold uppercase tracking-widest transition-all">
+              <span>View all projects</span>
+              <ArrowUpRight size={18} className="ml-2 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+            </Button>
+          </div>
+        </Reveal>
+
+        {/* Call to Action */}
+        <Reveal delay={0.6}>
+          <div className="mt-32 pt-20 border-t border-white/5 text-center">
+            <h4 className="text-[30px] md:text-[40px] font-medium text-text-heading mb-10 tracking-tight">
+              Have a vision <span className="gradient-text italic">in mind?</span>
+            </h4>
+            <Button variant="secondary" className="border-brand-main text-brand-main hover:bg-brand-main hover:text-bg-primary h-[64px] px-12 rounded-full text-[16px] font-bold transition-all shadow-[0_0_40px_rgba(0,255,133,0.05)]">
+              Contact us to start
+            </Button>
+          </div>
+        </Reveal>
+      </div>
     </section>
   );
-}
+};

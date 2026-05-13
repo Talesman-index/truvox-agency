@@ -2,131 +2,103 @@
 
 import { motion } from 'framer-motion';
 import { Button } from "@/components/ui/Button";
-import { Mail, Phone, MapPin, ArrowUpRight } from "lucide-react";
+import { Mail, Phone, MapPin, ArrowRight } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
+import { Badge } from '@/components/ui/Badge';
 
 export default function ContactPage() {
-
   return (
-    <main className="flex-grow">
-      {/* HERO CONTACT - DARK THEME */}
-      <section className="relative pt-40 pb-32 px-6 bg-dark overflow-hidden">
-        {/* Background Effects */}
-        <div className="absolute bottom-0 left-0 w-full h-full bg-gradient-to-t from-brand-main/5 to-transparent pointer-events-none"></div>
-        <div className="absolute top-[-10%] right-[-5%] w-[40%] h-[40%] bg-brand-secondary/10 blur-[100px] rounded-full"></div>
-
-        <div className="max-w-[1440px] mx-auto relative z-10 grid lg:grid-cols-2 gap-24 items-center">
-          <div className="space-y-12">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              className="flex items-center gap-4"
-            >
-              <div className="h-[1px] w-12 bg-brand-main"></div>
-              <span className="text-brand-main font-black uppercase tracking-[0.4em] text-[10px]">
-                Get in touch
-              </span>
-            </motion.div>
-
-            <div className="space-y-8">
-              <motion.h1 
-                initial={{ opacity: 0, y: 40 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.1 }}
-                className="text-6xl md:text-8xl font-black text-white leading-[1.0] tracking-tighter"
-              >
-                Let&apos;s build <br /><span className="gradient-text">your presence.</span>
-              </motion.h1>
-              <motion.p 
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                className="text-xl text-white/60 leading-relaxed max-w-lg"
-              >
-                Ready to take your business to the next level? Fill out the form and we&apos;ll get back to you within 24 hours.
-              </motion.p>
-            </div>
-
-            <div className="space-y-8 pt-8">
-               {[
-                 { icon: <Mail size={24} />, label: 'Email us', val: 'contact@truvox.io' },
-                 { icon: <Phone size={24} />, label: 'Call us', val: '+33 6 00 00 00 00' },
-                 { icon: <MapPin size={24} />, label: 'Studio', val: 'Paris, France (Remote First)' },
-               ].map((item, i) => (
-                 <Reveal key={i} delay={0.6 + (i * 0.1)}>
-                   <div className="flex items-center gap-8 group">
-                      <div className="w-16 h-16 bg-white/5 rounded-[20px] flex items-center justify-center text-brand-main border border-white/10 group-hover:bg-brand-main group-hover:text-white transition-all duration-300 group-hover:shadow-lg group-hover:shadow-brand-main/20">
-                         {item.icon}
-                      </div>
-                      <div className="space-y-1">
-                         <div className="text-[10px] text-white/40 font-black uppercase tracking-widest">{item.label}</div>
-                         <div className="text-xl font-bold text-white tracking-tight">{item.val}</div>
-                      </div>
-                   </div>
-                 </Reveal>
-               ))}
-            </div>
+    <main className="min-h-screen bg-bg-primary pt-32 pb-24 md:pt-48 md:pb-32 px-6">
+      <div className="max-w-[1200px] mx-auto grid lg:grid-cols-2 gap-24 items-start">
+        {/* Left Column - Info */}
+        <div className="space-y-12">
+          <div className="space-y-8">
+            <Reveal>
+              <Badge variant="lime" rotation={-2} className="mb-8">Contact Us</Badge>
+              <h1 className="text-5xl md:text-7xl lg:text-[80px] font-medium text-text-heading leading-[1.05] tracking-tight">
+                Let&apos;s Build <br /><span className="gradient-text italic">The Future.</span>
+              </h1>
+            </Reveal>
+            <Reveal delay={0.2}>
+              <p className="text-[18px] md:text-[20px] text-text-muted leading-relaxed max-w-lg">
+                Ready to elevate your digital authority? Share your vision with us and we&apos;ll get back to you within 24 hours.
+              </p>
+            </Reveal>
           </div>
 
-          <Reveal delay={0.4} duration={1}>
-            <div className="bg-white p-12 md:p-16 rounded-[60px] shadow-elevation5 border border-light relative group">
-              <div className="absolute top-10 right-10 opacity-10 group-hover:opacity-100 transition-opacity">
-                 <ArrowUpRight size={40} className="text-brand-main" />
-              </div>
-
-              <form className="space-y-10">
-                 <div className="grid md:grid-cols-2 gap-10">
-                    <div className="space-y-3">
-                       <label className="text-[10px] font-black text-primary uppercase tracking-[0.2em] ml-2">Full Name</label>
-                       <input 
-                          type="text" 
-                          placeholder="John Doe" 
-                          className="w-full bg-sectionAlt border-none rounded-2xl px-8 py-5 text-primary placeholder:text-muted focus:ring-2 focus:ring-brand-main transition-all shadow-inner"
-                       />
+          <div className="space-y-10 pt-8 border-t border-white/5">
+             {[
+               { icon: <Mail size={20} />, label: 'Email us', val: 'contact@truvox.io' },
+               { icon: <Phone size={20} />, label: 'Call us', val: '+33 6 00 00 00 00' },
+               { icon: <MapPin size={20} />, label: 'Studio', val: 'Paris, France (Remote First)' },
+             ].map((item, i) => (
+               <Reveal key={i} delay={0.4 + (i * 0.1)}>
+                 <div className="flex items-center gap-6 group">
+                    <div className="w-14 h-14 bg-bg-card rounded-2xl flex items-center justify-center text-brand-main border border-border-subtle group-hover:border-brand-main group-hover:shadow-glow transition-all duration-500">
+                       {item.icon}
                     </div>
-                    <div className="space-y-3">
-                       <label className="text-[10px] font-black text-primary uppercase tracking-[0.2em] ml-2">Email Address</label>
-                       <input 
-                          type="email" 
-                          placeholder="john@example.com" 
-                          className="w-full bg-sectionAlt border-none rounded-2xl px-8 py-5 text-primary placeholder:text-muted focus:ring-2 focus:ring-brand-main transition-all shadow-inner"
-                       />
+                    <div className="space-y-1">
+                       <div className="text-[12px] text-text-muted font-bold uppercase tracking-widest">{item.label}</div>
+                       <div className="text-[22px] font-semibold text-text-heading group-hover:text-brand-main transition-colors">{item.val}</div>
                     </div>
                  </div>
-                 
-                 <div className="space-y-3">
-                    <label className="text-[10px] font-black text-primary uppercase tracking-[0.2em] ml-2">Project Type</label>
-                    <div className="relative">
-                      <select className="w-full bg-sectionAlt border-none rounded-2xl px-8 py-5 text-primary focus:ring-2 focus:ring-brand-main transition-all appearance-none shadow-inner cursor-pointer font-bold">
-                         <option>New Website Creation</option>
-                         <option>Website Redesign</option>
-                         <option>UI/UX Design Only</option>
-                         <option>Other</option>
-                      </select>
-                      <div className="absolute right-8 top-1/2 -translate-y-1/2 pointer-events-none opacity-40">
-                         <ArrowUpRight size={20} className="rotate-90" />
-                      </div>
-                    </div>
-                 </div>
-                 
-                 <div className="space-y-3">
-                    <label className="text-[10px] font-black text-primary uppercase tracking-[0.2em] ml-2">Your Message</label>
-                    <textarea 
-                      rows={5} 
-                      placeholder="Tell us about your goals..." 
-                      className="w-full bg-sectionAlt border-none rounded-2xl px-8 py-5 text-primary placeholder:text-muted focus:ring-2 focus:ring-brand-main transition-all shadow-inner"
-                    ></textarea>
-                 </div>
-                 
-                 <Button variant="primary" className="w-full py-6 text-xl rounded-2xl shadow-elevation5">
-                    Send Message
-                 </Button>
-              </form>
-            </div>
-          </Reveal>
+               </Reveal>
+             ))}
+          </div>
         </div>
-      </section>
 
+        {/* Right Column - Form */}
+        <Reveal delay={0.4}>
+          <div className="bg-bg-card p-8 md:p-12 rounded-[40px] border border-border-subtle relative overflow-hidden group">
+            {/* Decorative background glow */}
+            <div className="absolute -top-24 -right-24 w-64 h-64 bg-brand-main/5 blur-[100px] rounded-full pointer-events-none group-hover:bg-brand-main/10 transition-colors"></div>
+            
+            <form className="space-y-10 relative z-10">
+               <div className="grid md:grid-cols-2 gap-8">
+                  <div className="space-y-3">
+                     <label className="text-[12px] font-bold text-text-muted uppercase tracking-widest ml-1">Full Name</label>
+                     <input 
+                        type="text" 
+                        placeholder="John Doe" 
+                        className="w-full bg-bg-primary/50 border border-border-subtle rounded-2xl px-6 h-[60px] text-text-heading placeholder:text-text-muted/30 focus:border-brand-main focus:outline-none transition-all"
+                     />
+                  </div>
+                  <div className="space-y-3">
+                     <label className="text-[12px] font-bold text-text-muted uppercase tracking-widest ml-1">Email Address</label>
+                     <input 
+                        type="email" 
+                        placeholder="john@example.com" 
+                        className="w-full bg-bg-primary/50 border border-border-subtle rounded-2xl px-6 h-[60px] text-text-heading placeholder:text-text-muted/30 focus:border-brand-main focus:outline-none transition-all"
+                     />
+                  </div>
+               </div>
+               
+               <div className="space-y-3">
+                  <label className="text-[12px] font-bold text-text-muted uppercase tracking-widest ml-1">Project Type</label>
+                  <select className="w-full bg-bg-primary/50 border border-border-subtle rounded-2xl px-6 h-[60px] text-text-heading focus:border-brand-main focus:outline-none transition-all appearance-none cursor-pointer">
+                     <option>Digital Strategy & UI/UX</option>
+                     <option>Full-Stack Development</option>
+                     <option>E-commerce & Automation</option>
+                     <option>Branding & Identity</option>
+                  </select>
+               </div>
+               
+               <div className="space-y-3">
+                  <label className="text-[12px] font-bold text-text-muted uppercase tracking-widest ml-1">Your Message</label>
+                  <textarea 
+                    rows={4} 
+                    placeholder="Tell us about your goals..." 
+                    className="w-full bg-bg-primary/50 border border-border-subtle rounded-2xl px-6 py-6 text-text-heading placeholder:text-text-muted/30 focus:border-brand-main focus:outline-none transition-all resize-none"
+                  ></textarea>
+               </div>
+               
+               <Button variant="primary" className="w-full h-[64px] rounded-full text-[16px] font-bold bg-brand-main text-bg-primary hover:bg-brand-hover shadow-[0_0_20px_rgba(0,255,133,0.3)]">
+                  Send Message <ArrowRight size={18} className="ml-2" />
+               </Button>
+            </form>
+          </div>
+        </Reveal>
+      </div>
     </main>
   );
 }

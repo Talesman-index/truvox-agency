@@ -2,141 +2,119 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import { Mail, Globe, MessageSquare, ArrowUpRight, Plus } from 'lucide-react';
+import { Badge } from '@/components/ui/Badge';
+import { TruvoxLogo } from '@/components/ui/TruvoxLogo';
 
-const socialIcons = [
-  { 
-    name: 'Facebook', 
-    href: '#', 
-    icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-    ) 
-  },
-  { 
-    name: 'Instagram', 
-    href: '#', 
-    icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
-    ) 
-  },
-  { 
-    name: 'LinkedIn', 
-    href: '#', 
-    icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
-    ) 
-  },
-  { 
-    name: 'YouTube', 
-    href: '#', 
-    icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 2-2 10.12 10.12 0 0 1 15 0 2 2 0 0 1 2 2 24.12 24.12 0 0 1 0 10 2 2 0 0 1-2 2 10.12 10.12 0 0 1-15 0 2 2 0 0 1-2-2Z"/><path d="m10 15 5-3-5-3z"/></svg>
-    ) 
-  },
-  { 
-    name: 'X', 
-    href: '#', 
-    icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4l11.733 16h4.267l-11.733 -16z"/><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"/></svg>
-    ) 
-  },
-];
-
-export function Footer() {
+export const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative bg-dark pt-40 pb-12 overflow-hidden text-white/70">
-      {/* Background Big Text - Ultra Faint Editorial */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full text-center pointer-events-none select-none z-0">
-        <h2 className="text-[25vw] font-black tracking-tighter leading-none text-white/[0.05] select-none">
-          TRUVOX
-        </h2>
-      </div>
-
-      {/* Top Gradient Blurs */}
-      <div className="absolute top-0 left-0 w-full h-[500px] bg-gradient-to-b from-brand-main/20 via-brand-main/5 to-transparent pointer-events-none z-0"></div>
-      <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-brand-secondary/20 blur-[180px] rounded-full pointer-events-none z-0"></div>
-
-      <div className="max-w-[1440px] mx-auto px-10 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-16 lg:gap-8 mb-32">
-          {/* Logo & Social - 4 columns */}
-          <div className="lg:col-span-5 space-y-16">
-            <Link href="/" className="inline-block">
-              <img 
-                src="/assets/truvox-logo.png" 
-                alt="TRUVOX Logo" 
-                className="h-10 w-auto opacity-90 logo-white"
-              />
+    <footer className="bg-bg-dark pt-24 pb-12 px-6 md:px-12 text-text-body overflow-hidden border-t border-white/5">
+      <div className="max-w-[1200px] mx-auto">
+        <div className="grid lg:grid-cols-12 gap-16 lg:gap-24 mb-32">
+          
+          {/* Left Column - Brand & Catchphrase */}
+          <div className="lg:col-span-5 space-y-12">
+            <Link href="/">
+              <TruvoxLogo className="text-white hover:opacity-80 transition-opacity" width={180} height={50} />
             </Link>
-            
-            <div className="flex items-center gap-6">
-              {socialIcons.map((social, i) => (
-                <motion.a
-                  key={i}
-                  href={social.href}
-                  whileHover={{ y: -5, color: '#0DB4B4', opacity: 1 }}
-                  className="text-white/40 hover:text-brand-main transition-all duration-300"
-                  aria-label={social.name}
-                >
-                  {social.icon}
-                </motion.a>
-              ))}
+            <h2 className="text-[40px] md:text-[50px] font-medium leading-[1.1] tracking-tight text-text-heading max-w-md">
+              Let&apos;s Build Something <span className="gradient-text italic">Remarkable</span> Together.
+            </h2>
+            <div className="flex gap-4">
+               {[
+                 { icon: <InstagramPlaceholder />, href: '#' },
+                 { icon: <TwitterPlaceholder />, href: '#' },
+                 { icon: <LinkedinPlaceholder />, href: '#' },
+               ].map((social, i) => (
+                 <Link 
+                   key={i} 
+                   href={social.href}
+                   className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-text-muted hover:bg-brand-main hover:text-bg-primary transition-all duration-300 shadow-sm"
+                 >
+                   {social.icon}
+                 </Link>
+               ))}
             </div>
           </div>
 
-          {/* Links Columns - 7 columns total */}
-          <div className="lg:col-span-2 space-y-10">
-            <h4 className="text-white font-black text-xs uppercase tracking-[0.2em] opacity-50">Sectors</h4>
-            <ul className="space-y-5 text-sm font-bold">
-              {['SMBs', 'Craftsmen', 'Freelancers', 'Startups'].map(item => (
-                <li key={item}>
-                  <Link href="#" className="hover:text-brand-main transition-colors duration-300 block">{item}</Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="lg:col-span-3 space-y-10">
-            <h4 className="text-white font-black text-xs uppercase tracking-[0.2em] opacity-50">Services</h4>
-            <ul className="space-y-5 text-sm font-bold">
-              {['Web Creation', 'UI/UX Design', 'Site Redesign', 'Digital Strategy'].map(item => (
-                <li key={item}>
-                  <Link href="#" className="hover:text-brand-main transition-colors duration-300 block">{item}</Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="lg:col-span-2 space-y-10">
-            <h4 className="text-white font-black text-xs uppercase tracking-[0.2em] opacity-50">Menu</h4>
-            <ul className="space-y-5 text-sm font-bold">
-              {[
-                { label: 'Home', href: '/' },
-                { label: 'Portfolio', href: '#portfolio' },
-                { label: 'About', href: '/about' },
-                { label: 'Contact', href: '/contact' }
-              ].map(item => (
-                <li key={item.label}>
-                  <Link href={item.href} className="hover:text-brand-main transition-colors duration-300 block">{item.label}</Link>
-                </li>
-              ))}
-            </ul>
+          {/* Right Columns - Links */}
+          <div className="lg:col-span-7 grid grid-cols-2 md:grid-cols-3 gap-12 md:gap-8">
+            <div className="space-y-10">
+              <h5 className="text-[12px] font-bold uppercase tracking-[0.2em] text-brand-main">Navigation</h5>
+              <ul className="space-y-4">
+                <li><Link href="/" className="text-[16px] font-medium hover:text-brand-main transition-colors text-text-body">Home</Link></li>
+                <li><Link href="/about" className="text-[16px] font-medium hover:text-brand-main transition-colors text-text-body">About Us</Link></li>
+                <li><Link href="/#projects" className="text-[16px] font-medium hover:text-brand-main transition-colors text-text-body">Selected Work</Link></li>
+                <li><Link href="/#methodology" className="text-[16px] font-medium hover:text-brand-main transition-colors text-text-body">Our Methodology</Link></li>
+                <li><Link href="/#pricing" className="text-[16px] font-medium hover:text-brand-main transition-colors text-text-body">Pricing</Link></li>
+              </ul>
+            </div>
+            <div className="space-y-10">
+              <h5 className="text-[12px] font-bold uppercase tracking-[0.2em] text-brand-main">Services</h5>
+              <ul className="space-y-4">
+                <li className="text-[16px] font-medium text-text-body/60">Digital Strategy</li>
+                <li className="text-[16px] font-medium text-text-body/60">UI/UX Design</li>
+                <li className="text-[16px] font-medium text-text-body/60">Full-Stack Dev</li>
+                <li className="text-[16px] font-medium text-text-body/60">E-commerce</li>
+              </ul>
+            </div>
+            <div className="space-y-10">
+              <h5 className="text-[12px] font-bold uppercase tracking-[0.2em] text-brand-main">Contact</h5>
+              <div className="space-y-8">
+                <Link 
+                  href="mailto:contact@truvox.io" 
+                  className="group block space-y-2"
+                >
+                  <div className="text-[14px] font-bold text-text-muted uppercase tracking-widest">Email Us</div>
+                  <div className="text-[18px] md:text-[20px] font-semibold flex items-center gap-2 text-text-heading group-hover:text-brand-main transition-all">
+                    contact@truvox.io
+                    <ArrowUpRight size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                  </div>
+                </Link>
+                <div className="space-y-2">
+                   <div className="text-[14px] font-bold text-text-muted uppercase tracking-widest">Studio</div>
+                   <div className="text-[18px] font-semibold text-text-heading">Paris, France</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
-        {/* Bottom Bar - Clean & Wide */}
-        <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8 text-[11px] font-black uppercase tracking-[0.2em] text-white/50">
-          <div>
-            © {currentYear} Copyright. All rights reserved.
+        {/* Bottom Bar */}
+        <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-8">
+          <div className="flex items-center gap-8 order-2 md:order-1">
+             <p className="text-text-muted text-[14px] font-medium">
+               © {currentYear} TRUVOX Agency.
+             </p>
+             <div className="flex gap-8">
+               <Link href="/privacy" className="text-text-muted hover:text-white text-[14px] transition-colors">Privacy</Link>
+               <Link href="/terms" className="text-text-muted hover:text-white text-[14px] transition-colors">Terms</Link>
+             </div>
           </div>
-          <div className="flex flex-wrap justify-center gap-10">
-            <Link href="#" className="hover:text-white transition-colors">Legal Notice</Link>
-            <Link href="#" className="hover:text-white transition-colors">Privacy Policy</Link>
-            <Link href="#" className="hover:text-white transition-colors">Cookies Policy</Link>
+          
+          <div className="flex items-center gap-3 order-1 md:order-2">
+             <Badge variant="lime" rotation={0} className="text-[12px]">Available for new projects</Badge>
           </div>
         </div>
       </div>
+
+      {/* Background Decorative Accent */}
+      <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-brand-main/5 blur-[120px] rounded-full pointer-events-none"></div>
     </footer>
   );
-}
+};
 
+// Simple placeholders
+const InstagramPlaceholder = () => (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+);
+
+const TwitterPlaceholder = () => (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+);
+
+const LinkedinPlaceholder = () => (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+);
