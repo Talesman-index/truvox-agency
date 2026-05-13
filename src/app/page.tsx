@@ -221,7 +221,7 @@ export default function Home() {
               <Reveal delay={0.4}>
                 <div className="relative aspect-[4/5] lg:aspect-square w-full rounded-[40px] overflow-hidden shadow-2xl border border-white/5 group">
                   <Image 
-                    src="/assets/bg/faq-3d-illustration.png" 
+                    src="/assets/bg/faq-minimal-3d.png" 
                     alt="Truvox Digital Innovation" 
                     fill 
                     className="object-cover group-hover:scale-105 transition-transform duration-1000"
