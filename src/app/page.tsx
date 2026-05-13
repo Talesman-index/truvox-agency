@@ -226,7 +226,6 @@ export default function Home() {
                     fill 
                     className="object-cover group-hover:scale-105 transition-transform duration-1000"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-bg-dark/40 to-transparent"></div>
                   <div className="absolute bottom-8 left-8">
                     <Badge variant="lime" rotation={-5} className="px-6 py-2 shadow-xl">Digital Innovation</Badge>
                   </div>
