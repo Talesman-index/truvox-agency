@@ -19,7 +19,7 @@ const values = [
   },
   {
     title: 'Global Perspective',
-    description: 'Operating from Paris with a remote-first mindset, we bring international standards to every project.',
+    description: 'Operating from Charlotte, NC with a remote-first mindset, we bring international standards to every project.',
     icon: <Globe size={24} />
   },
   {
@@ -55,7 +55,7 @@ export default function AboutPage() {
                   </p>
                   <div className="flex items-center gap-4 text-brand-main">
                      <Plus size={20} />
-                     <span className="text-[14px] font-bold uppercase tracking-widest">Paris Based • Remote First • World Class</span>
+                     <span className="text-[14px] font-bold uppercase tracking-widest">Charlotte NC • Remote First • World Class</span>
                   </div>
                </div>
              </Reveal>
