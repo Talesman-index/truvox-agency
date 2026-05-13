@@ -34,24 +34,30 @@ export default function Home() {
             </div>
           </div>
           
-          <Reveal delay={0.4}>
-             <p className="text-[18px] md:text-[22px] text-text-body/75 max-w-2xl mb-12 leading-relaxed">
-               We craft premium digital experiences that translate your vision into trust, and trust into measurable growth.
-             </p>
-          </Reveal>
+          <motion.p 
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3, delay: 0.1 }}
+            className="text-[18px] md:text-[22px] text-text-body/75 max-w-2xl mb-12 leading-relaxed"
+          >
+            We craft premium digital experiences that translate your vision into trust, and trust into measurable growth.
+          </motion.p>
 
-          <Reveal delay={0.6}>
-            <div className="relative w-full max-w-[1100px] aspect-[16/8] rounded-[40px] overflow-hidden mt-0 mb-20 shadow-2xl border border-border-subtle">
-               <Image 
-                 src="/assets/bg/hero-team.jpg" 
-                 alt="Truvox Team" 
-                 fill 
-                 className="object-cover opacity-60 grayscale hover:grayscale-0 transition-all duration-700"
-                 priority
-               />
-               <div className="absolute inset-0 bg-gradient-to-t from-bg-dark via-transparent to-transparent"></div>
-            </div>
-          </Reveal>
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.98 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.4, delay: 0.2 }}
+            className="relative w-full max-w-[1100px] aspect-[16/8] rounded-[40px] overflow-hidden mt-0 mb-20 shadow-2xl border border-border-subtle"
+          >
+             <Image 
+               src="/assets/bg/hero-team.jpg" 
+               alt="Truvox Team" 
+               fill 
+               className="object-cover opacity-60 grayscale hover:grayscale-0 transition-all duration-700"
+               priority
+             />
+             <div className="absolute inset-0 bg-gradient-to-t from-bg-dark via-transparent to-transparent"></div>
+          </motion.div>
         </div>
 
         {/* Decorative Elements */}
