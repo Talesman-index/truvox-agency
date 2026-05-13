@@ -17,7 +17,7 @@ export function AboutSection() {
               <div className="space-y-8">
                 <Badge variant="lime" rotation={-2}>About the Agency</Badge>
                 <h2 className="text-[36px] sm:text-[45px] md:text-[65px] font-medium text-text-heading leading-[1.1] tracking-tight break-words">
-                  We Build The <span className="gradient-text italic">Digital Foundations</span> Of Visionary Brands.
+                  We Build The <span className="gradient-text italic pr-[0.15em]">Digital Foundations</span> Of Visionary Brands.
                 </h2>
                 <p className="text-[18px] md:text-[22px] text-text-body/80 leading-relaxed max-w-2xl">
                   Truvox is a high-fidelity digital studio specializing in premium design and strategic engineering. We translate complex visions into seamless, high-performance digital experiences.
