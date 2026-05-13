@@ -71,7 +71,7 @@ export default function PrivacyPage() {
             <section className="space-y-6">
               <h2 className="text-2xl font-bold text-text-heading">5. Contact Us</h2>
               <p className="leading-relaxed">
-                If you have any questions about this Privacy Policy, please contact us at <span className="text-brand-main font-bold">contact@truvox.io</span>.
+                If you have any questions about this Privacy Policy, please contact us at <span className="text-brand-main font-bold">hello@truvox.studio</span>.
               </p>
             </section>
           </Reveal>

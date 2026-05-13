@@ -64,12 +64,12 @@ export const Footer = () => {
               <h5 className="text-[12px] font-bold uppercase tracking-[0.2em] text-brand-main">Contact</h5>
               <div className="space-y-8">
                 <Link 
-                  href="mailto:dafiashalom@gmail.com" 
+                  href="mailto:hello@truvox.studio" 
                   className="group block space-y-2"
                 >
                   <div className="text-[14px] font-bold text-text-muted uppercase tracking-widest">Email Us</div>
                   <div className="text-[18px] md:text-[20px] font-semibold flex items-center gap-2 text-text-heading group-hover:text-brand-main transition-all">
-                    dafiashalom@gmail.com
+                    hello@truvox.studio
                     <ArrowUpRight size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                   </div>
                 </Link>

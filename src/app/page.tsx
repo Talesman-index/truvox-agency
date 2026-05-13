@@ -22,7 +22,7 @@ export default function Home() {
     "logo": "https://truvox-agency.vercel.app/assets/logo.png",
     "image": "https://truvox-agency.vercel.app/assets/bg/hero-team.jpg",
     "telephone": "",
-    "email": "dafiashalom@gmail.com",
+    "email": "hello@truvox.studio",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Charlotte",
