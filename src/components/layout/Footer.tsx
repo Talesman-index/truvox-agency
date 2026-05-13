@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Mail, Globe, MessageSquare, ArrowUpRight, Plus } from 'lucide-react';
 import { Badge } from '@/components/ui/Badge';
-import { TruvoxLogo } from '@/components/ui/TruvoxLogo';
+import Image from 'next/image';
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -17,7 +17,7 @@ export const Footer = () => {
           {/* Left Column - Brand & Catchphrase */}
           <div className="lg:col-span-5 space-y-12">
             <Link href="/">
-              <TruvoxLogo className="text-white hover:opacity-80 transition-opacity" width={180} height={40} />
+              <Image src="/assets/logo.svg" alt="Truvox Logo" width={178} height={48} className="hover:opacity-80 transition-opacity" />
             </Link>
             <h2 className="text-[26px] xs:text-[32px] md:text-[50px] font-medium leading-tight md:leading-[1.1] tracking-tight text-text-heading max-w-md break-words">
               Let&apos;s Build Something <span className="gradient-text italic pr-[0.1em]">Remarkable</span> Together.

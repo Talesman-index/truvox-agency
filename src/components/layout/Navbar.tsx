@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
-import { TruvoxLogo } from '@/components/ui/TruvoxLogo';
+import Image from 'next/image';
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -36,7 +36,7 @@ export const Navbar = () => {
     >
       <div className="max-w-[1200px] mx-auto flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
-          <TruvoxLogo className="text-white hover:opacity-80 transition-opacity" width={144} height={32} />
+          <Image src="/assets/logo.svg" alt="Truvox Logo" width={149} height={40} className="hover:opacity-80 transition-opacity" priority />
         </Link>
 
         {/* Desktop Links */}

@@ -49,7 +49,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={archivo.variable}>
-      <body className={`${archivo.className} antialiased min-h-screen flex flex-col`}>
+      <body className={`${archivo.className} antialiased min-h-screen flex flex-col overflow-x-hidden`}>
         <Navbar />
         <main className="flex-grow">
           {children}

@@ -2,8 +2,6 @@
 
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useMemo } from 'react';
-import { Navbar } from '@/components/layout/Navbar';
-import { Footer } from '@/components/layout/Footer';
 import { Reveal } from '@/components/ui/Reveal';
 import { Badge } from '@/components/ui/Badge';
 import { ArrowUpRight } from 'lucide-react';
@@ -24,7 +22,6 @@ export default function ProjectsPage() {
 
   return (
     <main className="bg-bg-primary min-h-screen">
-      <Navbar />
       
       {/* Hero Header */}
       <section className="pt-40 pb-20 px-6 md:px-12">
@@ -131,7 +128,7 @@ export default function ProjectsPage() {
         </div>
       </section>
 
-      <Footer />
+
     </main>
   );
 }
