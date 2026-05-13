@@ -49,6 +49,10 @@ export default {
         organic: "70px",
         pill: "40px",
       },
+      screens: {
+        xs: "480px",
+        ...require("tailwindcss/defaultConfig").theme.screens,
+      },
       boxShadow: {
         glow: "0px 8px 32px rgba(0, 255, 133, 0.20)",
       },
