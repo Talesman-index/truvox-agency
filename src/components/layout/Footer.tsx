@@ -64,18 +64,18 @@ export const Footer = () => {
               <h5 className="text-[12px] font-bold uppercase tracking-[0.2em] text-brand-main">Contact</h5>
               <div className="space-y-8">
                 <Link 
-                  href="mailto:contact@truvox.io" 
+                  href="mailto:dafiashalom@gmail.com" 
                   className="group block space-y-2"
                 >
                   <div className="text-[14px] font-bold text-text-muted uppercase tracking-widest">Email Us</div>
                   <div className="text-[18px] md:text-[20px] font-semibold flex items-center gap-2 text-text-heading group-hover:text-brand-main transition-all">
-                    contact@truvox.io
+                    dafiashalom@gmail.com
                     <ArrowUpRight size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                   </div>
                 </Link>
                 <div className="space-y-2">
                    <div className="text-[14px] font-bold text-text-muted uppercase tracking-widest">Studio</div>
-                   <div className="text-[18px] font-semibold text-text-heading">Paris, France</div>
+                   <div className="text-[18px] font-semibold text-text-heading">Charlotte, North Carolina</div>
                 </div>
               </div>
             </div>

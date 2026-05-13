@@ -28,9 +28,9 @@ export default function ContactPage() {
 
           <div className="space-y-10 pt-8 border-t border-white/5">
              {[
-               { icon: <Mail size={20} />, label: 'Email us', val: 'contact@truvox.io' },
-               { icon: <Phone size={20} />, label: 'Call us', val: '+33 6 00 00 00 00' },
-               { icon: <MapPin size={20} />, label: 'Studio', val: 'Paris, France (Remote First)' },
+               { icon: <Mail size={20} />, label: 'Email us', val: 'dafiashalom@gmail.com' },
+               { icon: <Phone size={20} />, label: 'Call us', val: '+1 (515) 206-3535' },
+               { icon: <MapPin size={20} />, label: 'Studio', val: 'Charlotte, North Carolina' },
              ].map((item, i) => (
                <Reveal key={i} delay={0.4 + (i * 0.1)}>
                  <div className="flex items-center gap-6 group">

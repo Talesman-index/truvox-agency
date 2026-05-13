@@ -61,7 +61,7 @@ export function AboutSection() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-bg-dark/40 to-transparent"></div>
                 <div className="absolute top-8 right-8">
-                  <Badge variant="pink" rotation={8} className="px-6 py-2 shadow-xl">Paris Based</Badge>
+                  <Badge variant="pink" rotation={8} className="px-6 py-2 shadow-xl">Charlotte Based</Badge>
                 </div>
               </div>
             </Reveal>
