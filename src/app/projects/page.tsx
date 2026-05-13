@@ -33,7 +33,7 @@ export default function ProjectsPage() {
             <Badge variant="outline" className="mb-6 border-brand-main/30 text-brand-main">Selected Works</Badge>
           </Reveal>
           <Reveal delay={0.2}>
-            <h1 className="text-[36px] sm:text-[45px] md:text-[90px] font-medium leading-[1.1] tracking-tight mb-8">
+            <h1 className="text-[30px] sm:text-[45px] md:text-[90px] font-medium leading-tight md:leading-[1.1] tracking-tight mb-8">
               Pioneering <span className="inline-block gradient-text italic pr-[0.4em]">Digital</span> Authority.
             </h1>
           </Reveal>
@@ -100,7 +100,7 @@ export default function ProjectsPage() {
                       <div className="flex items-center justify-between">
                         <div className="flex items-center gap-4">
                           <span className="text-[12px] font-bold uppercase tracking-widest text-brand-main/60">{project.id}</span>
-                          <h2 className="text-[24px] md:text-[40px] font-medium tracking-tight group-hover:text-brand-main transition-colors">{project.title}</h2>
+                          <h2 className="text-[22px] md:text-[40px] font-medium tracking-tight group-hover:text-brand-main transition-colors">{project.title}</h2>
                         </div>
                         <span className="text-[14px] text-text-muted font-medium italic">{project.category}</span>
                       </div>

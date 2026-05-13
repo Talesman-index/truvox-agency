@@ -34,7 +34,7 @@ export default function ProjectDetailsPage() {
           </Reveal>
           
           <Reveal delay={0.2}>
-            <h1 className="text-[36px] sm:text-[45px] md:text-[100px] font-medium leading-[1] tracking-tighter mb-12 max-w-4xl">
+            <h1 className="text-[32px] sm:text-[45px] md:text-[100px] font-medium leading-tight md:leading-[1] tracking-tighter mb-12 max-w-4xl">
               {project.title}
             </h1>
           </Reveal>
@@ -139,7 +139,7 @@ export default function ProjectDetailsPage() {
             <div className="lg:col-span-8 space-y-24">
               <RevealItem delay={0.2}>
                 <div className="space-y-8">
-                  <h2 className="text-[32px] md:text-[56px] font-medium tracking-tight">The Challenge</h2>
+                  <h2 className="text-[28px] md:text-[56px] font-medium tracking-tight">The Challenge</h2>
                   <p className="text-[20px] text-text-muted leading-relaxed">
                     {project.details.challenge}
                   </p>
@@ -148,7 +148,7 @@ export default function ProjectDetailsPage() {
 
               <RevealItem delay={0.3}>
                 <div className="space-y-8">
-                  <h2 className="text-[32px] md:text-[56px] font-medium tracking-tight">Our Solution</h2>
+                  <h2 className="text-[28px] md:text-[56px] font-medium tracking-tight">Our Solution</h2>
                   <p className="text-[20px] text-text-muted leading-relaxed">
                     {project.details.solution}
                   </p>
@@ -173,7 +173,7 @@ export default function ProjectDetailsPage() {
                     <CheckCircle2 size={120} className="text-brand-main" />
                   </div>
                   <div className="relative z-10 space-y-6">
-                    <h2 className="text-[32px] md:text-[56px] font-medium tracking-tight text-brand-main">The Impact</h2>
+                    <h2 className="text-[28px] md:text-[56px] font-medium tracking-tight text-brand-main">The Impact</h2>
                     <p className="text-[18px] md:text-[28px] font-medium leading-relaxed text-white">
                       &quot;{project.details.impact}&quot;
                     </p>
@@ -191,7 +191,7 @@ export default function ProjectDetailsPage() {
         <div className="max-w-[1200px] mx-auto pt-20 border-t border-white/5">
           <Link href="/projects" className="group block text-center space-y-4">
             <span className="text-[12px] font-bold uppercase tracking-[0.4em] text-brand-main">Back to Work</span>
-            <h2 className="text-[32px] md:text-[60px] font-medium group-hover:italic transition-all duration-500">Explore All <span className="gradient-text pr-[0.1em]">Projects</span></h2>
+            <h2 className="text-[28px] md:text-[60px] font-medium group-hover:italic transition-all duration-500">Explore All <span className="gradient-text pr-[0.1em]">Projects</span></h2>
           </Link>
         </div>
       </section>
