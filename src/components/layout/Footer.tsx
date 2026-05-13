@@ -17,7 +17,7 @@ export const Footer = () => {
           {/* Left Column - Brand & Catchphrase */}
           <div className="lg:col-span-5 space-y-12">
             <Link href="/">
-              <TruvoxLogo className="text-white hover:opacity-80 transition-opacity" width={180} height={50} />
+              <TruvoxLogo className="text-white hover:opacity-80 transition-opacity" width={180} height={40} />
             </Link>
             <h2 className="text-[26px] xs:text-[32px] md:text-[50px] font-medium leading-tight md:leading-[1.1] tracking-tight text-text-heading max-w-md break-words">
               Let&apos;s Build Something <span className="gradient-text italic pr-[0.1em]">Remarkable</span> Together.

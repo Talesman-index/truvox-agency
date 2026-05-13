@@ -93,22 +93,22 @@ export function ProjectDetailContent({ project }: ProjectDetailContentProps) {
                 <div className="space-y-4">
                   <div className="flex items-center gap-3 text-brand-main mb-2">
                     <User size={18} />
-                    <span className="text-[12px] font-bold uppercase tracking-widest">Role</span>
+                    <span className="text-[12px] font-bold uppercase tracking-widest">Client</span>
                   </div>
-                  <p className="text-text-muted">{project.details.role}</p>
+                  <p className="text-text-muted">{project.details.client}</p>
                 </div>
               </RevealItem>
-
+ 
               <RevealItem delay={0.3}>
                 <div className="space-y-4">
                   <div className="flex items-center gap-3 text-brand-main mb-2">
                     <Layout size={18} />
-                    <span className="text-[12px] font-bold uppercase tracking-widest">Platform</span>
+                    <span className="text-[12px] font-bold uppercase tracking-widest">Category</span>
                   </div>
-                  <p className="text-text-muted">{project.details.platform}</p>
+                  <p className="text-text-muted">{project.category}</p>
                 </div>
               </RevealItem>
-
+ 
               <RevealItem delay={0.4}>
                 <div className="space-y-6">
                   <div className="flex items-center gap-3 text-brand-main mb-2">
@@ -116,36 +116,36 @@ export function ProjectDetailContent({ project }: ProjectDetailContentProps) {
                     <span className="text-[12px] font-bold uppercase tracking-widest">Technology</span>
                   </div>
                   <div className="flex flex-wrap gap-2">
-                    {project.details.tech.map((t: string, i: number) => (
+                    {project.details.techStack.map((t: string, i: number) => (
                       <span key={i} className="px-4 py-2 rounded-xl bg-white/5 border border-white/10 text-xs font-medium">{t}</span>
                     ))}
                   </div>
                 </div>
               </RevealItem>
             </div>
-
+ 
             {/* Main Content */}
             <div className="lg:col-span-8 space-y-24">
               <RevealItem delay={0.3}>
                 <div className="space-y-8">
                   <h2 className="text-[32px] md:text-[45px] font-medium text-text-heading tracking-tight leading-tight">The <span className="gradient-text italic">Challenge.</span></h2>
                   <p className="text-[18px] md:text-[20px] text-text-body leading-relaxed opacity-80">
-                    {project.challenge}
+                    {project.details.challenge}
                   </p>
                 </div>
               </RevealItem>
-
+ 
               <div className="space-y-12">
                 <RevealItem>
-                  <h2 className="text-[32px] md:text-[45px] font-medium text-text-heading tracking-tight leading-tight">Key <span className="gradient-text italic">Features.</span></h2>
+                  <h2 className="text-[32px] md:text-[45px] font-medium text-text-heading tracking-tight leading-tight">Key <span className="gradient-text italic">Services.</span></h2>
                 </RevealItem>
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  {project.features.map((feature: string, i: number) => (
+                  {project.details.services.map((service: string, i: number) => (
                     <RevealItem key={i} delay={i * 0.1}>
                       <div className="flex items-start gap-4 p-8 bg-bg-card rounded-[32px] border border-white/5 group hover:border-brand-main/30 transition-all duration-500">
                         <CheckCircle2 className="text-brand-main mt-1 shrink-0" size={24} />
-                        <p className="text-[18px] font-medium text-text-heading leading-snug">{feature}</p>
+                        <p className="text-[18px] font-medium text-text-heading leading-snug">{service}</p>
                       </div>
                     </RevealItem>
                   ))}

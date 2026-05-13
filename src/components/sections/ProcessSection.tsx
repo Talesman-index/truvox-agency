@@ -17,10 +17,10 @@ const services = [
 export function ProcessSection() {
   return (
     <section id="services" className="py-24 md:py-32 px-6 bg-brand-purple relative overflow-hidden">
-      <div className="max-w-[1200px] mx-auto flex flex-col md:flex-row gap-20">
+      <div className="max-w-[1200px] mx-auto flex flex-col lg:flex-row gap-10 xl:gap-20">
         
         {/* Left Side */}
-        <div className="md:w-1/2 space-y-12">
+        <div className="lg:w-1/2 space-y-12">
           <Reveal>
             <div className="space-y-6">
               <Badge variant="lime" rotation={-2}>Our Services</Badge>
@@ -52,7 +52,7 @@ export function ProcessSection() {
         </div>
 
         {/* Right Side - Services List */}
-        <div className="md:w-1/2 flex flex-col justify-center">
+        <div className="lg:w-1/2 flex flex-col justify-center">
           <div className="grid grid-cols-1 gap-6">
             {services.map((service, i) => (
               <RevealItem key={i} delay={i * 0.1}>

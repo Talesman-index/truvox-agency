@@ -36,11 +36,11 @@ export const Navbar = () => {
     >
       <div className="max-w-[1200px] mx-auto flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
-          <TruvoxLogo className="text-white hover:opacity-80 transition-opacity" width={140} height={40} />
+          <TruvoxLogo className="text-white hover:opacity-80 transition-opacity" width={144} height={32} />
         </Link>
 
         {/* Desktop Links */}
-        <div className="hidden md:flex items-center gap-10">
+        <div className="hidden lg:flex items-center gap-4 xl:gap-10">
           {navLinks.map((link) => (
             <Link 
               key={link.name} 
@@ -51,7 +51,7 @@ export const Navbar = () => {
             </Link>
           ))}
           <Link href="/contact">
-            <Button variant="primary" className="bg-brand-main text-bg-primary px-10 h-[50px] rounded-full text-[12px] font-bold uppercase tracking-widest hover:bg-brand-hover transition-all shadow-[0_0_20px_rgba(0,255,133,0.3)]">
+            <Button variant="primary" className="bg-brand-main text-bg-primary px-6 xl:px-10 h-[50px] rounded-full text-[12px] font-bold uppercase tracking-widest hover:bg-brand-hover transition-all shadow-[0_0_20px_rgba(0,255,133,0.3)]">
               Talk to us
             </Button>
           </Link>
@@ -59,7 +59,7 @@ export const Navbar = () => {
 
         {/* Mobile Toggle */}
         <button 
-          className="md:hidden text-white"
+          className="lg:hidden text-white"
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? <X size={28} /> : <Menu size={28} />}
@@ -73,7 +73,7 @@ export const Navbar = () => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="absolute top-full left-0 w-full bg-bg-card border-t border-white/5 p-6 md:hidden flex flex-col gap-6 shadow-2xl"
+            className="absolute top-full left-0 w-full bg-bg-card border-t border-white/5 p-6 lg:hidden flex flex-col gap-6 shadow-2xl"
           >
             {navLinks.map((link) => (
               <Link 

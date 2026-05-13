@@ -14,7 +14,7 @@ const stats = [
 export const StatsBar = () => {
   return (
     <section className="py-24 md:py-32 bg-bg-sectionAlt relative overflow-hidden border-y border-white/5">
-      <div className="max-w-[1200px] mx-auto px-6 relative z-10 flex flex-col md:flex-row items-center gap-16 md:gap-24">
+      <div className="max-w-[1200px] mx-auto px-6 relative z-10 flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
         
         {/* Award Icon Column */}
         <div className="flex-shrink-0 relative w-48 h-48">

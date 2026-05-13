@@ -89,7 +89,7 @@ export const PortfolioSection = () => {
         </Reveal>
 
         {/* Grid Layout - Clean 2-column staggered */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-8 xl:gap-x-12 gap-y-20">
           {allProjects.map((project, i) => (
             <ProjectCard key={i} project={project} index={i} />
           ))}

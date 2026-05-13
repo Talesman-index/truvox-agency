@@ -104,24 +104,24 @@ export default function Home() {
       />
       
       {/* HERO SECTION - DARK & NEON GREEN STYLE */}
-      <section className="relative min-h-screen flex flex-col items-center pt-32 md:pt-48 pb-20 px-4 md:px-6 overflow-hidden bg-bg-dark">
+      <section className="relative min-h-screen flex flex-col items-center pt-32 md:pt-64 pb-20 px-4 md:px-6 overflow-hidden bg-bg-dark">
         <div className="max-w-[1200px] mx-auto w-full relative z-20 flex flex-col items-center text-center">
           
           <div className="relative mb-16">
             <h1 className="sr-only">Web Design Agency for Small Businesses in Charlotte, NC</h1>
-            <h2 className="text-5xl md:text-7xl lg:text-[90px] font-medium text-white leading-[1.0] tracking-tight mb-4 break-words px-4">
+            <h2 className="text-5xl md:text-6xl lg:text-[90px] font-medium text-white leading-[1.0] tracking-tight mb-4 break-words px-4">
               Elevating Digital Authority Through <span className="gradient-text italic">Strategic Design.</span>
             </h2>
             
             {/* Floating Badges */}
-            <div className="absolute -top-24 left-4 sm:-top-12 sm:-left-24 hidden lg:block">
-              <Badge variant="lime" rotation={-12} className="text-[10px] sm:text-[14px] px-3 sm:px-6 py-1 sm:py-2">Product Strategy</Badge>
+            <div className="absolute -top-36 left-4 md:-top-28 md:left-2 lg:-left-12 xl:-left-24 hidden md:block">
+              <Badge variant="lime" rotation={-12} className="text-[12px] lg:text-[14px] px-4 lg:px-6 py-1.5 lg:py-2">Product Strategy</Badge>
             </div>
-            <div className="absolute -top-12 right-4 sm:top-2 sm:-right-24 hidden lg:block">
-              <Badge variant="pink" rotation={8} className="text-[10px] sm:text-[14px] px-3 sm:px-6 py-1 sm:py-2">High-Fidelity</Badge>
+            <div className="absolute -top-16 right-4 md:-top-20 md:right-2 lg:-right-12 xl:-right-24 hidden md:block">
+              <Badge variant="pink" rotation={8} className="text-[12px] lg:text-[14px] px-4 lg:px-6 py-1.5 lg:py-2">High-Fidelity</Badge>
             </div>
-            <div className="absolute -bottom-16 right-4 sm:-bottom-10 sm:right-1/4 hidden lg:block">
-              <Badge variant="sage" rotation={-5} className="text-[10px] sm:text-[14px] px-3 sm:px-6 py-1 sm:py-2">Data-Driven</Badge>
+            <div className="absolute -bottom-24 right-4 md:-bottom-20 md:right-1/4 hidden md:block">
+              <Badge variant="sage" rotation={-5} className="text-[12px] lg:text-[14px] px-4 lg:px-6 py-1.5 lg:py-2">Data-Driven</Badge>
             </div>
           </div>
           
@@ -187,7 +187,7 @@ export default function Home() {
               <Reveal>
                 <div className="space-y-6">
                   <Badge variant="pink" rotation={2}>FAQ</Badge>
-                  <h2 className="text-[42px] md:text-[56px] font-medium text-text-heading leading-[1.1] tracking-tight">
+                  <h2 className="text-[32px] md:text-[48px] lg:text-[56px] font-medium text-text-heading leading-[1.1] tracking-tight">
                     Addressing Concerns With <br />
                     <span className="gradient-text italic">Strategic Clarity.</span>
                   </h2>
@@ -242,7 +242,7 @@ export default function Home() {
       <section className="py-32 md:py-48 px-6 bg-bg-dark relative overflow-hidden">
         <div className="max-w-[1200px] mx-auto text-center space-y-12 relative z-10">
           <Reveal>
-            <h2 className="text-balance tracking-tight mb-12 break-words px-4">
+            <h2 className="text-[32px] md:text-[48px] lg:text-[70px] text-balance tracking-tight mb-12 break-words px-4">
               Ready To Build Your <br /><span className="gradient-text italic pr-[0.1em]">Digital Authority?</span>
             </h2>
           </Reveal>

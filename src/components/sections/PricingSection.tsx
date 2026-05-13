@@ -35,10 +35,10 @@ export function PricingSection() {
     <section id="pricing" className="py-24 md:py-32 px-6 bg-bg-primary overflow-hidden">
       <div className="max-w-[1200px] mx-auto">
         <Reveal>
-          <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+          <div className="flex flex-col lg:flex-row justify-between items-end mb-20 gap-8">
             <div className="max-w-2xl">
               <Badge variant="lime" rotation={-2} className="mb-8">Pricing Plans</Badge>
-              <h2 className="text-[24px] xs:text-[32px] sm:text-[45px] md:text-[55px] font-medium text-text-heading leading-tight md:leading-[1.1] tracking-tight break-words">
+              <h2 className="text-[24px] xs:text-[32px] sm:text-[40px] md:text-[48px] lg:text-[55px] font-medium text-text-heading leading-tight md:leading-[1.1] tracking-tight break-words">
                 Transparent Pricing For <span className="gradient-text italic pr-[0.1em]">Every Stage</span> Of Your Growth.
               </h2>
             </div>
@@ -48,10 +48,10 @@ export function PricingSection() {
           </div>
         </Reveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 xl:gap-8">
           {plans.map((plan, i) => (
             <RevealItem key={i} delay={i * 0.1}>
-              <div className={`p-10 md:p-12 rounded-[40px] border transition-all duration-500 bg-bg-card flex flex-col h-full hover:shadow-glow ${plan.featured ? 'border-brand-main border-[3px] md:scale-105 z-10' : 'border-border-subtle hover:border-brand-main'}`}>
+              <div className={`p-8 xl:p-12 rounded-[40px] border transition-all duration-500 bg-bg-card flex flex-col h-full hover:shadow-glow ${plan.featured ? 'border-brand-main border-[3px] lg:scale-105 z-10' : 'border-border-subtle hover:border-brand-main'}`}>
                 <div className="mb-12">
                    <div className="text-[14px] font-bold uppercase tracking-[0.2em] text-brand-main mb-4">{plan.name}</div>
                    <div className="flex items-baseline gap-1">

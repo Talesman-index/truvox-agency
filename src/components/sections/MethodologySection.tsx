@@ -37,7 +37,7 @@ export function MethodologySection() {
     <section id="methodology" className="py-24 md:py-32 px-6 bg-bg-primary overflow-hidden">
       <div className="max-w-[1200px] mx-auto">
         <Reveal>
-          <div className="flex flex-col md:flex-row justify-between items-end mb-20 md:mb-32 gap-8">
+          <div className="flex flex-col lg:flex-row justify-between items-end mb-20 lg:mb-32 gap-8">
             <div className="max-w-2xl">
               <Badge variant="lime" rotation={-2} className="mb-8">Methodology</Badge>
               <h2 className="text-[45px] md:text-[55px] font-medium text-text-heading leading-[1.1] tracking-tight">
