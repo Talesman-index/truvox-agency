@@ -41,7 +41,7 @@ export function MethodologySection() {
             <div className="max-w-2xl">
               <Badge variant="lime" rotation={-2} className="mb-8">Methodology</Badge>
               <h2 className="text-[45px] md:text-[55px] font-medium text-text-heading leading-[1.1] tracking-tight">
-                A Strategic Process Designed For <span className="gradient-text italic">Measurable Results.</span>
+                A Strategic Process Designed For <span className="inline-block gradient-text italic pr-[0.4em]">Measurable Results.</span>
               </h2>
             </div>
             <div className="w-12 h-12 rounded-full border border-brand-main/20 flex items-center justify-center text-brand-main">

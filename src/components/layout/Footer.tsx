@@ -20,7 +20,7 @@ export const Footer = () => {
               <TruvoxLogo className="text-white hover:opacity-80 transition-opacity" width={180} height={50} />
             </Link>
             <h2 className="text-[40px] md:text-[50px] font-medium leading-[1.1] tracking-tight text-text-heading max-w-md">
-              Let&apos;s Build Something <span className="gradient-text italic">Remarkable</span> Together.
+              Let&apos;s Build Something <span className="inline-block gradient-text italic pr-[0.4em]">Remarkable</span> Together.
             </h2>
             <div className="flex gap-4">
                {[
@@ -46,7 +46,7 @@ export const Footer = () => {
               <ul className="space-y-4">
                 <li><Link href="/" className="text-[16px] font-medium hover:text-brand-main transition-colors text-text-body">Home</Link></li>
                 <li><Link href="/about" className="text-[16px] font-medium hover:text-brand-main transition-colors text-text-body">About Us</Link></li>
-                <li><Link href="/#projects" className="text-[16px] font-medium hover:text-brand-main transition-colors text-text-body">Selected Work</Link></li>
+                <li><Link href="/projects" className="text-[16px] font-medium hover:text-brand-main transition-colors text-text-body">Projects</Link></li>
                 <li><Link href="/#methodology" className="text-[16px] font-medium hover:text-brand-main transition-colors text-text-body">Our Methodology</Link></li>
                 <li><Link href="/#pricing" className="text-[16px] font-medium hover:text-brand-main transition-colors text-text-body">Pricing</Link></li>
               </ul>

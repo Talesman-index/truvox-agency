@@ -21,7 +21,7 @@ export const Navbar = () => {
 
   const navLinks = [
     { name: 'Home', href: '/' },
-    { name: 'Portfolio', href: '/#projects' },
+    { name: 'Projects', href: '/projects' },
     { name: 'Methodology', href: '/#methodology' },
     { name: 'Pricing', href: '/#pricing' },
     { name: 'About', href: '/about' },

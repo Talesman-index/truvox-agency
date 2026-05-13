@@ -19,18 +19,18 @@ export default function Home() {
           
           <div className="relative mb-16">
             <h1 className="text-text-heading text-5xl md:text-7xl lg:text-[85px] font-medium leading-[1.0] tracking-tight mb-4 max-w-4xl">
-              Elevating Digital Authority Through <span className="gradient-text italic">Strategic Design.</span>
+              Elevating Digital Authority Through <span className="inline-block gradient-text italic pr-[0.4em]">Strategic Design.</span>
             </h1>
             
             {/* Floating Badges */}
-            <div className="absolute -top-12 -left-16 sm:-left-24">
-              <Badge variant="lime" rotation={-12} className="text-[14px] px-6 py-2">Product Strategy</Badge>
+            <div className="absolute -top-24 left-4 sm:-top-12 sm:-left-24">
+              <Badge variant="lime" rotation={-12} className="text-[10px] sm:text-[14px] px-3 sm:px-6 py-1 sm:py-2">Product Strategy</Badge>
             </div>
-            <div className="absolute top-2 -right-16 sm:-right-24">
-              <Badge variant="pink" rotation={8} className="text-[14px] px-6 py-2">High-Fidelity</Badge>
+            <div className="absolute -top-12 right-4 sm:top-2 sm:-right-24">
+              <Badge variant="pink" rotation={8} className="text-[10px] sm:text-[14px] px-3 sm:px-6 py-1 sm:py-2">High-Fidelity</Badge>
             </div>
-            <div className="absolute -bottom-10 right-1/4">
-              <Badge variant="sage" rotation={-5} className="text-[14px] px-6 py-2">Data-Driven</Badge>
+            <div className="absolute -bottom-16 right-4 sm:-bottom-10 sm:right-1/4">
+              <Badge variant="sage" rotation={-5} className="text-[10px] sm:text-[14px] px-3 sm:px-6 py-1 sm:py-2">Data-Driven</Badge>
             </div>
           </div>
           
@@ -182,8 +182,8 @@ export default function Home() {
       <section className="py-32 md:py-48 px-6 bg-bg-dark relative overflow-hidden">
         <div className="max-w-[1200px] mx-auto text-center space-y-12 relative z-10">
           <Reveal>
-            <h2 className="text-[45px] md:text-[65px] lg:text-[75px] font-medium text-white leading-[1.0] tracking-tight">
-              Ready To Build Your <br /><span className="gradient-text italic">Digital Authority?</span>
+            <h2 className="text-[45px] md:text-[85px] font-medium text-text-heading leading-[1.1] tracking-tight mb-12">
+              Ready To Build Your <br /><span className="inline-block gradient-text italic pr-[0.4em]">Digital Authority?</span>
             </h2>
           </Reveal>
           
