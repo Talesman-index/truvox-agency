@@ -1,5 +1,11 @@
-import type { Metadata } from "next";
+import { Archivo } from "next/font/google";
 import "./globals.css";
+
+const archivo = Archivo({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-archivo",
+});
 
 export const metadata: Metadata = {
   title: "Truvox | Designing trust. Building digital presence.",
@@ -15,8 +21,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className="antialiased min-h-screen flex flex-col">
+    <html lang="en" className={archivo.variable}>
+      <body className={`${archivo.className} antialiased min-h-screen flex flex-col`}>
         <Navbar />
         <main className="flex-grow">
           {children}
