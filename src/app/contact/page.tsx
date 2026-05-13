@@ -30,7 +30,7 @@ export default function ContactPage() {
              {[
                { icon: <Mail size={20} />, label: 'Email us', val: 'hello@truvox.studio' },
                { icon: <Phone size={20} />, label: 'Call us', val: '+1 (515) 206-3535' },
-               { icon: <MapPin size={20} />, label: 'Studio', val: 'Charlotte, North Carolina' },
+               { icon: <MapPin size={20} />, label: 'Studio', val: 'Charlotte, NC' },
              ].map((item, i) => (
                <Reveal key={i} delay={0.4 + (i * 0.1)}>
                  <div className="flex items-center gap-6 group">
