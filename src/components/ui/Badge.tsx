@@ -10,7 +10,7 @@ function cn(...inputs: ClassValue[]) {
 
 interface BadgeProps {
   children: React.ReactNode;
-  variant?: 'lime' | 'pink' | 'sage';
+  variant?: 'lime' | 'pink' | 'sage' | 'outline';
   className?: string;
   animate?: boolean;
   rotation?: number;
@@ -27,6 +27,7 @@ export const Badge = ({
     lime: 'badge-lime',
     pink: 'badge-pink',
     sage: 'badge-sage',
+    outline: 'inline-flex items-center justify-center bg-transparent px-4 py-2 rounded-[70px] text-[14px] font-bold border',
   };
 
   return (
