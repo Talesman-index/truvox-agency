@@ -80,13 +80,22 @@ export const Reveal = ({
   );
 };
 
-export const RevealItem = ({ children }: { children: React.ReactNode }) => {
+export const RevealItem = ({ 
+  children, 
+  delay = 0,
+  y = 40 
+}: { 
+  children: React.ReactNode;
+  delay?: number;
+  y?: number;
+}) => {
   const itemVariants = {
-    hidden: { opacity: 0, y: 40 },
+    hidden: { opacity: 0, y: y },
     visible: { 
       opacity: 1, 
       y: 0,
       transition: {
+        delay: delay,
         duration: 0.5,
         ease: [0.22, 1, 0.36, 1] as const
       }
