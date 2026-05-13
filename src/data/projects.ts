@@ -37,7 +37,7 @@ export const allProjects: Project[] = [
     details: {
       client: 'Sagana Collective',
       services: ['Brand Moat Strategy', 'UI/UX Architecture', 'Next.js Editorial Engine'],
-      year: '2024',
+      year: '2026',
       challenge: 'In a saturated market of minimalist design, the client needed a "Maximalist Authority" that felt both chaotic and perfectly controlled—a digital proof-of-concept for their radical motion philosophy.',
       solution: 'A motion-centric platform built on raw SVG manipulation and high-frequency frame-rate animations, creating a "living" brand ecosystem that commands immediate attention.',
       impact: 'Cited as a benchmark in design agency portfolios, leading to a 300% increase in average contract value and securing 3 major industry awards within the first quarter.',
@@ -59,7 +59,7 @@ export const allProjects: Project[] = [
     details: {
       client: 'BioTech Labs Inc.',
       services: ['Full-Stack Data Engineering', 'AI Diagnostic UI', 'Sterile OS Design System'],
-      year: '2023',
+      year: '2025',
       challenge: 'The primary obstacle was translating high-density medical telemetry into an intuitive interface that non-experts could navigate without sacrificing technical integrity or regulatory precision.',
       solution: 'A custom decentralized data architecture paired with a focus-heavy UI that uses intelligent anomaly detection to highlight critical health risks automatically.',
       impact: 'Validated by major health organizations as a new standard for remote diagnostic interfaces, reducing researcher cognitive load by 60% and cutting analysis time by 70%.',
@@ -81,7 +81,7 @@ export const allProjects: Project[] = [
     details: {
       client: 'Energy Logistics Group',
       services: ['Fintech UX Architecture', 'Biometric Flow Design', 'Geospatial UI'],
-      year: '2024',
+      year: '2026',
       challenge: 'The app needed to combine the complexity of a real-time logistics tracker with the extreme security requirements of a payment gateway, all within a one-handed mobile UX.',
       solution: 'A "Hyper-Fluid" UI that treats every interaction as a physical movement, paired with an offline-first architecture for reliable operation in low-connectivity areas.',
       impact: 'Secured $12M in Series A funding following the MVP launch, with investors citing the "intuitive clarity of the fintech architecture" as a primary competitive moat.',
@@ -103,7 +103,7 @@ export const allProjects: Project[] = [
     details: {
       client: 'Tavares Films',
       services: ['Art Direction', 'Cinematic Noir Identity', 'Motion Narrative Design'],
-      year: '2024',
+      year: '2026',
       challenge: 'Standard portfolios felt like static archives. Tavares needed a "Living Reel" that captured his atmosphere-first approach to filmmaking without overwhelming the viewer.',
       solution: 'A custom video-lazy-loading engine paired with a grain-textured aesthetic that emphasizes visual poetry and narrative flow over traditional grid layouts.',
       impact: 'Directly attributed to securing multi-million dollar collaborations with major global luxury houses within weeks of the new digital identity launch.',
