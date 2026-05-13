@@ -19,8 +19,8 @@ export const Footer = () => {
             <Link href="/">
               <TruvoxLogo className="text-white hover:opacity-80 transition-opacity" width={180} height={50} />
             </Link>
-            <h2 className="text-[40px] md:text-[50px] font-medium leading-[1.1] tracking-tight text-text-heading max-w-md">
-              Let&apos;s Build Something <span className="inline-block gradient-text italic pr-[0.4em]">Remarkable</span> Together.
+            <h2 className="text-[26px] xs:text-[32px] md:text-[50px] font-medium leading-tight md:leading-[1.1] tracking-tight text-text-heading max-w-md break-words">
+              Let&apos;s Build Something <span className="gradient-text italic pr-[0.1em]">Remarkable</span> Together.
             </h2>
             <div className="flex gap-4">
                {[

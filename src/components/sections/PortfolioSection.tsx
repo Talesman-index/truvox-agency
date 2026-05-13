@@ -78,8 +78,8 @@ export const PortfolioSection = () => {
           <div className="flex flex-col md:flex-row items-baseline justify-between gap-6 mb-20 md:mb-28">
             <div className="space-y-4">
               <Badge variant="lime" rotation={-2} className="mb-4">Selected Work</Badge>
-              <h2 className="text-[32px] sm:text-[40px] md:text-[60px] font-medium text-text-heading leading-tight tracking-tight">
-                Design <span className="inline-block gradient-text italic pr-[0.4em]">Manifesto.</span>
+              <h2 className="text-[26px] xs:text-[32px] sm:text-[40px] md:text-[60px] font-medium text-text-heading leading-tight tracking-tight break-words">
+                Design <span className="gradient-text italic pr-[0.1em]">Manifesto.</span>
               </h2>
             </div>
             <p className="text-text-muted text-[14px] font-medium uppercase tracking-[0.2em] md:text-right max-w-xs">
@@ -96,7 +96,7 @@ export const PortfolioSection = () => {
         </div>
 
         {/* View All Button */}
-        <Reveal delay={0.4}>
+        <Reveal delay={0.2}>
           <div className="mt-20 flex justify-center">
             <Link href="/projects">
               <Button variant="secondary" className="group border-white/10 text-white hover:text-black h-[60px] px-10 rounded-full text-[14px] font-bold uppercase tracking-widest transition-all">
@@ -108,12 +108,12 @@ export const PortfolioSection = () => {
         </Reveal>
 
         {/* Call to Action */}
-        <Reveal delay={0.6}>
+        <Reveal delay={0.3}>
           <div className="mt-32 pt-20 border-t border-white/5 text-center">
-            <h4 className="text-[28px] md:text-[40px] font-medium text-text-heading mb-10 tracking-tight">
-              Have a vision <span className="inline-block gradient-text italic pr-[0.4em]">in mind?</span>
+            <h4 className="text-[24px] xs:text-[28px] md:text-[40px] font-medium text-text-heading mb-10 tracking-tight break-words">
+              Have a vision <span className="gradient-text italic pr-[0.1em]">in mind?</span>
             </h4>
-            <Button variant="secondary" className="border-brand-main text-brand-main hover:bg-brand-main hover:text-bg-primary h-[64px] px-12 rounded-full text-[16px] font-bold transition-all shadow-[0_0_40px_rgba(0,255,133,0.05)]">
+            <Button variant="secondary" className="mt-10 border-brand-main text-brand-main hover:bg-brand-main hover:text-bg-primary h-[64px] px-12 rounded-full text-[16px] font-bold transition-all shadow-[0_0_40px_rgba(0,255,133,0.05)]">
               Contact us to start
             </Button>
           </div>

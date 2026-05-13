@@ -33,8 +33,8 @@ export default function ProjectsPage() {
             <Badge variant="outline" className="mb-6 border-brand-main/30 text-brand-main">Selected Works</Badge>
           </Reveal>
           <Reveal delay={0.2}>
-            <h1 className="text-[30px] sm:text-[45px] md:text-[90px] font-medium leading-tight md:leading-[1.1] tracking-tight mb-8">
-              Pioneering <span className="inline-block gradient-text italic pr-[0.4em]">Digital</span> Authority.
+            <h1 className="text-[24px] xs:text-[30px] sm:text-[45px] md:text-[90px] font-medium leading-tight md:leading-[1.1] tracking-tight mb-8 break-words">
+              Pioneering <span className="gradient-text italic pr-[0.1em]">Digital</span> Authority.
             </h1>
           </Reveal>
           

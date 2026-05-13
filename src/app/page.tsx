@@ -18,8 +18,8 @@ export default function Home() {
         <div className="max-w-[1200px] mx-auto w-full relative z-20 flex flex-col items-center text-center">
           
           <div className="relative mb-16">
-            <h1 className="text-[30px] sm:text-5xl md:text-7xl lg:text-[85px] font-medium leading-tight md:leading-[1.1] tracking-tight mb-4 max-w-4xl">
-              Elevating Digital Authority Through <span className="inline-block gradient-text italic pr-[0.4em]">Strategic Design.</span>
+            <h1 className="text-[24px] xs:text-[30px] sm:text-5xl md:text-7xl lg:text-[85px] font-medium leading-tight md:leading-[1.1] tracking-tight mb-4 max-w-4xl break-words">
+              Elevating Digital Authority Through <span className="gradient-text italic pr-[0.1em]">Strategic Design.</span>
             </h1>
             
             {/* Floating Badges */}
@@ -182,8 +182,8 @@ export default function Home() {
       <section className="py-32 md:py-48 px-6 bg-bg-dark relative overflow-hidden">
         <div className="max-w-[1200px] mx-auto text-center space-y-12 relative z-10">
           <Reveal>
-            <h2 className="text-[30px] sm:text-[45px] md:text-[85px] font-medium text-text-heading leading-tight md:leading-[1.1] tracking-tight mb-12">
-              Ready To Build Your <br /><span className="inline-block gradient-text italic pr-[0.4em]">Digital Authority?</span>
+            <h2 className="text-[24px] xs:text-[30px] sm:text-[45px] md:text-[85px] font-medium text-text-heading leading-tight md:leading-[1.1] tracking-tight mb-12 break-words">
+              Ready To Build Your <br /><span className="gradient-text italic pr-[0.1em]">Digital Authority?</span>
             </h2>
           </Reveal>
           

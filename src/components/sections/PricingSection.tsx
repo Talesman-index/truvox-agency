@@ -38,8 +38,8 @@ export function PricingSection() {
           <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
             <div className="max-w-2xl">
               <Badge variant="lime" rotation={-2} className="mb-8">Pricing Plans</Badge>
-              <h2 className="text-[32px] sm:text-[45px] md:text-[55px] font-medium text-text-heading leading-[1.1] tracking-tight">
-                Transparent Pricing For <span className="inline-block gradient-text italic pr-[0.4em]">Every Stage</span> Of Your Growth.
+              <h2 className="text-[24px] xs:text-[32px] sm:text-[45px] md:text-[55px] font-medium text-text-heading leading-tight md:leading-[1.1] tracking-tight break-words">
+                Transparent Pricing For <span className="gradient-text italic pr-[0.1em]">Every Stage</span> Of Your Growth.
               </h2>
             </div>
             <div className="w-12 h-12 rounded-full border border-brand-main/20 flex items-center justify-center text-brand-main">

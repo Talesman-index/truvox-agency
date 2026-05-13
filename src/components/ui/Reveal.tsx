@@ -15,13 +15,13 @@ interface RevealProps {
 export const Reveal = ({ 
   children, 
   width = '100%', 
-  delay = 0.05, 
-  duration = 0.4,
-  y = 20,
+  delay = 0, 
+  duration = 0.3,
+  y = 10,
   stagger = false
 }: RevealProps) => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-50px" });
+  const isInView = useInView(ref, { once: true, margin: "100px" });
   const mainControls = useAnimation();
 
   useEffect(() => {
@@ -83,7 +83,7 @@ export const Reveal = ({
 export const RevealItem = ({ 
   children, 
   delay = 0,
-  y = 20 
+  y = 10 
 }: { 
   children: React.ReactNode;
   delay?: number;
@@ -96,7 +96,7 @@ export const RevealItem = ({
       y: 0,
       transition: {
         delay: delay,
-        duration: 0.4,
+        duration: 0.3,
         ease: [0.22, 1, 0.36, 1] as const
       }
     }
