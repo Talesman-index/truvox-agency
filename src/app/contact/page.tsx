@@ -76,10 +76,10 @@ export default function ContactPage() {
                <div className="space-y-3">
                   <label className="text-[12px] font-bold text-text-muted uppercase tracking-widest ml-1">Project Type</label>
                   <select className="w-full bg-bg-primary/50 border border-border-subtle rounded-2xl px-6 h-[60px] text-text-heading focus:border-brand-main focus:outline-none transition-all appearance-none cursor-pointer">
-                     <option>Digital Strategy & UI/UX</option>
-                     <option>Full-Stack Development</option>
-                     <option>E-commerce & Automation</option>
-                     <option>Branding & Identity</option>
+                     <option>Product Design & UI/UX</option>
+                     <option>Web & Mobile Development</option>
+                     <option>Marketing & Data Strategy</option>
+                     <option>Brand Identity Systems</option>
                   </select>
                </div>
                

@@ -54,10 +54,10 @@ export const Footer = () => {
             <div className="space-y-10">
               <h5 className="text-[12px] font-bold uppercase tracking-[0.2em] text-brand-main">Services</h5>
               <ul className="space-y-4">
-                <li className="text-[16px] font-medium text-text-body/60">Digital Strategy</li>
-                <li className="text-[16px] font-medium text-text-body/60">UI/UX Design</li>
-                <li className="text-[16px] font-medium text-text-body/60">Full-Stack Dev</li>
-                <li className="text-[16px] font-medium text-text-body/60">E-commerce</li>
+                <li className="text-[16px] font-medium text-text-body/60">Product Design & UI/UX</li>
+                <li className="text-[16px] font-medium text-text-body/60">Web & Mobile Development</li>
+                <li className="text-[16px] font-medium text-text-body/60">Marketing & Data Strategy</li>
+                <li className="text-[16px] font-medium text-text-body/60">Brand Identity Systems</li>
               </ul>
             </div>
             <div className="space-y-10">

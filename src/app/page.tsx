@@ -44,10 +44,10 @@ export default function Home() {
       "@type": "OfferCatalog",
       "name": "Web Design Services",
       "itemListElement": [
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Website Creation" }},
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "UI/UX Design" }},
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Website Redesign" }},
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Digital Strategy" }}
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Product Design & UI/UX" }},
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Web & Mobile Development" }},
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Marketing & Data Strategy" }},
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Brand Identity Systems" }}
       ]
     },
     "sameAs": []
