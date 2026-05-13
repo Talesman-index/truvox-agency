@@ -45,6 +45,7 @@ export const Footer = () => {
               <h5 className="text-[12px] font-bold uppercase tracking-[0.2em] text-brand-main">Navigation</h5>
               <ul className="space-y-4">
                 <li><Link href="/about" className="text-[16px] font-medium hover:text-brand-main transition-colors text-text-body">About Us</Link></li>
+                <li><Link href="/services" className="text-[16px] font-medium hover:text-brand-main transition-colors text-text-body">Services</Link></li>
                 <li><Link href="/projects" className="text-[16px] font-medium hover:text-brand-main transition-colors text-text-body">Projects</Link></li>
                 <li><Link href="/blog" className="text-[16px] font-medium hover:text-brand-main transition-colors text-text-body">Blog</Link></li>
                 <li><Link href="/#methodology" className="text-[16px] font-medium hover:text-brand-main transition-colors text-text-body">Our Methodology</Link></li>
