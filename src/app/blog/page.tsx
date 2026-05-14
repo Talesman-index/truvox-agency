@@ -49,7 +49,7 @@ export default function BlogPage() {
                   <input 
                     type="text" 
                     placeholder="Search articles..." 
-                    className="w-full bg-bg-primary/50 border border-border-subtle rounded-2xl px-6 py-4 text-text-heading placeholder:text-text-muted/30 focus:border-brand-main focus:outline-none transition-all"
+                    className="w-full bg-bg-dark border border-border-subtle rounded-2xl px-6 py-4 text-text-heading placeholder:text-text-muted/30 focus:border-brand-main focus:outline-none transition-all"
                   />
                   <Search size={20} className="absolute right-6 top-1/2 -translate-y-1/2 text-text-muted" />
                 </div>
@@ -108,7 +108,7 @@ export default function BlogPage() {
                   <input 
                     type="email" 
                     placeholder="your@email.com" 
-                    className="w-full bg-bg-primary/50 border border-border-subtle rounded-2xl px-6 py-4 text-text-heading focus:border-brand-main focus:outline-none"
+                    className="w-full bg-bg-dark border border-border-subtle rounded-2xl px-6 py-4 text-text-heading focus:border-brand-main focus:outline-none"
                   />
                   <Button variant="secondary" className="w-full h-[54px] rounded-full border-white/10 text-white font-bold">
                     Subscribe
