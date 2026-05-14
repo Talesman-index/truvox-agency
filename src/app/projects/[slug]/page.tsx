@@ -26,10 +26,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${project.title} | Truvox Agency Portfolio`,
     description: `${project.description} — Truvox Agency Charlotte NC`,
+    alternates: {
+      canonical: `/projects/${slug}`,
+    },
     openGraph: {
       title: `${project.title} | Truvox Agency`,
       description: project.description,
       images: [{ url: project.image }],
+      url: `https://truvox.studio/projects/${slug}`,
     },
   };
 }
