@@ -40,7 +40,7 @@ export const allProjects: Project[] = [
       year: '2026',
       challenge: 'In a saturated market of minimalist design, the client needed a "Maximalist Authority" that felt both chaotic and perfectly controlled—a digital proof-of-concept for their radical motion philosophy.',
       solution: 'A motion-centric platform built on raw SVG manipulation and high-frequency frame-rate animations, creating a "living" brand ecosystem that commands immediate attention.',
-      impact: 'Cited as a benchmark in design agency portfolios, leading to a 300% increase in average contract value and securing 3 major industry awards within the first quarter.',
+      impact: 'Cited as a benchmark in design agency portfolios, leading to a significant increase in high-tier client acquisition and securing 3 major industry awards within the first quarter.',
       techStack: ['Next.js', 'Framer Motion', 'Raw SVG Shaders', 'TypeScript']
     }
   },
@@ -84,7 +84,7 @@ export const allProjects: Project[] = [
       year: '2026',
       challenge: 'The app needed to combine the complexity of a real-time logistics tracker with the extreme security requirements of a payment gateway, all within a one-handed mobile UX.',
       solution: 'A "Hyper-Fluid" UI that treats every interaction as a physical movement, paired with an offline-first architecture for reliable operation in low-connectivity areas.',
-      impact: 'Secured $12M in Series A funding following the MVP launch, with investors citing the "intuitive clarity of the fintech architecture" as a primary competitive moat.',
+      impact: 'Achieved significant market penetration following the MVP launch, with industry leaders citing the "intuitive clarity of the fintech architecture" as a primary competitive moat.',
       techStack: ['React Native', 'Stripe API', 'Mapbox', 'Biometric Auth']
     }
   },
@@ -106,7 +106,7 @@ export const allProjects: Project[] = [
       year: '2026',
       challenge: 'Standard portfolios felt like static archives. Tavares needed a "Living Reel" that captured his atmosphere-first approach to filmmaking without overwhelming the viewer.',
       solution: 'A custom video-lazy-loading engine paired with a grain-textured aesthetic that emphasizes visual poetry and narrative flow over traditional grid layouts.',
-      impact: 'Directly attributed to securing multi-million dollar collaborations with major global luxury houses within weeks of the new digital identity launch.',
+      impact: 'Directly attributed to securing prestigious collaborations with major global luxury houses within weeks of the new digital identity launch.',
       techStack: ['Next.js', 'Framer Motion', 'Custom Shaders', 'GSAP']
     }
   }
