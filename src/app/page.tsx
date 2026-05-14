@@ -18,9 +18,9 @@ export default function Home() {
     "@type": "LocalBusiness",
     "name": "Truvox Agency",
     "description": "Web design agency for small businesses in Charlotte, NC",
-    "url": "https://truvox-agency.vercel.app",
-    "logo": "https://truvox-agency.vercel.app/assets/logo.png",
-    "image": "https://truvox-agency.vercel.app/assets/bg/hero-team.jpg",
+    "url": "https://truvox.studio",
+    "logo": "https://truvox.studio/assets/logo.png",
+    "image": "https://truvox.studio/assets/bg/hero-team.jpg",
     "telephone": "",
     "email": "hello@truvox.studio",
     "address": {

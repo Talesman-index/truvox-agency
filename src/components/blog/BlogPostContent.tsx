@@ -29,7 +29,7 @@ export function BlogPostContent({ post, relatedPosts }: BlogPostContentProps) {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     "headline": post.title,
-    "image": `https://truvox-agency.vercel.app${post.coverImage}`,
+    "image": `https://truvox.studio${post.coverImage}`,
     "datePublished": new Date(post.date).toISOString(),
     "author": {
       "@type": "Person",
@@ -40,7 +40,7 @@ export function BlogPostContent({ post, relatedPosts }: BlogPostContentProps) {
       "name": "Truvox Agency",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://truvox-agency.vercel.app/assets/logo.png"
+        "url": "https://truvox.studio/assets/logo.png"
       }
     },
     "description": post.excerpt
