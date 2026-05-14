@@ -19,7 +19,7 @@ export default function Home() {
     "name": "Truvox Agency",
     "description": "Web design agency for small businesses in Charlotte, NC",
     "url": "https://truvox.studio",
-    "logo": "https://truvox.studio/assets/logo.png",
+    "logo": "https://truvox.studio/assets/truvox-logo.png",
     "image": "https://truvox.studio/assets/bg/hero-team.jpg",
     "telephone": "",
     "email": "hello@truvox.studio",

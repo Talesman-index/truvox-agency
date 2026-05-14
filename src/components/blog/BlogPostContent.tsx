@@ -40,7 +40,7 @@ export function BlogPostContent({ post, relatedPosts }: BlogPostContentProps) {
       "name": "Truvox Agency",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://truvox.studio/assets/logo.png"
+        "url": "https://truvox.studio/assets/truvox-logo.png"
       }
     },
     "description": post.excerpt
