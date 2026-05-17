@@ -17,6 +17,13 @@ export const metadata: Metadata = {
   keywords: "web design Charlotte NC, small business website, digital agency Charlotte, website design North Carolina",
   metadataBase: new URL("https://truvox.studio"),
   alternates: { canonical: "/" },
+  icons: {
+    icon: [
+      { url: '/favicon.svg', type: 'image/svg+xml' }
+    ],
+    shortcut: ['/favicon.svg'],
+    apple: ['/favicon.svg']
+  },
   openGraph: {
     title: "Truvox | Web Design Agency for Small Businesses in Charlotte, NC",
     description: "We create clean, strategic websites that build credibility and turn visitors into clients. Based in Charlotte, NC.",
