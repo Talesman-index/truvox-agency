@@ -20,7 +20,7 @@ export function AboutSection() {
                   Two people who care <span className="gradient-text italic">about your business.</span>
                 </h2>
                 <p className="text-[18px] md:text-[22px] text-text-body/80 leading-relaxed max-w-2xl">
-                  Truvox is Aïda and Shalom, a strategy and development duo based in Charlotte. We started this studio because most small businesses either don&apos;t have a website, or have one that doesn&apos;t reflect how good they actually are. We fix that. We keep things simple, we communicate clearly, and we don&apos;t disappear after launch.
+                  Truvox is Aïda and Shalom, a strategy and development duo. We started this studio because most small businesses either don&apos;t have a website, or have one that doesn&apos;t reflect how good they actually are. We fix that. We keep things simple, we communicate clearly, and we don&apos;t disappear after launch.
                 </p>
               </div>
             </Reveal>
@@ -42,7 +42,7 @@ export function AboutSection() {
                     <span className="text-[14px] font-bold uppercase tracking-widest">We&apos;re local</span>
                   </div>
                   <p className="text-text-muted text-[15px] leading-relaxed">
-                    Charlotte-based. We understand local businesses and what their clients need.
+                    Global reach. We understand local businesses and what their clients need.
                   </p>
                 </div>
               </div>
@@ -61,7 +61,7 @@ export function AboutSection() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-bg-dark/40 to-transparent"></div>
                 <div className="absolute top-8 right-8">
-                  <Badge variant="pink" rotation={8} className="px-6 py-2 shadow-xl">Charlotte, NC</Badge>
+                  <Badge variant="pink" rotation={8} className="px-6 py-2 shadow-xl">Remote Studio</Badge>
                 </div>
               </div>
             </Reveal>

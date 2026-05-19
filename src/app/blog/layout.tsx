@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Blog | Truvox Web Design & Growth Insights Charlotte NC",
+  title: "Blog | Truvox Web Design & Growth Insights",
   description: "Insights on web design, digital strategy, and business growth. Read the Truvox Journal for practical tips and resources.",
   alternates: { canonical: "/blog" },
   openGraph: {

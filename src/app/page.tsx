@@ -52,7 +52,7 @@ export default function Home() {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "Truvox Agency",
-    "description": "Web Design for Small Businesses in Charlotte, NC",
+    "description": "Web Design for Small Businesses",
     "url": "https://truvox.studio",
     "logo": "https://truvox.studio/assets/truvox-logo.png",
     "image": "https://truvox.studio/assets/bg/hero-team.jpg",
@@ -60,20 +60,18 @@ export default function Home() {
     "email": "hello@truvox.studio",
     "address": {
       "@type": "PostalAddress",
-      "addressLocality": "Charlotte",
-      "addressRegion": "NC",
       "addressCountry": "US"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 35.2271,
-      "longitude": -80.8431
     },
     "openingHours": "Mo-Fr 09:00-18:00",
     "priceRange": "$$",
     "serviceArea": {
-      "@type": "City",
-      "name": "Charlotte"
+      "@type": "GeoCircle",
+      "geoMidpoint": {
+        "@type": "GeoCoordinates",
+        "latitude": 39.8283,
+        "longitude": -98.5795
+      },
+      "geoRadius": "4000000"
     },
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
@@ -174,14 +172,14 @@ export default function Home() {
         <div className="max-w-[1200px] mx-auto w-full relative z-20 flex flex-col items-center text-center">
           
           <div className="relative mb-16">
-            <h1 className="sr-only">Web Design for Small Businesses in Charlotte, NC</h1>
+            <h1 className="sr-only">Web Design for Small Businesses</h1>
             <h2 className="text-5xl md:text-6xl lg:text-[90px] font-medium text-white leading-[1.0] tracking-tight mb-4 break-words px-4">
               Your business deserves a website <br /><span className="gradient-text italic">that actually works.</span>
             </h2>
             
             {/* Floating Badges */}
             <div className="absolute -top-36 left-4 md:-top-28 md:left-2 lg:-left-12 xl:-left-24 hidden md:block">
-              <Badge variant="lime" rotation={-12} className="text-[12px] lg:text-[14px] px-4 lg:px-6 py-1.5 lg:py-2">Charlotte, NC</Badge>
+              <Badge variant="lime" rotation={-12} className="text-[12px] lg:text-[14px] px-4 lg:px-6 py-1.5 lg:py-2">Web Design</Badge>
             </div>
             <div className="absolute -top-16 right-4 md:-top-20 md:right-2 lg:-right-12 xl:-right-24 hidden md:block">
               <Badge variant="pink" rotation={8} className="text-[12px] lg:text-[14px] px-4 lg:px-6 py-1.5 lg:py-2">Custom Design</Badge>
@@ -197,7 +195,7 @@ export default function Home() {
             transition={{ duration: 0.3, delay: 0.1 }}
             className="text-[18px] md:text-[22px] text-text-body/75 max-w-2xl mb-12 leading-relaxed"
           >
-            We&apos;re Truvox, a small web design studio in Charlotte. We build clean, professional websites that help local businesses look credible and attract more clients.
+            We&apos;re Truvox, a small web design studio. We build clean, professional websites that help businesses look credible and attract more clients.
           </motion.p>
 
           <motion.div 
@@ -225,7 +223,7 @@ export default function Home() {
             transition={{ duration: 0.3, delay: 0.3 }}
             className="text-[13px] text-text-muted font-medium uppercase tracking-[0.15em] mb-12"
           >
-            2 businesses served · Based in Charlotte, NC · Available now
+            2 businesses served · Remote Studio · Available now
           </motion.p>
 
           <motion.div 

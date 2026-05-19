@@ -136,7 +136,7 @@ export function BlogPostContent({ post, relatedPosts }: BlogPostContentProps) {
                   {post.excerpt}
                 </p>
                 
-                <h2>Strategizing for Growth in Charlotte</h2>
+                <h2>Strategizing for Growth</h2>
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                 </p>

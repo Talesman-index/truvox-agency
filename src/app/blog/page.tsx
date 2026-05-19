@@ -82,7 +82,7 @@ export default function BlogPage() {
                   <TrendingUp className="text-brand-main" size={32} />
                   <h3 className="text-[24px] font-bold text-text-heading leading-tight">Ready to grow your business?</h3>
                   <p className="text-[16px] text-text-muted leading-relaxed">
-                    Let&apos;s discuss how strategic design can help you attract more clients in Charlotte.
+                    Let&apos;s discuss how strategic design can help you attract more clients.
                   </p>
                 </div>
                 
@@ -102,7 +102,7 @@ export default function BlogPage() {
                   <h3 className="text-[18px] font-bold uppercase tracking-widest">Insights Inbox</h3>
                 </div>
                 <p className="text-[15px] text-text-muted leading-relaxed">
-                  Get the latest web design tips and local Charlotte growth strategies delivered to your inbox.
+                  Get the latest web design tips and growth strategies delivered to your inbox.
                 </p>
                 <div className="space-y-4">
                   <input 

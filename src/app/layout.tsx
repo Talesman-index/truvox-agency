@@ -18,9 +18,9 @@ const instrument = Instrument_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Truvox | Web Design Agency for Small Businesses in Charlotte, NC",
-  description: "Truvox is a Charlotte-based web design agency helping small businesses attract more clients with clean, strategic, high-converting websites. Get a free consultation.",
-  keywords: "web design Charlotte NC, small business website, digital agency Charlotte, website design North Carolina",
+  title: "Truvox | Web Design Agency for Small Businesses",
+  description: "Truvox is a web design agency helping small businesses attract more clients with clean, strategic, high-converting websites. Get a free consultation.",
+  keywords: "web design, small business website, digital agency, website design",
   metadataBase: new URL("https://truvox.studio"),
   alternates: { canonical: "/" },
   icons: {
@@ -31,17 +31,17 @@ export const metadata: Metadata = {
     apple: ['/favicon.svg']
   },
   openGraph: {
-    title: "Truvox | Web Design Agency for Small Businesses in Charlotte, NC",
-    description: "We create clean, strategic websites that build credibility and turn visitors into clients. Based in Charlotte, NC.",
+    title: "Truvox | Web Design Agency for Small Businesses",
+    description: "We create clean, strategic websites that build credibility and turn visitors into clients.",
     url: "https://truvox.studio",
     siteName: "Truvox Agency",
-    images: [{ url: "/assets/og/truvox-og.jpg", width: 1200, height: 630, alt: "Truvox Agency Charlotte NC" }],
+    images: [{ url: "/assets/og/truvox-og.jpg", width: 1200, height: 630, alt: "Truvox Agency" }],
     locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Truvox | Web Design Agency Charlotte NC",
+    title: "Truvox | Web Design Agency",
     description: "Strategic web design for small businesses. Clean, high-converting websites.",
     images: ["/assets/og/truvox-og.jpg"],
   },

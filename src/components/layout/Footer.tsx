@@ -76,7 +76,7 @@ export const Footer = () => {
                 </Link>
                 <div className="space-y-2">
                    <div className="text-[14px] font-bold text-text-muted uppercase tracking-widest">Studio</div>
-                   <div className="text-[18px] font-semibold text-text-heading">Charlotte, NC</div>
+                   <div className="text-[18px] font-semibold text-text-heading">Remote</div>
                    <div className="text-[14px] text-brand-main/80 font-medium">Available for projects worldwide</div>
                 </div>
               </div>

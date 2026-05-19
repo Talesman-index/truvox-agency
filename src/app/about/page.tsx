@@ -37,7 +37,7 @@ export default function AboutPage() {
                  </p>
                  <div className="flex items-center gap-4 text-brand-main">
                     <Plus size={20} />
-                    <span className="text-[14px] font-bold uppercase tracking-widest">Charlotte, NC</span>
+                    <span className="text-[14px] font-bold uppercase tracking-widest">Remote Studio</span>
                  </div>
                </div>
              </Reveal>
@@ -101,7 +101,7 @@ export default function AboutPage() {
           <Reveal>
             <span className="text-brand-main font-bold uppercase tracking-[0.3em] text-[12px]">Our Studio</span>
             <h2 className="text-[40px] md:text-[60px] font-medium text-text-heading leading-[1.1] tracking-tight mt-6">
-              We&apos;re based in Charlotte, NC, <br /><span className="gradient-text italic">but we work with businesses everywhere.</span>
+              We work with businesses <br /><span className="gradient-text italic">all over the world.</span>
             </h2>
           </Reveal>
           <Reveal delay={0.2}>
