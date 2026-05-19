@@ -15,12 +15,12 @@ export function AboutSection() {
           <div className="lg:col-span-7 space-y-12">
             <Reveal>
               <div className="space-y-8">
-                <Badge variant="lime" rotation={-2}>About the Agency</Badge>
+                <Badge variant="lime" rotation={-2}>About Us</Badge>
                 <h2 className="text-[36px] sm:text-[45px] md:text-[65px] font-medium text-text-heading leading-[1.1] tracking-tight break-words">
-                  We Build The <span className="gradient-text italic">Digital Foundations</span> Of Visionary Brands.
+                  Two people who care <span className="gradient-text italic">about your business.</span>
                 </h2>
                 <p className="text-[18px] md:text-[22px] text-text-body/80 leading-relaxed max-w-2xl">
-                  Truvox is a high-fidelity digital studio specializing in premium design and strategic engineering. We translate complex visions into seamless, high-performance digital experiences.
+                  Truvox is Aïda and Shalom, a strategy and development duo based in Charlotte. We started this studio because most small businesses either don&apos;t have a website, or have one that doesn&apos;t reflect how good they actually are. We fix that. We keep things simple, we communicate clearly, and we don&apos;t disappear after launch.
                 </p>
               </div>
             </Reveal>
@@ -30,19 +30,19 @@ export function AboutSection() {
                 <div className="space-y-4">
                   <div className="flex items-center gap-3 text-brand-main">
                     <Plus size={18} />
-                    <span className="text-[14px] font-bold uppercase tracking-widest">Excellence by Design</span>
+                    <span className="text-[14px] font-bold uppercase tracking-widest">We keep it simple</span>
                   </div>
                   <p className="text-text-muted text-[15px] leading-relaxed">
-                    We never settle for "good enough." Every pixel and line of code is crafted with precision.
+                    No unnecessary complexity. You&apos;ll always know where your project stands.
                   </p>
                 </div>
                 <div className="space-y-4">
                   <div className="flex items-center gap-3 text-brand-main">
                     <Plus size={18} />
-                    <span className="text-[14px] font-bold uppercase tracking-widest">Strategic Growth</span>
+                    <span className="text-[14px] font-bold uppercase tracking-widest">We&apos;re local</span>
                   </div>
                   <p className="text-text-muted text-[15px] leading-relaxed">
-                    Innovation without strategy is just noise. We build solutions that drive measurable results.
+                    Charlotte-based. We understand local businesses and what their clients need.
                   </p>
                 </div>
               </div>
@@ -61,7 +61,7 @@ export function AboutSection() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-bg-dark/40 to-transparent"></div>
                 <div className="absolute top-8 right-8">
-                  <Badge variant="pink" rotation={8} className="px-6 py-2 shadow-xl">Charlotte Based</Badge>
+                  <Badge variant="pink" rotation={8} className="px-6 py-2 shadow-xl">Charlotte, NC</Badge>
                 </div>
               </div>
             </Reveal>

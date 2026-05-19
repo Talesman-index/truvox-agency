@@ -15,8 +15,8 @@ const ProjectCard = ({ project, index }: { project: any; index: number }) => {
   return (
     <RevealItem delay={index * 0.1}>
       <Link 
-        href={`/projects/${project.slug}`} 
-        className="group block space-y-6"
+         href={`/projects/${project.slug}`} 
+         className="group block space-y-6"
       >
         {/* Image Container - Framer Style (Clean, Rounded, Overflow hidden) */}
         <div className="relative aspect-[16/10] w-full overflow-hidden rounded-[32px] bg-bg-card border border-white/5 group-hover:border-brand-main/30 transition-all duration-700">
@@ -39,9 +39,16 @@ const ProjectCard = ({ project, index }: { project: any; index: number }) => {
         {/* Metadata - Webflow/Framer Style (Tags + Description) */}
         <div className="px-2 space-y-4">
           <div className="flex flex-wrap items-center justify-between gap-4">
-            <h3 className="text-[24px] md:text-[28px] font-medium text-text-heading tracking-tight group-hover:text-brand-main transition-colors">
-              {project.title}
-            </h3>
+            <div className="space-y-1">
+              <h3 className="text-[24px] md:text-[28px] font-medium text-text-heading tracking-tight group-hover:text-brand-main transition-colors">
+                {project.title}
+              </h3>
+              {project.isConcept && (
+                <span className="text-[12px] text-brand-main/80 font-medium block">
+                  Concept project
+                </span>
+              )}
+            </div>
             
             {/* Tags Row */}
             <div className="flex items-center gap-2">
@@ -77,13 +84,13 @@ export const PortfolioSection = () => {
         <Reveal>
           <div className="flex flex-col md:flex-row items-baseline justify-between gap-6 mb-20 md:mb-28">
             <div className="space-y-4">
-              <Badge variant="lime" rotation={-2} className="mb-4">Selected Work</Badge>
+              <Badge variant="lime" rotation={-2} className="mb-4">Our Work</Badge>
               <h2 className="text-[26px] xs:text-[32px] sm:text-[40px] md:text-[60px] font-medium text-text-heading leading-tight tracking-tight break-words">
-                Design <span className="gradient-text italic pr-[0.1em]">Manifesto.</span>
+                A few things <span className="gradient-text italic pr-[0.1em]">we&apos;ve built.</span>
               </h2>
             </div>
-            <p className="text-text-muted text-[14px] font-medium uppercase tracking-[0.2em] md:text-right max-w-xs">
-              Curated selection of our most impactful digital architecture.
+            <p className="text-text-muted text-[16px] leading-relaxed max-w-sm">
+              We&apos;re a new studio. Here&apos;s what we&apos;ve done so far, and where we&apos;re headed.
             </p>
           </div>
         </Reveal>
@@ -100,7 +107,7 @@ export const PortfolioSection = () => {
           <div className="mt-20 flex justify-center">
             <Link href="/projects">
               <Button variant="secondary" className="group border-white/10 text-white hover:text-black h-[60px] px-10 rounded-full text-[14px] font-bold uppercase tracking-widest transition-all">
-                <span>View all projects</span>
+                <span>View All Projects</span>
                 <ArrowUpRight size={18} className="ml-2 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
               </Button>
             </Link>
@@ -113,9 +120,11 @@ export const PortfolioSection = () => {
             <h4 className="text-[24px] xs:text-[28px] md:text-[40px] font-medium text-text-heading mb-10 tracking-tight break-words">
               Have a vision <span className="gradient-text italic pr-[0.1em]">in mind?</span>
             </h4>
-            <Button variant="secondary" className="mt-10 border-brand-main text-brand-main hover:bg-brand-main hover:text-bg-primary h-[64px] px-12 rounded-full text-[16px] font-bold transition-all shadow-[0_0_40px_rgba(0,255,133,0.05)]">
-              Contact us to start
-            </Button>
+            <Link href="/contact">
+              <Button variant="secondary" className="mt-10 border-brand-main text-brand-main hover:bg-brand-main hover:text-bg-primary h-[64px] px-12 rounded-full text-[16px] font-bold transition-all shadow-[0_0_40px_rgba(0,255,133,0.05)]">
+                Contact us to start
+              </Button>
+            </Link>
           </div>
         </Reveal>
       </div>

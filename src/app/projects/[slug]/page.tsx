@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return {
     title: `${project.title} | Truvox Agency Portfolio`,
-    description: `${project.description} — Truvox Agency Charlotte NC`,
+    description: `${project.description} | Truvox Agency Charlotte NC`,
     alternates: {
       canonical: `/projects/${slug}`,
     },

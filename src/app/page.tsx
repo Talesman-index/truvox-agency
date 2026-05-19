@@ -1,6 +1,7 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from "@/components/ui/Button";
 import { PortfolioSection } from "@/components/sections/PortfolioSection";
 import { PricingSection } from "@/components/sections/PricingSection";
@@ -8,16 +9,50 @@ import { MethodologySection } from "@/components/sections/MethodologySection";
 import { ProcessSection } from "@/components/sections/ProcessSection";
 import { AboutSection } from "@/components/sections/AboutSection";
 import Image from "next/image";
-import { Check, X as Close, ArrowRight, Plus } from "lucide-react";
+import Link from "next/link";
+import { ArrowRight, Plus } from "lucide-react";
 import { Reveal, RevealItem } from "@/components/ui/Reveal";
 import { Badge } from "@/components/ui/Badge";
+
+function FaqAccordion({ question, answer }: { question: string; answer: string }) {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <div 
+      onClick={() => setIsOpen(!isOpen)}
+      className="p-7 bg-bg-card/50 backdrop-blur-sm rounded-[28px] border border-white/5 flex flex-col cursor-pointer group hover:border-brand-main/40 hover:bg-bg-card transition-all duration-300"
+    >
+      <div className="flex items-center justify-between w-full gap-4">
+        <span className="text-[16px] md:text-[18px] font-medium text-white/90 group-hover:text-white transition-colors">{question}</span>
+        <div className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-brand-main group-hover:text-bg-primary group-hover:border-brand-main transition-all duration-300 shrink-0">
+          <motion.div
+            animate={{ rotate: isOpen ? 45 : 0 }}
+            transition={{ duration: 0.2 }}
+          >
+            <Plus size={18} />
+          </motion.div>
+        </div>
+      </div>
+      <motion.div
+        initial={false}
+        animate={{ height: isOpen ? 'auto' : 0, marginTop: isOpen ? 16 : 0, opacity: isOpen ? 1 : 0 }}
+        transition={{ duration: 0.25, ease: 'easeInOut' }}
+        className="overflow-hidden"
+      >
+        <p className="text-[15px] md:text-[16px] text-text-muted leading-relaxed">
+          {answer}
+        </p>
+      </motion.div>
+    </div>
+  );
+}
 
 export default function Home() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "Truvox Agency",
-    "description": "Web design agency for small businesses in Charlotte, NC",
+    "description": "Web Design for Small Businesses in Charlotte, NC",
     "url": "https://truvox.studio",
     "logo": "https://truvox.studio/assets/truvox-logo.png",
     "image": "https://truvox.studio/assets/bg/hero-team.jpg",
@@ -44,10 +79,10 @@ export default function Home() {
       "@type": "OfferCatalog",
       "name": "Web Design Services",
       "itemListElement": [
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Product Design & UI/UX" }},
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Web & Mobile Development" }},
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Marketing & Data Strategy" }},
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Brand Identity Systems" }}
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Website Creation" }},
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Website Redesign" }},
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "UI/UX Design" }},
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Strategy" }}
       ]
     },
     "sameAs": []
@@ -59,38 +94,69 @@ export default function Home() {
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "How do we start a project together?",
+        "name": "How do we get started?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Start by booking a free consultation. We'll discuss your business goals, budget, and timeline to define the right approach for your project."
+          "text": "Book a free 30-minute call. We'll talk about your business and figure out together what your website needs. No commitment, no pressure."
         }
       },
       {
         "@type": "Question",
-        "name": "What is your high-fidelity design philosophy?",
+        "name": "How long does a project take?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "We believe every pixel matters. Our designs are strategic, not decorative — built to guide visitors toward action and reflect your brand's true value."
+          "text": "Most projects take between 2 and 4 weeks from our first call to launch. It depends on how many pages and how quickly you can provide content."
         }
       },
       {
         "@type": "Question",
-        "name": "How do you use data to drive design?",
+        "name": "Do I need to provide the content?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "We analyze user behavior, conversion patterns, and competitor benchmarks to make every design decision backed by real-world performance data."
+          "text": "We can guide you on what to write, or write it for you as part of the Growth package. Either way, we'll make sure the final text is clear and effective."
         }
       },
       {
         "@type": "Question",
-        "name": "Do you provide long-term support?",
+        "name": "What if I already have a website?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. Our Growth and Enterprise plans include ongoing support. We also offer flexible maintenance packages for all clients after launch."
+          "text": "We can redesign it from scratch or improve what's already there. We'll be honest about which option makes more sense for your situation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you offer support after launch?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. The Growth plan includes one month of support. After that, we offer simple maintenance packages if you need ongoing help."
         }
       }
     ]
   };
+
+  const faqs = [
+    {
+      q: "How do we get started?",
+      a: "Book a free 30-minute call. We'll talk about your business and figure out together what your website needs. No commitment, no pressure."
+    },
+    {
+      q: "How long does a project take?",
+      a: "Most projects take between 2 and 4 weeks from our first call to launch. It depends on how many pages and how quickly you can provide content."
+    },
+    {
+      q: "Do I need to provide the content?",
+      a: "We can guide you on what to write, or write it for you as part of the Growth package. Either way, we'll make sure the final text is clear and effective."
+    },
+    {
+      q: "What if I already have a website?",
+      a: "We can redesign it from scratch or improve what's already there. We'll be honest about which option makes more sense for your situation."
+    },
+    {
+      q: "Do you offer support after launch?",
+      a: "Yes. The Growth plan includes one month of support. After that, we offer simple maintenance packages if you need ongoing help."
+    }
+  ];
 
   return (
     <main className="flex-grow bg-bg-primary">
@@ -108,20 +174,20 @@ export default function Home() {
         <div className="max-w-[1200px] mx-auto w-full relative z-20 flex flex-col items-center text-center">
           
           <div className="relative mb-16">
-            <h1 className="sr-only">Web Design Agency for Small Businesses in Charlotte, NC</h1>
+            <h1 className="sr-only">Web Design for Small Businesses in Charlotte, NC</h1>
             <h2 className="text-5xl md:text-6xl lg:text-[90px] font-medium text-white leading-[1.0] tracking-tight mb-4 break-words px-4">
-              Elevating Digital Authority Through <span className="gradient-text italic">Strategic Design.</span>
+              Your business deserves a website <br /><span className="gradient-text italic">that actually works.</span>
             </h2>
             
             {/* Floating Badges */}
             <div className="absolute -top-36 left-4 md:-top-28 md:left-2 lg:-left-12 xl:-left-24 hidden md:block">
-              <Badge variant="lime" rotation={-12} className="text-[12px] lg:text-[14px] px-4 lg:px-6 py-1.5 lg:py-2">Product Strategy</Badge>
+              <Badge variant="lime" rotation={-12} className="text-[12px] lg:text-[14px] px-4 lg:px-6 py-1.5 lg:py-2">Charlotte, NC</Badge>
             </div>
             <div className="absolute -top-16 right-4 md:-top-20 md:right-2 lg:-right-12 xl:-right-24 hidden md:block">
-              <Badge variant="pink" rotation={8} className="text-[12px] lg:text-[14px] px-4 lg:px-6 py-1.5 lg:py-2">High-Fidelity</Badge>
+              <Badge variant="pink" rotation={8} className="text-[12px] lg:text-[14px] px-4 lg:px-6 py-1.5 lg:py-2">Custom Design</Badge>
             </div>
             <div className="absolute -bottom-24 right-4 md:-bottom-20 md:right-1/4 hidden md:block">
-              <Badge variant="sage" rotation={-5} className="text-[12px] lg:text-[14px] px-4 lg:px-6 py-1.5 lg:py-2">Data-Driven</Badge>
+              <Badge variant="sage" rotation={-5} className="text-[12px] lg:text-[14px] px-4 lg:px-6 py-1.5 lg:py-2">Clean Code</Badge>
             </div>
           </div>
           
@@ -131,7 +197,35 @@ export default function Home() {
             transition={{ duration: 0.3, delay: 0.1 }}
             className="text-[18px] md:text-[22px] text-text-body/75 max-w-2xl mb-12 leading-relaxed"
           >
-            We craft premium digital experiences that translate your vision into trust, and trust into measurable growth.
+            We&apos;re Truvox, a small web design studio in Charlotte. We build clean, professional websites that help local businesses look credible and attract more clients.
+          </motion.p>
+
+          <motion.div 
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3, delay: 0.2 }}
+            className="flex flex-col sm:flex-row gap-4 items-center mb-6"
+          >
+            <Link href="/contact">
+              <Button className="bg-brand-main text-bg-primary hover:bg-brand-hover h-[56px] px-10 rounded-full text-[16px] font-bold shadow-[0_0_30px_rgba(0,255,133,0.15)] transition-all">
+                Book a Free Call
+              </Button>
+            </Link>
+            <Link href="#projects">
+              <Button variant="secondary" className="border-white/10 text-white hover:text-black h-[56px] px-10 rounded-full text-[16px] font-bold transition-all">
+                See Our Work
+              </Button>
+            </Link>
+          </motion.div>
+          
+          {/* Proof line under the CTAs */}
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.3, delay: 0.3 }}
+            className="text-[13px] text-text-muted font-medium uppercase tracking-[0.15em] mb-12"
+          >
+            2 businesses served · Based in Charlotte, NC · Available now
           </motion.p>
 
           <motion.div 
@@ -141,11 +235,11 @@ export default function Home() {
             className="relative w-full max-w-[1100px] aspect-[16/8] rounded-[40px] overflow-hidden mt-0 mb-20 shadow-2xl border border-border-subtle"
           >
              <Image 
-               src="/assets/bg/hero-team.jpg" 
-               alt="Truvox Team" 
-               fill 
-               className="object-cover opacity-60 grayscale hover:grayscale-0 transition-all duration-700"
-               priority
+                src="/assets/bg/hero-team.jpg" 
+                alt="Truvox Team" 
+                fill 
+                className="object-cover opacity-60 grayscale hover:grayscale-0 transition-all duration-700"
+                priority
              />
              <div className="absolute inset-0 bg-gradient-to-t from-bg-dark via-transparent to-transparent"></div>
           </motion.div>
@@ -156,14 +250,11 @@ export default function Home() {
         <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-brand-main/10 blur-[150px] rounded-full pointer-events-none"></div>
       </section>
 
-
-
       {/* ABOUT SECTION */}
       <AboutSection />
 
       {/* SERVICES SECTION */}
       <ProcessSection />
-
 
       {/* PORTFOLIO SECTION */}
       <PortfolioSection />
@@ -188,8 +279,8 @@ export default function Home() {
                 <div className="space-y-6">
                   <Badge variant="pink" rotation={2}>FAQ</Badge>
                   <h2 className="text-[32px] md:text-[48px] lg:text-[56px] font-medium text-text-heading leading-[1.1] tracking-tight">
-                    Addressing Concerns With <br />
-                    <span className="gradient-text italic">Strategic Clarity.</span>
+                    Questions <br />
+                    <span className="gradient-text italic">we get a lot.</span>
                   </h2>
                   <p className="text-text-muted text-[18px] max-w-md">
                     We believe in transparency. Here are answers to the questions we get most often.
@@ -198,19 +289,9 @@ export default function Home() {
               </Reveal>
 
               <div className="space-y-4">
-                {[
-                  "How do we start a project together?",
-                  "What is your high-fidelity design philosophy?",
-                  "How do you use data to drive design?",
-                  "Do you provide long-term support?"
-                ].map((q, i) => (
+                {faqs.map((faq, i) => (
                   <Reveal key={i} delay={0.2 + i * 0.1}>
-                    <div className="p-7 bg-bg-card/50 backdrop-blur-sm rounded-[28px] border border-white/5 flex items-center justify-between cursor-pointer group hover:border-brand-main/40 hover:bg-bg-card transition-all duration-300">
-                      <span className="text-[16px] md:text-[18px] font-medium text-white/90 group-hover:text-white transition-colors">{q}</span>
-                      <div className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-brand-main group-hover:text-bg-primary group-hover:border-brand-main transition-all duration-300">
-                        <Plus size={18} />
-                      </div>
-                    </div>
+                    <FaqAccordion question={faq.q} answer={faq.a} />
                   </Reveal>
                 ))}
               </div>
@@ -222,12 +303,12 @@ export default function Home() {
                 <div className="relative aspect-[4/5] lg:aspect-square w-full rounded-[40px] overflow-hidden shadow-2xl border border-white/5 group">
                   <Image 
                     src="/assets/bg/faq-minimal-3d.png" 
-                    alt="Truvox Digital Innovation" 
+                    alt="Truvox FAQ Info" 
                     fill 
                     className="object-cover group-hover:scale-105 transition-transform duration-1000"
                   />
                   <div className="absolute bottom-8 left-8">
-                    <Badge variant="lime" rotation={-5} className="px-6 py-2 shadow-xl">Digital Innovation</Badge>
+                    <Badge variant="lime" rotation={-5} className="px-6 py-2 shadow-xl">Support & Care</Badge>
                   </div>
                 </div>
               </Reveal>
@@ -241,20 +322,25 @@ export default function Home() {
       <section className="py-32 md:py-48 px-6 bg-bg-dark relative overflow-hidden">
         <div className="max-w-[1200px] mx-auto text-center space-y-12 relative z-10">
           <Reveal>
-            <h2 className="text-[32px] md:text-[48px] lg:text-[70px] text-balance tracking-tight mb-12 break-words px-4">
-              Ready To Build Your <br /><span className="gradient-text italic pr-[0.1em]">Digital Authority?</span>
+            <h2 className="text-[32px] md:text-[48px] lg:text-[70px] text-balance tracking-tight mb-6 break-words px-4 text-white">
+              Ready to get a website <br /><span className="gradient-text italic pr-[0.1em]">that works for your business?</span>
             </h2>
+            <p className="text-text-muted text-[18px] md:text-[22px] max-w-2xl mx-auto leading-relaxed mt-6">
+              Let&apos;s start with a free 30-minute call. No pitch, no commitment, just an honest conversation about what your business needs.
+            </p>
           </Reveal>
           
           <Reveal delay={0.2}>
-            <div className="flex justify-center">
-              <Button className="bg-brand-main text-bg-primary px-12 h-[64px] rounded-full text-[18px] font-bold hover:bg-brand-hover transition-all">
-                Start My Project <ArrowRight className="ml-2" size={24} />
-              </Button>
+            <div className="flex justify-center mt-12">
+              <Link href="/contact">
+                <Button className="bg-brand-main text-bg-primary px-12 h-[64px] rounded-full text-[18px] font-bold hover:bg-brand-hover transition-all shadow-[0_0_40px_rgba(0,255,133,0.15)]">
+                  Book My Free Call <ArrowRight className="ml-2" size={24} />
+                </Button>
+              </Link>
             </div>
           </Reveal>
 
-          {/* Rotating Sun/Sparkle Icon */}
+          {/* Rotating Sparkle Icon */}
           <div className="flex justify-center mt-20">
              <motion.div
                animate={{ rotate: 360 }}

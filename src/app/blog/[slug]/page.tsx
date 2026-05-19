@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return {
     title: `${post.title} | Truvox Blog`,
-    description: `${post.excerpt} — Truvox Agency Charlotte NC`,
+    description: `${post.excerpt} | Truvox Agency Charlotte NC`,
     alternates: {
       canonical: `/blog/${slug}`,
     },

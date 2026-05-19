@@ -42,7 +42,9 @@ export default {
         },
       },
       fontFamily: {
-        archivo: ["var(--font-archivo)", "sans-serif"],
+        display: ["var(--font-display)", "Georgia", "serif"],
+        body: ["var(--font-body)", "system-ui", "sans-serif"],
+        archivo: ["var(--font-body)", "system-ui", "sans-serif"],
       },
       borderRadius: {
         sm: "2px",

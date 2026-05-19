@@ -13,16 +13,17 @@ export default function ContactPage() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    projectType: 'Product Design & UI/UX',
-    message: ''
+    businessName: '',
+    whatDoYouNeed: 'Website Creation',
+    projectDetails: '',
+    budget: '',
+    timeline: ''
   });
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate API call (replace with your Formspree ID or real API)
-    // To use Formspree, replace the fetch URL with: https://formspree.io/f/YOUR_ID
     try {
       const response = await fetch('https://formspree.io/f/xbdwepay', {
         method: 'POST',
@@ -37,7 +38,7 @@ export default function ContactPage() {
       }
     } catch (error) {
       console.error("Submission error:", error);
-      alert("Something went wrong. Please try again or email us directly.");
+      alert("Something went wrong. Please try again or email us directly at hello@truvox.studio.");
     } finally {
       setIsSubmitting(false);
     }
@@ -57,12 +58,12 @@ export default function ContactPage() {
             <Reveal>
               <Badge variant="lime" rotation={-2} className="mb-8">Contact Us</Badge>
               <h1 className="text-5xl md:text-7xl lg:text-[80px] font-medium text-text-heading leading-[1.05] tracking-tight">
-                Let&apos;s Build <br /><span className="gradient-text italic">The Future.</span>
+                Let&apos;s talk about <br /><span className="gradient-text italic">your project.</span>
               </h1>
             </Reveal>
             <Reveal delay={0.2}>
               <p className="text-[18px] md:text-[20px] text-text-muted leading-relaxed max-w-lg">
-                Ready to elevate your digital authority? Share your vision with us and we&apos;ll get back to you within 24 hours.
+                Fill out the form and we&apos;ll get back to you within 24 hours. Or if you prefer, book directly in our calendar for a free 30-minute call.
               </p>
             </Reveal>
           </div>
@@ -102,11 +103,11 @@ export default function ContactPage() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, scale: 0.95 }}
                   onSubmit={handleSubmit} 
-                  className="space-y-10 relative z-10"
+                  className="space-y-8 relative z-10"
                 >
-                   <div className="grid md:grid-cols-2 gap-8">
+                   <div className="grid md:grid-cols-2 gap-6">
                       <div className="space-y-3">
-                         <label className="text-[12px] font-bold text-text-muted uppercase tracking-widest ml-1">Full Name</label>
+                         <label className="text-[12px] font-bold text-text-muted uppercase tracking-widest ml-1">Your Name</label>
                          <input 
                             type="text" 
                             name="name"
@@ -118,7 +119,7 @@ export default function ContactPage() {
                          />
                       </div>
                       <div className="space-y-3">
-                         <label className="text-[12px] font-bold text-text-muted uppercase tracking-widest ml-1">Email Address</label>
+                         <label className="text-[12px] font-bold text-text-muted uppercase tracking-widest ml-1">Your Email</label>
                          <input 
                             type="email" 
                             name="email"
@@ -130,31 +131,69 @@ export default function ContactPage() {
                          />
                       </div>
                    </div>
-                   
+
                    <div className="space-y-3">
-                      <label className="text-[12px] font-bold text-text-muted uppercase tracking-widest ml-1">Project Type</label>
-                      <select 
-                        name="projectType"
-                        value={formData.projectType}
-                        onChange={handleChange}
-                        className="w-full bg-bg-dark border border-border-subtle rounded-2xl px-6 h-[60px] text-text-heading focus:border-brand-main focus:outline-none transition-all appearance-none cursor-pointer"
-                      >
-                         <option>Product Design & UI/UX</option>
-                         <option>Web & Mobile Development</option>
-                         <option>Marketing & Data Strategy</option>
-                         <option>Brand Identity Systems</option>
-                      </select>
+                      <label className="text-[12px] font-bold text-text-muted uppercase tracking-widest ml-1">Business Name</label>
+                      <input 
+                         type="text" 
+                         name="businessName"
+                         required
+                         value={formData.businessName}
+                         onChange={handleChange}
+                         placeholder="Your Company, Restaurant, or Brand" 
+                         className="w-full bg-bg-dark border border-border-subtle rounded-2xl px-6 h-[60px] text-text-heading placeholder:text-text-muted/30 focus:border-brand-main focus:outline-none transition-all"
+                      />
                    </div>
                    
                    <div className="space-y-3">
-                      <label className="text-[12px] font-bold text-text-muted uppercase tracking-widest ml-1">Your Message</label>
+                      <label className="text-[12px] font-bold text-text-muted uppercase tracking-widest ml-1">What do you need?</label>
+                      <select 
+                        name="whatDoYouNeed"
+                        value={formData.whatDoYouNeed}
+                        onChange={handleChange}
+                        className="w-full bg-bg-dark border border-border-subtle rounded-2xl px-6 h-[60px] text-text-heading focus:border-brand-main focus:outline-none transition-all appearance-none cursor-pointer"
+                      >
+                         <option value="Website Creation">Website Creation</option>
+                         <option value="Website Redesign">Website Redesign</option>
+                         <option value="UI/UX Design">UI/UX Design</option>
+                         <option value="Strategy">Strategy</option>
+                      </select>
+                   </div>
+
+                   <div className="grid md:grid-cols-2 gap-6">
+                      <div className="space-y-3">
+                         <label className="text-[12px] font-bold text-text-muted uppercase tracking-widest ml-1">Budget (optional)</label>
+                         <input 
+                            type="text" 
+                            name="budget"
+                            value={formData.budget}
+                            onChange={handleChange}
+                            placeholder="e.g. $2,000" 
+                            className="w-full bg-bg-dark border border-border-subtle rounded-2xl px-6 h-[60px] text-text-heading placeholder:text-text-muted/30 focus:border-brand-main focus:outline-none transition-all"
+                         />
+                      </div>
+                      <div className="space-y-3">
+                         <label className="text-[12px] font-bold text-text-muted uppercase tracking-widest ml-1">Timeline (optional)</label>
+                         <input 
+                            type="text" 
+                            name="timeline"
+                            value={formData.timeline}
+                            onChange={handleChange}
+                            placeholder="e.g. 1 month" 
+                            className="w-full bg-bg-dark border border-border-subtle rounded-2xl px-6 h-[60px] text-text-heading placeholder:text-text-muted/30 focus:border-brand-main focus:outline-none transition-all"
+                         />
+                      </div>
+                   </div>
+                   
+                   <div className="space-y-3">
+                      <label className="text-[12px] font-bold text-text-muted uppercase tracking-widest ml-1">Tell us a bit about your project</label>
                       <textarea 
-                        name="message"
+                        name="projectDetails"
                         required
-                        value={formData.message}
+                        value={formData.projectDetails}
                         onChange={handleChange}
                         rows={4} 
-                        placeholder="Tell us about your goals..." 
+                        placeholder="What are your goals? Who are your customers?" 
                         className="w-full bg-bg-dark border border-border-subtle rounded-2xl px-6 py-6 text-text-heading placeholder:text-text-muted/30 focus:border-brand-main focus:outline-none transition-all resize-none"
                       ></textarea>
                    </div>
@@ -176,7 +215,7 @@ export default function ContactPage() {
                         </div>
                       ) : (
                         <div className="flex items-center gap-2">
-                          Send Message <ArrowRight size={18} />
+                          Send My Request <ArrowRight size={18} />
                         </div>
                       )}
                    </Button>
@@ -192,17 +231,28 @@ export default function ContactPage() {
                     <CheckCircle2 size={48} className="text-brand-main" />
                   </div>
                   <div className="space-y-4">
-                    <h3 className="text-3xl font-bold text-text-heading">Message Sent!</h3>
+                    <h3 className="text-3xl font-bold text-text-heading">Request Sent!</h3>
                     <p className="text-text-muted text-lg max-w-sm mx-auto">
-                      Thank you for reaching out. Our team will review your project and get back to you at <span className="text-brand-main font-medium">{formData.email}</span> within 24 hours.
+                      Thank you for reaching out. We will review your project and get back to you at <span className="text-brand-main font-medium">{formData.email}</span> within 24 hours.
                     </p>
                   </div>
                   <Button 
-                    onClick={() => setIsSuccess(false)}
+                    onClick={() => {
+                      setIsSuccess(false);
+                      setFormData({
+                        name: '',
+                        email: '',
+                        businessName: '',
+                        whatDoYouNeed: 'Website Creation',
+                        projectDetails: '',
+                        budget: '',
+                        timeline: ''
+                      });
+                    }}
                     variant="secondary" 
                     className="rounded-full border-white/10 text-white"
                   >
-                    Send Another Message
+                    Send Another Request
                   </Button>
                 </motion.div>
               )}

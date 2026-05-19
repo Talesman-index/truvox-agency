@@ -10,6 +10,7 @@ export interface Project {
   image: string;
   link: string;
   color: string;
+  isConcept?: boolean;
   details: {
     client: string;
     services: string[];
@@ -27,20 +28,20 @@ export const allProjects: Project[] = [
     slug: 'sagana-agency',
     title: 'Sagana Agency',
     category: 'Design Studio',
-    tags: ['Disruptive', 'Immersive', 'Authority'],
-    description: 'Immersive platform establishing the digital authority of bold creative studios through disruptive design.',
-    fullDescription: 'Sagana Agency required a digital presence that mirrored their radical approach to visual storytelling. We developed a high-fidelity "Editorial Engine" that treats every scroll as a cinematic moment, effectively shifting their market positioning from a service provider to a strategic authority.',
-    designStyle: 'A high-fidelity editorial aesthetic characterized by maximalist typography, disruptive motion signatures, and a "Digital Pulse" neon-cyan accent over a deep-black void. The design prioritizes visual friction to ensure high-intensity brand recall.',
+    tags: ['Custom Design', 'Next.js', 'Clean Code'],
+    description: 'Immersive platform establishing the credibility of creative studios through clean, bold design.',
+    fullDescription: 'Sagana Agency required an online presence that mirrored their creative approach to visual storytelling. We developed a custom web platform that treats every scroll as a cinematic moment, helping them look credible and attract more high-value clients.',
+    designStyle: 'A professional editorial layout characterized by bold typography, smooth transitions, and a vibrant color system that stands out.',
     image: '/assets/portfolio/sagana.png',
     link: 'https://www.sagana-agency.com/',
     color: 'from-blue-600/20 to-teal-400/20',
     details: {
       client: 'Sagana Collective',
-      services: ['Brand Moat Strategy', 'UI/UX Architecture', 'Next.js Editorial Engine'],
+      services: ['Brand Strategy', 'UI/UX Design', 'Next.js Development'],
       year: '2026',
-      challenge: 'In a saturated market of minimalist design, the client needed a "Maximalist Authority" that felt both chaotic and perfectly controlled—a digital proof-of-concept for their radical motion philosophy.',
-      solution: 'A motion-centric platform built on raw SVG manipulation and high-frequency frame-rate animations, creating a "living" brand ecosystem that commands immediate attention.',
-      impact: 'Cited as a benchmark in design agency portfolios, leading to a significant increase in high-tier client acquisition and securing 3 major industry awards within the first quarter.',
+      challenge: 'In a saturated market of minimalist design, the client needed a bold, memorable website that felt both chaotic and perfectly controlled, serving as a digital proof-of-concept for their radical motion philosophy.',
+      solution: 'A motion-centric platform built on raw SVG manipulation and high-frequency animations, creating a dynamic, living brand ecosystem that commands immediate attention.',
+      impact: 'Highly praised by peers, leading to a significant increase in client inquiries and securing 3 major industry design awards within the first quarter.',
       techStack: ['Next.js', 'Framer Motion', 'Raw SVG Shaders', 'TypeScript']
     }
   },
@@ -49,21 +50,22 @@ export const allProjects: Project[] = [
     slug: 'smart-petri-dish',
     title: 'Smart Petri Dish',
     category: 'Health Tech',
-    tags: ['Innovation', 'MVP', 'Decentralized'],
-    description: 'MVP development of an intelligent system for decentralized health screening. A major innovation validated by experts.',
-    fullDescription: 'SPD is a global health initiative aiming to democratize lab-grade analysis through decentralized intelligence. We engineered a high-precision dashboard that translates complex biological data-streams into actionable insights for field researchers across the globe.',
-    designStyle: 'Scientific minimalism under a design system called "Sterile OS." The interface eliminates all visual noise, using a high-contrast palette of emerald chroma for positive confirmation and cool-gray depth hierarchies for laboratory-grade precision.',
+    tags: ['Innovation', 'Web Dashboard', 'Research'],
+    description: 'An intuitive dashboard built to help health researchers analyze biological data in the field.',
+    fullDescription: 'SPD is a global health initiative aiming to make lab-grade analysis accessible anywhere. We engineered an intuitive dashboard that translates complex biological data-streams into clear, actionable insights for researchers working in the field.',
+    designStyle: 'A clean and simple layout with a high-contrast palette designed for absolute readability under low-light field conditions.',
     image: '/assets/portfolio/spd.png',
     link: 'https://spd-zeta.vercel.app/',
     color: 'from-emerald-600/20 to-green-400/20',
+    isConcept: true,
     details: {
       client: 'BioTech Labs Inc.',
-      services: ['Full-Stack Data Engineering', 'AI Diagnostic UI', 'Sterile OS Design System'],
+      services: ['Full-Stack Engineering', 'UI Design', 'Custom Design System'],
       year: '2025',
-      challenge: 'The primary obstacle was translating high-density medical telemetry into an intuitive interface that non-experts could navigate without sacrificing technical integrity or regulatory precision.',
-      solution: 'A custom decentralized data architecture paired with a focus-heavy UI that uses intelligent anomaly detection to highlight critical health risks automatically.',
-      impact: 'Validated by major health organizations as a new standard for remote diagnostic interfaces, reducing researcher cognitive load by 60% and cutting analysis time by 70%.',
-      techStack: ['React', 'Node.js', 'Real-time Telemetry', 'AI/ML Models', 'Socket.io']
+      challenge: 'The primary obstacle was translating complex medical data into a clean, simple layout that field teams could navigate quickly without losing technical accuracy.',
+      solution: 'A custom data structure paired with a clean, focus-heavy layout that highlights critical findings automatically.',
+      impact: 'Praised by field testers for reducing cognitive load and cutting data analysis time by 70% in remote field settings.',
+      techStack: ['React', 'Node.js', 'Real-time Telemetry', 'Socket.io']
     }
   },
   {
@@ -71,21 +73,22 @@ export const allProjects: Project[] = [
     slug: 'fuelup-mobile',
     title: 'FuelUp Mobile',
     category: 'Mobile App',
-    tags: ['UI/UX', 'Fintech', 'Logistics'],
-    description: 'A seamless mobile experience designed to streamline fuel procurement and digital payments for modern drivers.',
-    fullDescription: 'FuelUp is a fintech-meets-logistics disruptor solving the critical "final mile" of energy procurement. The application integrates high-trust payment gateways with real-time geolocation and inventory tracking in a single, high-fidelity mobile interface.',
-    designStyle: 'Glossmorphic utility blending tactile 3D elements with a "Hyper-Fluid" navigation philosophy. Used glassmorphic layers to indicate depth of security and biometric-inspired micro-interactions for a frictionless checkout experience.',
+    tags: ['UI/UX Design', 'Mobile Development', 'Payments'],
+    description: 'A clean and easy-to-use mobile app designed to simplify fuel purchases and secure digital payments.',
+    fullDescription: 'FuelUp is a mobile utility designed to simplify fuel purchases. The application integrates secure payment processing with real-time location mapping and fuel levels in a single, clean mobile interface.',
+    designStyle: 'A modern, clean design featuring glassmorphic accents, clear buttons, and a simple checkout flow.',
     image: '/assets/portfolio/fuelup.png',
     link: 'https://www.behance.net/gallery/218017715/Mobile-App-to-buy-fuel',
     color: 'from-purple-600/20 to-pink-400/20',
+    isConcept: true,
     details: {
       client: 'Energy Logistics Group',
-      services: ['Fintech UX Architecture', 'Biometric Flow Design', 'Geospatial UI'],
+      services: ['Mobile App Design', 'Checkout Flow Strategy', 'Maps Integration'],
       year: '2026',
-      challenge: 'The app needed to combine the complexity of a real-time logistics tracker with the extreme security requirements of a payment gateway, all within a one-handed mobile UX.',
-      solution: 'A "Hyper-Fluid" UI that treats every interaction as a physical movement, paired with an offline-first architecture for reliable operation in low-connectivity areas.',
-      impact: 'Achieved significant market penetration following the MVP launch, with industry leaders citing the "intuitive clarity of the fintech architecture" as a primary competitive moat.',
-      techStack: ['React Native', 'Stripe API', 'Mapbox', 'Biometric Auth']
+      challenge: 'The app needed to combine real-time mapping details with secure payment methods in a simple, one-handed mobile interface.',
+      solution: 'An intuitive checkout flow that makes purchasing fuel as simple as a few taps, with offline caching for reliable use in low-signal areas.',
+      impact: 'Highly praised by design critics for its simple, user-friendly payment flow and clear map navigation.',
+      techStack: ['React Native', 'Stripe API', 'Mapbox']
     }
   },
   {
@@ -93,20 +96,20 @@ export const allProjects: Project[] = [
     slug: 'tavares',
     title: 'Tavares',
     category: 'Cinematic',
-    tags: ['Cinematic', 'Editorial', 'Visual Poetry'],
-    description: 'Immersive cinematic portfolio for a visionary director, blending high-end editorial aesthetics with disruptive storytelling.',
-    fullDescription: 'For Director Tavares, we built more than a portfolio—we engineered a "Narrative Arc." The platform adapts its mood and pacing to the cinematic work being viewed, acting as a silent, poetic backdrop to his visual storytelling.',
-    designStyle: 'Cinematic Noir aesthetic utilizing custom grain-noise shaders and extreme letter-spacing. The layout follows a "Director’s Cut" philosophy, with silent-film transitions and custom easing curves to mimic the tactile feel of 35mm film.',
+    tags: ['Cinematic', 'Portfolio', 'Custom Video Player'],
+    description: 'Cinematic portfolio for film director Tavares, designed to showcase his work and make a strong first impression.',
+    fullDescription: 'For Director Tavares, we built a modern website that serves as a beautiful backdrop to his cinematic work, letting his projects be the main focus of the page.',
+    designStyle: 'An elegant dark design with custom film grain and smooth transitions to match the aesthetic of his films.',
     image: '/assets/portfolio/tavares-cinematic.png',
     link: 'https://portfolio-tavares.vercel.app/',
     color: 'from-orange-600/20 to-red-400/20',
     details: {
       client: 'Tavares Films',
-      services: ['Art Direction', 'Cinematic Noir Identity', 'Motion Narrative Design'],
+      services: ['Art Direction', 'Custom Web Design', 'Custom Video Player'],
       year: '2026',
-      challenge: 'Standard portfolios felt like static archives. Tavares needed a "Living Reel" that captured his atmosphere-first approach to filmmaking without overwhelming the viewer.',
-      solution: 'A custom video-lazy-loading engine paired with a grain-textured aesthetic that emphasizes visual poetry and narrative flow over traditional grid layouts.',
-      impact: 'Directly attributed to securing prestigious collaborations with major global luxury houses within weeks of the new digital identity launch.',
+      challenge: 'Standard portfolio grids felt static. Tavares needed a website that captured the atmosphere of his films without slowing down page load times.',
+      solution: 'A highly optimized video-loading system paired with an elegant dark theme that emphasizes visual storytelling.',
+      impact: 'Helped the client secure several new commercial directing projects with global fashion houses shortly after launch.',
       techStack: ['Next.js', 'Framer Motion', 'Custom Shaders', 'GSAP']
     }
   }

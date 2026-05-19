@@ -1,4 +1,4 @@
-/* Archivo font handled by next/font in layout.tsx */
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Instrument+Sans:wght@400;500;600&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -29,7 +29,13 @@
   --gradient-hero      : radial-gradient(ellipse at 65% 40%, rgba(0,255,133,0.12) 0%, transparent 65%);
   --gradient-separator : linear-gradient(90deg, transparent, #00FF85, transparent);
 
-  --font-archivo: "Archivo", sans-serif;
+  --font-display : 'Syne', sans-serif;
+  --font-body    : 'Instrument Sans', system-ui, sans-serif;
+}
+
+/* Reset letter-spacing — c'est le fix principal */
+* {
+  letter-spacing: normal;
 }
 
 html, body {
@@ -41,55 +47,121 @@ html, body {
 
 @layer base {
   body {
-    @apply bg-bg-primary text-text-body font-archivo antialiased;
-    font-size: 18px;
-    line-height: 28px;
+    @apply bg-bg-primary text-text-body antialiased;
+    font-family    : var(--font-body);
+    font-size      : 17px;
+    font-weight    : 400;
+    line-height    : 1.7;
+    letter-spacing : 0;        /* jamais de tracking positif sur le body */
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-archivo text-[var(--text-heading)] break-words;
-    overflow-wrap: break-word;
-    word-wrap: break-word;
-    hyphens: auto;
-  }
-  
-  h1 { 
-    @apply text-[24px] leading-tight font-medium;
-  }
-  
-  @screen sm {
-    h1 { @apply text-[45px] leading-[1.1]; }
-  }
-  
-  @screen md {
-    h1 { @apply text-[75px] leading-[86px]; }
+  /* H1 — Hero principal */
+  h1 {
+    font-family    : var(--font-display);
+    font-size      : clamp(40px, 6vw, 76px);
+    font-weight    : 700;
+    line-height    : 1.0;
+    letter-spacing : -0.03em;
+    color          : var(--text-heading);
   }
 
-  h2 { 
-    @apply text-[22px] leading-tight font-medium;
+  /* H2 — Titres de section */
+  h2 {
+    font-family    : var(--font-display);
+    font-size      : clamp(26px, 4vw, 48px);
+    font-weight    : 600;
+    line-height    : 1.05;
+    letter-spacing : -0.025em;
+    color          : var(--text-heading);
   }
-  
-  @screen md {
-    h2 { @apply text-[55px] leading-[65px]; }
+
+  /* H3 — Titres de cartes / sous-sections */
+  h3 {
+    font-family    : var(--font-display);
+    font-size      : clamp(18px, 2vw, 24px);
+    font-weight    : 500;
+    line-height    : 1.2;
+    letter-spacing : -0.01em;
+    color          : var(--text-heading);
   }
-  
-  h3 { font-size: 42px; font-weight: 700; line-height: 42px; }
-  h4 { font-size: 24px; font-weight: 400; line-height: 34px; }
-  h5 { font-size: 22px; font-weight: 600; line-height: 26px; }
+
+  /* H4 — Labels de section */
+  h4 {
+    font-family    : var(--font-body);
+    font-size      : 11px;
+    font-weight    : 500;
+    line-height    : 1.4;
+    letter-spacing : 0.12em;   /* seul endroit où le tracking positif est ok */
+    text-transform : uppercase;
+    color          : var(--text-muted);
+  }
+
+  /* Body / Paragraphes */
+  p {
+    font-family    : var(--font-body);
+    font-size      : 17px;
+    font-weight    : 400;
+    line-height    : 1.7;
+    letter-spacing : 0;
+    color          : var(--text-body);
+    max-width      : 620px;    /* jamais pleine largeur sur le body */
+  }
+
+  /* Liens de navigation */
+  nav a {
+    font-family    : var(--font-display);
+    font-size      : 14px;
+    font-weight    : 500;
+    letter-spacing : 0;        /* pas de tracking sur la nav */
+    color          : var(--text-heading);
+  }
+
+  /* Boutons */
+  button, .btn {
+    font-family    : var(--font-display);
+    font-size      : 14px;
+    font-weight    : 600;
+    letter-spacing : 0.01em;   /* très légèrement espacé — lisibilité uniquement */
+  }
+
+  /* Numéros d'étapes / Stats */
+  .stat-number,
+  .step-number,
+  .price-amount {
+    font-family    : var(--font-display);
+    font-weight    : 800;      /* 800 — finesse et élégance Syne */
+    letter-spacing : -0.04em;
+    line-height    : 0.9;
+  }
+
+  /* Citations / Testimonials */
+  blockquote {
+    font-family    : var(--font-display);
+    font-weight    : 500;
+    font-size      : clamp(20px, 2.5vw, 28px);
+    line-height    : 1.5;
+    letter-spacing : -0.01em;
+  }
 }
 
 @layer components {
   /* Buttons as per visual contract */
   .btn-primary {
-    @apply inline-flex items-center justify-center bg-[var(--brand-main)] text-[var(--bg-primary)] px-6 h-[56px] rounded-full transition-all duration-200 text-[16px] font-bold border-none hover:bg-[var(--brand-hover)];
+    @apply inline-flex items-center justify-center bg-[var(--brand-main)] text-[var(--bg-primary)] px-6 h-[56px] rounded-full transition-all duration-200 text-[14px] font-semibold border-none hover:bg-[var(--brand-hover)];
+    font-family: var(--font-display);
+    letter-spacing: 0.01em;
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center bg-transparent text-[var(--brand-main)] px-6 h-[56px] rounded-full border border-[var(--brand-main)] transition-all duration-200 text-[16px] font-bold hover:bg-[var(--brand-main)] hover:text-[var(--bg-primary)];
+    @apply inline-flex items-center justify-center bg-transparent text-[var(--brand-main)] px-6 h-[56px] rounded-full border border-[var(--brand-main)] transition-all duration-200 text-[14px] font-semibold hover:bg-[var(--brand-main)] hover:text-[var(--bg-primary)];
+    font-family: var(--font-display);
+    letter-spacing: 0.01em;
   }
 
   .btn-ghost-zailab {
-    @apply inline-flex items-center justify-center bg-transparent text-white px-6 h-[56px] rounded-full border border-white/30 transition-all duration-200 text-[16px] font-bold hover:border-[var(--brand-main)] hover:text-[var(--brand-main)];
+    @apply inline-flex items-center justify-center bg-transparent text-white px-6 h-[56px] rounded-full border border-white/30 transition-all duration-200 text-[14px] font-semibold hover:border-[var(--brand-main)] hover:text-[var(--brand-main)];
+    font-family: var(--font-display);
+    letter-spacing: 0.01em;
   }
 
   .card-standard {
@@ -102,14 +174,17 @@ html, body {
 
   .badge-lime {
     @apply bg-[var(--bg-card-tint)] text-[var(--brand-main)] px-4 py-2 rounded-[70px] text-[14px] font-bold border border-[#00FF8533];
+    letter-spacing: 0.06em;
   }
 
   .badge-pink {
     @apply bg-[var(--bg-card-tint)] text-[var(--brand-main)] px-4 py-2 rounded-[70px] text-[14px] font-bold border border-[#00FF8533];
+    letter-spacing: 0.06em;
   }
 
   .badge-sage {
     @apply bg-[var(--bg-card-tint)] text-[var(--brand-main)] px-4 py-2 rounded-[70px] text-[14px] font-bold border border-[#00FF8533];
+    letter-spacing: 0.06em;
   }
 
   .gradient-text {
@@ -143,13 +218,42 @@ html, body {
     0%, 100% { transform: rotate(-2deg); }
     50% { transform: rotate(2deg); }
   }
+
+  /* Section labels au-dessus des titres */
+  .section-label {
+    font-family    : var(--font-body);
+    font-size      : 11px;
+    font-weight    : 500;
+    letter-spacing : 0.12em;
+    text-transform : uppercase;
+    color          : #888888;
+    margin-bottom  : 12px;
+  }
+
+  /* Footer headline */
+  .footer-headline {
+    font-family    : var(--font-display);
+    font-weight    : 700;
+    font-size      : clamp(32px, 5vw, 56px);
+    letter-spacing : -0.03em;
+    line-height    : 1.05;
+  }
+
+  /* Italic coloré sur mots accent */
+  .footer-headline em {
+    font-style : normal; /* Syne is non-italic high-impact geometric display */
+    color      : var(--brand-main); /* couleur accent du site */
+    font-family : var(--font-display);
+  }
 }
 
 @layer utilities {
   .text-stats {
+    font-family    : var(--font-display);
     font-size: 89px;
-    font-weight: 600;
+    font-weight: 800;
     line-height: 86px;
+    letter-spacing: -0.04em;
     color: var(--brand-main);
   }
 }
@@ -171,4 +275,14 @@ html, body {
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--brand-main);
+}
+
+/* Footer — texte */
+footer p,
+footer a {
+  font-family    : var(--font-body);
+  font-size      : 14px;
+  font-weight    : 400;
+  letter-spacing : 0;
+  color          : rgba(255,255,255,0.55);
 }

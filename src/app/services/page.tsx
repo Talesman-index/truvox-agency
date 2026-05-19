@@ -5,51 +5,46 @@ import { Badge } from '@/components/ui/Badge';
 import { Button } from '@/components/ui/Button';
 import { 
   ArrowRight, 
+  Globe, 
   Layers, 
-  Smartphone, 
-  Database, 
   Palette,
-  Search,
-  Zap,
-  Code,
-  ShieldCheck,
-  LineChart
+  Compass
 } from 'lucide-react';
 import Link from 'next/link';
 
 const services = [
   {
-    title: 'Product Design & UI/UX',
-    description: 'We create high-fidelity, intuitive interfaces that don\'t just look good but drive conversions and user satisfaction.',
+    title: 'Website Creation',
+    description: 'We design and build professional websites from scratch, structured to present your services clearly and guide visitors toward contacting you.',
+    icon: <Globe size={32} />,
+    features: ['Custom Layout', 'Mobile Responsive', 'Contact Form', 'Fast Page Loading']
+  },
+  {
+    title: 'Website Redesign',
+    description: 'If your current website looks outdated or isn\'t bringing in clients, we\'ll rebuild it into something that works.',
     icon: <Layers size={32} />,
-    features: ['User Research', 'Information Architecture', 'Visual Design', 'Prototyping']
+    features: ['Modern Visual Design', 'Content Refinement', 'Better Page Speed', 'Redirect Setup']
   },
   {
-    title: 'Web & Mobile Development',
-    description: 'Robust, scalable, and high-performance applications built with modern frameworks like Next.js and React Native.',
-    icon: <Smartphone size={32} />,
-    features: ['Custom Web Apps', 'Mobile Apps', 'E-commerce', 'CMS Integration']
-  },
-  {
-    title: 'Marketing & Data Strategy',
-    description: 'Data-driven insights to optimize your digital presence and maximize ROI through strategic campaigns.',
-    icon: <Database size={32} />,
-    features: ['Conversion Audit', 'SEO Optimization', 'Analytics Setup', 'Growth Strategy']
-  },
-  {
-    title: 'Brand Identity Systems',
-    description: 'Crafting unique and memorable visual identities that resonate with your target audience and establish authority.',
+    title: 'UI/UX Design',
+    description: 'Clean layouts, easy navigation, and a design that makes people trust your business from the first click.',
     icon: <Palette size={32} />,
-    features: ['Logo Design', 'Visual Guidelines', 'Design Systems', 'Brand Strategy']
+    features: ['Intuitive Layouts', 'Consistent Branding', 'User Flows', 'Readable Typography']
+  },
+  {
+    title: 'Strategy',
+    description: 'Not sure what your website needs? We\'ll help you figure that out first, aligning structure, messaging, and user flow, before building anything.',
+    icon: <Compass size={32} />,
+    features: ['Content Structure', 'Competitor Review', 'Clear CTAs', 'Messaging Alignment']
   }
 ];
 
 const processes = [
-  { step: '01', title: 'Discovery', desc: 'Deep dive into your business goals, target audience, and market landscape.' },
-  { step: '02', title: 'Strategy', desc: 'Defining the roadmap, technology stack, and visual direction for success.' },
-  { step: '03', title: 'Design', desc: 'Iterative design process focusing on high-fidelity aesthetics and usability.' },
-  { step: '04', title: 'Build', desc: 'Clean, efficient coding with continuous testing and performance audits.' },
-  { step: '05', title: 'Launch', desc: 'Seamless deployment and monitoring to ensure a perfect first impression.' }
+  { step: '01', title: 'Discovery', desc: 'We start with a call to understand your business, your clients, and what you actually need from a website.' },
+  { step: '02', title: 'Strategy', desc: 'We map out the structure and content before touching design. This is where we define what the site needs to say and to whom.' },
+  { step: '03', title: 'Design', desc: 'We build a clean, modern design tailored to your business without using generic templates.' },
+  { step: '04', title: 'Development', desc: 'We code and build the site, making sure it works fast and looks right on every device.' },
+  { step: '05', title: 'Launch', desc: 'We review everything together before going live. After launch, we\'re still available if anything comes up.' }
 ];
 
 export default function ServicesPage() {
@@ -59,12 +54,12 @@ export default function ServicesPage() {
       <section className="px-6 mb-32">
         <div className="max-w-[1200px] mx-auto text-center">
           <Reveal>
-            <Badge variant="lime" rotation={-2} className="mb-8">Expertise</Badge>
+            <Badge variant="lime" rotation={-2} className="mb-8">What We Do</Badge>
             <h1 className="text-5xl md:text-7xl lg:text-[90px] font-medium text-text-heading leading-[1.0] tracking-tight mb-12">
-              Strategic Solutions <br /><span className="gradient-text italic">For Global Impact.</span>
+              A website built for <br /><span className="gradient-text italic">your business. Not a template.</span>
             </h1>
             <p className="text-[18px] md:text-[22px] text-text-muted max-w-2xl mx-auto leading-relaxed">
-              We combine world-class design with precision engineering to help your business establish absolute digital authority.
+              Every business is different. We take the time to understand yours before writing a single line of code.
             </p>
           </Reveal>
         </div>
@@ -108,13 +103,13 @@ export default function ServicesPage() {
           <Reveal>
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-24">
                <div className="space-y-6">
-                 <Badge variant="pink" rotation={2}>Our Workflow</Badge>
+                 <Badge variant="pink" rotation={2}>How It Works</Badge>
                  <h2 className="text-[35px] md:text-[55px] font-medium text-text-heading tracking-tight">
-                    How We Bring <br /><span className="gradient-text italic">Vision To Reality.</span>
+                    A simple process. <br /><span className="gradient-text italic">No surprises.</span>
                  </h2>
                </div>
                <p className="text-text-muted max-w-sm text-[18px]">
-                 A structured, transparent process designed to minimize friction and maximize results.
+                 We know that working with a web designer can feel complicated. We&apos;ve made ours as clear as possible.
                </p>
             </div>
           </Reveal>
@@ -141,11 +136,11 @@ export default function ServicesPage() {
         <div className="max-w-[1000px] mx-auto text-center">
            <Reveal>
              <h2 className="text-[40px] md:text-[70px] font-medium text-text-heading leading-[1.1] tracking-tight mb-12">
-               Let&apos;s Build Your <br /><span className="gradient-text italic">Next Big Thing.</span>
+               Ready to get a website <br /><span className="gradient-text italic">that works for your business?</span>
              </h2>
              <Link href="/contact">
-               <Button className="bg-brand-main text-bg-primary px-12 h-[64px] rounded-full text-[18px] font-bold hover:bg-brand-hover transition-all">
-                 Start A Conversation <ArrowRight className="ml-2" size={24} />
+               <Button className="bg-brand-main text-bg-primary px-12 h-[64px] rounded-full text-[18px] font-bold hover:bg-brand-hover transition-all shadow-[0_0_40px_rgba(0,255,133,0.15)]">
+                 Book My Free Call <ArrowRight className="ml-2" size={24} />
                </Button>
              </Link>
            </Reveal>

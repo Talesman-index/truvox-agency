@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Contact Truvox | Get a Free Web Design Consultation",
-  description: "Ready to build your digital presence? Contact Truvox for a free consultation. Based in Charlotte, NC — serving clients worldwide.",
+  description: "Ready to build your digital presence? Contact Truvox for a free consultation. Based in Charlotte, NC, and serving clients worldwide.",
   alternates: { canonical: "/contact" },
   openGraph: {
     title: "Contact Truvox | Free Web Design Consultation",

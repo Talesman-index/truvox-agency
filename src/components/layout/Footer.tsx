@@ -19,8 +19,8 @@ export const Footer = () => {
             <Link href="/">
               <Image src="/assets/logo.svg" alt="Truvox Logo" width={178} height={48} className="hover:opacity-80 transition-opacity" />
             </Link>
-            <h2 className="text-[26px] xs:text-[32px] md:text-[50px] font-medium leading-tight md:leading-[1.1] tracking-tight text-text-heading max-w-md break-words">
-              Let&apos;s Build Something <span className="gradient-text italic pr-[0.1em]">Remarkable</span> Together.
+            <h2 className="footer-headline text-text-heading max-w-2xl break-words">
+              Let&apos;s Build Something <em className="gradient-text pr-[0.1em]">Remarkable</em> Together.
             </h2>
             <div className="flex gap-4">
                {[
@@ -55,10 +55,10 @@ export const Footer = () => {
             <div className="space-y-10">
               <h5 className="text-[12px] font-bold uppercase tracking-[0.2em] text-brand-main">Services</h5>
               <ul className="space-y-4">
-                <li className="text-[16px] font-medium text-text-body/60">Product Design & UI/UX</li>
-                <li className="text-[16px] font-medium text-text-body/60">Web & Mobile Development</li>
-                <li className="text-[16px] font-medium text-text-body/60">Marketing & Data Strategy</li>
-                <li className="text-[16px] font-medium text-text-body/60">Brand Identity Systems</li>
+                <li className="text-[16px] font-medium text-text-body/60">Website Creation</li>
+                <li className="text-[16px] font-medium text-text-body/60">Website Redesign</li>
+                <li className="text-[16px] font-medium text-text-body/60">UI/UX Design</li>
+                <li className="text-[16px] font-medium text-text-body/60">Strategy</li>
               </ul>
             </div>
             <div className="space-y-10">

@@ -1,14 +1,20 @@
 import type { Metadata } from "next";
-import { Archivo } from "next/font/google";
+import { Syne, Instrument_Sans } from "next/font/google";
 import Script from 'next/script';
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 
-const archivo = Archivo({
+const syne = Syne({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-archivo",
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-display",
+});
+
+const instrument = Instrument_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  variable: "--font-body",
 });
 
 export const metadata: Metadata = {
@@ -43,8 +49,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={archivo.variable}>
-      <body className={`${archivo.className} antialiased min-h-screen flex flex-col overflow-x-hidden`}>
+    <html lang="en" className={`${syne.variable} ${instrument.variable}`}>
+      <body className={`${instrument.className} antialiased min-h-screen flex flex-col overflow-x-hidden`}>
         <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-PC3HNC9G"
