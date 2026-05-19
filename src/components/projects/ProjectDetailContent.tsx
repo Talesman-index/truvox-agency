@@ -176,17 +176,20 @@ export function ProjectDetailContent({ project }: ProjectDetailContentProps) {
 
               {/* Impact */}
               <RevealItem>
-                <div className="space-y-8 md:space-y-10 p-8 sm:p-12 md:p-20 bg-brand-main text-bg-primary rounded-[40px] md:rounded-[60px] shadow-2xl shadow-brand-main/10">
-                  <div className="flex items-center gap-4 text-bg-primary/60">
-                    <TrendingUp className="w-6 h-6 md:w-7 md:h-7" />
-                    <h2 className="text-[10px] md:text-[12px] font-bold uppercase tracking-[0.4em]">The Growth Impact</h2>
+                <div className="relative space-y-8 md:space-y-10 p-8 sm:p-12 md:p-20 bg-bg-card border border-white/5 rounded-[40px] md:rounded-[60px] overflow-hidden group">
+                  <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-main/5 blur-[120px] rounded-full pointer-events-none transition-opacity duration-700 group-hover:opacity-100 opacity-60" />
+                  <div className="relative z-10">
+                    <div className="flex items-center gap-4 text-brand-main mb-8 md:mb-10">
+                      <TrendingUp className="w-6 h-6 md:w-7 md:h-7" />
+                      <h2 className="text-[10px] md:text-[12px] font-bold uppercase tracking-[0.4em]">The Growth Impact</h2>
+                    </div>
+                    <h3 className="text-[28px] sm:text-[32px] md:text-[64px] font-medium tracking-tight leading-[1] text-text-heading mb-8">
+                      Measureable <br/> <span className="gradient-text italic opacity-90">Authority.</span>
+                    </h3>
+                    <p className="text-[18px] sm:text-[22px] md:text-[32px] font-medium leading-relaxed tracking-tight text-text-body">
+                      {project.details.impact}
+                    </p>
                   </div>
-                  <h3 className="text-[28px] sm:text-[32px] md:text-[64px] font-medium tracking-tight leading-[1] text-bg-primary">
-                    Measureable <br/> <span className="italic opacity-80">Authority.</span>
-                  </h3>
-                  <p className="text-[18px] sm:text-[22px] md:text-[32px] font-medium leading-tight tracking-tight">
-                    {project.details.impact}
-                  </p>
                 </div>
               </RevealItem>
 
