@@ -216,18 +216,38 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="max-w-[1200px] mx-auto w-full relative z-20 flex flex-col items-center text-center">
+        <motion.div
+  className="max-w-[1200px] mx-auto w-full relative z-20 flex flex-col items-center text-center mt-12"
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.6, delay: 0.2 }}
+>
           
           <div className="relative mb-8 max-w-5xl">
             <h1 className="sr-only">Web Design for Small Businesses</h1>
-            <h2 className="flex flex-col items-center gap-2 md:gap-4 mb-4 px-4">
-              <span className="font-mono text-brand-main text-3xl sm:text-5xl md:text-6xl lg:text-[76px] font-bold tracking-[0.05em] uppercase leading-none">
-                Websites Designed
-              </span>
-              <span className="font-display text-white text-3xl sm:text-5xl md:text-6xl lg:text-[80px] font-bold leading-none tracking-tight">
-                To Attract More Clients
-              </span>
-            </h2>
+            <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="flex flex-col items-center gap-2 md:gap-4 mb-4 px-4"
+          >
+            <motion.span
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              className="font-mono text-brand-main text-3xl sm:text-5xl md:text-6xl lg:text-[76px] font-bold tracking-[0.05em] uppercase leading-none"
+            >
+              Websites Designed
+            </motion.span>
+            <motion.span
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.8 }}
+              className="font-display text-white text-3xl sm:text-5xl md:text-6xl lg:text-[80px] font-bold leading-none tracking-tight"
+            >
+              To Attract More Clients
+            </motion.span>
+          </motion.h2>
           </div>
           
           <motion.p 
@@ -266,18 +286,30 @@ export default function Home() {
           >
             2 businesses served · Remote Studio · Available now
           </motion.p>
-        </div>
+        </motion.div>
 
         {/* Scroll Down Button */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20">
-          <Link href="#about" className="flex items-center justify-center w-12 h-12 rounded-full border border-white/15 bg-black/20 backdrop-blur-sm text-white/60 hover:text-brand-main hover:border-brand-main hover:bg-black/40 transition-all duration-300">
-            <span className="text-xl font-light">↓</span>
-          </Link>
-        </div>
-
+        <Link href="#about" passHref>
+<motion.button
+  whileHover={{ scale: 1.05 }}
+  animate={{ y: [0, -4, 0] }}
+  transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
+  className="flex items-center justify-center w-12 h-12 rounded-full border border-white/15 bg-black/20 backdrop-blur-sm text-white/60 hover:text-brand-main hover:border-brand-main hover:bg-black/40 transition-all duration-300 mt-24"
+>
+  <motion.span className="text-xl font-light" animate={{ scale: [1, 1.1, 1] }} transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}>↓</motion.span>
+</motion.button>
+        </Link>
         {/* Decorative Elements */}
-        <div className="absolute top-1/4 left-1/4 w-[400px] h-[400px] bg-brand-main/5 blur-[150px] rounded-full pointer-events-none"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-brand-main/10 blur-[150px] rounded-full pointer-events-none"></div>
+        <motion.div
+          className="absolute top-1/4 left-1/4 w-[400px] h-[400px] bg-brand-main/5 blur-[150px] rounded-full pointer-events-none"
+          animate={{ scale: [1, 1.05, 1] }}
+          transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
+        />
+        <motion.div
+          className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-brand-main/10 blur-[150px] rounded-full pointer-events-none"
+          animate={{ scale: [1, 0.95, 1] }}
+          transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
+        />
       </section>
 
       {/* MARQUEE TICKER */}

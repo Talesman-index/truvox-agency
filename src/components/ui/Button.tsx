@@ -1,18 +1,14 @@
 'use client';
 
-import { ButtonHTMLAttributes, forwardRef } from 'react';
-import { clsx, type ClassValue } from 'clsx';
-import { twMerge } from 'tailwind-merge';
+import { motion } from 'framer-motion';
+import React, { forwardRef } from 'react';
+import { cn } from '@/lib/utils';
 
-function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs));
-}
-
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   variant?: 'primary' | 'secondary' | 'ghost' | 'ghost-zailab' | 'outline-white';
-}
+};
 
-const Button = forwardRef<HTMLButtonElement, ButtonProps>(
+export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant = 'primary', ...props }, ref) => {
     const variants = {
       primary: 'btn-primary',
@@ -23,19 +19,19 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     };
 
     return (
-      <button
+      <motion.button
         ref={ref}
+        whileTap={{ scale: 0.95 }}
+        whileHover={{ scale: 1.02 }}
         className={cn(
-          'inline-flex items-center justify-center font-sans transition-all duration-200 active:scale-95 disabled:opacity-50 disabled:pointer-events-none',
+          'inline-flex items-center justify-center font-sans transition-all duration-200 active:scale-95 disabled:opacity-50 disabled:pointer-events-none cursor-pointer',
           variants[variant],
           className
         )}
         {...props}
-      />
+      >
+        {props.children}
+      </motion.button>
     );
   }
 );
-
-Button.displayName = 'Button';
-
-export { Button };
