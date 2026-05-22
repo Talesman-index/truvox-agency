@@ -20,11 +20,11 @@ function FaqAccordion({ question, answer }: { question: string; answer: string }
   return (
     <div 
       onClick={() => setIsOpen(!isOpen)}
-      className="p-7 bg-bg-card/50 backdrop-blur-sm rounded-[28px] border border-white/5 flex flex-col cursor-pointer group hover:border-brand-main/40 hover:bg-bg-card transition-all duration-300"
+      className="p-7 bg-[#0D0D18] rounded-[12px] border border-[#1A1A1A] flex flex-col cursor-pointer group hover:border-brand-main transition-all duration-300"
     >
       <div className="flex items-center justify-between w-full gap-4">
         <span className="text-[16px] md:text-[18px] font-medium text-white/90 group-hover:text-white transition-colors">{question}</span>
-        <div className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-brand-main group-hover:text-bg-primary group-hover:border-brand-main transition-all duration-300 shrink-0">
+        <div className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-brand-main group-hover:text-[#000000] group-hover:border-brand-main transition-all duration-300 shrink-0">
           <motion.div
             animate={{ rotate: isOpen ? 45 : 0 }}
             transition={{ duration: 0.2 }}
@@ -168,32 +168,73 @@ export default function Home() {
       />
       
       {/* HERO SECTION - DARK & NEON GREEN STYLE */}
-      <section className="relative min-h-screen flex flex-col items-center pt-32 md:pt-64 pb-20 px-4 md:px-6 overflow-hidden bg-bg-dark">
+      <section className="relative min-h-screen flex flex-col items-center justify-center pt-32 pb-24 px-4 md:px-6 overflow-hidden bg-black">
+        {/* Fullscreen Background Image with Dark Overlay */}
+        <div className="absolute inset-0 z-0 overflow-hidden">
+          <Image 
+            src="/assets/bg/hero-team.jpg" 
+            alt="Workspace Background" 
+            fill 
+            className="object-cover opacity-15 grayscale pointer-events-none"
+            priority
+          />
+          {/* Subtle gradient overlay to blend into black */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/80 to-black"></div>
+        </div>
+
+        {/* Left Floating Blocks */}
+        <div className="absolute left-6 md:left-12 lg:left-20 top-1/4 hidden md:block opacity-[0.06] pointer-events-none z-10">
+          <div className="flex flex-col gap-2">
+            <div className="flex gap-2 justify-end">
+              <div className="w-14 h-14 md:w-20 md:h-20 border border-white rounded-sm bg-white/5"></div>
+            </div>
+            <div className="flex gap-2 justify-end">
+              <div className="w-14 h-14 md:w-20 md:h-20 border border-white rounded-sm bg-white/5"></div>
+              <div className="w-14 h-14 md:w-20 md:h-20 border border-white rounded-sm bg-white/10"></div>
+            </div>
+            <div className="flex gap-2">
+              <div className="w-14 h-14 md:w-20 md:h-20 border border-white rounded-sm bg-white/5"></div>
+              <div className="w-14 h-14 md:w-20 md:h-20 border border-white rounded-sm bg-white/5"></div>
+            </div>
+          </div>
+        </div>
+
+        {/* Right Floating Blocks */}
+        <div className="absolute right-6 md:right-12 lg:right-20 top-1/3 hidden md:block opacity-[0.06] pointer-events-none z-10">
+          <div className="flex flex-col gap-2">
+            <div className="flex gap-2">
+              <div className="w-14 h-14 md:w-20 md:h-20 border border-white rounded-sm bg-white/5"></div>
+              <div className="w-14 h-14 md:w-20 md:h-20 border border-white rounded-sm bg-white/5"></div>
+            </div>
+            <div className="flex gap-2">
+              <div className="w-14 h-14 md:w-20 md:h-20 border border-white rounded-sm bg-white/10"></div>
+              <div className="w-14 h-14 md:w-20 md:h-20 border border-white rounded-sm bg-white/5"></div>
+            </div>
+            <div className="flex gap-2 justify-start">
+              <div className="w-14 h-14 md:w-20 md:h-20 border border-white rounded-sm bg-white/5"></div>
+            </div>
+          </div>
+        </div>
+
         <div className="max-w-[1200px] mx-auto w-full relative z-20 flex flex-col items-center text-center">
           
-          <div className="relative mb-16">
+          <div className="relative mb-8 max-w-5xl">
             <h1 className="sr-only">Web Design for Small Businesses</h1>
-            <h2 className="text-5xl md:text-6xl lg:text-[90px] font-medium text-white leading-[1.0] tracking-tight mb-4 break-words px-4">
-              Your business deserves a website <br /><span className="gradient-text italic">that actually works.</span>
+            <h2 className="flex flex-col items-center gap-2 md:gap-4 mb-4 px-4">
+              <span className="font-mono text-brand-main text-3xl sm:text-5xl md:text-6xl lg:text-[76px] font-bold tracking-[0.05em] uppercase leading-none">
+                Websites Designed
+              </span>
+              <span className="font-display text-white text-3xl sm:text-5xl md:text-6xl lg:text-[80px] font-bold leading-none tracking-tight">
+                To Attract More Clients
+              </span>
             </h2>
-            
-            {/* Floating Badges */}
-            <div className="absolute -top-36 left-4 md:-top-28 md:left-2 lg:-left-12 xl:-left-24 hidden md:block">
-              <Badge variant="lime" rotation={-12} className="text-[12px] lg:text-[14px] px-4 lg:px-6 py-1.5 lg:py-2">Web Design</Badge>
-            </div>
-            <div className="absolute -top-16 right-4 md:-top-20 md:right-2 lg:-right-12 xl:-right-24 hidden md:block">
-              <Badge variant="pink" rotation={8} className="text-[12px] lg:text-[14px] px-4 lg:px-6 py-1.5 lg:py-2">Custom Design</Badge>
-            </div>
-            <div className="absolute -bottom-24 right-4 md:-bottom-20 md:right-1/4 hidden md:block">
-              <Badge variant="sage" rotation={-5} className="text-[12px] lg:text-[14px] px-4 lg:px-6 py-1.5 lg:py-2">Clean Code</Badge>
-            </div>
           </div>
           
           <motion.p 
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3, delay: 0.1 }}
-            className="text-[18px] md:text-[22px] text-text-body/75 max-w-2xl mb-12 leading-relaxed"
+            className="text-[16px] md:text-[20px] text-text-body/80 max-w-2xl mb-12 leading-relaxed px-4"
           >
             We&apos;re Truvox, a small web design studio. We build clean, professional websites that help businesses look credible and attract more clients.
           </motion.p>
@@ -202,15 +243,15 @@ export default function Home() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3, delay: 0.2 }}
-            className="flex flex-col sm:flex-row gap-4 items-center mb-6"
+            className="flex flex-col sm:flex-row gap-4 items-center mb-6 z-30"
           >
             <Link href="/contact">
-              <Button className="bg-brand-main text-bg-primary hover:bg-brand-hover h-[56px] px-10 rounded-full text-[16px] font-bold shadow-[0_0_30px_rgba(0,255,133,0.15)] transition-all">
+              <Button className="btn-primary h-[54px] px-10 rounded-full text-[12px] font-bold uppercase tracking-widest shadow-[0_0_30px_rgba(206,254,85,0.2)]">
                 Book a Free Call
               </Button>
             </Link>
             <Link href="#projects">
-              <Button variant="secondary" className="border-white/10 text-white hover:text-black h-[56px] px-10 rounded-full text-[16px] font-bold transition-all">
+              <Button className="btn-secondary h-[54px] px-10 rounded-full text-[12px] font-bold uppercase tracking-widest">
                 See Our Work
               </Button>
             </Link>
@@ -221,31 +262,50 @@ export default function Home() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.3, delay: 0.3 }}
-            className="text-[13px] text-text-muted font-medium uppercase tracking-[0.15em] mb-12"
+            className="text-[12px] text-text-muted font-bold uppercase tracking-[0.2em] mb-12"
           >
             2 businesses served · Remote Studio · Available now
           </motion.p>
+        </div>
 
-          <motion.div 
-            initial={{ opacity: 0, y: 30, scale: 0.98 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ duration: 1.2, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            className="relative w-full max-w-[1100px] aspect-[16/8] rounded-[40px] overflow-hidden mt-0 mb-20 shadow-2xl border border-border-subtle"
-          >
-             <Image 
-                src="/assets/bg/hero-team.jpg" 
-                alt="Truvox Team" 
-                fill 
-                className="object-cover opacity-60 grayscale hover:grayscale-0 transition-all duration-700"
-                priority
-             />
-             <div className="absolute inset-0 bg-gradient-to-t from-bg-dark via-transparent to-transparent"></div>
-          </motion.div>
+        {/* Scroll Down Button */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20">
+          <Link href="#about" className="flex items-center justify-center w-12 h-12 rounded-full border border-white/15 bg-black/20 backdrop-blur-sm text-white/60 hover:text-brand-main hover:border-brand-main hover:bg-black/40 transition-all duration-300">
+            <span className="text-xl font-light">↓</span>
+          </Link>
         </div>
 
         {/* Decorative Elements */}
         <div className="absolute top-1/4 left-1/4 w-[400px] h-[400px] bg-brand-main/5 blur-[150px] rounded-full pointer-events-none"></div>
         <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-brand-main/10 blur-[150px] rounded-full pointer-events-none"></div>
+      </section>
+
+      {/* MARQUEE TICKER */}
+      <section className="overflow-hidden bg-black border-y border-white/5 py-10 md:py-14 select-none">
+        <div className="animate-marquee">
+          {/* First set of words */}
+          <div className="flex items-center gap-16 md:gap-24 text-[24px] sm:text-[36px] md:text-[54px] font-mono text-brand-main tracking-[0.2em] font-bold pr-16 md:pr-24">
+            <span>DESIGN</span>
+            <span className="text-white/20">/</span>
+            <span>DEVELOPMENT</span>
+            <span className="text-white/20">/</span>
+            <span>STRATEGY</span>
+            <span className="text-white/20">/</span>
+            <span>GROWTH</span>
+            <span className="text-white/20">/</span>
+          </div>
+          {/* Second set of words (for seamless scrolling) */}
+          <div className="flex items-center gap-16 md:gap-24 text-[24px] sm:text-[36px] md:text-[54px] font-mono text-brand-main tracking-[0.2em] font-bold pr-16 md:pr-24" aria-hidden="true">
+            <span>DESIGN</span>
+            <span className="text-white/20">/</span>
+            <span>DEVELOPMENT</span>
+            <span className="text-white/20">/</span>
+            <span>STRATEGY</span>
+            <span className="text-white/20">/</span>
+            <span>GROWTH</span>
+            <span className="text-white/20">/</span>
+          </div>
+        </div>
       </section>
 
       {/* ABOUT SECTION */}
@@ -264,7 +324,7 @@ export default function Home() {
       <PricingSection />
 
       {/* FAQ SECTION */}
-      <section className="py-24 md:py-40 px-6 bg-bg-sectionAlt relative overflow-hidden">
+      <section className="py-24 md:py-40 px-6 bg-black border-t border-white/5 relative overflow-hidden">
         {/* Subtle Background Glow */}
         <div className="absolute -top-24 -right-24 w-96 h-96 bg-brand-main/5 blur-[120px] rounded-full"></div>
         
@@ -275,10 +335,14 @@ export default function Home() {
             <div className="lg:col-span-6 space-y-12">
               <Reveal>
                 <div className="space-y-6">
-                  <Badge variant="pink" rotation={2}>FAQ</Badge>
-                  <h2 className="text-[32px] md:text-[48px] lg:text-[56px] font-medium text-text-heading leading-[1.1] tracking-tight">
-                    Questions <br />
-                    <span className="gradient-text italic">we get a lot.</span>
+                  <Badge variant="lime" rotation={2}>FAQ</Badge>
+                  <h2 className="text-[32px] sm:text-[40px] md:text-[56px] font-bold text-white tracking-tight leading-[1.15] break-words">
+                    <span className="font-mono text-brand-main text-[14px] uppercase tracking-[0.2em] block mb-4 font-bold">
+                      Common
+                    </span>
+                    <span className="font-display">
+                      Questions
+                    </span>
                   </h2>
                   <p className="text-text-muted text-[18px] max-w-md">
                     We believe in transparency. Here are answers to the questions we get most often.
@@ -298,7 +362,7 @@ export default function Home() {
             {/* Image Side */}
             <div className="lg:col-span-6">
               <Reveal delay={0.4}>
-                <div className="relative aspect-[4/5] lg:aspect-square w-full rounded-[40px] overflow-hidden shadow-2xl border border-white/5 group">
+                <div className="relative aspect-[4/5] lg:aspect-square w-full rounded-[12px] overflow-hidden shadow-2xl border border-white/5 group">
                   <Image 
                     src="/assets/bg/faq-minimal-3d.png" 
                     alt="Truvox FAQ Info" 
@@ -317,11 +381,16 @@ export default function Home() {
       </section>
 
       {/* FOOTER CTA SECTION */}
-      <section className="py-32 md:py-48 px-6 bg-bg-dark relative overflow-hidden">
+      <section className="py-32 md:py-48 px-6 bg-black border-t border-white/5 relative overflow-hidden">
         <div className="max-w-[1200px] mx-auto text-center space-y-12 relative z-10">
           <Reveal>
-            <h2 className="text-[32px] md:text-[48px] lg:text-[70px] text-balance tracking-tight mb-6 break-words px-4 text-white">
-              Ready to get a website <br /><span className="gradient-text italic pr-[0.1em]">that works for your business?</span>
+            <h2 className="text-[32px] sm:text-[40px] md:text-[56px] lg:text-[72px] font-bold text-white tracking-tight leading-[1.15] break-words text-center px-4">
+              <span className="font-mono text-brand-main text-[14px] sm:text-[16px] uppercase tracking-[0.2em] block mb-4 font-bold">
+                Ready to Build
+              </span>
+              <span className="font-display block">
+                A Website That Works?
+              </span>
             </h2>
             <p className="text-text-muted text-[18px] md:text-[22px] max-w-2xl mx-auto leading-relaxed mt-6">
               Let&apos;s start with a free 30-minute call. No pitch, no commitment, just an honest conversation about what your business needs.
@@ -331,8 +400,9 @@ export default function Home() {
           <Reveal delay={0.2}>
             <div className="flex justify-center mt-12">
               <Link href="/contact">
-                <Button className="bg-brand-main text-bg-primary px-12 h-[64px] rounded-full text-[18px] font-bold hover:bg-brand-hover transition-all shadow-[0_0_40px_rgba(0,255,133,0.15)]">
-                  Book My Free Call <ArrowRight className="ml-2" size={24} />
+                <Button className="btn-primary h-[56px] px-10 rounded-full text-[12px] font-bold uppercase tracking-widest shadow-[0_0_30px_rgba(206,254,85,0.2)]">
+                  <span>Book My Free Call</span>
+                  <ArrowRight className="ml-2" size={16} />
                 </Button>
               </Link>
             </div>

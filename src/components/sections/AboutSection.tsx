@@ -16,30 +16,35 @@ export function AboutSection() {
             <Reveal>
               <div className="space-y-8">
                 <Badge variant="lime" rotation={-2}>About Us</Badge>
-                <h2 className="text-[36px] sm:text-[45px] md:text-[65px] font-medium text-text-heading leading-[1.1] tracking-tight break-words">
-                  Two people who care <span className="gradient-text italic">about your business.</span>
+                <h2 className="text-[32px] sm:text-[40px] md:text-[56px] font-bold text-white tracking-tight leading-[1.15] break-words">
+                  <span className="font-mono text-brand-main text-[14px] uppercase tracking-[0.2em] block mb-4 font-bold">
+                    Two People
+                  </span>
+                  <span className="font-display">
+                    Who Care About Your Business.
+                  </span>
                 </h2>
-                <p className="text-[18px] md:text-[22px] text-text-body/80 leading-relaxed max-w-2xl">
+                <p className="text-[16px] md:text-[18px] text-text-body/80 leading-relaxed max-w-2xl">
                   Truvox is Aïda and Shalom, a strategy and development duo. We started this studio because most small businesses either don&apos;t have a website, or have one that doesn&apos;t reflect how good they actually are. We fix that. We keep things simple, we communicate clearly, and we don&apos;t disappear after launch.
                 </p>
               </div>
             </Reveal>
 
             <Reveal delay={0.2}>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-                <div className="space-y-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 pt-4">
+                <div className="space-y-4 border-l border-white/10 pl-6">
                   <div className="flex items-center gap-3 text-brand-main">
                     <Plus size={18} />
-                    <span className="text-[14px] font-bold uppercase tracking-widest">We keep it simple</span>
+                    <span className="font-mono text-[13px] font-bold uppercase tracking-widest text-white">We keep it simple</span>
                   </div>
                   <p className="text-text-muted text-[15px] leading-relaxed">
                     No unnecessary complexity. You&apos;ll always know where your project stands.
                   </p>
                 </div>
-                <div className="space-y-4">
+                <div className="space-y-4 border-l border-white/10 pl-6">
                   <div className="flex items-center gap-3 text-brand-main">
                     <Plus size={18} />
-                    <span className="text-[14px] font-bold uppercase tracking-widest">We&apos;re local</span>
+                    <span className="font-mono text-[13px] font-bold uppercase tracking-widest text-white">We&apos;re local</span>
                   </div>
                   <p className="text-text-muted text-[15px] leading-relaxed">
                     Global reach. We understand local businesses and what their clients need.
@@ -52,9 +57,9 @@ export function AboutSection() {
           {/* Image Side */}
           <div className="lg:col-span-5">
             <Reveal delay={0.4}>
-              <div className="relative aspect-[4/5] w-full rounded-[40px] overflow-hidden shadow-2xl border border-white/5 group">
+              <div className="relative aspect-[4/5] w-full rounded-[12px] overflow-hidden shadow-2xl border border-white/5 group">
                 <Image 
-                  src="/assets/bg/hero-team.jpg" 
+                  src="/assets/about.jpg" 
                   alt="Truvox Studio" 
                   fill 
                   className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700"

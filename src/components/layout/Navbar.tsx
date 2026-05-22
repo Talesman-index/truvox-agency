@@ -20,18 +20,17 @@ export const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: 'About', href: '/about' },
-    { name: 'Services', href: '/services' },
-    { name: 'Projects', href: '/projects' },
-    { name: 'Blog', href: '/blog' },
-    { name: 'Methodology', href: '/#methodology' },
+    { name: 'About', href: '/#about' },
+    { name: 'Services', href: '/#services' },
+    { name: 'Case Study', href: '/#projects' },
+    { name: 'Process', href: '/#methodology' },
     { name: 'Pricing', href: '/#pricing' },
   ];
 
   return (
     <nav 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-6 md:px-12 py-6 ${
-        scrolled ? 'bg-bg-primary/90 backdrop-blur-xl border-b border-white/5 py-4' : 'bg-transparent'
+        scrolled ? 'bg-black/85 backdrop-blur-xl border-b border-white/5 py-4' : 'bg-transparent'
       }`}
     >
       <div className="max-w-[1200px] mx-auto flex items-center justify-between">
@@ -45,14 +44,14 @@ export const Navbar = () => {
             <Link 
               key={link.name} 
               href={link.href}
-              className="text-[12px] font-bold uppercase tracking-[0.2em] text-white/50 hover:text-brand-main transition-colors duration-200"
+              className="text-[12px] font-bold uppercase tracking-[0.2em] text-white/60 hover:text-brand-hover active:text-brand-main transition-colors duration-200"
             >
               {link.name}
             </Link>
           ))}
           <Link href="/contact">
-            <Button variant="primary" className="bg-brand-main text-bg-primary px-6 xl:px-10 h-[50px] rounded-full text-[12px] font-bold uppercase tracking-widest hover:bg-brand-hover transition-all shadow-[0_0_20px_rgba(0,255,133,0.3)]">
-              Talk to us
+            <Button className="btn-primary h-[46px] px-8 rounded-full text-[12px] font-normal uppercase tracking-wider transition-all">
+              Request a quote ↗
             </Button>
           </Link>
         </div>
@@ -73,7 +72,7 @@ export const Navbar = () => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="absolute top-full left-0 w-full bg-bg-card border-t border-white/5 p-6 lg:hidden flex flex-col gap-6 shadow-2xl"
+            className="absolute top-full left-0 w-full bg-black/95 backdrop-blur-2xl border-t border-white/5 p-6 lg:hidden flex flex-col gap-6 shadow-2xl"
           >
             {navLinks.map((link) => (
               <Link 
@@ -86,8 +85,8 @@ export const Navbar = () => {
               </Link>
             ))}
             <Link href="/contact" onClick={() => setIsOpen(false)}>
-              <Button variant="primary" className="bg-brand-main text-bg-primary w-full h-[50px] rounded-full text-[12px] font-bold uppercase tracking-widest">
-                Talk to us
+              <Button className="btn-primary w-full h-[50px] rounded-full text-[12px] font-normal uppercase tracking-widest">
+                Request a quote ↗
               </Button>
             </Link>
           </motion.div>

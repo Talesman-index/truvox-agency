@@ -40,62 +40,84 @@ const steps = [
 
 export function MethodologySection() {
   return (
-    <section id="methodology" className="py-24 md:py-32 px-6 bg-bg-primary overflow-hidden">
+    <section id="methodology" className="py-24 md:py-40 px-6 bg-bg-primary overflow-hidden border-t border-white/5">
       <div className="max-w-[1200px] mx-auto">
-        <Reveal>
-          <div className="flex flex-col lg:flex-row justify-between items-end mb-20 lg:mb-32 gap-8">
-            <div className="max-w-2xl">
-              <Badge variant="lime" rotation={-2} className="mb-8">How It Works</Badge>
-              <h2 className="text-[45px] md:text-[55px] font-medium text-text-heading leading-[1.1] tracking-tight">
-                A simple process. <span className="inline-block gradient-text italic pr-[0.4em]">No surprises.</span>
-              </h2>
-              <p className="mt-6 text-text-muted text-[18px] leading-relaxed max-w-xl">
-                We know that working with a web designer can feel complicated. We&apos;ve made ours as clear as possible.
-              </p>
-            </div>
-            <div className="w-12 h-12 rounded-full border border-brand-main/20 flex items-center justify-center text-brand-main shrink-0 hidden lg:flex">
-               <Plus size={20} />
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-start">
+          
+          {/* Left Column: Sticky Heading */}
+          <div className="lg:col-span-5 lg:sticky lg:top-32 space-y-8">
+            <Reveal>
+              <div className="space-y-6">
+                <Badge variant="lime" rotation={-2}>How It Works</Badge>
+                <h2 className="text-[32px] sm:text-[40px] md:text-[56px] font-bold text-white tracking-tight leading-[1.15] break-words">
+                  <span className="font-mono text-brand-main text-[14px] uppercase tracking-[0.2em] block mb-4 font-bold">
+                    A Simple
+                  </span>
+                  <span className="font-display">
+                    And Clear Process
+                  </span>
+                </h2>
+                <p className="text-text-muted text-[16px] md:text-[18px] leading-relaxed max-w-md">
+                  We know that working with a web designer can feel complicated. We&apos;ve made ours as clear as possible.
+                </p>
+              </div>
+            </Reveal>
+
+            {/* Graphic Icon */}
+            <div className="hidden lg:flex w-12 h-12 rounded-full border border-brand-main/20 items-center justify-center text-brand-main shadow-[0_0_15px_rgba(206,254,85,0.05)]">
+               <Plus size={20} className="animate-pulse" />
             </div>
           </div>
-        </Reveal>
 
-        {/* 5-Column Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
-          {steps.map((step, i) => (
-            <RevealItem key={i} delay={i * 0.1}>
-              <div className="group relative p-8 bg-bg-card rounded-[32px] h-full flex flex-col justify-between border border-border-subtle hover:border-brand-main hover:shadow-glow transition-all duration-500">
-                <div className="space-y-6">
-                  <div className="relative">
-                    <div className="w-14 h-14 rounded-2xl bg-brand-main/10 flex items-center justify-center text-brand-main shadow-sm group-hover:scale-110 transition-transform duration-500 border border-brand-main/20">
+          {/* Right Column: Vertical Sequence of Cards */}
+          <div className="lg:col-span-7 space-y-6">
+            {steps.map((step, i) => (
+              <RevealItem key={i} delay={i * 0.1}>
+                <div className="group relative p-8 bg-[#0D0D18] rounded-[12px] border border-[#1A1A1A] hover:border-brand-main hover:shadow-[0px_8px_32px_rgba(206,254,85,0.15)] transition-all duration-500 flex flex-col sm:flex-row items-start gap-6">
+                  
+                  {/* Left part: Icon and Mobile Number */}
+                  <div className="flex items-center justify-between w-full sm:w-auto shrink-0 gap-4">
+                    <div className="w-14 h-14 rounded-[12px] bg-brand-main/10 flex items-center justify-center text-brand-main shadow-sm group-hover:scale-110 transition-transform duration-500 border border-brand-main/20">
                       {step.icon}
                     </div>
-                    {/* Floating Number */}
-                    <div className="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-bg-card border border-border-subtle flex items-center justify-center text-[12px] font-bold text-text-muted group-hover:text-brand-main group-hover:border-brand-main transition-colors">
+                    {/* Number displayed on Mobile */}
+                    <div className="sm:hidden text-[28px] font-display font-extrabold text-white/10 group-hover:text-brand-main/25 transition-colors">
                       {step.number}
                     </div>
                   </div>
                   
-                  <div className="space-y-3">
-                    <h3 className="text-[20px] font-bold text-text-heading leading-tight transition-colors group-hover:text-brand-main">
-                      {step.title}
-                    </h3>
-                    <p className="text-[14px] text-text-muted leading-relaxed">
+                  {/* Right part: Title, Description, and Details */}
+                  <div className="flex-grow space-y-3">
+                    <div className="flex items-center justify-between">
+                      <h3 className="font-display text-[22px] font-bold text-white leading-tight transition-colors group-hover:text-brand-main">
+                        {step.title}
+                      </h3>
+                      {/* Number displayed on Desktop */}
+                      <span className="hidden sm:block text-[32px] font-display font-extrabold text-white/10 group-hover:text-brand-main/25 transition-colors">
+                        {step.number}
+                      </span>
+                    </div>
+                    <p className="text-[15px] text-text-muted leading-relaxed">
                       {step.description}
                     </p>
+                    
+                    <div className="pt-2 flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <span className="text-[11px] font-mono font-bold text-brand-main uppercase tracking-widest">
+                        Phase {step.number}
+                      </span>
+                    </div>
                   </div>
+
                 </div>
-                
-                <div className="mt-8 pt-4 border-t border-white/5 opacity-0 group-hover:opacity-100 transition-opacity">
-                   <div className="text-[11px] font-bold text-brand-main uppercase tracking-widest">Phase {step.number}</div>
-                </div>
-              </div>
-            </RevealItem>
-          ))}
+              </RevealItem>
+            ))}
+          </div>
+
         </div>
 
         {/* Timeframe Tagline */}
         <Reveal delay={0.3}>
-          <div className="mt-20 text-center">
+          <div className="mt-24 text-center border-t border-white/5 pt-12">
             <p className="text-text-heading text-[18px] md:text-[20px] font-medium">
               Most projects take <span className="gradient-text italic">2 to 4 weeks</span> from first call to launch.
             </p>

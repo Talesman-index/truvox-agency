@@ -55,9 +55,9 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">
             {/* Aïda Bio */}
             <RevealItem delay={0.1}>
-              <div className="p-10 bg-bg-card rounded-[40px] border border-border-subtle hover:border-brand-main transition-all duration-500 group h-full flex flex-col justify-between">
+              <div className="p-10 bg-bg-card rounded-[12px] border border-border-subtle hover:border-brand-main transition-all duration-500 group h-full flex flex-col justify-between">
                 <div className="space-y-8">
-                  <div className="w-16 h-16 rounded-2xl bg-brand-main/10 flex items-center justify-center text-brand-main border border-brand-main/20 group-hover:scale-110 transition-transform duration-500">
+                  <div className="w-16 h-16 rounded-[12px] bg-brand-main/10 flex items-center justify-center text-brand-main border border-brand-main/20 group-hover:scale-110 transition-transform duration-500">
                     <Compass size={28} />
                   </div>
                   <div className="space-y-2">
@@ -73,9 +73,9 @@ export default function AboutPage() {
 
             {/* Shalom Bio */}
             <RevealItem delay={0.2}>
-              <div className="p-10 bg-bg-card rounded-[40px] border border-border-subtle hover:border-brand-main transition-all duration-500 group h-full flex flex-col justify-between">
+              <div className="p-10 bg-bg-card rounded-[12px] border border-border-subtle hover:border-brand-main transition-all duration-500 group h-full flex flex-col justify-between">
                 <div className="space-y-8">
-                  <div className="w-16 h-16 rounded-2xl bg-brand-main/10 flex items-center justify-center text-brand-main border border-brand-main/20 group-hover:scale-110 transition-transform duration-500">
+                  <div className="w-16 h-16 rounded-[12px] bg-brand-main/10 flex items-center justify-center text-brand-main border border-brand-main/20 group-hover:scale-110 transition-transform duration-500">
                     <Code2 size={28} />
                   </div>
                   <div className="space-y-2">

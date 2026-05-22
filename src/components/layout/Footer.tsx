@@ -10,7 +10,7 @@ export const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-bg-dark pt-24 pb-12 px-6 md:px-12 text-text-body relative overflow-hidden border-t border-white/5">
+    <footer className="bg-black pt-24 pb-12 px-6 md:px-12 text-text-body relative overflow-hidden border-t border-white/5">
       <div className="max-w-[1200px] mx-auto">
         <div className="grid lg:grid-cols-12 gap-16 lg:gap-24 mb-32">
           
@@ -19,7 +19,7 @@ export const Footer = () => {
             <Link href="/">
               <Image src="/assets/logo.svg" alt="Truvox Logo" width={178} height={48} className="hover:opacity-80 transition-opacity" />
             </Link>
-            <h2 className="footer-headline text-text-heading max-w-2xl break-words">
+            <h2 className="footer-headline text-text-heading max-w-2xl">
               Let&apos;s Build Something <em className="gradient-text pr-[0.1em]">Remarkable</em> Together.
             </h2>
             <div className="flex gap-4">

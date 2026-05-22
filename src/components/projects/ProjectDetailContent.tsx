@@ -105,7 +105,7 @@ export function ProjectDetailContent({ project }: ProjectDetailContentProps) {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
             viewport={{ once: true }}
-            className="relative aspect-[4/3] sm:aspect-[16/9] lg:aspect-[21/9] rounded-[24px] sm:rounded-[40px] md:rounded-[60px] overflow-hidden group shadow-2xl border border-white/5"
+            className="relative aspect-[4/3] sm:aspect-[16/9] lg:aspect-[21/9] rounded-[12px] overflow-hidden group shadow-2xl border border-white/5"
           >
             <Image
               src={project.image}
@@ -164,7 +164,7 @@ export function ProjectDetailContent({ project }: ProjectDetailContentProps) {
                   </p>
                   
                   {/* Design Style Feature */}
-                  <div className="mt-12 md:mt-16 p-8 md:p-14 bg-white/[0.02] border border-white/5 rounded-[32px] md:rounded-[40px] relative overflow-hidden group">
+                  <div className="mt-12 md:mt-16 p-8 md:p-14 bg-white/[0.02] border border-white/5 rounded-[12px] relative overflow-hidden group">
                     <div className="absolute top-0 right-0 w-32 h-32 bg-brand-main/10 blur-[80px] rounded-full" />
                     <p className="text-[10px] md:text-[11px] font-bold uppercase tracking-[0.4em] text-brand-main mb-4 md:mb-6">Visual Language</p>
                     <p className="text-[16px] md:text-[22px] font-medium italic text-text-heading leading-relaxed relative z-10">
@@ -176,7 +176,7 @@ export function ProjectDetailContent({ project }: ProjectDetailContentProps) {
 
               {/* Impact */}
               <RevealItem>
-                <div className="relative space-y-8 md:space-y-10 p-8 sm:p-12 md:p-20 bg-bg-card border border-white/5 rounded-[40px] md:rounded-[60px] overflow-hidden group">
+                <div className="relative space-y-8 md:space-y-10 p-8 sm:p-12 md:p-20 bg-bg-card border border-white/5 rounded-[12px] overflow-hidden group">
                   <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-main/5 blur-[120px] rounded-full pointer-events-none transition-opacity duration-700 group-hover:opacity-100 opacity-60" />
                   <div className="relative z-10">
                     <div className="flex items-center gap-4 text-brand-main mb-8 md:mb-10">
@@ -216,7 +216,7 @@ export function ProjectDetailContent({ project }: ProjectDetailContentProps) {
                 <h5 className="text-[10px] md:text-[11px] font-bold uppercase tracking-[0.4em] text-brand-main border-b border-white/10 pb-4">Core Deliverables</h5>
                 <div className="space-y-3 md:space-y-4">
                   {project.details.services.map((service: string, i: number) => (
-                    <div key={i} className="flex items-start gap-3 md:gap-4 p-4 md:p-5 bg-white/5 rounded-xl md:rounded-2xl border border-white/10">
+                    <div key={i} className="flex items-start gap-3 md:gap-4 p-4 md:p-5 bg-white/5 rounded-[12px] border border-white/10">
                       <CheckCircle2 className="w-4 h-4 md:w-[18px] md:h-[18px] text-brand-main shrink-0 mt-0.5 md:mt-1" />
                       <span className="text-[13px] md:text-[15px] font-medium text-text-body">{service}</span>
                     </div>
@@ -225,10 +225,10 @@ export function ProjectDetailContent({ project }: ProjectDetailContentProps) {
               </div>
 
               {/* CTA Card */}
-              <div className="p-8 rounded-[32px] md:rounded-[40px] bg-gradient-to-br from-white/10 to-transparent border border-white/10 space-y-6">
+              <div className="p-8 rounded-[12px] bg-gradient-to-br from-white/10 to-transparent border border-white/10 space-y-6">
                 <h6 className="text-[18px] md:text-[20px] font-medium text-text-heading">Have a similar project?</h6>
                 <p className="text-[13px] md:text-[14px] text-text-muted leading-relaxed">Let&apos;s discuss how we can build your brand moat and digital authority.</p>
-                <Link href="/contact" className="flex items-center justify-between w-full p-4 md:p-5 bg-white text-bg-primary rounded-xl md:rounded-2xl font-bold uppercase tracking-widest text-[10px] md:text-[11px] hover:bg-brand-main transition-colors group">
+                <Link href="/contact" className="flex items-center justify-between w-full p-4 md:p-5 bg-white text-bg-primary rounded-[24px] font-bold uppercase tracking-widest text-[10px] md:text-[11px] hover:bg-brand-main transition-colors group">
                   Get in Touch
                   <ChevronRight className="w-4 h-4 md:w-[18px] md:h-[18px]" />
                 </Link>

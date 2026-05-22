@@ -71,7 +71,7 @@ export default function ServicesPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {services.map((service, i) => (
               <RevealItem key={i} delay={i * 0.1}>
-                <div className="p-10 md:p-12 bg-bg-card rounded-[40px] border border-border-subtle group hover:border-brand-main transition-all duration-500 flex flex-col h-full">
+                <div className="p-10 md:p-12 bg-bg-card rounded-[12px] border border-border-subtle group hover:border-brand-main transition-all duration-500 flex flex-col h-full">
                   <div className="w-20 h-20 rounded-3xl bg-brand-main/10 flex items-center justify-center text-brand-main mb-10 border border-brand-main/20 group-hover:scale-110 transition-transform duration-500">
                     {service.icon}
                   </div>

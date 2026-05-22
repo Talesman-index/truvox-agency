@@ -43,13 +43,13 @@ export default function BlogPage() {
             
             {/* Search Box */}
             <Reveal delay={0.2}>
-              <div className="p-8 bg-bg-card rounded-[32px] border border-white/5 space-y-6">
+              <div className="p-8 bg-bg-card rounded-[12px] border border-white/5 space-y-6">
                 <h3 className="text-[18px] font-bold uppercase tracking-widest text-text-heading">Search</h3>
                 <div className="relative">
                   <input 
                     type="text" 
                     placeholder="Search articles..." 
-                    className="w-full bg-bg-dark border border-border-subtle rounded-2xl px-6 py-4 text-text-heading placeholder:text-text-muted/30 focus:border-brand-main focus:outline-none transition-all"
+                    className="w-full bg-bg-dark border border-border-subtle rounded-[8px] px-6 py-4 text-text-heading placeholder:text-text-muted/30 focus:border-brand-main focus:outline-none transition-all"
                   />
                   <Search size={20} className="absolute right-6 top-1/2 -translate-y-1/2 text-text-muted" />
                 </div>
@@ -58,7 +58,7 @@ export default function BlogPage() {
 
             {/* Categories */}
             <Reveal delay={0.3}>
-              <div className="p-8 bg-bg-card rounded-[32px] border border-white/5 space-y-6">
+              <div className="p-8 bg-bg-card rounded-[12px] border border-white/5 space-y-6">
                 <h3 className="text-[18px] font-bold uppercase tracking-widest text-text-heading">Categories</h3>
                 <div className="flex flex-wrap gap-3">
                   {blogCategories.map((cat) => (
@@ -75,7 +75,7 @@ export default function BlogPage() {
 
             {/* CTA Box */}
             <Reveal delay={0.4}>
-              <div className="p-8 bg-bg-card rounded-[32px] border border-brand-main/20 bg-gradient-to-br from-brand-main/5 to-transparent space-y-8 relative overflow-hidden group">
+              <div className="p-8 bg-bg-card rounded-[12px] border border-brand-main/20 bg-gradient-to-br from-brand-main/5 to-transparent space-y-8 relative overflow-hidden group">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-brand-main/10 blur-[60px] rounded-full" />
                 
                 <div className="space-y-4 relative z-10">
@@ -96,7 +96,7 @@ export default function BlogPage() {
 
             {/* Newsletter */}
             <Reveal delay={0.5}>
-              <div className="p-8 bg-bg-card rounded-[32px] border border-white/5 space-y-6">
+              <div className="p-8 bg-bg-card rounded-[12px] border border-white/5 space-y-6">
                 <div className="flex items-center gap-3 text-brand-main">
                   <Mail size={20} />
                   <h3 className="text-[18px] font-bold uppercase tracking-widest">Insights Inbox</h3>
@@ -108,7 +108,7 @@ export default function BlogPage() {
                   <input 
                     type="email" 
                     placeholder="your@email.com" 
-                    className="w-full bg-bg-dark border border-border-subtle rounded-2xl px-6 py-4 text-text-heading focus:border-brand-main focus:outline-none"
+                    className="w-full bg-bg-dark border border-border-subtle rounded-[8px] px-6 py-4 text-text-heading focus:border-brand-main focus:outline-none"
                   />
                   <Button variant="secondary" className="w-full h-[54px] rounded-full border-white/10 text-white font-bold">
                     Subscribe

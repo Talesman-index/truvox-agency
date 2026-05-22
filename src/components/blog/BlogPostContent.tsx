@@ -94,7 +94,7 @@ export function BlogPostContent({ post, relatedPosts }: BlogPostContentProps) {
         </div>
 
         <Reveal delay={0.2}>
-          <div className="max-w-[1400px] mx-auto mt-20 relative aspect-[21/9] w-full rounded-[40px] overflow-hidden border border-white/5 shadow-2xl">
+          <div className="max-w-[1400px] mx-auto mt-20 relative aspect-[21/9] w-full rounded-[12px] overflow-hidden border border-white/5 shadow-2xl">
             <Image 
               src={post.coverImage} 
               alt={post.title} 
@@ -142,7 +142,7 @@ export function BlogPostContent({ post, relatedPosts }: BlogPostContentProps) {
                 </p>
                 
                 {/* IN-ARTICLE CTA */}
-                <div className="my-16 p-10 bg-bg-card rounded-[40px] border border-brand-main/20 relative overflow-hidden group">
+                <div className="my-16 p-10 bg-bg-card rounded-[12px] border border-brand-main/20 relative overflow-hidden group">
                   <div className="absolute -top-24 -right-24 w-64 h-64 bg-brand-main/5 blur-[100px] rounded-full" />
                   <div className="relative z-10 space-y-6">
                     <h3 className="text-[28px] font-bold text-text-heading m-0">Want a website like this for your business?</h3>

@@ -12,7 +12,7 @@ export const BlogCard = ({ post, index }: { post: BlogPost; index: number }) => 
     <RevealItem delay={index * 0.1}>
       <Link 
         href={`/blog/${post.slug}`} 
-        className="group block h-full bg-bg-card rounded-[32px] border border-white/5 hover:border-brand-main/30 transition-all duration-500 overflow-hidden"
+        className="group block h-full bg-bg-card rounded-[12px] border border-white/5 hover:border-brand-main/30 transition-all duration-500 overflow-hidden"
       >
         {/* Image Container */}
         <div className="relative aspect-[16/10] w-full overflow-hidden">

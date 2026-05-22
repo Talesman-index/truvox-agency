@@ -1,20 +1,25 @@
 import type { Metadata } from "next";
-import { Syne, Instrument_Sans } from "next/font/google";
+import { BioRhyme, DM_Sans, Space_Mono } from "next/font/google";
 import Script from 'next/script';
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 
-const syne = Syne({
+const bioRhyme = BioRhyme({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
-  variable: "--font-display",
+  variable: "--font-display"
 });
 
-const instrument = Instrument_Sans({
+const dmSans = DM_Sans({
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
+  weight: ["400", "500", "700"],
   variable: "--font-body",
+});
+
+const spaceMono = Space_Mono({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-mono",
 });
 
 export const metadata: Metadata = {
@@ -49,8 +54,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${syne.variable} ${instrument.variable}`}>
-      <body className={`${instrument.className} antialiased min-h-screen flex flex-col overflow-x-hidden`}>
+    <html lang="en" className={`${bioRhyme.variable} ${dmSans.variable} ${spaceMono.variable}`}>
+      <body className={`${dmSans.className} antialiased min-h-screen flex flex-col overflow-x-hidden`}>
         <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-PC3HNC9G"

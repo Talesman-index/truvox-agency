@@ -76,7 +76,7 @@ export default function ContactPage() {
              ].map((item, i) => (
                <Reveal key={i} delay={0.4 + (i * 0.1)}>
                  <div className="flex items-center gap-6 group">
-                    <div className="w-14 h-14 bg-bg-card rounded-2xl flex items-center justify-center text-brand-main border border-border-subtle group-hover:border-brand-main group-hover:shadow-glow transition-all duration-500">
+                    <div className="w-14 h-14 bg-bg-card rounded-[12px] flex items-center justify-center text-brand-main border border-border-subtle group-hover:border-brand-main group-hover:shadow-glow transition-all duration-500">
                        {item.icon}
                     </div>
                     <div className="space-y-1">
@@ -91,7 +91,7 @@ export default function ContactPage() {
 
         {/* Right Column - Form */}
         <Reveal delay={0.4}>
-          <div className="bg-bg-card p-8 md:p-12 rounded-[40px] border border-border-subtle relative overflow-hidden group min-h-[600px] flex flex-col justify-center">
+          <div className="bg-bg-card p-8 md:p-12 rounded-[12px] border border-border-subtle relative overflow-hidden group min-h-[600px] flex flex-col justify-center">
             {/* Decorative background glow */}
             <div className="absolute -top-24 -right-24 w-64 h-64 bg-brand-main/5 blur-[100px] rounded-full pointer-events-none group-hover:bg-brand-main/10 transition-colors"></div>
             
@@ -115,7 +115,7 @@ export default function ContactPage() {
                             value={formData.name}
                             onChange={handleChange}
                             placeholder="John Doe" 
-                            className="w-full bg-bg-dark border border-border-subtle rounded-2xl px-6 h-[60px] text-text-heading placeholder:text-text-muted/30 focus:border-brand-main focus:outline-none transition-all"
+                            className="w-full bg-bg-dark border border-border-subtle rounded-[8px] px-6 h-[60px] text-text-heading placeholder:text-text-muted/30 focus:border-brand-main focus:outline-none transition-all"
                          />
                       </div>
                       <div className="space-y-3">
@@ -127,7 +127,7 @@ export default function ContactPage() {
                             value={formData.email}
                             onChange={handleChange}
                             placeholder="john@example.com" 
-                            className="w-full bg-bg-dark border border-border-subtle rounded-2xl px-6 h-[60px] text-text-heading placeholder:text-text-muted/30 focus:border-brand-main focus:outline-none transition-all"
+                            className="w-full bg-bg-dark border border-border-subtle rounded-[8px] px-6 h-[60px] text-text-heading placeholder:text-text-muted/30 focus:border-brand-main focus:outline-none transition-all"
                          />
                       </div>
                    </div>
@@ -141,17 +141,17 @@ export default function ContactPage() {
                          value={formData.businessName}
                          onChange={handleChange}
                          placeholder="Your Company, Restaurant, or Brand" 
-                         className="w-full bg-bg-dark border border-border-subtle rounded-2xl px-6 h-[60px] text-text-heading placeholder:text-text-muted/30 focus:border-brand-main focus:outline-none transition-all"
+                         className="w-full bg-bg-dark border border-border-subtle rounded-[8px] px-6 h-[60px] text-text-heading placeholder:text-text-muted/30 focus:border-brand-main focus:outline-none transition-all"
                       />
                    </div>
                    
                    <div className="space-y-3">
                       <label className="text-[12px] font-bold text-text-muted uppercase tracking-widest ml-1">What do you need?</label>
                       <select 
-                        name="whatDoYouNeed"
-                        value={formData.whatDoYouNeed}
-                        onChange={handleChange}
-                        className="w-full bg-bg-dark border border-border-subtle rounded-2xl px-6 h-[60px] text-text-heading focus:border-brand-main focus:outline-none transition-all appearance-none cursor-pointer"
+                         name="whatDoYouNeed"
+                         value={formData.whatDoYouNeed}
+                         onChange={handleChange}
+                         className="w-full bg-bg-dark border border-border-subtle rounded-[8px] px-6 h-[60px] text-text-heading focus:border-brand-main focus:outline-none transition-all appearance-none cursor-pointer"
                       >
                          <option value="Website Creation">Website Creation</option>
                          <option value="Website Redesign">Website Redesign</option>
@@ -169,7 +169,7 @@ export default function ContactPage() {
                             value={formData.budget}
                             onChange={handleChange}
                             placeholder="e.g. $2,000" 
-                            className="w-full bg-bg-dark border border-border-subtle rounded-2xl px-6 h-[60px] text-text-heading placeholder:text-text-muted/30 focus:border-brand-main focus:outline-none transition-all"
+                            className="w-full bg-bg-dark border border-border-subtle rounded-[8px] px-6 h-[60px] text-text-heading placeholder:text-text-muted/30 focus:border-brand-main focus:outline-none transition-all"
                          />
                       </div>
                       <div className="space-y-3">
@@ -180,7 +180,7 @@ export default function ContactPage() {
                             value={formData.timeline}
                             onChange={handleChange}
                             placeholder="e.g. 1 month" 
-                            className="w-full bg-bg-dark border border-border-subtle rounded-2xl px-6 h-[60px] text-text-heading placeholder:text-text-muted/30 focus:border-brand-main focus:outline-none transition-all"
+                            className="w-full bg-bg-dark border border-border-subtle rounded-[8px] px-6 h-[60px] text-text-heading placeholder:text-text-muted/30 focus:border-brand-main focus:outline-none transition-all"
                          />
                       </div>
                    </div>
@@ -194,7 +194,7 @@ export default function ContactPage() {
                         onChange={handleChange}
                         rows={4} 
                         placeholder="What are your goals? Who are your customers?" 
-                        className="w-full bg-bg-dark border border-border-subtle rounded-2xl px-6 py-6 text-text-heading placeholder:text-text-muted/30 focus:border-brand-main focus:outline-none transition-all resize-none"
+                        className="w-full bg-bg-dark border border-border-subtle rounded-[8px] px-6 py-6 text-text-heading placeholder:text-text-muted/30 focus:border-brand-main focus:outline-none transition-all resize-none"
                       ></textarea>
                    </div>
                    

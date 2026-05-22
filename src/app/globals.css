@@ -1,41 +1,37 @@
-@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Instrument+Sans:wght@400;500;600&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  /* TRUVOX Dark & Neon Green Palette */
-  --brand-main         : #00FF85;
-  --brand-hover        : #00CC6A;
-  --brand-light        : #80FFD0;
+  /* 99Studio Inspired Palette */
+  --brand-main         : #CEFE55; /* Neon Lime */
+  --brand-hover        : #2266FF; /* Secondary Blue / Interactive Hover */
+  --brand-blue         : #0000EE; /* Primary Brand Blue */
+  --brand-light        : #F4F1E6; /* Warm White */
 
-  --bg-primary         : #0A0A0A;
-  --bg-section-alt     : #0F0F0F;
-  --bg-dark            : #000000;
-  --bg-card            : #161616;
-  --bg-card-tint       : rgba(0, 255, 133, 0.06);
+  --bg-primary         : #000000; /* Pure Black */
+  --bg-section-alt     : #0D0D18; /* Near-Black Surface */
+  --bg-dark            : #000000; /* Pure Black */
+  --bg-card            : #0D0D18; /* Near-Black Surface */
+  --bg-card-tint       : rgba(206, 254, 85, 0.06); /* Neon Lime tint */
 
-  --text-heading       : #FFFFFF;
-  --text-body          : #CCCCCC;
-  --text-muted         : #888888;
+  --text-heading       : #F4F1E6; /* Warm White */
+  --text-body          : #D8D8D8; /* Light Gray */
+  --text-muted         : #ADAAAA; /* Mid-Gray */
   --text-white         : #FFFFFF;
 
-  --border-subtle      : #1E1E1E;
-  --border-brand       : #00FF85;
+  --border-subtle      : #1A1A1A; /* Dark Charcoal */
+  --border-brand       : #0000EE; /* Primary Brand Blue */
 
-  --gradient-brand     : linear-gradient(135deg, #00FF85, #80FFD0);
-  --gradient-text      : linear-gradient(135deg, #00FF85, #80FFD0);
-  --gradient-hero      : radial-gradient(ellipse at 65% 40%, rgba(0,255,133,0.12) 0%, transparent 65%);
-  --gradient-separator : linear-gradient(90deg, transparent, #00FF85, transparent);
-
-  --font-display : 'Syne', sans-serif;
-  --font-body    : 'Instrument Sans', system-ui, sans-serif;
+  --gradient-brand     : linear-gradient(135deg, #0000EE, #CEFE55);
+  --gradient-text      : linear-gradient(135deg, #0000EE, #CEFE55);
+  --gradient-hero      : radial-gradient(ellipse at 65% 40%, rgba(206, 254, 85, 0.08) 0%, transparent 65%);
+  --gradient-separator : linear-gradient(90deg, transparent, #0000EE, transparent);
 }
 
-/* Reset letter-spacing — c'est le fix principal */
+/* Reset letter-spacing */
 * {
-  letter-spacing: normal;
+  letter-spacing: 0px;
 }
 
 html, body {
@@ -46,22 +42,27 @@ html, body {
 }
 
 @layer base {
+  /* BioRhyme Expanded variable width axis mapping */
+  h1, h2, h3, h4, blockquote, .stat-number, .step-number, .price-amount, .font-display {
+    font-stretch: 125%;
+  }
+
   body {
     @apply bg-bg-primary text-text-body antialiased;
     font-family    : var(--font-body);
-    font-size      : 17px;
+    font-size      : 16px;
     font-weight    : 400;
-    line-height    : 1.7;
-    letter-spacing : 0;        /* jamais de tracking positif sur le body */
+    line-height    : 1.56;
+    letter-spacing : 0px;
   }
 
   /* H1 — Hero principal */
   h1 {
     font-family    : var(--font-display);
-    font-size      : clamp(40px, 6vw, 76px);
-    font-weight    : 700;
-    line-height    : 1.0;
-    letter-spacing : -0.03em;
+    font-size      : clamp(38px, 5.5vw, 60px);
+    font-weight    : 800;
+    line-height    : 1.2;
+    letter-spacing : 0px;
     color          : var(--text-heading);
   }
 
@@ -70,58 +71,57 @@ html, body {
     font-family    : var(--font-display);
     font-size      : clamp(26px, 4vw, 48px);
     font-weight    : 600;
-    line-height    : 1.05;
-    letter-spacing : -0.025em;
+    line-height    : 1.375;
+    letter-spacing : 0px;
     color          : var(--text-heading);
   }
 
   /* H3 — Titres de cartes / sous-sections */
   h3 {
     font-family    : var(--font-display);
-    font-size      : clamp(18px, 2vw, 24px);
-    font-weight    : 500;
-    line-height    : 1.2;
-    letter-spacing : -0.01em;
+    font-size      : clamp(20px, 2.5vw, 40px);
+    font-weight    : 600;
+    line-height    : 1.35;
+    letter-spacing : 0px;
     color          : var(--text-heading);
   }
 
   /* H4 — Labels de section */
   h4 {
-    font-family    : var(--font-body);
-    font-size      : 11px;
-    font-weight    : 500;
-    line-height    : 1.4;
-    letter-spacing : 0.12em;   /* seul endroit où le tracking positif est ok */
-    text-transform : uppercase;
-    color          : var(--text-muted);
+    font-family    : var(--font-display);
+    font-size      : 34px;
+    font-weight    : 600;
+    line-height    : 1.24;
+    letter-spacing : 0px;
+    color          : var(--text-heading);
   }
 
   /* Body / Paragraphes */
   p {
     font-family    : var(--font-body);
-    font-size      : 17px;
+    font-size      : 16px;
     font-weight    : 400;
-    line-height    : 1.7;
-    letter-spacing : 0;
+    line-height    : 1.56;
+    letter-spacing : 0px;
     color          : var(--text-body);
-    max-width      : 620px;    /* jamais pleine largeur sur le body */
+    max-width      : 620px;
   }
 
   /* Liens de navigation */
   nav a {
-    font-family    : var(--font-display);
-    font-size      : 14px;
-    font-weight    : 500;
-    letter-spacing : 0;        /* pas de tracking sur la nav */
-    color          : var(--text-heading);
+    font-family    : -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size      : 12px;
+    font-weight    : 400;
+    letter-spacing : 0px;
+    color          : var(--border-brand);
   }
 
   /* Boutons */
   button, .btn {
-    font-family    : var(--font-display);
-    font-size      : 14px;
-    font-weight    : 600;
-    letter-spacing : 0.01em;   /* très légèrement espacé — lisibilité uniquement */
+    font-family    : -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size      : 12px;
+    font-weight    : 400;
+    letter-spacing : 0px;
   }
 
   /* Numéros d'étapes / Stats */
@@ -129,66 +129,78 @@ html, body {
   .step-number,
   .price-amount {
     font-family    : var(--font-display);
-    font-weight    : 800;      /* 800 — finesse et élégance Syne */
-    letter-spacing : -0.04em;
+    font-weight    : 800;
+    letter-spacing : 0px;
     line-height    : 0.9;
   }
 
   /* Citations / Testimonials */
   blockquote {
     font-family    : var(--font-display);
-    font-weight    : 500;
+    font-weight    : 600;
     font-size      : clamp(20px, 2.5vw, 28px);
     line-height    : 1.5;
-    letter-spacing : -0.01em;
+    letter-spacing : 0px;
   }
 }
 
 @layer components {
-  /* Buttons as per visual contract */
+  /* Buttons as per 99Studio visual contract */
   .btn-primary {
-    @apply inline-flex items-center justify-center bg-[var(--brand-main)] text-[var(--bg-primary)] px-6 h-[56px] rounded-full transition-all duration-200 text-[14px] font-semibold border-none hover:bg-[var(--brand-hover)];
-    font-family: var(--font-display);
-    letter-spacing: 0.01em;
+    @apply inline-flex items-center justify-center bg-[var(--brand-main)] text-[#000000] px-6 h-[48px] rounded-[24px] transition-all duration-200 text-[12px] font-normal border-none hover:opacity-90 hover:scale-[1.02] active:opacity-85;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    letter-spacing: 0px;
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center bg-transparent text-[var(--brand-main)] px-6 h-[56px] rounded-full border border-[var(--brand-main)] transition-all duration-200 text-[14px] font-semibold hover:bg-[var(--brand-main)] hover:text-[var(--bg-primary)];
-    font-family: var(--font-display);
-    letter-spacing: 0.01em;
+    @apply inline-flex items-center justify-center bg-[#F4F1E6] text-[#000000] px-6 h-[48px] rounded-[24px] border border-[#D8D8D8] transition-all duration-200 text-[12px] font-normal hover:bg-[#F6F5F2] active:bg-[#F0F0F0];
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    letter-spacing: 0px;
   }
 
   .btn-ghost-zailab {
-    @apply inline-flex items-center justify-center bg-transparent text-white px-6 h-[56px] rounded-full border border-white/30 transition-all duration-200 text-[14px] font-semibold hover:border-[var(--brand-main)] hover:text-[var(--brand-main)];
-    font-family: var(--font-display);
-    letter-spacing: 0.01em;
+    @apply inline-flex items-center justify-center bg-transparent text-[var(--border-brand)] px-6 h-[48px] rounded-[24px] border border-[var(--border-brand)] transition-all duration-200 text-[12px] font-normal hover:bg-[rgba(0,0,238,0.08)] active:bg-[rgba(0,0,238,0.12)];
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    letter-spacing: 0px;
   }
 
+  /* Cards as per 99Studio */
   .card-standard {
-    @apply bg-[var(--bg-card)] p-8 md:p-10 rounded-[30px] border border-[var(--border-subtle)] transition-all duration-300 text-[var(--text-body)];
+    @apply bg-[var(--bg-card)] p-10 rounded-[12px] border border-[var(--border-subtle)] transition-all duration-300 text-[var(--text-body)] shadow-[0px_8px_24px_rgba(0,0,0,0.32)];
   }
   .card-standard:hover {
     @apply border-[var(--brand-main)];
-    box-shadow: 0px 8px 32px rgba(0, 255, 133, 0.20);
+    box-shadow: 0px 8px 32px rgba(206, 254, 85, 0.15);
+  }
+
+  /* Light card option */
+  .card-light {
+    @apply bg-[#F4F1E6] text-[#000000] p-10 rounded-[12px] transition-all duration-300 shadow-[0px_4px_12px_rgba(0,0,0,0.08)];
+  }
+  .card-light h1, .card-light h2, .card-light h3, .card-light h4, .card-light h5, .card-light h6 {
+    @apply text-[#000000];
   }
 
   .badge-lime {
-    @apply bg-[var(--bg-card-tint)] text-[var(--brand-main)] px-4 py-2 rounded-[70px] text-[14px] font-bold border border-[#00FF8533];
+    @apply bg-[var(--bg-card-tint)] text-[var(--brand-main)] px-4 py-2 rounded-[70px] text-[12px] font-bold border border-[#CEFE5533];
     letter-spacing: 0.06em;
   }
 
   .badge-pink {
-    @apply bg-[var(--bg-card-tint)] text-[var(--brand-main)] px-4 py-2 rounded-[70px] text-[14px] font-bold border border-[#00FF8533];
+    @apply bg-[var(--bg-card-tint)] text-[var(--brand-main)] px-4 py-2 rounded-[70px] text-[12px] font-bold border border-[#CEFE5533];
     letter-spacing: 0.06em;
   }
 
   .badge-sage {
-    @apply bg-[var(--bg-card-tint)] text-[var(--brand-main)] px-4 py-2 rounded-[70px] text-[14px] font-bold border border-[#00FF8533];
+    @apply bg-[var(--bg-card-tint)] text-[var(--brand-main)] px-4 py-2 rounded-[70px] text-[12px] font-bold border border-[#CEFE5533];
     letter-spacing: 0.06em;
   }
 
   .gradient-text {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-[#00FF85] to-[#80FFD0];
+    @apply text-brand-main bg-none;
+    background-clip: unset;
+    -webkit-background-clip: unset;
+    -webkit-text-fill-color: currentColor;
   }
 
   .gradient-text.italic {
@@ -221,28 +233,30 @@ html, body {
 
   /* Section labels au-dessus des titres */
   .section-label {
-    font-family    : var(--font-body);
-    font-size      : 11px;
-    font-weight    : 500;
-    letter-spacing : 0.12em;
-    text-transform : uppercase;
-    color          : #888888;
+    font-family    : -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size      : 12px;
+    font-weight    : 400;
+    letter-spacing : 0px;
+    text-transform : none;
+    color          : var(--border-brand);
     margin-bottom  : 12px;
   }
 
   /* Footer headline */
   .footer-headline {
     font-family    : var(--font-display);
-    font-weight    : 700;
-    font-size      : clamp(32px, 5vw, 56px);
-    letter-spacing : -0.03em;
-    line-height    : 1.05;
+    font-weight    : 800;
+    font-size      : clamp(20px, 3.5vw, 42px);
+    letter-spacing : 0px;
+    line-height    : 1.2;
+    word-break     : keep-all;
+    overflow-wrap  : break-word;
   }
 
-  /* Italic coloré sur mots accent */
+  /* em inside footer headline */
   .footer-headline em {
-    font-style : normal; /* Syne is non-italic high-impact geometric display */
-    color      : var(--brand-main); /* couleur accent du site */
+    font-style : normal;
+    color      : var(--brand-main);
     font-family : var(--font-display);
   }
 }
@@ -253,12 +267,12 @@ html, body {
     font-size: 89px;
     font-weight: 800;
     line-height: 86px;
-    letter-spacing: -0.04em;
+    letter-spacing: 0px;
     color: var(--brand-main);
   }
 }
 
-/* Custom Scrollbar - Truvox Style */
+/* Custom Scrollbar - 99Studio Style */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -268,7 +282,7 @@ html, body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #222;
+  background: #1A1A1A;
   border-radius: 10px;
   border: 2px solid var(--bg-dark);
 }
@@ -283,6 +297,18 @@ footer a {
   font-family    : var(--font-body);
   font-size      : 14px;
   font-weight    : 400;
-  letter-spacing : 0;
+  letter-spacing : 0px;
   color          : rgba(255,255,255,0.55);
 }
+
+@keyframes marquee {
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-50%, 0, 0); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 30s linear infinite;
+}
+

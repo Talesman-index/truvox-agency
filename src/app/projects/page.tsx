@@ -74,7 +74,7 @@ export default function ProjectsPage() {
                 >
                   <Link href={`/projects/${project.slug}`} className="block space-y-8">
                     {/* Image Container */}
-                    <div className="relative aspect-[16/10] overflow-hidden rounded-[40px] bg-bg-card border border-white/5 transition-all duration-700 group-hover:border-brand-main/30 shadow-2xl">
+                    <div className="relative aspect-[16/10] overflow-hidden rounded-[12px] bg-bg-card border border-white/5 transition-all duration-700 group-hover:border-brand-main/30 shadow-2xl">
                       <Image
                         src={project.image}
                         alt={project.title}
