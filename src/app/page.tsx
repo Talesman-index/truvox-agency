@@ -554,15 +554,12 @@ export default function Home() {
                 
                 <button className="flex items-center gap-3 bg-white text-black font-mono text-[12px] uppercase tracking-[0.15em] h-[52px] px-8 hover:bg-[#33FF0D] hover:shadow-[0_8px_20px_rgba(51,255,13,0.2)] hover:-translate-y-0.5 transition-all duration-300 cursor-pointer border-none font-semibold rounded-none relative z-10 w-full justify-center sm:w-auto">
                   <span>Schedule a call</span>
-                  <div className="relative w-6 h-6 rounded-full overflow-hidden border border-black/10 transition-transform duration-300 group-hover:scale-105">
-                    <Image 
-                      src="/assets/team/shalom.jpg" 
-                      alt="Shalom" 
-                      fill 
-                      className="object-cover" 
-                    />
+                  {/* Green phone circle */}
+                  <div className="w-[18px] h-[18px] rounded-full bg-[#33FF0D] flex items-center justify-center text-black border border-black/10 shadow-[0_0_8px_rgba(51,255,13,0.3)] transition-all duration-300 group-hover:scale-110 group-hover:rotate-[15deg] group-hover:bg-[#2DD90D] shrink-0">
+                    <svg viewBox="0 0 24 24" className="w-[9px] h-[9px] fill-black text-black" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M20 15.5c-1.2 0-2.4-.2-3.6-.6-.3-.1-.7 0-1 .2l-2.2 2.2c-2.8-1.4-5.1-3.8-6.6-6.6l2.2-2.2c.3-.3.4-.7.2-1-.3-1.1-.5-2.3-.5-3.5 0-.6-.4-1-1-1H4c-.6 0-1 .4-1 1 0 9.4 7.6 17 17 17 .6 0 1-.4 1-1v-3.5c0-.6-.4-1-1-1z" fill="currentColor" />
+                    </svg>
                   </div>
-                  <div className="w-1.5 h-1.5 rounded-full bg-[#33FF0D] shadow-[0_0_8px_#33FF0D] transition-transform duration-300 group-hover:scale-110"></div>
                 </button>
               </Link>
             </div>
