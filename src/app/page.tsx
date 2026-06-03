@@ -177,7 +177,7 @@ export default function Home() {
       />
       
       {/* HERO SECTION - NUVARA AGENCY STYLE */}
-      <section className="relative min-h-screen flex flex-col items-center justify-center pt-24 pb-12 px-4 md:px-6 overflow-hidden bg-black">
+      <section className="relative min-h-screen flex flex-col items-center justify-center pt-36 pb-16 sm:pt-28 md:pt-36 px-4 md:px-6 overflow-hidden bg-black">
 
         <motion.div
           className="max-w-[1200px] mx-auto w-full relative z-20 flex flex-col items-center text-center mt-2"
@@ -286,7 +286,7 @@ export default function Home() {
           <motion.div
             animate={{ y: [0, -10, 0] }}
             transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-            className="relative w-24 h-48 sm:w-32 sm:h-64 mt-8 overflow-hidden"
+            className="relative w-24 h-48 sm:w-32 sm:h-64 mt-16 sm:mt-8 overflow-hidden"
           >
             <Image 
               src="/truvox_pixel.svg" 
