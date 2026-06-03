@@ -1,126 +1,121 @@
 'use client';
 
+import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Reveal, RevealItem } from '@/components/ui/Reveal';
-import { Badge } from '@/components/ui/Badge';
+import { Reveal } from '@/components/ui/Reveal';
 import { BlogCard } from '@/components/blog/BlogCard';
 import { blogPosts, blogCategories } from '@/data/blog';
-import { Button } from '@/components/ui/Button';
-import { Search, ArrowRight, BarChart3, Mail } from 'lucide-react';
 import Link from 'next/link';
 
 export default function BlogPage() {
-  return (
-    <main className="min-h-screen bg-bg-primary pt-32 pb-24 md:pt-48 md:pb-32 overflow-hidden">
-      <div className="max-w-[1400px] mx-auto px-6">
-        
-        {/* HERO SECTION */}
-        <div className="max-w-[800px] mb-20 md:mb-32">
-          <Reveal>
-            <Badge variant="lime" rotation={-2} className="mb-8">The Truvox Journal</Badge>
-            <h1 className="text-5xl md:text-7xl lg:text-[90px] font-medium text-text-heading leading-[1.0] tracking-tight mb-8">
-              Insights & <span className="gradient-text italic">Resources.</span>
-            </h1>
-            <p className="text-[20px] md:text-[24px] text-text-body leading-relaxed font-light max-w-xl">
-              Practical tips to grow your small business online. We share our philosophy on design, strategy, and local growth.
-            </p>
-          </Reveal>
-        </div>
+  const [activeCategory, setActiveCategory] = useState<string | null>(null);
 
-        <div className="grid lg:grid-cols-12 gap-16">
-          
-          {/* Main Content - Articles Grid */}
-          <div className="lg:col-span-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-8">
-              {blogPosts.map((post, i) => (
+  const filtered = activeCategory
+    ? blogPosts.filter((p) => p.category === activeCategory)
+    : blogPosts;
+
+  return (
+    <main className="min-h-screen bg-black text-white">
+
+      {/* ─── HERO ─────────────────────────────────────────────────────────── */}
+      <section className="relative pt-40 pb-20 px-6 border-b border-white/5 overflow-hidden">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-[#33FF0D]/4 blur-[180px] rounded-full pointer-events-none" />
+
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
+          className="max-w-[1200px] mx-auto relative z-10"
+        >
+          <span className="font-mono text-[#33FF0D] text-[12px] uppercase tracking-[0.3em] block mb-8">
+            // The Truvox Journal
+          </span>
+          <h1 className="font-display text-[56px] sm:text-[80px] md:text-[100px] lg:text-[120px] text-white leading-[1.0] tracking-normal uppercase mb-8">
+            INSIGHTS &amp;<br /><span className="text-[#33FF0D]">RESOURCES.</span>
+          </h1>
+          <p className="font-body text-[#A4A4A4] text-[17px] sm:text-[20px] max-w-xl leading-[1.5]">
+            Strategy, design, and web perspectives to help businesses communicate clearly and grow online.
+          </p>
+        </motion.div>
+      </section>
+
+      {/* ─── FILTERS ──────────────────────────────────────────────────────── */}
+      <section className="border-b border-white/5 px-6 py-6 bg-black sticky top-[76px] z-30 backdrop-blur-md bg-black/90">
+        <div className="max-w-[1200px] mx-auto flex items-center gap-3 flex-wrap">
+          <button
+            onClick={() => setActiveCategory(null)}
+            className={`font-mono text-[10px] uppercase tracking-[0.2em] px-4 py-2 border transition-all duration-200 ${
+              activeCategory === null
+                ? 'border-[#33FF0D] text-[#33FF0D] bg-[#33FF0D]/5'
+                : 'border-[#575757]/30 text-[#505250] hover:border-white/30 hover:text-white'
+            }`}
+          >
+            All
+          </button>
+          {blogCategories.map((cat) => (
+            <button
+              key={cat}
+              onClick={() => setActiveCategory(cat === activeCategory ? null : cat)}
+              className={`font-mono text-[10px] uppercase tracking-[0.2em] px-4 py-2 border transition-all duration-200 ${
+                activeCategory === cat
+                  ? 'border-[#33FF0D] text-[#33FF0D] bg-[#33FF0D]/5'
+                  : 'border-[#575757]/30 text-[#505250] hover:border-white/30 hover:text-white'
+              }`}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
+      </section>
+
+      {/* ─── ARTICLES GRID ────────────────────────────────────────────────── */}
+      <section className="py-20 md:py-32 px-6 bg-black">
+        <div className="max-w-[1200px] mx-auto">
+
+          {/* Section label */}
+          <Reveal>
+            <div className="flex items-center gap-6 mb-12">
+              <span className="font-mono text-[#33FF0D] text-[11px] uppercase tracking-[0.3em]">
+                // {filtered.length} article{filtered.length !== 1 ? 's' : ''}
+              </span>
+              <div className="flex-1 h-px bg-white/5" />
+            </div>
+          </Reveal>
+
+          {filtered.length === 0 ? (
+            <div className="text-center py-24">
+              <p className="font-mono text-[#505250] text-[14px] uppercase tracking-[0.2em]">No articles in this category yet.</p>
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {filtered.map((post, i) => (
                 <BlogCard key={post.slug} post={post} index={i} />
               ))}
             </div>
-          </div>
-
-          {/* Sidebar */}
-          <aside className="lg:col-span-4 space-y-12">
-            
-            {/* Search Box */}
-            <Reveal delay={0.2}>
-              <div className="p-8 bg-bg-card rounded-[12px] border border-white/5 space-y-6">
-                <h3 className="text-[18px] font-bold uppercase tracking-widest text-text-heading">Search</h3>
-                <div className="relative">
-                  <input 
-                    type="text" 
-                    placeholder="Search articles..." 
-                    className="w-full bg-bg-dark border border-border-subtle rounded-[8px] px-6 py-4 text-text-heading placeholder:text-text-muted/30 focus:border-brand-main focus:outline-none transition-all"
-                  />
-                  <Search size={20} className="absolute right-6 top-1/2 -translate-y-1/2 text-text-muted" />
-                </div>
-              </div>
-            </Reveal>
-
-            {/* Categories */}
-            <Reveal delay={0.3}>
-              <div className="p-8 bg-bg-card rounded-[12px] border border-white/5 space-y-6">
-                <h3 className="text-[18px] font-bold uppercase tracking-widest text-text-heading">Categories</h3>
-                <div className="flex flex-wrap gap-3">
-                  {blogCategories.map((cat) => (
-                    <button 
-                      key={cat}
-                      className="px-5 py-2.5 rounded-full border border-white/10 text-[14px] font-medium text-text-muted hover:border-brand-main hover:text-brand-main transition-all"
-                    >
-                      {cat}
-                    </button>
-                  ))}
-                </div>
-              </div>
-            </Reveal>
-
-            {/* CTA Box */}
-            <Reveal delay={0.4}>
-              <div className="p-8 bg-bg-card rounded-[12px] border border-brand-main/20 bg-gradient-to-br from-brand-main/5 to-transparent space-y-8 relative overflow-hidden group">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-brand-main/10 blur-[60px] rounded-full" />
-                
-                <div className="space-y-4 relative z-10">
-                  <BarChart3 className="text-brand-main" size={32} />
-                  <h3 className="text-[24px] font-bold text-text-heading leading-tight">Ready to grow your business?</h3>
-                  <p className="text-[16px] text-text-muted leading-relaxed">
-                    Let&apos;s discuss how strategic design can help you attract more clients.
-                  </p>
-                </div>
-                
-                <Link href="/contact" className="block relative z-10">
-                  <Button className="w-full h-[60px] rounded-full bg-brand-main text-bg-primary font-bold shadow-[0_0_30px_rgba(0,255,133,0.15)]">
-                    Book a consultation <ArrowRight size={18} className="ml-2" />
-                  </Button>
-                </Link>
-              </div>
-            </Reveal>
-
-            {/* Newsletter */}
-            <Reveal delay={0.5}>
-              <div className="p-8 bg-bg-card rounded-[12px] border border-white/5 space-y-6">
-                <div className="flex items-center gap-3 text-brand-main">
-                  <Mail size={20} />
-                  <h3 className="text-[18px] font-bold uppercase tracking-widest">Insights Inbox</h3>
-                </div>
-                <p className="text-[15px] text-text-muted leading-relaxed">
-                  Get the latest web design tips and growth strategies delivered to your inbox.
-                </p>
-                <div className="space-y-4">
-                  <input 
-                    type="email" 
-                    placeholder="your@email.com" 
-                    className="w-full bg-bg-dark border border-border-subtle rounded-[8px] px-6 py-4 text-text-heading focus:border-brand-main focus:outline-none"
-                  />
-                  <Button variant="secondary" className="w-full h-[54px] rounded-full border-white/10 text-white font-bold">
-                    Subscribe
-                  </Button>
-                </div>
-              </div>
-            </Reveal>
-
-          </aside>
-
+          )}
         </div>
-      </div>
+      </section>
+
+      {/* ─── CTA ──────────────────────────────────────────────────────────── */}
+      <section className="py-24 md:py-36 px-6 bg-black border-t border-white/5 relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#33FF0D]/4 blur-[150px] rounded-full pointer-events-none" />
+        <div className="max-w-[1200px] mx-auto relative z-10 text-center">
+          <Reveal>
+            <span className="font-mono text-[#33FF0D] text-[11px] uppercase tracking-[0.3em] block mb-8">// Ready to start?</span>
+            <h2 className="font-display text-[48px] sm:text-[68px] md:text-[80px] text-white leading-[1.0] uppercase tracking-normal mb-6">
+              LET'S BUILD<br /><span className="text-[#33FF0D]">SOMETHING CLEAR.</span>
+            </h2>
+            <p className="font-body text-[#A4A4A4] text-[17px] max-w-lg mx-auto leading-[1.5] mb-12">
+              Tell us about your business. We'll tell you honestly what your website needs to communicate, and how we'll build it.
+            </p>
+            <Link href="/contact" className="relative group inline-flex items-center bg-[#33FF0D] text-black font-mono text-[12px] uppercase tracking-[0.15em] h-[52px] px-10 hover:bg-[#2DD90D] hover:shadow-[0_8px_20px_rgba(51,255,13,0.2)] hover:-translate-y-0.5 transition-all duration-300 font-semibold">
+              <span className="mr-4">Discuss your website</span>
+              <span className="inline-block transform -rotate-45 group-hover:rotate-0 transition-transform duration-300 text-[16px]">→</span>
+            </Link>
+          </Reveal>
+        </div>
+      </section>
+
     </main>
   );
 }

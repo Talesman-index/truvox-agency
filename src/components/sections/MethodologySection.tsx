@@ -10,56 +10,56 @@ const steps = [
   {
     number: '01',
     title: 'Discovery',
-    description: 'We start with a call to understand your business, your clients, and what you actually need from a website.',
+    description: 'We start with a focused conversation about your business, your audience, and what you need your website to accomplish. We ask more questions than most agencies because clarity at this stage determines the quality of everything that follows.',
     icon3d: '/assets/icons3d/search.avif',
     deliverables: [
-      "Business goals definition",
-      "User research & target mapping",
-      "Tech stack selection"
+      "Business goals and priorities defined",
+      "Target audience and user needs mapped",
+      "Scope and technical requirements aligned"
     ]
   },
   {
     number: '02',
     title: 'Strategy',
-    description: 'We map out the structure and content before touching design. This is where we define what the site needs to say and to whom.',
+    description: 'Before we design anything, we establish your messaging, structure your content, and map the user journey. This is where we decide what your website needs to say and how it should say it.',
     icon3d: '/assets/icons3d/cdmRdvAtWOA2Auwbo7D1WXEj8b0.avif',
     deliverables: [
-      "Sitemap & page hierarchy",
-      "Content structure & copy guidelines",
-      "User flow mapping"
+      "Sitemap and page architecture",
+      "Content structure and messaging framework",
+      "Conversion flow and key call-to-action definition"
     ]
   },
   {
     number: '03',
     title: 'Design',
-    description: 'We build a clean, modern design tailored to your business without using generic templates.',
+    description: 'We design a website that reflects your brand and communicates clearly to your audience. No generic templates. Every visual decision supports your business objective.',
     icon3d: '/assets/icons3d/design.avif',
     deliverables: [
       "High-fidelity UI mockups",
-      "Custom design systems",
-      "Interactive prototypes"
+      "Custom visual identity applied to layouts",
+      "Prototype reviewed and approved before development"
     ]
   },
   {
     number: '04',
     title: 'Development',
-    description: 'We code and build the site, making sure it works fast and looks right on every device.',
+    description: 'We build the website clean, fast, and responsive. Every page loads quickly, works on every device, and is structured for search engines from day one.',
     icon3d: '/assets/icons3d/48ozxNxjmhGkuMCjHtIthSsL8.avif',
     deliverables: [
-      "Clean responsive Next.js code",
-      "Page speed & SEO optimization",
-      "Forms & third-party integrations"
+      "Responsive Next.js development",
+      "Performance and SEO optimization",
+      "Forms, integrations, and analytics setup"
     ]
   },
   {
     number: '05',
     title: 'Launch',
-    description: 'We review everything together before going live. After launch, we\'re still available if anything comes up.',
+    description: 'We review every detail together before going live. After launch, we remain available to ensure your website performs exactly as intended as your business evolves.',
     icon3d: '/assets/icons3d/launch.avif',
     deliverables: [
-      "Final visual checklist review",
-      "Domain mapping & live deployment",
-      "1 month post-launch support"
+      "Final cross-device quality review",
+      "Domain setup and live deployment",
+      "1 month of post-launch support"
     ]
   }
 ];
@@ -79,11 +79,11 @@ export function MethodologySection() {
           <Badge variant="lime" rotation={-2}>How It Works</Badge>
           
           <h2 className="font-display text-white text-[40px] sm:text-[56px] md:text-[68px] lg:text-[72px] font-normal leading-[1.0] tracking-normal uppercase">
-            A SIMPLE AND <span className="text-[#33FF0D]">CLEAR PROCESS</span>
+            HOW WE <span className="text-[#33FF0D]">WORK</span>
           </h2>
           
           <p className="font-body text-[#A4A4A4] text-[16px] sm:text-[18px] max-w-lg leading-[1.4] mt-4">
-            We know that working with a web designer can feel complicated. We&apos;ve made ours as clear as possible.
+            Strategy and design happen in the right order. Every step is designed to reduce uncertainty and ensure the final website performs.
           </p>
         </div>
 
@@ -265,7 +265,7 @@ export function MethodologySection() {
         {/* Timeframe Tagline */}
         <div className="mt-20 text-center border-t border-white/5 pt-12 select-none">
           <p className="text-[#A4A4A4] text-[16px] md:text-[18px]">
-            Most projects take <span className="text-white font-medium">2 to 4 weeks</span> from our first call to launch.
+            Most projects go from <span className="text-white font-medium">strategy call to launch</span> in 2 to 4 weeks.
           </p>
         </div>
 

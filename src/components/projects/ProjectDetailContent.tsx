@@ -65,11 +65,21 @@ export function ProjectDetailContent({ project }: ProjectDetailContentProps) {
                 <Link 
                   href={project.link} 
                   target="_blank"
-                  className="group relative inline-flex items-center gap-4 md:gap-6 bg-brand-main text-bg-primary px-8 md:px-10 py-5 md:py-6 rounded-full font-bold uppercase tracking-widest text-[11px] md:text-[13px] overflow-hidden transition-all hover:scale-[1.02] active:scale-[0.98] shadow-xl shadow-brand-main/20"
+                  className="relative group inline-block select-none"
                 >
-                  <span>Launch Live Project</span>
-                  <div className="w-6 h-6 md:w-8 md:h-8 rounded-full bg-bg-primary/10 flex items-center justify-center transition-transform group-hover:rotate-45">
-                    <ArrowUpRight className="w-4 h-4 md:w-5 md:h-5" />
+                  {/* Corner Crop Marks */}
+                  <span className="absolute top-[-5px] left-[-5px] w-2 h-2 border-t border-l border-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
+                  <span className="absolute top-[-5px] right-[-5px] w-2 h-2 border-t border-r border-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
+                  <span className="absolute bottom-[-5px] left-[-5px] w-2 h-2 border-b border-l border-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
+                  <span className="absolute bottom-[-5px] right-[-5px] w-2 h-2 border-b border-r border-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
+                  
+                  <div className="flex items-center bg-[#33FF0D] text-black font-mono text-[12px] uppercase tracking-[0.1em] h-[57px] rounded-none hover:bg-[#2DD90D] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_20px_rgba(51,255,13,0.2)] cursor-pointer border-none pl-6 pr-0 relative z-10 w-fit">
+                    <span className="mr-6 font-medium">Launch Live Project</span>
+                    <span className="flex items-center justify-center w-[50px] h-[57px] border-l border-black/25 text-[18px]">
+                      <span className="inline-block transform -rotate-45 group-hover:rotate-0 transition-transform duration-300 leading-none">
+                        →
+                      </span>
+                    </span>
                   </div>
                 </Link>
               </Reveal>
@@ -228,9 +238,19 @@ export function ProjectDetailContent({ project }: ProjectDetailContentProps) {
               <div className="p-8 rounded-[12px] bg-gradient-to-br from-white/10 to-transparent border border-white/10 space-y-6">
                 <h6 className="text-[18px] md:text-[20px] font-medium text-text-heading">Have a similar project?</h6>
                 <p className="text-[13px] md:text-[14px] text-text-muted leading-relaxed">Let&apos;s discuss how we can build your brand moat and digital authority.</p>
-                <Link href="/contact" className="flex items-center justify-between w-full p-4 md:p-5 bg-white text-bg-primary rounded-[24px] font-bold uppercase tracking-widest text-[10px] md:text-[11px] hover:bg-brand-main transition-colors group">
-                  Get in Touch
-                  <ChevronRight className="w-4 h-4 md:w-[18px] md:h-[18px]" />
+                <Link href="/contact" className="relative group block w-full select-none">
+                  {/* Corner Crop Marks */}
+                  <span className="absolute top-[-5px] left-[-5px] w-2 h-2 border-t border-l border-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
+                  <span className="absolute top-[-5px] right-[-5px] w-2 h-2 border-t border-r border-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
+                  <span className="absolute bottom-[-5px] left-[-5px] w-2 h-2 border-b border-l border-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
+                  <span className="absolute bottom-[-5px] right-[-5px] w-2 h-2 border-b border-r border-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
+                  
+                  <div className="flex items-center justify-between bg-white text-black font-mono text-[12px] uppercase tracking-[0.1em] h-[48px] px-6 hover:bg-[#33FF0D] hover:shadow-[0_8px_20px_rgba(51,255,13,0.2)] hover:-translate-y-0.5 transition-all duration-300 w-full cursor-pointer border-none relative z-10">
+                    <span>Get in Touch</span>
+                    <span className="inline-block transform -rotate-45 group-hover:rotate-0 transition-transform duration-300 text-[16px] leading-none">
+                      →
+                    </span>
+                  </div>
                 </Link>
               </div>
 

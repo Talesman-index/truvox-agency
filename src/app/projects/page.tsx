@@ -41,9 +41,9 @@ export default function ProjectsPage() {
               <button
                 key={category}
                 onClick={() => setActiveCategory(category)}
-                className={`px-8 py-3 rounded-full text-[12px] font-bold uppercase tracking-widest transition-all duration-300 border ${
+                className={`px-6 py-2.5 rounded-none font-mono text-[11px] uppercase tracking-wider transition-all duration-300 border cursor-pointer ${
                   activeCategory === category 
-                    ? 'bg-brand-main border-brand-main text-bg-primary shadow-[0_0_20px_rgba(0,255,133,0.3)]' 
+                    ? 'bg-[#33FF0D] border-[#33FF0D] text-black shadow-[0_0_15px_rgba(51,255,13,0.2)]' 
                     : 'bg-transparent border-white/10 text-white/50 hover:border-white/30 hover:text-white'
                 }`}
               >

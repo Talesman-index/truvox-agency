@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import Link from 'next/link';
 
 interface ServiceData {
   id: string;
@@ -15,28 +16,28 @@ const services: ServiceData[] = [
   {
     id: "01",
     name: "UI / UX DESIGN",
-    description: "We design user interfaces and experiences that are easy to understand and simple to use.",
+    description: "We simplify complexity. Our interfaces are built to help users understand information quickly, take action confidently, and trust the businesses behind them.",
     tags: ["User research", "Prototypes", "Wireframes", "User flows", "Responsive Design"],
     icon: "/assets/icons3d/design.avif"
   },
   {
     id: "02",
     name: "WEBSITE CREATION",
-    description: "We design and build professional websites from scratch, structured to present your services clearly and guide visitors.",
+    description: "We build custom websites with one goal: to make your business communicate clearly online. Every page, section, and call-to-action is designed to move visitors toward a decision.",
     tags: ["Custom Design", "Next.js development", "Responsive layout", "SEO optimization", "Contact integration"],
     icon: "/assets/icons3d/zJzgsbzn1lS3rCHLY4bpPxQ35g.avif"
   },
   {
     id: "03",
     name: "WEBSITE REDESIGN",
-    description: "Transform your outdated website into a modern, high-performance platform that builds trust and brings in clients.",
+    description: "Your website redesign should feel like a business upgrade, not just a visual refresh. We improve communication, remove friction, and rebuild trust from the first scroll.",
     tags: ["Website analysis", "New structure", "Improved speed", "Modern visuals", "Better navigation"],
     icon: "/assets/icons3d/48ozxNxjmhGkuMCjHtIthSsL8.avif"
   },
   {
     id: "04",
     name: "STRATEGY",
-    description: "We clarify your business message and structure your website layout to guide visitors toward taking action.",
+    description: "Strategy is the foundation behind every website that performs. We align your messaging, structure, and user journey before a single line of code is written.",
     tags: ["Content strategy", "Conversion optimization", "Messaging framework", "Competitor analysis"],
     icon: "/assets/icons3d/cdmRdvAtWOA2Auwbo7D1WXEj8b0.avif"
   }
@@ -58,11 +59,11 @@ export function ProcessSection() {
           </span>
           
           <h2 className="font-display text-white text-[40px] sm:text-[56px] md:text-[68px] lg:text-[72px] font-normal leading-[1.0] tracking-normal uppercase">
-            DESIGN <span className="text-[#33FF0D]">CAPABILITIES</span>
+            WHAT WE <span className="text-[#33FF0D]">BUILD</span>
           </h2>
           
           <p className="font-body text-[#A4A4A4] text-[16px] sm:text-[18px] max-w-lg leading-[1.4] mt-4">
-            We offer focused design services that improve clarity, usability, and consistency across digital products.
+            Four focused services, each built around a single outcome: helping your business communicate clearly and convert visitors into clients.
           </p>
         </div>
 
@@ -131,6 +132,26 @@ export function ProcessSection() {
               </div>
             </motion.div>
           ))}
+        </div>
+
+        {/* Action Button */}
+        <div className="mt-12 md:mt-16 text-center select-none">
+          <Link href="/services" className="relative group inline-block">
+            {/* Corner Crop Marks */}
+            <span className="absolute top-[-5px] left-[-5px] w-2 h-2 border-t border-l border-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
+            <span className="absolute top-[-5px] right-[-5px] w-2 h-2 border-t border-r border-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
+            <span className="absolute bottom-[-5px] left-[-5px] w-2 h-2 border-b border-l border-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
+            <span className="absolute bottom-[-5px] right-[-5px] w-2 h-2 border-b border-r border-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
+            
+            <div className="flex items-center bg-[#FFFFFF] text-[#000000] font-mono text-[12px] uppercase tracking-[0.1em] h-[57px] rounded-none hover:bg-[#33FF0D] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_20px_rgba(51,255,13,0.2)] cursor-pointer border-none pl-6 pr-0 relative z-10">
+              <span className="mr-6 font-medium">View all capabilities</span>
+              <span className="flex items-center justify-center w-[50px] h-[57px] border-l border-black/25 text-[18px]">
+                <span className="inline-block transform -rotate-45 group-hover:rotate-0 transition-transform duration-300 leading-none">
+                  →
+                </span>
+              </span>
+            </div>
+          </Link>
         </div>
 
       </div>

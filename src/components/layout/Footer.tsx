@@ -44,8 +44,9 @@ export const Footer = () => {
               <span className="font-mono text-[#A4A4A4] text-[12px] uppercase tracking-[0.2em] block">[ Main links ]</span>
               <ul className="space-y-3 font-body text-[14px]">
                 <li><Link href="/" className="font-medium text-[#33FF0D] hover:underline transition-all">Home</Link></li>
-                <li><Link href="/#about" className="font-medium text-[#A4A4A4] hover:text-white transition-colors">About</Link></li>
-                <li><Link href="/#projects" className="font-medium text-[#A4A4A4] hover:text-white transition-colors">Projects</Link></li>
+                <li><Link href="/about" className="font-medium text-[#A4A4A4] hover:text-white transition-colors">About</Link></li>
+                <li><Link href="/services" className="font-medium text-[#A4A4A4] hover:text-white transition-colors">Services</Link></li>
+                <li><Link href="/projects" className="font-medium text-[#A4A4A4] hover:text-white transition-colors">Projects</Link></li>
                 <li><Link href="/blog" className="font-medium text-[#A4A4A4] hover:text-white transition-colors">Blog</Link></li>
               </ul>
             </div>

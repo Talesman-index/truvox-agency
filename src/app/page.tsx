@@ -8,6 +8,7 @@ import { PricingSection } from "@/components/sections/PricingSection";
 import { MethodologySection } from "@/components/sections/MethodologySection";
 import { ProcessSection } from "@/components/sections/ProcessSection";
 import { AboutSection } from "@/components/sections/AboutSection";
+import { BlogPreviewSection } from "@/components/sections/BlogPreviewSection";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Plus } from "lucide-react";
@@ -138,31 +139,31 @@ export default function Home() {
   const faqs = [
     {
       q: "How do we get started?",
-      a: "Book a free 30-minute call. We'll talk about your business and figure out together what your website needs. No commitment, no pressure."
+      a: "Book a free 30-minute call. We'll listen to your business goals, understand your audience, and clarify exactly what your website needs to accomplish. No pitch, no pressure."
     },
     {
       q: "How long does a project take?",
-      a: "Most projects take between 2 and 4 weeks from our first call to launch. It depends on how many pages and how quickly you can provide content."
+      a: "Most projects go from strategy call to launch in 2 to 4 weeks. The timeline depends on the scope and how quickly we can align on content and direction."
     },
     {
       q: "Do I need to provide the content?",
-      a: "We can guide you on what to write, or write it for you as part of the Growth package. Either way, we'll make sure the final text is clear and effective."
+      a: "Not necessarily. We can guide your messaging, structure your copy, or write it entirely for you as part of our Premium package. Either way, every word is reviewed for clarity and purpose."
     },
     {
       q: "What if I already have a website?",
-      a: "We can redesign it from scratch or improve what's already there. We'll be honest about which option makes more sense for your situation."
+      a: "We'll audit what's working and what's holding you back. Sometimes a full redesign is the right move. Sometimes targeted improvements are enough. We'll tell you honestly which one applies to you."
     },
     {
       q: "Do you offer support after launch?",
-      a: "Yes. The Growth plan includes one month of support. After that, we offer simple maintenance packages if you need ongoing help."
+      a: "Yes. Our Standard and Premium packages include post-launch support. We're available to fix issues, refine content, and ensure your website continues performing as your business evolves."
     }
   ];
 
   const blackRibbonItems = [
-    "Have a project in mind?",
-    "Need design clarity?",
-    "Want to collaborate?",
-    "Looking for high conversion?",
+    "Build clarity into your website.",
+    "Strategy before aesthetics.",
+    "Websites that convert.",
+    "Design with business purpose.",
   ];
 
   return (
@@ -246,7 +247,7 @@ export default function Home() {
           
           {/* Subtitle / Description */}
           <p className="font-body text-[#A4A4A4] text-[16px] sm:text-[18px] md:text-[20px] max-w-2xl mb-12 leading-[1.4] px-4">
-            We design <span className="text-white font-medium">digital experiences</span> that balance visual clarity, usability, and purpose to help <span className="text-white font-medium">brands communicate</span> better.
+            We design and build <span className="text-white font-medium">strategic websites</span> that help businesses communicate clearly, <span className="text-white font-medium">build trust</span>, and convert visitors into clients.
           </p>
 
           {/* Action Buttons */}
@@ -442,6 +443,9 @@ export default function Home() {
       {/* PRICING SECTION */}
       <PricingSection />
 
+      {/* BLOG PREVIEW SECTION */}
+      <BlogPreviewSection />
+
       {/* FAQ SECTION */}
       <section className="py-24 md:py-40 px-6 bg-black border-t border-white/5 relative overflow-hidden">
         {/* Subtle Background Glow */}
@@ -464,7 +468,7 @@ export default function Home() {
                     </span>
                   </h2>
                   <p className="text-text-muted text-[18px] max-w-md">
-                    We believe in transparency. Here are answers to the questions we get most often.
+                    Straightforward answers to the questions most business owners ask before starting a website project.
                   </p>
                 </div>
               </Reveal>
@@ -525,7 +529,7 @@ export default function Home() {
 
           <Reveal>
             <h2 className="text-[44px] sm:text-[64px] md:text-[80px] lg:text-[96px] font-display text-white tracking-normal leading-[1.0] uppercase text-center">
-              Feel like <br /> collaborating?
+              Let's build <br /> something clear.
             </h2>
           </Reveal>
           
@@ -539,7 +543,7 @@ export default function Home() {
                 <span className="absolute bottom-[-5px] right-[-5px] w-2 h-2 border-b border-r border-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
                 
                 <div className="flex items-center bg-[#33FF0D] text-black font-mono text-[12px] uppercase tracking-[0.15em] h-[52px] px-8 hover:bg-[#2DD90D] hover:shadow-[0_8px_20px_rgba(51,255,13,0.2)] hover:-translate-y-0.5 transition-all duration-300 cursor-pointer border-none font-semibold rounded-none relative z-10 w-full justify-center sm:w-auto">
-                  <span className="mr-4">Start a project</span>
+                  <span className="mr-4">Start your project</span>
                   <span className="inline-block transform -rotate-45 group-hover:rotate-0 transition-transform duration-300 text-[16px] leading-none">
                     →
                   </span>
@@ -553,7 +557,7 @@ export default function Home() {
                 <span className="absolute bottom-[-5px] right-[-5px] w-2 h-2 border-b border-r border-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
                 
                 <div className="flex items-center gap-3 bg-white text-black font-mono text-[12px] uppercase tracking-[0.15em] h-[52px] px-8 hover:bg-[#33FF0D] hover:shadow-[0_8px_20px_rgba(51,255,13,0.2)] hover:-translate-y-0.5 transition-all duration-300 cursor-pointer border-none font-semibold rounded-none relative z-10 w-full justify-center sm:w-auto">
-                  <span>Schedule a call</span>
+                  <span>Discuss your website</span>
                   {/* Green phone circle */}
                   <div className="w-[18px] h-[18px] rounded-full bg-[#33FF0D] flex items-center justify-center text-black border border-black/10 shadow-[0_0_8px_rgba(51,255,13,0.3)] transition-all duration-300 group-hover:scale-110 group-hover:rotate-[15deg] group-hover:bg-[#2DD90D] shrink-0">
                     <svg viewBox="0 0 24 24" className="w-[9px] h-[9px] fill-black text-black" xmlns="http://www.w3.org/2000/svg">

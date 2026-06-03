@@ -2,12 +2,16 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
+import { TruvoxLogo } from '@/components/ui/TruvoxLogo';
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
+  const isHome = pathname === '/';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,9 +22,10 @@ export const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: 'About', href: '/#about' },
-    { name: 'Services', href: '/#services' },
-    { name: 'Case Study', href: '/#projects' },
+    { name: 'About', href: '/about' },
+    { name: 'Services', href: '/services' },
+    { name: 'Case Study', href: '/projects' },
+    { name: 'Blog', href: '/blog' },
     { name: 'Process', href: '/#methodology' },
     { name: 'Pricing', href: '/#pricing' },
   ];
@@ -32,7 +37,7 @@ export const Navbar = () => {
           scrolled || isOpen ? 'bg-black/90 backdrop-blur-md border-b border-[#575757]/20 py-4' : 'bg-transparent'
         }`}
       >
-        <div className="max-w-[1440px] mx-auto flex items-center justify-between">
+        <div className="max-w-[1440px] mx-auto flex items-center justify-between relative">
           
           {/* Left: Menu Toggle Button */}
           <button 
@@ -49,7 +54,19 @@ export const Navbar = () => {
             </div>
           </button>
 
-
+          {/* Center: Favicon Logo (visible on all pages) */}
+          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+            <Link href="/" className="block group">
+              <Image
+                src="/truvox_pixel.png"
+                alt="Truvox"
+                width={36}
+                height={36}
+                className="w-[36px] h-[36px] object-contain opacity-90 group-hover:opacity-100 group-hover:drop-shadow-[0_0_8px_rgba(51,255,13,0.6)] transition-all duration-300"
+                priority
+              />
+            </Link>
+          </div>
 
           {/* Right: Book a Call Button with Phone Icon */}
           <Link href="/contact">
@@ -98,9 +115,9 @@ export const Navbar = () => {
 
             {/* Side Agency info */}
             <div className="flex flex-col gap-6 text-[14px] text-[#A4A4A4] max-w-sm pt-4 md:pt-12 border-t border-[#575757]/20 md:border-none">
-              <span className="font-mono text-[#33FF0D] uppercase tracking-[0.2em]">Contact Information</span>
+              <span className="font-mono text-[#33FF0D] uppercase tracking-[0.2em]">Contact</span>
               <p className="leading-relaxed">
-                We combine strategy and development to create websites that don&apos;t just look good, they actually work.
+                We build strategic websites that help businesses communicate clearly and convert visitors into clients. Let's discuss yours.
               </p>
               <div className="flex flex-col gap-1">
                 <span className="text-white font-medium">hello@truvox.studio</span>

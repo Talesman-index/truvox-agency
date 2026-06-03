@@ -83,25 +83,25 @@ export function AboutSection() {
       title: "OUR GOALS",
       image: "/assets/bg/about_nature_goals.jpg",
       gradient: "from-[#1E3040] via-[#0E1520] to-[#070A0F]",
-      content: "We establish clear milestones, focus on user-centric layouts, ensure consistent performance, and plan for scalable long-term growth.",
+      content: "Build websites that serve a clear business purpose. Every milestone, layout, and interaction is measured against one question: does this help our client communicate better and convert more?",
       label: "01 · PURPOSE",
-      footerRight: "USER EXPERIENCE"
+      footerRight: "CLEAR OUTCOMES"
     },
     {
       title: "OUR MISSION",
       image: "/assets/bg/about_nature_mission.jpg",
       gradient: "from-[#3D7899] via-[#122A3C] to-[#0A0F17]",
-      content: "We focus on understanding the problem before designing the solution, ensuring every layout, interaction, and visual element serves a real purpose.",
-      label: "02 · INTENT",
-      footerRight: "MEANINGFUL DESIGN"
+      content: "Help businesses communicate clearly online. We define messaging and structure before touching design, because a website that doesn't communicate doesn't convert.",
+      label: "02 · MISSION",
+      footerRight: "STRATEGIC DESIGN"
     },
     {
       title: "OUR VISION",
       image: "/assets/bg/about_nature_vision.jpg",
       gradient: "from-[#4B2F7D] via-[#18112C] to-[#090712]",
-      content: "We strive to lead digital innovation, building interfaces that set new standards for speed, accessibility, and clean aesthetic design.",
-      label: "03 · INNOVATION",
-      footerRight: "DIGITAL SOLUTIONS"
+      content: "A future where every business, regardless of size, has a website that earns trust, communicates its value clearly, and actively supports its growth.",
+      label: "03 · VISION",
+      footerRight: "BUSINESS GROWTH"
     }
   ];
 
@@ -129,7 +129,7 @@ export function AboutSection() {
             
             {/* Mission Statement */}
             <div className="space-y-6">
-              <ScrollRevealText text="We believe great design always begins with understanding the goals and users behind every project to create meaningful and effective digital experiences." />
+              <ScrollRevealText text="Most websites fail because they focus on how they look before clarifying what they need to say. We start with your business goals and build backwards from there." />
               
               {/* Handwritten Signature */}
               <div className="pt-4">
@@ -139,68 +139,56 @@ export function AboutSection() {
               </div>
             </div>
 
-            {/* Agency Ratings Block */}
+            {/* Agency Metrics Block */}
             <div className="grid grid-cols-2 gap-8 pt-8 border-t border-[#575757]/20 w-full select-none">
-              {/* Rating 1: Capterra */}
+              {/* Metric 1: Custom Code */}
               <div className="flex flex-col gap-2">
-                {/* Logo Badge */}
+                {/* Icon Badge */}
                 <div className="w-10 h-10 rounded-full bg-[#111111] border border-[#575757]/30 flex items-center justify-center">
-                  <svg viewBox="0 0 24 24" className="w-5 h-5 text-white" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M16.5 7.5 C15.3 6.0 13.3 5.0 11.0 5.0 C7.1 5.0 4.0 8.1 4.0 12.0 C4.0 15.9 7.1 19.0 11.0 19.0 C13.3 19.0 15.3 18.0 16.5 16.5" stroke="currentColor" strokeWidth="3" strokeLinecap="round" fill="none" />
-                    <circle cx="11.5" cy="12.0" r="2.2" fill="#FF3333" />
+                  <svg viewBox="0 0 24 24" className="w-5 h-5 text-white" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" xmlns="http://www.w3.org/2000/svg">
+                    <polyline points="16 18 22 12 16 6"></polyline>
+                    <polyline points="8 6 2 12 8 18"></polyline>
                   </svg>
                 </div>
                 {/* Header Tag */}
                 <span className="font-mono text-[#33FF0D] text-[10px] sm:text-[11px] uppercase tracking-wider block mt-2">
-                  // CAPTERRA
+                  // CODEBASE
                 </span>
-                {/* Value & Stars */}
+                {/* Value */}
                 <div className="flex items-baseline gap-2 mt-1">
                   <span className="font-display text-[32px] sm:text-[40px] text-white leading-none font-bold">
-                    4.9
+                    100%
                   </span>
-                  <span className="font-mono text-[14px] sm:text-[16px] text-[#505250] font-normal">
-                    /5
-                  </span>
-                </div>
-                {/* Stars Rating */}
-                <div className="flex items-center gap-0.5 text-white text-[12px] sm:text-[13px] my-0.5">
-                  <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                 </div>
                 {/* Subtext */}
-                <span className="font-mono text-[8px] sm:text-[9px] text-[#505250] uppercase tracking-widest mt-1">
-                  Based on 230 reviews
+                <span className="font-mono text-[9px] text-[#505250] uppercase tracking-widest mt-2 leading-relaxed">
+                  Bespoke Design &amp;<br />Custom Development
                 </span>
               </div>
 
-              {/* Rating 2: Trustpilot */}
+              {/* Metric 2: Templates */}
               <div className="flex flex-col gap-2 pl-8 border-l border-[#575757]/20">
-                {/* Logo Badge */}
+                {/* Icon Badge */}
                 <div className="w-10 h-10 rounded-full bg-[#111111] border border-[#575757]/30 flex items-center justify-center">
-                  <svg viewBox="0 0 24 24" className="w-5 h-5 text-white" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 3C12 9 15 12 21 12C15 12 12 15 12 21C12 15 9 12 3 12C9 12 12 9 12 3Z" fill="white" />
+                  <svg viewBox="0 0 24 24" className="w-5 h-5 text-white" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                    <line x1="9" y1="9" x2="15" y2="15"></line>
+                    <line x1="15" y1="9" x2="9" y2="15"></line>
                   </svg>
                 </div>
                 {/* Header Tag */}
                 <span className="font-mono text-[#33FF0D] text-[10px] sm:text-[11px] uppercase tracking-wider block mt-2">
-                  // TRUSTPILOT
+                  // TEMPLATES
                 </span>
-                {/* Value & Stars */}
+                {/* Value */}
                 <div className="flex items-baseline gap-2 mt-1">
                   <span className="font-display text-[32px] sm:text-[40px] text-white leading-none font-bold">
-                    4.7
+                    0.0
                   </span>
-                  <span className="font-mono text-[14px] sm:text-[16px] text-[#505250] font-normal">
-                    /5
-                  </span>
-                </div>
-                {/* Stars Rating */}
-                <div className="flex items-center gap-0.5 text-white text-[12px] sm:text-[13px] my-0.5">
-                  <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                 </div>
                 {/* Subtext */}
-                <span className="font-mono text-[8px] sm:text-[9px] text-[#505250] uppercase tracking-widest mt-1">
-                  Based on 120 reviews
+                <span className="font-mono text-[9px] text-[#505250] uppercase tracking-widest mt-2 leading-relaxed">
+                  Pre-made templates or<br />generic themes used
                 </span>
               </div>
             </div>
@@ -301,7 +289,7 @@ export function AboutSection() {
             {/* Bottom text block & CTA button */}
             <div className="w-full max-w-[340px] sm:max-w-md space-y-6 pt-4">
               <p className="font-body text-[#A4A4A4] text-[15px] sm:text-[16px] leading-[1.4] text-left">
-                Our team works across branding, web design, and digital interfaces, helping companies present their ideas clearly and professionally.
+                We don't just build websites. We build strategic digital experiences designed to help businesses communicate clearly, build credibility, and grow.
               </p>
               
               <Link href="/about" className="relative group block w-fit">

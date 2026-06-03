@@ -22,7 +22,7 @@ const fixedPlans: Plan[] = [
     id: "01",
     name: "BASIC · START PRESENCE",
     price: "$500",
-    description: "A simple and clean website to establish your business online. Perfect for startups and local businesses.",
+    description: "A clear, well-structured website to establish your business online and give visitors a reason to reach out.",
     subtext: "Starting from · One-time project cost",
     features: [
       "Up to 5 pages",
@@ -31,13 +31,13 @@ const fixedPlans: Plan[] = [
       "Basic SEO setup",
       "2 rounds of revisions"
     ],
-    cta: "Get Started"
+    cta: "Start your project"
   },
   {
     id: "02",
     name: "STANDARD · GROWTH WEBSITE",
     price: "$1,200",
-    description: "A fully structured website designed to attract, engage, and convert visitors into active clients.",
+    description: "A strategically built website designed to communicate your value clearly, earn trust, and convert visitors into clients.",
     subtext: "Starting from · One-time project cost",
     features: [
       "Up to 10 pages",
@@ -47,13 +47,13 @@ const fixedPlans: Plan[] = [
       "1 month of support"
     ],
     featured: true,
-    cta: "Get Started"
+    cta: "Start your project"
   },
   {
     id: "03",
     name: "PREMIUM · HIGH-CONVERTING",
     price: "$2,500",
-    description: "A complete digital experience with copy, design, strategy, and conversions fully optimized.",
+    description: "A complete strategic website with messaging, design, and conversion fully optimized for business growth.",
     subtext: "Starting from · One-time project cost",
     features: [
       "Unlimited pages",
@@ -62,7 +62,7 @@ const fixedPlans: Plan[] = [
       "1 month of priority support",
       "Fast-track delivery"
     ],
-    cta: "Get Started"
+    cta: "Start your project"
   }
 ];
 
@@ -70,7 +70,7 @@ const customPlan: Plan = {
   id: "04",
   name: "CUSTOM · PROJECTS",
   price: "Let's talk",
-  description: "Ideal for projects requiring tailored functionality, third-party integrations, or custom scopes built around your business goals.",
+  description: "For businesses with specific requirements. We scope the project around your goals, timeline, and budget.",
   subtext: "Based on budget & timeline",
   features: [
     "Custom page structure & layouts",
@@ -78,7 +78,7 @@ const customPlan: Plan = {
     "Dedicated strategy & copywriting",
     "Extended post-launch support"
   ],
-  cta: "Request a quote"
+  cta: "Discuss your project"
 };
 
 export function PricingSection() {
@@ -110,7 +110,7 @@ export function PricingSection() {
         </h2>
         
         <p className="font-body text-[#A4A4A4] text-[16px] sm:text-[18px] max-w-xl mx-auto text-center leading-[1.4] mb-16">
-          Flexible pricing designed to match different project needs from focused design tasks to full-scale digital experiences.
+          Transparent pricing based on what your business actually needs. Every package is built around one goal: a website that performs.
         </p>
 
         {/* Toggle tabs */}
