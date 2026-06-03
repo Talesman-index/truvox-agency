@@ -32,7 +32,7 @@ export const allProjects: Project[] = [
     description: 'Humanitarian portal for a Christian organization providing meals, shelter, and reinsertion programs in Cotonou.',
     fullDescription: 'The Refuge required an online portal to connect with potential donors and volunteers, bridging digital communication with ground reality. We built a structured, responsive web application that tracks and displays program funding in real-time.',
     designStyle: 'A warm and organic design system featuring sage green, earthy terracotta accents, and soft curved borders that feel welcoming and credible.',
-    image: '/assets/portfolio/your refuge.png',
+    image: '/assets/portfolio/your-refuge.jpg',
     link: 'https://your-refuge.vercel.app/',
     color: 'from-emerald-800/20 to-amber-700/20',
     details: {
@@ -54,7 +54,7 @@ export const allProjects: Project[] = [
     description: 'Cinematic portfolio for film director Tavares, designed to showcase his work and make a strong first impression.',
     fullDescription: 'For Director Tavares, we built a modern website that serves as a beautiful backdrop to his cinematic work, letting his projects be the main focus of the page.',
     designStyle: 'An elegant dark design with custom film grain and smooth transitions to match the aesthetic of his films.',
-    image: '/assets/portfolio/tavares-cinematic.png',
+    image: '/assets/portfolio/tavares-cinematic.jpg',
     link: 'https://portfolio-tavares.vercel.app/',
     color: 'from-orange-600/20 to-red-400/20',
     details: {
@@ -76,7 +76,7 @@ export const allProjects: Project[] = [
     description: 'Immersive platform establishing the credibility of creative studios through clean, bold design.',
     fullDescription: 'Sagana Agency required an online presence that mirrored their creative approach to visual storytelling. We developed a custom web platform that treats every scroll as a cinematic moment, helping them look credible and attract more high-value clients.',
     designStyle: 'A professional editorial layout characterized by bold typography, smooth transitions, and a vibrant color system that stands out.',
-    image: '/assets/portfolio/sagana.png',
+    image: '/assets/portfolio/sagana.jpg',
     link: 'https://www.sagana-agency.com/',
     color: 'from-blue-600/20 to-teal-400/20',
     details: {
@@ -98,7 +98,7 @@ export const allProjects: Project[] = [
     description: 'An intuitive dashboard built to help health researchers analyze biological data in the field.',
     fullDescription: 'SPD is a global health initiative aiming to make lab-grade analysis accessible anywhere. We engineered an intuitive dashboard that translates complex biological data-streams into clear, actionable insights for researchers working in the field.',
     designStyle: 'A clean and simple layout with a high-contrast palette designed for absolute readability under low-light field conditions.',
-    image: '/assets/portfolio/spd.png',
+    image: '/assets/portfolio/spd.jpg',
     link: 'https://spd-zeta.vercel.app/',
     color: 'from-emerald-600/20 to-green-400/20',
     isConcept: true,

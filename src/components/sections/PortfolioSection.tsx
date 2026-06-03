@@ -103,12 +103,12 @@ export const PortfolioSection = () => {
                 <span className="absolute bottom-[-5px] left-[-5px] w-2 h-2 border-b border-l border-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
                 <span className="absolute bottom-[-5px] right-[-5px] w-2 h-2 border-b border-r border-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
                 
-                <button className="flex items-center justify-between w-[150px] bg-[#33FF0D] text-black font-mono text-[12px] uppercase tracking-[0.1em] h-[48px] px-4 hover:bg-[#2DD90D] hover:shadow-[0_8px_20px_rgba(51,255,13,0.2)] hover:-translate-y-0.5 transition-all duration-300 cursor-pointer border-none relative z-10">
+                <div className="flex items-center justify-between w-[150px] bg-[#33FF0D] text-black font-mono text-[12px] uppercase tracking-[0.1em] h-[48px] px-4 hover:bg-[#2DD90D] hover:shadow-[0_8px_20px_rgba(51,255,13,0.2)] hover:-translate-y-0.5 transition-all duration-300 cursor-pointer border-none relative z-10">
                   <span>View all</span>
                   <span className="inline-block transform -rotate-45 group-hover:rotate-0 transition-transform duration-300 text-[16px] leading-none">
                     →
                   </span>
-                </button>
+                </div>
               </Link>
             </div>
           </div>
@@ -190,12 +190,12 @@ export const PortfolioSection = () => {
                       <span className="absolute bottom-[-5px] left-[-5px] w-2 h-2 border-b border-l border-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
                       <span className="absolute bottom-[-5px] right-[-5px] w-2 h-2 border-b border-r border-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
                       
-                      <button className="flex items-center justify-between bg-white text-black font-mono text-[12px] uppercase tracking-[0.1em] h-[48px] px-6 hover:bg-[#33FF0D] hover:shadow-[0_8px_20px_rgba(51,255,13,0.2)] hover:-translate-y-0.5 transition-all duration-300 w-full cursor-pointer border-none relative z-10">
+                      <div className="flex items-center justify-between bg-white text-black font-mono text-[12px] uppercase tracking-[0.1em] h-[48px] px-6 hover:bg-[#33FF0D] hover:shadow-[0_8px_20px_rgba(51,255,13,0.2)] hover:-translate-y-0.5 transition-all duration-300 w-full cursor-pointer border-none relative z-10">
                         <span>View project</span>
                         <span className="inline-block transform -rotate-45 group-hover:rotate-0 transition-transform duration-300 text-[16px] leading-none">
                           →
                         </span>
-                      </button>
+                      </div>
                     </Link>
                   </div>
 

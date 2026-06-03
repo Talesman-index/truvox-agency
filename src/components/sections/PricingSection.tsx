@@ -197,13 +197,13 @@ export function PricingSection() {
                         </div>
 
                         <Link href="/contact" className="shrink-0">
-                          <Button className={`h-[50px] px-8 rounded-none text-[12px] font-bold uppercase tracking-widest transition-all ${
+                          <div className={`inline-flex items-center justify-center h-[50px] px-8 rounded-none text-[12px] font-bold uppercase tracking-widest transition-all cursor-pointer ${
                             plan.featured 
                               ? 'btn-primary shadow-[0_0_20px_rgba(51,255,13,0.2)]' 
                               : 'bg-transparent border border-white/20 text-white hover:bg-white/5 hover:border-white/40'
                           }`}>
                             {plan.cta}
-                          </Button>
+                          </div>
                         </Link>
                       </div>
                     </div>
@@ -269,9 +269,9 @@ export function PricingSection() {
                       </div>
 
                       <Link href="/contact" className="shrink-0">
-                        <Button className="h-[50px] px-8 rounded-none text-[12px] font-bold uppercase tracking-widest bg-transparent border border-white/20 text-white hover:bg-white/5 hover:border-white/40">
+                        <div className="inline-flex items-center justify-center h-[50px] px-8 rounded-none text-[12px] font-bold uppercase tracking-widest bg-transparent border border-white/20 text-white hover:bg-white/5 hover:border-white/40 cursor-pointer">
                           {customPlan.cta}
-                        </Button>
+                        </div>
                       </Link>
                     </div>
                   </div>

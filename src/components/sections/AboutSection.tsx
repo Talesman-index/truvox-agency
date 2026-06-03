@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence, useScroll, useTransform, MotionValue } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
+import { Reveal } from '@/components/ui/Reveal';
 
 interface WordProps {
   children: string;
@@ -24,12 +25,36 @@ function Word({ children, progress, range }: WordProps) {
 
 function ScrollRevealText({ text }: { text: string }) {
   const containerRef = useRef<HTMLHeadingElement>(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start 80%", "start 25%"]
   });
 
   const words = text.split(" ");
+
+  if (isMobile) {
+    return (
+      <Reveal>
+        <h2 
+          ref={containerRef}
+          className="font-display text-white text-[28px] sm:text-[36px] md:text-[44px] lg:text-[48px] font-normal leading-[1.15] tracking-normal uppercase text-left flex flex-wrap"
+        >
+          {text}
+        </h2>
+      </Reveal>
+    );
+  }
 
   return (
     <h2 
@@ -56,7 +81,7 @@ export function AboutSection() {
   const cards = [
     {
       title: "OUR GOALS",
-      image: "/assets/bg/about_nature_goals.png",
+      image: "/assets/bg/about_nature_goals.jpg",
       gradient: "from-[#1E3040] via-[#0E1520] to-[#070A0F]",
       content: "We establish clear milestones, focus on user-centric layouts, ensure consistent performance, and plan for scalable long-term growth.",
       label: "01 · PURPOSE",
@@ -64,7 +89,7 @@ export function AboutSection() {
     },
     {
       title: "OUR MISSION",
-      image: "/assets/bg/about_nature_mission.png",
+      image: "/assets/bg/about_nature_mission.jpg",
       gradient: "from-[#3D7899] via-[#122A3C] to-[#0A0F17]",
       content: "We focus on understanding the problem before designing the solution, ensuring every layout, interaction, and visual element serves a real purpose.",
       label: "02 · INTENT",
@@ -72,7 +97,7 @@ export function AboutSection() {
     },
     {
       title: "OUR VISION",
-      image: "/assets/bg/about_nature_vision.png",
+      image: "/assets/bg/about_nature_vision.jpg",
       gradient: "from-[#4B2F7D] via-[#18112C] to-[#090712]",
       content: "We strive to lead digital innovation, building interfaces that set new standards for speed, accessibility, and clean aesthetic design.",
       label: "03 · INNOVATION",
@@ -286,14 +311,14 @@ export function AboutSection() {
                 <span className="absolute bottom-[-5px] left-[-5px] w-2 h-2 border-b border-l border-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
                 <span className="absolute bottom-[-5px] right-[-5px] w-2 h-2 border-b border-r border-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
                 
-                <button className="flex items-center bg-[#FFFFFF] text-[#000000] font-mono text-[12px] uppercase tracking-[0.1em] h-[57px] rounded-none hover:bg-[#33FF0D] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_20px_rgba(51,255,13,0.2)] cursor-pointer border-none pl-6 pr-0 w-fit relative z-10">
+                <div className="flex items-center bg-[#FFFFFF] text-[#000000] font-mono text-[12px] uppercase tracking-[0.1em] h-[57px] rounded-none hover:bg-[#33FF0D] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_20px_rgba(51,255,13,0.2)] cursor-pointer border-none pl-6 pr-0 w-fit relative z-10">
                   <span className="mr-6 font-medium">Learn more about us</span>
                   <span className="flex items-center justify-center w-[50px] h-[57px] border-l border-black/25 text-[18px]">
                     <span className="inline-block transform -rotate-45 group-hover:rotate-0 transition-transform duration-300 leading-none">
                       →
                     </span>
                   </span>
-                </button>
+                </div>
               </Link>
             </div>
 

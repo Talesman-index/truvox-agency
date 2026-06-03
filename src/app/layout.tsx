@@ -37,17 +37,17 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
   icons: {
     icon: [
-      { url: '/truvox_pixel.svg', type: 'image/svg+xml' }
+      { url: '/truvox_pixel.png', type: 'image/png' }
     ],
-    shortcut: ['/truvox_pixel.svg'],
-    apple: ['/truvox_pixel.svg']
+    shortcut: ['/truvox_pixel.png'],
+    apple: ['/truvox_pixel.png']
   },
   openGraph: {
     title: "Truvox | Web Design Agency for Small Businesses",
     description: "We create clean, strategic websites that build credibility and turn visitors into clients.",
     url: "https://truvox.studio",
     siteName: "Truvox Agency",
-    images: [{ url: "/assets/og/truvox-og.jpg", width: 1200, height: 630, alt: "Truvox Agency" }],
+    images: [{ url: "/assets/og/truvox-og.png", width: 1200, height: 630, alt: "Truvox Agency" }],
     locale: "en_US",
     type: "website",
   },
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Truvox | Web Design Agency",
     description: "Strategic web design for small businesses. Clean, high-converting websites.",
-    images: ["/assets/og/truvox-og.jpg"],
+    images: ["/assets/og/truvox-og.png"],
   },
 };
 
