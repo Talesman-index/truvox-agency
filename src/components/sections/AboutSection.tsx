@@ -140,9 +140,61 @@ export function AboutSection() {
             </div>
 
             {/* Agency Metrics Block */}
-            <div className="grid grid-cols-2 gap-8 pt-8 border-t border-[#575757]/20 w-full select-none">
-              {/* Metric 1: Custom Code */}
+            <div className="grid grid-cols-3 gap-4 sm:gap-6 pt-8 border-t border-[#575757]/20 w-full select-none">
+              {/* Metric 1: Founding */}
               <div className="flex flex-col gap-2">
+                {/* Icon Badge */}
+                <div className="w-10 h-10 rounded-full bg-[#111111] border border-[#575757]/30 flex items-center justify-center">
+                  <svg viewBox="0 0 24 24" className="w-5 h-5 text-white" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                  </svg>
+                </div>
+                {/* Header Tag */}
+                <span className="font-mono text-[#33FF0D] text-[9px] sm:text-[11px] uppercase tracking-wider block mt-2">
+                  // LAUNCH
+                </span>
+                {/* Value */}
+                <div className="flex items-baseline gap-2 mt-1">
+                  <span className="font-display text-[24px] sm:text-[36px] md:text-[40px] text-white leading-none font-bold">
+                    2025
+                  </span>
+                </div>
+                {/* Subtext */}
+                <span className="font-mono text-[8px] sm:text-[9.5px] text-[#505250] uppercase tracking-widest mt-2 leading-relaxed">
+                  Studio founded<br />in Cotonou
+                </span>
+              </div>
+
+              {/* Metric 2: Partners */}
+              <div className="flex flex-col gap-2 pl-4 sm:pl-6 border-l border-[#575757]/20">
+                {/* Icon Badge */}
+                <div className="w-10 h-10 rounded-full bg-[#111111] border border-[#575757]/30 flex items-center justify-center">
+                  <svg viewBox="0 0 24 24" className="w-5 h-5 text-white" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                  </svg>
+                </div>
+                {/* Header Tag */}
+                <span className="font-mono text-[#33FF0D] text-[9px] sm:text-[11px] uppercase tracking-wider block mt-2">
+                  // TEAM
+                </span>
+                {/* Value */}
+                <div className="flex items-baseline gap-2 mt-1">
+                  <span className="font-display text-[24px] sm:text-[36px] md:text-[40px] text-white leading-none font-bold">
+                    02
+                  </span>
+                </div>
+                {/* Subtext */}
+                <span className="font-mono text-[8px] sm:text-[9.5px] text-[#505250] uppercase tracking-widest mt-2 leading-relaxed">
+                  Aïda &amp; Shalom<br />(Partners)
+                </span>
+              </div>
+
+              {/* Metric 3: Projects */}
+              <div className="flex flex-col gap-2 pl-4 sm:pl-6 border-l border-[#575757]/20">
                 {/* Icon Badge */}
                 <div className="w-10 h-10 rounded-full bg-[#111111] border border-[#575757]/30 flex items-center justify-center">
                   <svg viewBox="0 0 24 24" className="w-5 h-5 text-white" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" xmlns="http://www.w3.org/2000/svg">
@@ -151,44 +203,18 @@ export function AboutSection() {
                   </svg>
                 </div>
                 {/* Header Tag */}
-                <span className="font-mono text-[#33FF0D] text-[10px] sm:text-[11px] uppercase tracking-wider block mt-2">
-                  // CODEBASE
+                <span className="font-mono text-[#33FF0D] text-[9px] sm:text-[11px] uppercase tracking-wider block mt-2">
+                  // WORK
                 </span>
                 {/* Value */}
                 <div className="flex items-baseline gap-2 mt-1">
-                  <span className="font-display text-[32px] sm:text-[40px] text-white leading-none font-bold">
-                    100%
+                  <span className="font-display text-[24px] sm:text-[36px] md:text-[40px] text-white leading-none font-bold">
+                    05
                   </span>
                 </div>
                 {/* Subtext */}
-                <span className="font-mono text-[9px] text-[#505250] uppercase tracking-widest mt-2 leading-relaxed">
-                  Bespoke Design &amp;<br />Custom Development
-                </span>
-              </div>
-
-              {/* Metric 2: Templates */}
-              <div className="flex flex-col gap-2 pl-8 border-l border-[#575757]/20">
-                {/* Icon Badge */}
-                <div className="w-10 h-10 rounded-full bg-[#111111] border border-[#575757]/30 flex items-center justify-center">
-                  <svg viewBox="0 0 24 24" className="w-5 h-5 text-white" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                    <line x1="9" y1="9" x2="15" y2="15"></line>
-                    <line x1="15" y1="9" x2="9" y2="15"></line>
-                  </svg>
-                </div>
-                {/* Header Tag */}
-                <span className="font-mono text-[#33FF0D] text-[10px] sm:text-[11px] uppercase tracking-wider block mt-2">
-                  // TEMPLATES
-                </span>
-                {/* Value */}
-                <div className="flex items-baseline gap-2 mt-1">
-                  <span className="font-display text-[32px] sm:text-[40px] text-white leading-none font-bold">
-                    0.0
-                  </span>
-                </div>
-                {/* Subtext */}
-                <span className="font-mono text-[9px] text-[#505250] uppercase tracking-widest mt-2 leading-relaxed">
-                  Pre-made templates or<br />generic themes used
+                <span className="font-mono text-[8px] sm:text-[9.5px] text-[#505250] uppercase tracking-widest mt-2 leading-relaxed">
+                  Bespoke projects<br />designed &amp; built
                 </span>
               </div>
             </div>
