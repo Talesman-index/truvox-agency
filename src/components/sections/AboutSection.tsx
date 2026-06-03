@@ -58,19 +58,25 @@ export function AboutSection() {
       title: "OUR GOALS",
       image: "/assets/bg/about_nature_goals.png",
       gradient: "from-[#1E3040] via-[#0E1520] to-[#070A0F]",
-      content: "We establish clear milestones, focus on user-centric layouts, ensure consistent performance, and plan for scalable long-term growth."
+      content: "We establish clear milestones, focus on user-centric layouts, ensure consistent performance, and plan for scalable long-term growth.",
+      label: "01 · PURPOSE",
+      footerRight: "USER EXPERIENCE"
     },
     {
       title: "OUR MISSION",
       image: "/assets/bg/about_nature_mission.png",
       gradient: "from-[#3D7899] via-[#122A3C] to-[#0A0F17]",
-      content: "We focus on understanding the problem before designing the solution, ensuring every layout, interaction, and visual element serves a real purpose."
+      content: "We focus on understanding the problem before designing the solution, ensuring every layout, interaction, and visual element serves a real purpose.",
+      label: "02 · INTENT",
+      footerRight: "MEANINGFUL DESIGN"
     },
     {
       title: "OUR VISION",
       image: "/assets/bg/about_nature_vision.png",
       gradient: "from-[#4B2F7D] via-[#18112C] to-[#090712]",
-      content: "We strive to lead digital innovation, building interfaces that set new standards for speed, accessibility, and clean aesthetic design."
+      content: "We strive to lead digital innovation, building interfaces that set new standards for speed, accessibility, and clean aesthetic design.",
+      label: "03 · INNOVATION",
+      footerRight: "DIGITAL SOLUTIONS"
     }
   ];
 
@@ -227,8 +233,8 @@ export function AboutSection() {
 
                       {/* Card Content */}
                       <div className="relative z-10 space-y-3">
-                        <span className="font-mono text-[#33FF0D] text-[10px] uppercase tracking-[0.25em] block">
-                          // 0{idx + 1}
+                        <span className="font-mono text-[#A4A4A4] text-[9px] uppercase tracking-[0.25em] block">
+                          {card.label}
                         </span>
                         <h3 className="font-display text-[22px] tracking-wide text-white uppercase mb-2 leading-none">
                           {card.title.replace("OUR ", "")}
@@ -240,20 +246,12 @@ export function AboutSection() {
 
                       {/* Card Footer Details */}
                       <div className="flex justify-between items-center w-full pt-4 border-t border-white/10 relative z-10">
-                        <span className="font-mono text-[9px] text-[#505250] uppercase tracking-[0.2em]">
-                          TRV.{card.title.replace("OUR ", "").substring(0, 3)} // CLT.NC
+                        <span className="font-mono text-[9px] text-[#A4A4A4] uppercase tracking-[0.2em]">
+                          TRUVOX · STUDIO
                         </span>
-                        <div className="flex items-center gap-2 relative">
-                          {isActive && (
-                            <>
-                              <span className="w-1.5 h-1.5 rounded-full bg-[#33FF0D] animate-ping absolute left-0" />
-                              <span className="w-1.5 h-1.5 rounded-full bg-[#33FF0D] relative z-10" />
-                            </>
-                          )}
-                          <span className={`font-mono text-[8px] uppercase tracking-widest ${isActive ? 'text-[#33FF0D] pl-3.5' : 'text-[#505250]'}`}>
-                            {isActive ? "active" : "standby"}
-                          </span>
-                        </div>
+                        <span className={`font-mono text-[9px] uppercase tracking-[0.2em] transition-colors duration-300 ${isActive ? 'text-[#33FF0D]' : 'text-[#A4A4A4]'}`}>
+                          {card.footerRight}
+                        </span>
                       </div>
                     </motion.div>
                   );
