@@ -6,7 +6,7 @@ import { Badge } from '@/components/ui/Badge';
 import { BlogCard } from '@/components/blog/BlogCard';
 import { blogPosts, blogCategories } from '@/data/blog';
 import { Button } from '@/components/ui/Button';
-import { Search, ArrowRight, TrendingUp, Mail } from 'lucide-react';
+import { Search, ArrowRight, BarChart3, Mail } from 'lucide-react';
 import Link from 'next/link';
 
 export default function BlogPage() {
@@ -79,7 +79,7 @@ export default function BlogPage() {
                 <div className="absolute top-0 right-0 w-32 h-32 bg-brand-main/10 blur-[60px] rounded-full" />
                 
                 <div className="space-y-4 relative z-10">
-                  <TrendingUp className="text-brand-main" size={32} />
+                  <BarChart3 className="text-brand-main" size={32} />
                   <h3 className="text-[24px] font-bold text-text-heading leading-tight">Ready to grow your business?</h3>
                   <p className="text-[16px] text-text-muted leading-relaxed">
                     Let&apos;s discuss how strategic design can help you attract more clients.

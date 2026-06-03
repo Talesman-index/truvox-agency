@@ -3,30 +3,35 @@
 @tailwind utilities;
 
 :root {
-  /* 99Studio Inspired Palette */
-  --brand-main         : #CEFE55; /* Neon Lime */
-  --brand-hover        : #2266FF; /* Secondary Blue / Interactive Hover */
-  --brand-blue         : #0000EE; /* Primary Brand Blue */
-  --brand-light        : #F4F1E6; /* Warm White */
+  /* Nuvara Inspired Palette */
+  --brand-main         : #33FF0D; /* Neon Green */
+  --brand-hover        : #2DD90D; /* Darker Neon Green */
+  --brand-blue         : #0000EE; /* Electric Blue */
+  --brand-light        : #F5F5F5; /* Off-White */
 
   --bg-primary         : #000000; /* Pure Black */
-  --bg-section-alt     : #0D0D18; /* Near-Black Surface */
+  --bg-section-alt     : #0D0D0D; /* Dark Charcoal */
   --bg-dark            : #000000; /* Pure Black */
-  --bg-card            : #0D0D18; /* Near-Black Surface */
-  --bg-card-tint       : rgba(206, 254, 85, 0.06); /* Neon Lime tint */
+  --bg-card            : #0D0D0D; /* Dark Charcoal */
+  --bg-card-tint       : rgba(51, 255, 13, 0.06); /* Neon Green tint */
 
-  --text-heading       : #F4F1E6; /* Warm White */
-  --text-body          : #D8D8D8; /* Light Gray */
-  --text-muted         : #ADAAAA; /* Mid-Gray */
+  --text-heading       : #FFFFFF; /* Pure White */
+  --text-body          : #A4A4A4; /* Medium Gray */
+  --text-muted         : #505250; /* Charcoal */
   --text-white         : #FFFFFF;
 
-  --border-subtle      : #1A1A1A; /* Dark Charcoal */
-  --border-brand       : #0000EE; /* Primary Brand Blue */
+  --border-subtle      : #575757; /* Slate Gray */
+  --border-brand       : #0000EE; /* Electric Blue */
 
-  --gradient-brand     : linear-gradient(135deg, #0000EE, #CEFE55);
-  --gradient-text      : linear-gradient(135deg, #0000EE, #CEFE55);
-  --gradient-hero      : radial-gradient(ellipse at 65% 40%, rgba(206, 254, 85, 0.08) 0%, transparent 65%);
+  --gradient-brand     : linear-gradient(135deg, #0000EE, #33FF0D);
+  --gradient-text      : linear-gradient(135deg, #0000EE, #33FF0D);
+  --gradient-hero      : radial-gradient(ellipse at 65% 40%, rgba(51, 255, 13, 0.08) 0%, transparent 65%);
   --gradient-separator : linear-gradient(90deg, transparent, #0000EE, transparent);
+
+  /* Font variable aliases (values injected by next/font) */
+  --font-display       : var(--font-staatliches);
+  --font-body          : var(--font-geist);
+  --font-mono          : var(--font-geist-mono);
 }
 
 /* Reset letter-spacing */
@@ -42,86 +47,82 @@ html, body {
 }
 
 @layer base {
-  /* BioRhyme Expanded variable width axis mapping */
-  h1, h2, h3, h4, blockquote, .stat-number, .step-number, .price-amount, .font-display {
-    font-stretch: 125%;
-  }
-
   body {
     @apply bg-bg-primary text-text-body antialiased;
     font-family    : var(--font-body);
-    font-size      : 16px;
-    font-weight    : 400;
-    line-height    : 1.56;
-    letter-spacing : 0px;
+    font-size      : 18px;
+    font-weight    : 500;
+    line-height    : 1.4;
+    letter-spacing : normal;
   }
 
   /* H1 — Hero principal */
   h1 {
     font-family    : var(--font-display);
-    font-size      : clamp(38px, 5.5vw, 60px);
-    font-weight    : 800;
-    line-height    : 1.2;
-    letter-spacing : 0px;
+    font-size      : clamp(48px, 9vw, 172px);
+    font-weight    : 400;
+    line-height    : 1.0;
+    letter-spacing : normal;
     color          : var(--text-heading);
+    text-transform : uppercase;
   }
 
   /* H2 — Titres de section */
   h2 {
-    font-family    : var(--font-display);
-    font-size      : clamp(26px, 4vw, 48px);
-    font-weight    : 600;
-    line-height    : 1.375;
-    letter-spacing : 0px;
+    font-family    : var(--font-body);
+    font-size      : clamp(20px, 3vw, 24px);
+    font-weight    : 500;
+    line-height    : 1.2;
+    letter-spacing : normal;
     color          : var(--text-heading);
   }
 
   /* H3 — Titres de cartes / sous-sections */
   h3 {
     font-family    : var(--font-display);
-    font-size      : clamp(20px, 2.5vw, 40px);
-    font-weight    : 600;
-    line-height    : 1.35;
-    letter-spacing : 0px;
+    font-size      : clamp(24px, 4vw, 48px);
+    font-weight    : 400;
+    line-height    : 1.1;
+    letter-spacing : normal;
     color          : var(--text-heading);
   }
 
   /* H4 — Labels de section */
   h4 {
     font-family    : var(--font-display);
-    font-size      : 34px;
-    font-weight    : 600;
-    line-height    : 1.24;
-    letter-spacing : 0px;
+    font-size      : 28px;
+    font-weight    : 400;
+    line-height    : 1.1;
+    letter-spacing : normal;
     color          : var(--text-heading);
   }
 
   /* Body / Paragraphes */
   p {
     font-family    : var(--font-body);
-    font-size      : 16px;
-    font-weight    : 400;
-    line-height    : 1.56;
-    letter-spacing : 0px;
+    font-size      : 18px;
+    font-weight    : 500;
+    line-height    : 1.4;
+    letter-spacing : normal;
     color          : var(--text-body);
     max-width      : 620px;
   }
 
   /* Liens de navigation */
   nav a {
-    font-family    : -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-family    : sans-serif;
     font-size      : 12px;
     font-weight    : 400;
-    letter-spacing : 0px;
-    color          : var(--border-brand);
+    letter-spacing : normal;
+    color          : var(--text-white);
   }
 
   /* Boutons */
   button, .btn {
-    font-family    : -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-family    : sans-serif;
     font-size      : 12px;
     font-weight    : 400;
-    letter-spacing : 0px;
+    letter-spacing : normal;
   }
 
   /* Numéros d'étapes / Stats */
@@ -129,75 +130,74 @@ html, body {
   .step-number,
   .price-amount {
     font-family    : var(--font-display);
-    font-weight    : 800;
-    letter-spacing : 0px;
+    font-weight    : 400;
+    letter-spacing : normal;
     line-height    : 0.9;
   }
 
   /* Citations / Testimonials */
   blockquote {
     font-family    : var(--font-display);
-    font-weight    : 600;
-    font-size      : clamp(20px, 2.5vw, 28px);
-    line-height    : 1.5;
-    letter-spacing : 0px;
+    font-weight    : 400;
+    font-size      : clamp(24px, 4vw, 48px);
+    line-height    : 1.1;
+    letter-spacing : normal;
   }
 }
 
 @layer components {
-  /* Buttons as per 99Studio visual contract */
+  /* Buttons as per Nuvara visual contract */
   .btn-primary {
-    @apply inline-flex items-center justify-center bg-[var(--brand-main)] text-[#000000] px-6 h-[48px] rounded-[24px] transition-all duration-200 text-[12px] font-normal border-none hover:opacity-90 hover:scale-[1.02] active:opacity-85;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    letter-spacing: 0px;
+    @apply inline-flex items-center justify-center bg-[#33FF0D] text-[#000000] px-7 h-[57px] rounded-none transition-colors duration-200 text-[12px] font-normal border-none hover:bg-[#2DD90D] active:bg-[#1FA006] disabled:bg-[#A4A4A4] disabled:text-[#505250] disabled:cursor-not-allowed;
+    font-family: sans-serif;
+    letter-spacing: normal;
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center bg-[#F4F1E6] text-[#000000] px-6 h-[48px] rounded-[24px] border border-[#D8D8D8] transition-all duration-200 text-[12px] font-normal hover:bg-[#F6F5F2] active:bg-[#F0F0F0];
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    letter-spacing: 0px;
+    @apply inline-flex items-center justify-center bg-[#F5F5F5] text-[#000000] px-7 h-[57px] rounded-none border border-black transition-colors duration-200 text-[12px] font-normal hover:bg-white hover:border-[#333333] active:bg-[#E0E0E0] disabled:bg-[#D0D0D0] disabled:border-[#A4A4A4] disabled:cursor-not-allowed;
+    font-family: sans-serif;
+    letter-spacing: normal;
   }
 
   .btn-ghost-zailab {
-    @apply inline-flex items-center justify-center bg-transparent text-[var(--border-brand)] px-6 h-[48px] rounded-[24px] border border-[var(--border-brand)] transition-all duration-200 text-[12px] font-normal hover:bg-[rgba(0,0,238,0.08)] active:bg-[rgba(0,0,238,0.12)];
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    letter-spacing: 0px;
+    @apply inline-flex items-center justify-center bg-transparent text-white px-7 h-[57px] rounded-none border border-[#575757] transition-all duration-200 text-[12px] font-normal hover:bg-white/5 hover:border-white/80 active:bg-white/10;
+    font-family: sans-serif;
+    letter-spacing: normal;
   }
 
-  /* Cards as per 99Studio */
+  /* Cards as per Nuvara */
   .card-standard {
-    @apply bg-[var(--bg-card)] p-10 rounded-[12px] border border-[var(--border-subtle)] transition-all duration-300 text-[var(--text-body)] shadow-[0px_8px_24px_rgba(0,0,0,0.32)];
+    @apply bg-[var(--bg-card)] p-8 rounded-none border border-[var(--border-subtle)] transition-all duration-300 text-[var(--text-body)] shadow-none;
   }
   .card-standard:hover {
-    @apply border-[var(--brand-main)];
-    box-shadow: 0px 8px 32px rgba(206, 254, 85, 0.15);
+    @apply border-white/40;
   }
 
   /* Light card option */
   .card-light {
-    @apply bg-[#F4F1E6] text-[#000000] p-10 rounded-[12px] transition-all duration-300 shadow-[0px_4px_12px_rgba(0,0,0,0.08)];
+    @apply bg-[#F5F5F5] text-[#000000] p-8 rounded-none transition-all duration-300 border border-[#C0C4BF];
   }
   .card-light h1, .card-light h2, .card-light h3, .card-light h4, .card-light h5, .card-light h6 {
     @apply text-[#000000];
   }
 
   .badge-lime {
-    @apply bg-[var(--bg-card-tint)] text-[var(--brand-main)] px-4 py-2 rounded-[70px] text-[12px] font-bold border border-[#CEFE5533];
-    letter-spacing: 0.06em;
+    @apply bg-[#33FF0D] text-[#000000] px-3 py-1 rounded-none text-[14px] font-medium font-mono;
+    letter-spacing: normal;
   }
 
   .badge-pink {
-    @apply bg-[var(--bg-card-tint)] text-[var(--brand-main)] px-4 py-2 rounded-[70px] text-[12px] font-bold border border-[#CEFE5533];
-    letter-spacing: 0.06em;
+    @apply bg-[#F5F5F5] text-[#000000] px-3 py-1 rounded-none text-[14px] font-medium font-mono border border-[#C0C4BF];
+    letter-spacing: normal;
   }
 
   .badge-sage {
-    @apply bg-[var(--bg-card-tint)] text-[var(--brand-main)] px-4 py-2 rounded-[70px] text-[12px] font-bold border border-[#CEFE5533];
-    letter-spacing: 0.06em;
+    @apply bg-[#F5F5F5] text-[#000000] px-3 py-1 rounded-none text-[14px] font-medium font-mono border border-[#C0C4BF];
+    letter-spacing: normal;
   }
 
   .gradient-text {
-    @apply text-brand-main bg-none;
+    @apply text-white bg-none;
     background-clip: unset;
     -webkit-background-clip: unset;
     -webkit-text-fill-color: currentColor;
@@ -209,7 +209,7 @@ html, body {
   }
 
   .input-zailab {
-    @apply bg-transparent border-none border-b border-[var(--border-subtle)] h-[38px] px-0 py-1 text-[18px] text-white font-normal focus:outline-none focus:border-[var(--brand-main)] placeholder-[var(--text-muted)] w-full;
+    @apply bg-transparent border-none border-b border-[#575757] h-[40px] px-0 py-1 text-[16px] text-white font-normal focus:outline-none focus:border-b-2 focus:border-[#33FF0D] placeholder-white/50 w-full rounded-none;
   }
 
   /* Animations */

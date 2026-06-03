@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import React, { forwardRef } from 'react';
 import { cn } from '@/lib/utils';
 
-type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
+type ButtonProps = React.ComponentPropsWithoutRef<typeof motion.button> & {
   variant?: 'primary' | 'secondary' | 'ghost' | 'ghost-zailab' | 'outline-white';
 };
 

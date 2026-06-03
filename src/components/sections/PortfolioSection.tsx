@@ -1,144 +1,196 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import { useRef } from 'react';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
-import { Reveal, RevealItem } from '@/components/ui/Reveal';
-import { Button } from '@/components/ui/Button';
 import Link from 'next/link';
-import { ArrowUpRight } from 'lucide-react';
-import { Badge } from '@/components/ui/Badge';
 
 import { allProjects } from '@/data/projects';
 
 export const PortfolioSection = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const activeProject = allProjects[activeIndex];
+
   return (
-    <section id="projects" className="py-24 md:py-40 px-6 bg-bg-primary border-t border-white/5">
-      <div className="max-w-[1200px] mx-auto">
-        {/* Minimalist Header */}
-        <Reveal>
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-20 md:mb-32">
-            <div className="space-y-4">
-              <Badge variant="lime" rotation={-2} className="mb-4">Our Work</Badge>
-              <h2 className="text-[32px] sm:text-[40px] md:text-[56px] font-bold text-white tracking-tight leading-[1.15] break-words">
-                <span className="font-mono text-brand-main text-[14px] uppercase tracking-[0.2em] block mb-4 font-bold">
-                  Selected
-                </span>
-                <span className="font-display">
-                  Works
-                </span>
-              </h2>
-            </div>
-            <p className="text-text-muted text-[16px] leading-relaxed max-w-sm">
-              We&apos;re a new studio. Here&apos;s what we&apos;ve done so far, and where we&apos;re headed.
+    <section
+      id="projects"
+      className="relative py-24 md:py-32 px-6 md:px-12 overflow-hidden"
+      style={{ background: '#F5F5F5' }}
+    >
+
+      <div className="max-w-[1400px] mx-auto relative z-20">
+
+        {/* ── HEADER ROW ── */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16 md:mb-24">
+          {/* Left: title */}
+          <div>
+            <h2
+              className="text-[40px] sm:text-[56px] md:text-[72px] lg:text-[86px] leading-[0.95] tracking-tight"
+              style={{
+                fontFamily: 'var(--font-staatliches), Georgia, serif',
+                fontWeight: 400,
+                color: '#000',
+                textTransform: 'uppercase',
+              }}
+            >
+              Selected Work{' '}
+              <span
+                className="text-[18px] sm:text-[22px] md:text-[26px] align-top"
+                style={{
+                  fontFamily: 'var(--font-geist-mono), monospace',
+                  fontWeight: 600,
+                  color: '#33FF0D',
+                }}
+              >
+                [{String(allProjects.length).padStart(2, '0')}]
+              </span>
+            </h2>
+            <p
+              className="mt-4 max-w-md text-[15px] md:text-[16px] leading-relaxed"
+              style={{
+                fontFamily: 'var(--font-geist), system-ui, sans-serif',
+                color: '#555',
+                fontWeight: 400,
+              }}
+            >
+              A selection of design projects that showcase our approach to
+              clarity, structure, and usability across digital platforms.
             </p>
           </div>
-        </Reveal>
 
-        {/* List Layout - Alternating Flex Rows */}
-        <div className="space-y-24 md:space-y-32">
-          {allProjects.map((project, i) => (
-            <Reveal key={i} delay={i * 0.1}>
-              <div className={`flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-16 pb-16 border-b border-white/5 last:border-b-0 last:pb-0 ${
-                i % 2 === 1 ? 'lg:flex-row-reverse' : ''
-              }`}>
-                
-                {/* Text Side */}
-                <div className="w-full lg:w-[45%] space-y-6">
-                  <div className="flex items-center gap-4">
-                    <span className="font-mono text-brand-main text-[14px] font-bold tracking-[0.2em]">
-                      0{i + 1}
-                    </span>
-                    {project.isConcept && (
-                      <span className="text-[11px] font-mono text-brand-main/80 uppercase tracking-widest">
-                        Concept
-                      </span>
-                    )}
-                  </div>
-                  
-                  <h3 className="font-display text-[28px] sm:text-[34px] md:text-[40px] font-bold text-white leading-tight">
-                    {project.title}
-                  </h3>
-                  
-                  <p className="text-text-muted text-[15px] md:text-[16px] leading-relaxed max-w-lg">
-                    {project.description}
-                  </p>
-                  
-                  <div className="flex flex-wrap items-center gap-2 pt-2">
-                    {project.tags.map((tag: string, tagIdx: number) => (
-                      <span 
-                        key={tagIdx} 
-                        className="text-[10px] font-mono font-bold uppercase tracking-widest px-3 py-1 rounded-full border border-white/10 text-text-muted hover:border-brand-main/30 hover:text-brand-main transition-all"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                  
-                  <div className="pt-4">
-                    <Link 
-                      href={`/projects/${project.slug}`} 
-                      className="text-brand-hover hover:text-brand-main transition-colors text-[13px] font-mono font-bold uppercase tracking-wider inline-flex items-center gap-1 group"
-                    >
-                      View Case Study 
-                      <ArrowUpRight size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                    </Link>
-                  </div>
-                </div>
-                
-                {/* Image Side */}
-                <div className="w-full lg:w-[50%]">
-                  <Link href={`/projects/${project.slug}`} className="group block">
-                    <div className="relative aspect-[16/10] w-full overflow-hidden rounded-[12px] bg-[#0D0D18] border border-white/5 group-hover:border-brand-main/30 transition-all duration-700 shadow-2xl">
-                      <Image 
-                        src={project.image} 
-                        alt={project.title} 
-                        fill 
-                        unoptimized
-                        className="object-cover transition-all duration-1000 group-hover:scale-103"
-                      />
-                      <div className="absolute inset-0 bg-brand-main/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                    </div>
-                  </Link>
-                </div>
-                
-              </div>
-            </Reveal>
-          ))}
+          {/* Right: counter */}
+          <div
+            className="hidden md:block text-right font-mono"
+            style={{
+              fontWeight: 600,
+              fontSize: 'clamp(40px, 5vw, 72px)',
+              color: '#000',
+              lineHeight: 1,
+            }}
+          >
+            {String(activeIndex + 1).padStart(2, '0')}/{String(allProjects.length).padStart(2, '0')}
+          </div>
         </div>
 
-        {/* View All Button */}
-        <Reveal delay={0.2}>
-          <div className="mt-24 flex justify-center">
-            <Link href="/projects">
-              <Button className="btn-secondary h-[56px] px-10 rounded-full text-[12px] font-bold uppercase tracking-widest transition-all">
-                <span>View All Projects</span>
-                <ArrowUpRight size={16} className="ml-2" />
-              </Button>
-            </Link>
-          </div>
-        </Reveal>
+        {/* ── MAIN CONTENT: Grid layout ── */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
 
-        {/* Call to Action */}
-        <Reveal delay={0.3}>
-          <div className="mt-32 pt-20 border-t border-white/5 text-center space-y-8">
-            <h4 className="text-[32px] sm:text-[40px] md:text-[56px] font-bold text-white tracking-tight leading-[1.15] break-words">
-              <span className="font-mono text-brand-main text-[14px] uppercase tracking-[0.2em] block mb-4 font-bold">
-                Have a vision
-              </span>
-              <span className="font-display">
-                In Mind?
-              </span>
-            </h4>
-            <div className="flex justify-center pt-4">
-              <Link href="/contact">
-                <Button className="btn-primary h-[56px] px-10 rounded-full text-[12px] font-bold uppercase tracking-widest shadow-[0_0_30px_rgba(206,254,85,0.2)]">
-                  Contact us to start
-                </Button>
+          {/* LEFT: Project name tabs */}
+          <div className="lg:col-span-3 flex flex-col justify-between">
+            <div className="flex flex-col gap-2">
+              {allProjects.map((project, i) => (
+                <button
+                  key={project.slug}
+                  onClick={() => setActiveIndex(i)}
+                  className="text-left py-4 px-6 transition-all duration-300 cursor-pointer text-[18px] sm:text-[20px] md:text-[22px] font-medium border-l-2 font-interDisplay"
+                  style={{
+                    color: activeIndex === i ? '#000000' : '#A4A4A4',
+                    borderLeftColor: activeIndex === i ? '#33FF0D' : 'transparent',
+                    background: 'transparent',
+                  }}
+                >
+                  {project.title}
+                </button>
+              ))}
+            </div>
+
+            {/* View all button */}
+            <div className="mt-8 px-6">
+              <Link
+                href="/projects"
+                className="inline-flex items-center justify-between w-[150px] bg-[#33FF0D] text-black font-mono text-[12px] uppercase tracking-[0.1em] h-[48px] px-4 hover:bg-[#2DD90D] hover:shadow-[0_8px_20px_rgba(51,255,13,0.2)] hover:-translate-y-0.5 transition-all duration-300 group"
+              >
+                <span>View all</span>
+                <span className="text-[16px] transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1">↗</span>
               </Link>
             </div>
           </div>
-        </Reveal>
+
+          {/* RIGHT: Combined Project Card (Image left, Info right) */}
+          <div className="lg:col-span-9">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeProject.slug}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                className="grid grid-cols-1 md:grid-cols-12 w-full border border-[#C0C4BF] bg-white overflow-hidden shadow-lg h-full"
+              >
+                {/* Left side: Project Image */}
+                <div className="md:col-span-7 relative aspect-[16/10] md:aspect-auto min-h-[300px] md:min-h-[450px] overflow-hidden bg-[#1A1A1A]">
+                  <Image
+                    src={activeProject.image}
+                    alt={activeProject.title}
+                    fill
+                    unoptimized
+                    className="object-cover transition-transform duration-1000 hover:scale-105"
+                  />
+                </div>
+
+                {/* Right side: Project Info (Black card) */}
+                <div className="md:col-span-5 bg-black p-8 md:p-10 flex flex-col justify-between text-white border-l border-[#C0C4BF]/20">
+                  <div className="space-y-6">
+                    {/* Project Logo/Title */}
+                    <div className="flex items-center gap-3">
+                      <div className="w-8 h-8 rounded-full bg-[#33FF0D]/20 flex items-center justify-center">
+                        <div className="w-3 h-3 rounded-full bg-[#33FF0D]" />
+                      </div>
+                      <span className="text-[20px] font-display uppercase tracking-wide">
+                        {activeProject.title}
+                      </span>
+                    </div>
+
+                    {/* Description */}
+                    <p className="text-[#A4A4A4] text-[14px] leading-relaxed font-body">
+                      {activeProject.description}
+                    </p>
+
+                    {/* Tags */}
+                    <div className="flex flex-wrap gap-2">
+                      {activeProject.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="px-3.5 py-1.5 border border-[#575757] text-[11px] font-mono uppercase tracking-wider text-white bg-white/5 rounded-none"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="space-y-6 mt-12">
+                    {/* Divider */}
+                    <div className="border-t border-[#575757]/40 w-full" />
+
+                    {/* Metadata Rows */}
+                    <div className="space-y-3 font-mono text-[12px] text-white">
+                      <div className="flex justify-between">
+                        <span className="text-[#A4A4A4] uppercase tracking-wider">Year</span>
+                        <span>{activeProject.details.year}</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-[#A4A4A4] uppercase tracking-wider">Timeline</span>
+                        <span>4 Weeks</span>
+                      </div>
+                    </div>
+
+                    {/* View project button */}
+                    <Link
+                      href={`/projects/${activeProject.slug}`}
+                      className="flex items-center justify-between bg-white text-black font-mono text-[12px] uppercase tracking-[0.1em] h-[48px] px-6 hover:bg-[#F5F5F5] hover:shadow-[0_8px_20px_rgba(255,255,255,0.1)] hover:-translate-y-0.5 transition-all duration-300 w-full group"
+                    >
+                      <span>View project</span>
+                      <span className="text-[16px] transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1">↗</span>
+                    </Link>
+                  </div>
+
+                </div>
+              </motion.div>
+            </AnimatePresence>
+          </div>
+
+        </div>
       </div>
     </section>
   );

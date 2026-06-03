@@ -2,11 +2,11 @@ import React from 'react';
 
 interface TruvoxLogoProps {
   className?: string;
-  width?: number;
-  height?: number;
+  width?: number | string;
+  height?: number | string;
 }
 
-export const TruvoxLogo: React.FC<TruvoxLogoProps> = ({ className, width = 180, height = 40 }) => {
+export const TruvoxLogo: React.FC<TruvoxLogoProps> = ({ className, width = "100%", height = "100%" }) => {
   return (
     <svg 
       width={width} 

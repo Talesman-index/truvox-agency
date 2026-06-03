@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import { Reveal, RevealItem } from '@/components/ui/Reveal';
 import { Badge } from '@/components/ui/Badge';
-import { ArrowUpRight, CheckCircle2, ChevronRight, Target, Sparkles, TrendingUp } from 'lucide-react';
+import { ArrowUpRight, CheckCircle2, ChevronRight, Target, Paintbrush, Cpu, BarChart3 } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { allProjects } from '@/data/projects';
@@ -117,7 +117,7 @@ export function ProjectDetailContent({ project }: ProjectDetailContentProps) {
             <div className="absolute inset-0 bg-gradient-to-t from-bg-dark/80 via-transparent to-transparent" />
             <div className="absolute bottom-6 left-6 md:bottom-12 md:left-12">
               <div className="flex items-center gap-3 text-white/50 bg-black/20 backdrop-blur-xl px-4 md:px-6 py-2 md:py-3 rounded-full border border-white/10">
-                <Sparkles className="w-3.5 h-3.5 md:w-4 md:h-4" />
+                <Paintbrush className="w-3.5 h-3.5 md:w-4 md:h-4" />
                 <span className="text-[10px] md:text-[12px] font-bold uppercase tracking-widest">Aesthetics: {project.tags[0]}</span>
               </div>
             </div>
@@ -153,7 +153,7 @@ export function ProjectDetailContent({ project }: ProjectDetailContentProps) {
               <RevealItem>
                 <div className="space-y-8 md:space-y-10">
                   <div className="inline-flex items-center gap-4 text-brand-main">
-                    <Sparkles className="w-5 h-5 md:w-6 md:h-6" />
+                    <Cpu className="w-5 h-5 md:w-6 md:h-6" />
                     <h2 className="text-[10px] md:text-[12px] font-bold uppercase tracking-[0.4em]">Our Engineered Solution</h2>
                   </div>
                   <h3 className="text-[28px] sm:text-[32px] md:text-[54px] font-medium text-text-heading tracking-tight leading-[1.1]">
@@ -180,7 +180,7 @@ export function ProjectDetailContent({ project }: ProjectDetailContentProps) {
                   <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-main/5 blur-[120px] rounded-full pointer-events-none transition-opacity duration-700 group-hover:opacity-100 opacity-60" />
                   <div className="relative z-10">
                     <div className="flex items-center gap-4 text-brand-main mb-8 md:mb-10">
-                      <TrendingUp className="w-6 h-6 md:w-7 md:h-7" />
+                      <BarChart3 className="w-6 h-6 md:w-7 md:h-7" />
                       <h2 className="text-[10px] md:text-[12px] font-bold uppercase tracking-[0.4em]">The Growth Impact</h2>
                     </div>
                     <h3 className="text-[28px] sm:text-[32px] md:text-[64px] font-medium tracking-tight leading-[1] text-text-heading mb-8">

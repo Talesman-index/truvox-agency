@@ -1,25 +1,32 @@
 import type { Metadata } from "next";
-import { BioRhyme, DM_Sans, Space_Mono } from "next/font/google";
+import { Geist_Mono, Inter as InterFont, Geist, Staatliches } from "next/font/google";
 import Script from 'next/script';
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 
-const bioRhyme = BioRhyme({
+const geistMono = Geist_Mono({
   subsets: ["latin"],
-  variable: "--font-display"
+  weight: ["500", "600"],
+  variable: "--font-geist-mono",
 });
 
-const dmSans = DM_Sans({
+const interDisplay = InterFont({
   subsets: ["latin"],
   weight: ["400", "500", "700"],
-  variable: "--font-body",
+  variable: "--font-inter-display",
 });
 
-const spaceMono = Space_Mono({
+const geist = Geist({
   subsets: ["latin"],
   weight: ["400", "700"],
-  variable: "--font-mono",
+  variable: "--font-geist",
+});
+
+const staatliches = Staatliches({
+  subsets: ["latin"],
+  weight: ["400"],
+  variable: "--font-staatliches",
 });
 
 export const metadata: Metadata = {
@@ -30,10 +37,10 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
   icons: {
     icon: [
-      { url: '/favicon.svg', type: 'image/svg+xml' }
+      { url: '/truvox_pixel.svg', type: 'image/svg+xml' }
     ],
-    shortcut: ['/favicon.svg'],
-    apple: ['/favicon.svg']
+    shortcut: ['/truvox_pixel.svg'],
+    apple: ['/truvox_pixel.svg']
   },
   openGraph: {
     title: "Truvox | Web Design Agency for Small Businesses",
@@ -54,8 +61,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${bioRhyme.variable} ${dmSans.variable} ${spaceMono.variable}`}>
-      <body className={`${dmSans.className} antialiased min-h-screen flex flex-col overflow-x-hidden`}>
+    <html lang="en" className={`${geistMono.variable} ${interDisplay.variable} ${geist.variable} ${staatliches.variable}`}>
+      <body className={`${geist.className} antialiased min-h-screen flex flex-col overflow-x-hidden`}>
         <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-PC3HNC9G"
@@ -70,16 +77,28 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           dangerouslySetInnerHTML={{
             __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
             new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            j=d.createElement(s),dl=l!='dataLayer'? '&l='+l:'';j.async=true;j.src=
             'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
             })(window,document,'script','dataLayer','GTM-PC3HNC9G');`,
           }}
         />
-        <Navbar />
-        <main className="flex-grow">
-          {children}
-        </main>
-        <Footer />
+        <div className="relative min-h-screen flex flex-col overflow-x-hidden">
+          {/* Global Background Vertical Grid Lines */}
+          <div className="absolute inset-y-0 left-0 right-0 pointer-events-none z-30 max-w-[1440px] mx-auto px-6 md:px-12 grid grid-cols-6">
+            <div className="border-r border-neutral-500/[0.08] h-full"></div>
+            <div className="border-r border-neutral-500/[0.08] h-full"></div>
+            <div className="border-r border-neutral-500/[0.08] h-full"></div>
+            <div className="border-r border-neutral-500/[0.08] h-full"></div>
+            <div className="border-r border-neutral-500/[0.08] h-full"></div>
+            <div className="h-full"></div>
+          </div>
+          
+          <Navbar />
+          <main className="flex-grow">
+            {children}
+          </main>
+          <Footer />
+        </div>
       </body>
     </html>
   );
