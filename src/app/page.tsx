@@ -250,20 +250,33 @@ export default function Home() {
           </p>
 
           {/* Action Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 items-center justify-center mb-16 z-30">
-            <Link href="#projects">
-              <button className="flex items-center bg-[#FFFFFF] text-[#000000] font-mono text-[12px] uppercase tracking-[0.1em] h-[57px] rounded-none hover:bg-[#F5F5F5] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_20px_rgba(255,255,255,0.1)] cursor-pointer border-none pl-6 pr-0 group">
+          <div className="flex flex-col sm:flex-row gap-6 items-center justify-center mb-16 z-30 select-none">
+            {/* See our work (Hover: neon green, crop marks, arrow rotate) */}
+            <Link href="#projects" className="relative group block">
+              {/* Corner Crop Marks */}
+              <span className="absolute top-[-5px] left-[-5px] w-2 h-2 border-t border-l border-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
+              <span className="absolute top-[-5px] right-[-5px] w-2 h-2 border-t border-r border-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
+              <span className="absolute bottom-[-5px] left-[-5px] w-2 h-2 border-b border-l border-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
+              <span className="absolute bottom-[-5px] right-[-5px] w-2 h-2 border-b border-r border-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
+              
+              <button className="flex items-center bg-[#FFFFFF] text-[#000000] font-mono text-[12px] uppercase tracking-[0.1em] h-[57px] rounded-none hover:bg-[#33FF0D] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_20px_rgba(51,255,13,0.2)] cursor-pointer border-none pl-6 pr-0 relative z-10">
                 <span className="mr-6 font-medium">See our work</span>
-                <span className="flex items-center justify-center w-[50px] h-[57px] border-l border-black/20 text-[16px] transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1">
-                  ↗
+                <span className="flex items-center justify-center w-[50px] h-[57px] border-l border-black/25 text-[18px]">
+                  <span className="inline-block transform -rotate-45 group-hover:rotate-0 transition-transform duration-300 leading-none">
+                    →
+                  </span>
                 </span>
               </button>
             </Link>
-            <Link href="/contact">
-              <button className="flex items-center bg-[#000000] text-[#FFFFFF] border border-[#575757] font-mono text-[12px] uppercase tracking-[0.1em] h-[57px] rounded-none hover:bg-white/5 hover:border-white/40 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_20px_rgba(255,255,255,0.05)] cursor-pointer pl-6 pr-0 group">
+
+            {/* Request a quote (Hover: arrow rotate, border glow) */}
+            <Link href="/contact" className="relative group block">
+              <button className="flex items-center bg-[#000000] text-[#FFFFFF] border border-[#575757] hover:border-white/40 font-mono text-[12px] uppercase tracking-[0.1em] h-[57px] rounded-none hover:bg-white/5 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_20px_rgba(255,255,255,0.05)] cursor-pointer pl-6 pr-0">
                 <span className="mr-6 font-medium">Request a quote</span>
-                <span className="flex items-center justify-center w-[50px] h-[57px] border-l border-[#575757] text-[16px] transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1">
-                  ↗
+                <span className="flex items-center justify-center w-[50px] h-[57px] border-l border-[#575757] text-[18px]">
+                  <span className="inline-block transform -rotate-45 group-hover:rotate-0 transition-transform duration-300 leading-none">
+                    →
+                  </span>
                 </span>
               </button>
             </Link>
@@ -518,16 +531,30 @@ export default function Home() {
           
           <Reveal delay={0.2}>
             <div className="flex flex-col sm:flex-row justify-center items-center gap-4 z-30 relative mt-8">
-              <Link href="/contact">
-                <button className="flex items-center bg-[#33FF0D] text-black font-mono text-[12px] uppercase tracking-[0.15em] h-[52px] px-8 hover:bg-[#2DD90D] hover:shadow-[0_8px_20px_rgba(51,255,13,0.2)] hover:-translate-y-0.5 transition-all duration-300 cursor-pointer border-none font-semibold rounded-none group">
-                  <span>Start a project</span>
-                  <span className="ml-4 text-[16px] transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1">↗</span>
+              <Link href="/contact" className="relative group block sm:inline-block">
+                {/* Corner Crop Marks */}
+                <span className="absolute top-[-5px] left-[-5px] w-2 h-2 border-t border-l border-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
+                <span className="absolute top-[-5px] right-[-5px] w-2 h-2 border-t border-r border-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
+                <span className="absolute bottom-[-5px] left-[-5px] w-2 h-2 border-b border-l border-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
+                <span className="absolute bottom-[-5px] right-[-5px] w-2 h-2 border-b border-r border-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
+                
+                <button className="flex items-center bg-[#33FF0D] text-black font-mono text-[12px] uppercase tracking-[0.15em] h-[52px] px-8 hover:bg-[#2DD90D] hover:shadow-[0_8px_20px_rgba(51,255,13,0.2)] hover:-translate-y-0.5 transition-all duration-300 cursor-pointer border-none font-semibold rounded-none relative z-10 w-full justify-center sm:w-auto">
+                  <span className="mr-4">Start a project</span>
+                  <span className="inline-block transform -rotate-45 group-hover:rotate-0 transition-transform duration-300 text-[16px] leading-none">
+                    →
+                  </span>
                 </button>
               </Link>
-              <Link href="/contact">
-                <button className="flex items-center gap-3 bg-white text-black font-mono text-[12px] uppercase tracking-[0.15em] h-[52px] px-8 hover:bg-[#F5F5F5] hover:shadow-[0_8px_20px_rgba(255,255,255,0.1)] hover:-translate-y-0.5 transition-all duration-300 cursor-pointer border-none font-semibold rounded-none group">
+              <Link href="/contact" className="relative group block sm:inline-block">
+                {/* Corner Crop Marks */}
+                <span className="absolute top-[-5px] left-[-5px] w-2 h-2 border-t border-l border-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
+                <span className="absolute top-[-5px] right-[-5px] w-2 h-2 border-t border-r border-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
+                <span className="absolute bottom-[-5px] left-[-5px] w-2 h-2 border-b border-l border-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
+                <span className="absolute bottom-[-5px] right-[-5px] w-2 h-2 border-b border-r border-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
+                
+                <button className="flex items-center gap-3 bg-white text-black font-mono text-[12px] uppercase tracking-[0.15em] h-[52px] px-8 hover:bg-[#33FF0D] hover:shadow-[0_8px_20px_rgba(51,255,13,0.2)] hover:-translate-y-0.5 transition-all duration-300 cursor-pointer border-none font-semibold rounded-none relative z-10 w-full justify-center sm:w-auto">
                   <span>Schedule a call</span>
-                  <div className="relative w-6 h-6 rounded-full overflow-hidden border border-black/10">
+                  <div className="relative w-6 h-6 rounded-full overflow-hidden border border-black/10 transition-transform duration-300 group-hover:scale-105">
                     <Image 
                       src="/assets/team/shalom.jpg" 
                       alt="Shalom" 

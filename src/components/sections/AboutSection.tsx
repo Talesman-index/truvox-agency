@@ -281,11 +281,19 @@ export function AboutSection() {
                 Our team works across branding, web design, and digital interfaces, helping companies present their ideas clearly and professionally.
               </p>
               
-              <Link href="/about" className="block">
-                <button className="flex items-center bg-[#FFFFFF] text-[#000000] font-mono text-[12px] uppercase tracking-[0.1em] h-[57px] rounded-none hover:bg-[#F5F5F5] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_20px_rgba(255,255,255,0.1)] cursor-pointer border-none pl-6 pr-0 w-fit group">
+              <Link href="/about" className="relative group block w-fit">
+                {/* Corner Crop Marks */}
+                <span className="absolute top-[-5px] left-[-5px] w-2 h-2 border-t border-l border-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
+                <span className="absolute top-[-5px] right-[-5px] w-2 h-2 border-t border-r border-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
+                <span className="absolute bottom-[-5px] left-[-5px] w-2 h-2 border-b border-l border-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
+                <span className="absolute bottom-[-5px] right-[-5px] w-2 h-2 border-b border-r border-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
+                
+                <button className="flex items-center bg-[#FFFFFF] text-[#000000] font-mono text-[12px] uppercase tracking-[0.1em] h-[57px] rounded-none hover:bg-[#33FF0D] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_20px_rgba(51,255,13,0.2)] cursor-pointer border-none pl-6 pr-0 w-fit relative z-10">
                   <span className="mr-6 font-medium">Learn more about us</span>
-                  <span className="flex items-center justify-center w-[50px] h-[57px] border-l border-black/20 text-[16px] transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1">
-                    ↗
+                  <span className="flex items-center justify-center w-[50px] h-[57px] border-l border-black/25 text-[18px]">
+                    <span className="inline-block transform -rotate-45 group-hover:rotate-0 transition-transform duration-300 leading-none">
+                      →
+                    </span>
                   </span>
                 </button>
               </Link>
