@@ -178,7 +178,7 @@ export default function Home() {
       />
       
       {/* HERO SECTION - NUVARA AGENCY STYLE */}
-      <section className="relative min-h-screen flex flex-col items-center justify-center pt-48 pb-20 sm:pt-32 md:pt-36 px-4 md:px-6 overflow-hidden bg-black">
+      <section className="relative min-h-screen flex flex-col items-center justify-center pt-32 pb-12 sm:pt-28 md:pt-28 px-4 md:px-6 overflow-hidden bg-black">
 
         <motion.div
           className="max-w-[1200px] mx-auto w-full relative z-20 flex flex-col items-center text-center mt-6 sm:mt-2"
@@ -190,7 +190,7 @@ export default function Home() {
           <motion.div 
             onMouseEnter={() => setIsLogoHovered(true)}
             onMouseLeave={() => setIsLogoHovered(false)}
-            className="relative w-[320px] sm:w-[600px] md:w-[800px] lg:w-[1000px] xl:w-[1200px] h-[86px] sm:h-[161px] md:h-[215px] lg:h-[268px] xl:h-[322px] mb-8 select-none cursor-pointer"
+            className="relative w-[280px] sm:w-[500px] md:w-[680px] lg:w-[820px] xl:w-[960px] h-[75px] sm:h-[134px] md:h-[182px] lg:h-[220px] xl:h-[258px] mb-6 select-none cursor-pointer"
           >
             <svg 
               viewBox="0 0 413 111" 
@@ -246,21 +246,21 @@ export default function Home() {
           </motion.div>
           
           {/* Subtitle / Description */}
-          <p className="font-body text-[#A4A4A4] text-[16px] sm:text-[18px] md:text-[20px] max-w-2xl mb-12 leading-[1.4] px-4">
+          <p className="font-body text-[#A4A4A4] text-[15px] sm:text-[17px] md:text-[19px] max-w-2xl mb-8 leading-[1.4] px-4">
             We design and build <span className="text-white font-medium">strategic websites</span> that help businesses communicate clearly, <span className="text-white font-medium">build trust</span>, and convert visitors into clients.
           </p>
 
           {/* Truvox Signature — Service Brackets */}
-          <div className="flex flex-wrap items-center justify-center gap-3 mb-10">
-            <span className="font-mono text-[11px] text-[#33FF0A] tracking-[0.2em] uppercase border border-[#33FF0A]/20 px-3 py-1.5 bg-[#33FF0A]/5">[ Strategy ]</span>
-            <span className="font-mono text-[11px] text-white/30">—</span>
-            <span className="font-mono text-[11px] text-[#33FF0A] tracking-[0.2em] uppercase border border-[#33FF0A]/20 px-3 py-1.5 bg-[#33FF0A]/5">[ Design ]</span>
-            <span className="font-mono text-[11px] text-white/30">—</span>
-            <span className="font-mono text-[11px] text-[#33FF0A] tracking-[0.2em] uppercase border border-[#33FF0A]/20 px-3 py-1.5 bg-[#33FF0A]/5">[ Development ]</span>
+          <div className="flex flex-wrap items-center justify-center gap-3 mb-6">
+            <span className="font-mono text-[10px] sm:text-[11px] text-[#33FF0A] tracking-[0.2em] uppercase border border-[#33FF0A]/20 px-2 py-1 sm:px-3 sm:py-1.5 bg-[#33FF0A]/5">[ Strategy ]</span>
+            <span className="font-mono text-[10px] sm:text-[11px] text-white/30">—</span>
+            <span className="font-mono text-[10px] sm:text-[11px] text-[#33FF0A] tracking-[0.2em] uppercase border border-[#33FF0A]/20 px-2 py-1 sm:px-3 sm:py-1.5 bg-[#33FF0A]/5">[ Design ]</span>
+            <span className="font-mono text-[10px] sm:text-[11px] text-white/30">—</span>
+            <span className="font-mono text-[10px] sm:text-[11px] text-[#33FF0A] tracking-[0.2em] uppercase border border-[#33FF0A]/20 px-2 py-1 sm:px-3 sm:py-1.5 bg-[#33FF0A]/5">[ Development ]</span>
           </div>
 
           {/* Action Buttons */}
-          <div className="flex flex-col sm:flex-row gap-6 items-center justify-center mb-16 z-30 select-none">
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 items-center justify-center mb-10 sm:mb-12 z-30 select-none">
             {/* See our work (Hover: neon green, crop marks, arrow rotate) */}
             <Link href="#projects" className="relative group block">
               {/* Corner Crop Marks */}
@@ -294,9 +294,9 @@ export default function Home() {
 
           {/* Truvox Pixel Logo at the bottom */}
           <motion.div
-            animate={{ y: [0, -10, 0] }}
+            animate={{ y: [0, -8, 0] }}
             transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-            className="relative w-24 h-48 sm:w-32 sm:h-64 mt-16 sm:mt-8 overflow-hidden"
+            className="relative w-16 h-32 sm:w-20 sm:h-40 mt-4 sm:mt-2 overflow-hidden"
           >
             <Image 
               src="/truvox_pixel.png" 
