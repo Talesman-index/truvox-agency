@@ -189,7 +189,7 @@ export function AboutSection() {
                 </div>
                 {/* Subtext */}
                 <span className="font-mono text-[8px] sm:text-[9.5px] text-[#505250] uppercase tracking-widest mt-2 leading-relaxed">
-                  Aïda &amp; Shalom<br />(Partners)
+                  Founding<br />Partners
                 </span>
               </div>
 
