@@ -339,7 +339,7 @@ export default function Home() {
           {/* Video itself */}
           <video 
             className="w-full h-full object-cover opacity-80"
-            src="/truvox_herovideo.mp4"
+            src="/vox.video.mp4"
             autoPlay
             loop
             muted
