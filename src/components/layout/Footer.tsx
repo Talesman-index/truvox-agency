@@ -79,7 +79,7 @@ export const Footer = () => {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-6">
           <p className="text-text-muted text-[13px] font-mono">
-            © 2025 Truvox. All rights reserved.
+            © 2026 Truvox. All rights reserved.
           </p>
           
           {/* Social Links */}
