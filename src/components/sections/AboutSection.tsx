@@ -209,7 +209,7 @@ export function AboutSection() {
                 {/* Value */}
                 <div className="flex items-baseline gap-2 mt-1">
                   <span className="font-display text-[24px] sm:text-[36px] md:text-[40px] text-white leading-none font-bold">
-                    05
+                    03
                   </span>
                 </div>
                 {/* Subtext */}
