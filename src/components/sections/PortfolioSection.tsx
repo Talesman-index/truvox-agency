@@ -8,8 +8,13 @@ import Link from 'next/link';
 import { allProjects } from '@/data/projects';
 
 export const PortfolioSection = () => {
+  // Filter out Sagana Agency and Smart Petri Dish from the homepage view
+  const homeProjects = allProjects.filter(
+    (project) => project.slug !== 'sagana-agency' && project.slug !== 'smart-petri-dish'
+  );
+
   const [activeIndex, setActiveIndex] = useState(0);
-  const activeProject = allProjects[activeIndex];
+  const activeProject = homeProjects[activeIndex];
 
   return (
     <section
@@ -42,7 +47,7 @@ export const PortfolioSection = () => {
                   color: '#33FF0D',
                 }}
               >
-                [{String(allProjects.length).padStart(2, '0')}]
+                [{String(homeProjects.length).padStart(2, '0')}]
               </span>
             </h2>
             <p
@@ -68,7 +73,7 @@ export const PortfolioSection = () => {
               lineHeight: 1,
             }}
           >
-            {String(activeIndex + 1).padStart(2, '0')}/{String(allProjects.length).padStart(2, '0')}
+            {String(activeIndex + 1).padStart(2, '0')}/{String(homeProjects.length).padStart(2, '0')}
           </div>
         </div>
 
@@ -78,7 +83,7 @@ export const PortfolioSection = () => {
           {/* LEFT: Project name tabs */}
           <div className="lg:col-span-3 flex flex-col justify-between">
             <div className="flex flex-col gap-2">
-              {allProjects.map((project, i) => (
+              {homeProjects.map((project, i) => (
                 <button
                   key={project.slug}
                   onClick={() => setActiveIndex(i)}
