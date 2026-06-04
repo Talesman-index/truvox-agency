@@ -246,17 +246,17 @@ export default function Home() {
           </motion.div>
           
           {/* Subtitle / Description */}
-          <p className="font-body text-[#A4A4A4] text-[15px] sm:text-[17px] md:text-[19px] max-w-2xl mb-8 leading-[1.4] px-4">
-            We design and build <span className="text-white font-medium">strategic websites</span> that help businesses communicate clearly, <span className="text-white font-medium">build trust</span>, and convert visitors into clients.
+          <p className="font-body text-[#A4A4A4] text-[15px] sm:text-[17px] md:text-[19px] max-w-3xl mb-8 leading-[1.5] px-4">
+            We design <span className="text-white font-medium">digital experiences</span> that bring <span className="text-white font-medium">clarity</span>, build <span className="text-white font-medium">trust</span>, and support <span className="text-white font-medium">business growth</span>.
           </p>
 
           {/* Truvox Signature — Service Brackets */}
           <div className="flex flex-wrap items-center justify-center gap-3 mb-6">
-            <span className="font-mono text-[10px] sm:text-[11px] text-[#33FF0A] tracking-[0.2em] uppercase border border-[#33FF0A]/20 px-2 py-1 sm:px-3 sm:py-1.5 bg-[#33FF0A]/5">[ Strategy ]</span>
+            <span className="font-mono text-[10px] sm:text-[11px] text-[#33FF0A] tracking-[0.2em] uppercase border border-[#33FF0A]/20 px-2 py-1 sm:px-3 sm:py-1.5 bg-[#33FF0A]/5">[ STRATEGY ]</span>
             <span className="font-mono text-[10px] sm:text-[11px] text-white/30">—</span>
-            <span className="font-mono text-[10px] sm:text-[11px] text-[#33FF0A] tracking-[0.2em] uppercase border border-[#33FF0A]/20 px-2 py-1 sm:px-3 sm:py-1.5 bg-[#33FF0A]/5">[ Design ]</span>
+            <span className="font-mono text-[10px] sm:text-[11px] text-[#33FF0A] tracking-[0.2em] uppercase border border-[#33FF0A]/20 px-2 py-1 sm:px-3 sm:py-1.5 bg-[#33FF0A]/5">[ DESIGN ]</span>
             <span className="font-mono text-[10px] sm:text-[11px] text-white/30">—</span>
-            <span className="font-mono text-[10px] sm:text-[11px] text-[#33FF0A] tracking-[0.2em] uppercase border border-[#33FF0A]/20 px-2 py-1 sm:px-3 sm:py-1.5 bg-[#33FF0A]/5">[ Development ]</span>
+            <span className="font-mono text-[10px] sm:text-[11px] text-[#33FF0A] tracking-[0.2em] uppercase border border-[#33FF0A]/20 px-2 py-1 sm:px-3 sm:py-1.5 bg-[#33FF0A]/5">[ DEVELOPMENT ]</span>
           </div>
 
           {/* Action Buttons */}
@@ -309,8 +309,8 @@ export default function Home() {
         </motion.div>
 
         {/* Decorative background glows */}
-        <div className="absolute top-1/4 left-1/4 w-[400px] h-[400px] bg-[#33FF0A]/5 blur-[150px] rounded-full pointer-events-none" />
-        <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-[#33FF0A]/10 blur-[150px] rounded-full pointer-events-none" />
+        <div className="absolute top-1/4 left-1/4 w-[300px] h-[300px] bg-[#33FF0A]/3 blur-[80px] rounded-full pointer-events-none" />
+        <div className="absolute bottom-1/4 right-1/4 w-[300px] h-[300px] bg-[#33FF0A]/6 blur-[80px] rounded-full pointer-events-none" />
       </section>
 
       {/* ADVERTISING VIDEO SECTION */}
