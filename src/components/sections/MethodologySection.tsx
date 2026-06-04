@@ -2,64 +2,52 @@
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Badge } from '@/components/ui/Badge';
 import Image from 'next/image';
 import { Check } from 'lucide-react';
 
 const steps = [
   {
     number: '01',
-    title: 'Discovery',
-    description: 'We start with a focused conversation about your business, your audience, and what you need your website to accomplish. We ask more questions than most agencies because clarity at this stage determines the quality of everything that follows.',
+    title: 'Audit',
+    description: 'We map your business, your audience, and the gap between where you are and where you need to be online. No assumptions. Every decision that follows is grounded in this diagnostic phase.',
     icon3d: '/assets/icons3d/search.avif',
     deliverables: [
-      "Business goals and priorities defined",
-      "Target audience and user needs mapped",
-      "Scope and technical requirements aligned"
+      "Business positioning and competitive gaps identified",
+      "Target audience and intent mapped",
+      "Technical and content audit completed"
     ]
   },
   {
     number: '02',
-    title: 'Strategy',
-    description: 'Before we design anything, we establish your messaging, structure your content, and map the user journey. This is where we decide what your website needs to say and how it should say it.',
+    title: 'Structure',
+    description: 'We define your architecture before we design a single pixel. Sitemap, messaging hierarchy, and conversion logic are set here. Structure determines whether a website works — or just looks good.',
     icon3d: '/assets/icons3d/cdmRdvAtWOA2Auwbo7D1WXEj8b0.avif',
     deliverables: [
-      "Sitemap and page architecture",
-      "Content structure and messaging framework",
-      "Conversion flow and key call-to-action definition"
+      "Sitemap and information architecture",
+      "Messaging framework and content hierarchy",
+      "Conversion flow and CTA strategy"
     ]
   },
   {
     number: '03',
-    title: 'Design',
-    description: 'We design a website that reflects your brand and communicates clearly to your audience. No generic templates. Every visual decision supports your business objective.',
+    title: 'Craft',
+    description: 'Design and development are a single continuous process at Truvox. We prototype, validate, and build in one tight loop — no hand-off friction, no lost intent. What you approve is what gets built.',
     icon3d: '/assets/icons3d/design.avif',
     deliverables: [
-      "High-fidelity UI mockups",
-      "Custom visual identity applied to layouts",
-      "Prototype reviewed and approved before development"
+      "High-fidelity design with brand applied",
+      "Responsive Next.js development",
+      "Performance, SEO and accessibility built-in"
     ]
   },
   {
     number: '04',
-    title: 'Development',
-    description: 'We build the website clean, fast, and responsive. Every page loads quickly, works on every device, and is structured for search engines from day one.',
-    icon3d: '/assets/icons3d/48ozxNxjmhGkuMCjHtIthSsL8.avif',
-    deliverables: [
-      "Responsive Next.js development",
-      "Performance and SEO optimization",
-      "Forms, integrations, and analytics setup"
-    ]
-  },
-  {
-    number: '05',
     title: 'Launch',
-    description: 'We review every detail together before going live. After launch, we remain available to ensure your website performs exactly as intended as your business evolves.',
+    description: 'We do not push live and disappear. Every launch includes a full cross-device review, domain and deployment setup, and a structured handover. You own what we build — completely.',
     icon3d: '/assets/icons3d/launch.avif',
     deliverables: [
-      "Final cross-device quality review",
-      "Domain setup and live deployment",
-      "1 month of post-launch support"
+      "Final QA across all devices and browsers",
+      "Domain, hosting and analytics setup",
+      "30-day post-launch support included"
     ]
   }
 ];
@@ -70,21 +58,23 @@ export function MethodologySection() {
   return (
     <section id="methodology" className="py-24 md:py-36 px-6 bg-black overflow-hidden border-t border-white/5 relative">
       {/* Background Glow */}
-      <div className="absolute top-1/2 right-1/4 w-[300px] h-[300px] bg-[#33FF0D]/5 blur-[120px] rounded-full pointer-events-none" />
+      <div className="absolute top-1/2 right-1/4 w-[300px] h-[300px] bg-[#33FF0A]/5 blur-[120px] rounded-full pointer-events-none" />
 
       <div className="max-w-[1200px] mx-auto relative z-20">
         
         {/* Header Block */}
-        <div className="max-w-2xl flex flex-col items-center lg:items-start text-center lg:text-left space-y-4 mb-20">
-          <Badge variant="lime" rotation={-2}>How It Works</Badge>
+        <div className="max-w-2xl flex flex-col items-start text-left space-y-4 mb-20">
+          <span className="truvox-bracket">The Truvox Method</span>
           
-          <h2 className="font-display text-white text-[40px] sm:text-[56px] md:text-[68px] lg:text-[72px] font-normal leading-[1.0] tracking-normal uppercase">
-            HOW WE <span className="text-[#33FF0D]">WORK</span>
+          <h2 className="font-display text-white text-[40px] sm:text-[56px] md:text-[68px] lg:text-[72px] font-bold leading-[0.95] tracking-[-0.03em] uppercase">
+            A.S.C.L. <span className="text-[#33FF0A]">FRAMEWORK</span>
           </h2>
           
           <p className="font-body text-[#A4A4A4] text-[16px] sm:text-[18px] max-w-lg leading-[1.4] mt-4">
-            Strategy and design happen in the right order. Every step is designed to reduce uncertainty and ensure the final website performs.
+            Four phases. No shortcuts. Every project follows the same rigorous sequence — because structure is what separates a website that works from one that simply exists.
           </p>
+
+          <div className="truvox-line w-full mt-6">A.S.C.L.</div>
         </div>
 
         {/* Layout for Desktop: Split columns */}
@@ -101,19 +91,19 @@ export function MethodologySection() {
                   onMouseEnter={() => setActiveStep(idx)}
                   className={`text-left p-6 border transition-all duration-300 cursor-pointer flex items-center justify-between group rounded-none select-none ${
                     isActive 
-                      ? 'bg-[#0D0D0D] border-[#33FF0D] shadow-[0_0_20px_rgba(51,255,13,0.05)]' 
+                      ? 'bg-[#0D0D0D] border-[#33FF0A] shadow-[0_0_20px_rgba(51,255,10,0.05)]' 
                       : 'bg-transparent border-[#575757]/15 hover:border-[#575757]/45'
                   }`}
                 >
                   <div className="flex items-center gap-4">
-                    <span className={`font-mono text-[13px] ${isActive ? 'text-[#33FF0D]' : 'text-[#505250] group-hover:text-white/45'} transition-colors`}>
+                    <span className={`font-mono text-[13px] ${isActive ? 'text-[#33FF0A]' : 'text-[#505250] group-hover:text-white/45'} transition-colors`}>
                       [ {step.number} ]
                     </span>
                     <span className={`font-display text-[22px] uppercase ${isActive ? 'text-white' : 'text-[#A4A4A4] group-hover:text-white'} transition-colors`}>
                       {step.title}
                     </span>
                   </div>
-                  <span className={`text-[16px] transition-transform duration-300 ${isActive ? 'text-[#33FF0D] translate-x-1' : 'text-[#505250] group-hover:text-white/45'}`}>
+                  <span className={`text-[16px] transition-transform duration-300 ${isActive ? 'text-[#33FF0A] translate-x-1' : 'text-[#505250] group-hover:text-white/45'}`}>
                     →
                   </span>
                 </button>
@@ -124,7 +114,7 @@ export function MethodologySection() {
           {/* Right Column: Dynamic Showcase Card */}
           <div className="col-span-7">
             <div className="border border-[#575757]/30 bg-[#0D0D0D] p-10 flex flex-col justify-between h-full relative overflow-hidden min-h-[480px] rounded-none group">
-              <div className="absolute top-0 right-0 w-48 h-48 bg-[#33FF0D]/5 blur-[80px] rounded-full pointer-events-none" />
+              <div className="absolute top-0 right-0 w-48 h-48 bg-[#33FF0A]/5 blur-[80px] rounded-full pointer-events-none" />
               
               <AnimatePresence mode="wait">
                 <motion.div
@@ -155,7 +145,7 @@ export function MethodologySection() {
                   {/* Info side */}
                   <div className="md:w-3/5 space-y-6">
                     <div>
-                      <span className="font-mono text-[11px] text-[#33FF0D] bg-[#33FF0D]/5 border border-[#33FF0D]/10 px-2.5 py-0.5 select-none">
+                      <span className="font-mono text-[11px] text-[#33FF0A] bg-[#33FF0A]/5 border border-[#33FF0A]/10 px-2.5 py-0.5 select-none">
                         PHASE {steps[activeStep].number}
                       </span>
                       <h3 className="font-display text-[32px] text-white tracking-normal uppercase mt-3 mb-2">
@@ -173,7 +163,7 @@ export function MethodologySection() {
                       <ul className="space-y-2">
                         {steps[activeStep].deliverables.map((item, index) => (
                           <li key={index} className="flex items-start">
-                            <Check size={12} className="text-[#33FF0D] mr-2.5 mt-1 shrink-0" />
+                            <Check size={12} className="text-[#33FF0A] mr-2.5 mt-1 shrink-0" />
                             <span className="text-[13px] font-medium text-white/90 leading-tight">
                               {item}
                             </span>
@@ -196,7 +186,7 @@ export function MethodologySection() {
               <div 
                 key={step.title}
                 className={`border transition-all duration-300 bg-[#0D0D0D] rounded-none overflow-hidden ${
-                  isOpen ? 'border-[#33FF0D]' : 'border-[#575757]/15'
+                  isOpen ? 'border-[#33FF0A]' : 'border-[#575757]/15'
                 }`}
               >
                 {/* Header */}
@@ -205,14 +195,14 @@ export function MethodologySection() {
                   className="w-full text-left p-6 flex items-center justify-between bg-transparent border-none cursor-pointer select-none"
                 >
                   <div className="flex items-center gap-4">
-                    <span className={`font-mono text-[12px] ${isOpen ? 'text-[#33FF0D]' : 'text-[#505250]'}`}>
+                    <span className={`font-mono text-[12px] ${isOpen ? 'text-[#33FF0A]' : 'text-[#505250]'}`}>
                       [ {step.number} ]
                     </span>
                     <span className="font-display text-[20px] uppercase text-white">
                       {step.title}
                     </span>
                   </div>
-                  <span className={`text-[18px] text-[#33FF0D] transition-transform duration-300 ${isOpen ? 'rotate-90' : ''}`}>
+                  <span className={`text-[18px] text-[#33FF0A] transition-transform duration-300 ${isOpen ? 'rotate-90' : ''}`}>
                     →
                   </span>
                 </button>
@@ -247,7 +237,7 @@ export function MethodologySection() {
                       <ul className="space-y-2">
                         {step.deliverables.map((item, index) => (
                           <li key={index} className="flex items-start">
-                            <Check size={12} className="text-[#33FF0D] mr-2.5 mt-1 shrink-0" />
+                            <Check size={12} className="text-[#33FF0A] mr-2.5 mt-1 shrink-0" />
                             <span className="text-[13px] font-medium text-white/90 leading-tight">
                               {item}
                             </span>
@@ -263,10 +253,11 @@ export function MethodologySection() {
         </div>
 
         {/* Timeframe Tagline */}
-        <div className="mt-20 text-center border-t border-white/5 pt-12 select-none">
+        <div className="mt-20 border-t border-white/5 pt-12 select-none flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <p className="text-[#A4A4A4] text-[16px] md:text-[18px]">
-            Most projects go from <span className="text-white font-medium">strategy call to launch</span> in 2 to 4 weeks.
+            Most projects go from <span className="text-white font-medium">audit to launch</span> in 2 to 4 weeks.
           </p>
+          <span className="truvox-indicator">Available now</span>
         </div>
 
       </div>

@@ -1,343 +1,238 @@
 'use client';
 
-import { useState, useRef, useEffect } from 'react';
-import { motion, AnimatePresence, useScroll, useTransform, MotionValue } from 'framer-motion';
+import { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import Link from 'next/link';
-import Image from 'next/image';
-import { Reveal } from '@/components/ui/Reveal';
 
-interface WordProps {
-  children: string;
-  progress: MotionValue<number>;
-  range: [number, number];
-}
+const timeline = [
+  {
+    id: '01',
+    label: 'Purpose',
+    title: 'Goals',
+    body: 'Build websites that serve a clear business purpose. Every milestone, layout, and interaction is measured against one question: does this help our client communicate better and convert more?',
+    tag: 'Clear Outcomes',
+  },
+  {
+    id: '02',
+    label: 'Mission',
+    title: 'Mission',
+    body: 'Help businesses communicate clearly online. We define messaging and structure before touching design, because a website that doesn\'t communicate doesn\'t convert.',
+    tag: 'Strategic Design',
+  },
+  {
+    id: '03',
+    label: 'Vision',
+    title: 'Vision',
+    body: 'A future where every business, regardless of size, has a website that earns trust, communicates its value clearly, and actively supports its growth.',
+    tag: 'Business Growth',
+  },
+];
 
-function Word({ children, progress, range }: WordProps) {
-  const opacity = useTransform(progress, range, [0.15, 1]);
+const stats = [
+  { value: '2025', label: 'Founded', sub: 'Remote studio' },
+  { value: '02', label: 'Partners', sub: 'Founding team' },
+  { value: '05+', label: 'Projects', sub: 'Bespoke builds' },
+];
+
+/* ─── Single timeline row ─────────────────────────── */
+function TimelineRow({
+  item,
+  index,
+}: {
+  item: (typeof timeline)[0];
+  index: number;
+}) {
+  const ref = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ['start 85%', 'start 35%'],
+  });
+  const opacity = useTransform(scrollYProgress, [0, 1], [0, 1]);
+  const x = useTransform(scrollYProgress, [0, 1], [40, 0]);
+
   return (
-    <span className="relative mr-[0.25em] last:mr-0 inline-block">
-      <motion.span style={{ opacity }}>
-        {children}
-      </motion.span>
-    </span>
+    <motion.div
+      ref={ref}
+      style={{ opacity, x }}
+      className="relative grid grid-cols-[80px_1fr] md:grid-cols-[120px_1fr] gap-6 md:gap-10 pb-16 last:pb-0 group"
+    >
+      {/* Left — index + vertical line */}
+      <div className="flex flex-col items-center gap-3 pt-1">
+        <span className="font-mono text-[11px] text-[#33FF0A] tracking-[0.25em] select-none">
+          [ {item.id} ]
+        </span>
+        {index < timeline.length - 1 && (
+          <motion.div
+            className="w-px bg-gradient-to-b from-[#33FF0A]/40 to-transparent flex-1 min-h-[80px]"
+            initial={{ scaleY: 0, originY: 0 }}
+            whileInView={{ scaleY: 1 }}
+            viewport={{ once: true, margin: '-60px' }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          />
+        )}
+      </div>
+
+      {/* Right — content card */}
+      <div className="truvox-corners border border-[#575757]/20 bg-[#0A0A0A] p-7 md:p-9 group-hover:border-[#33FF0A]/25 transition-colors duration-500 relative overflow-hidden">
+        {/* Floating glow on hover */}
+        <div className="absolute -top-10 -right-10 w-40 h-40 bg-[#33FF0A]/5 blur-[60px] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+
+        <div className="flex items-start justify-between mb-4">
+          <span className="font-mono text-[10px] text-[#505250] uppercase tracking-[0.25em]">
+            {item.label}
+          </span>
+          <span className="font-mono text-[10px] text-[#33FF0A] uppercase tracking-[0.2em] border border-[#33FF0A]/20 px-2.5 py-1 bg-[#33FF0A]/5">
+            {item.tag}
+          </span>
+        </div>
+
+        <h3 className="font-display text-white text-[28px] md:text-[36px] font-bold leading-[1.0] tracking-[-0.02em] uppercase mb-4">
+          {item.title}
+        </h3>
+
+        <p className="font-body text-[#A4A4A4] text-[15px] leading-[1.55] max-w-xl">
+          {item.body}
+        </p>
+      </div>
+    </motion.div>
   );
 }
 
-function ScrollRevealText({ text }: { text: string }) {
-  const containerRef = useRef<HTMLHeadingElement>(null);
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
-
+/* ─── Main component ──────────────────────────────── */
+export function AboutSection() {
+  const sectionRef = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start 80%", "start 25%"]
+    target: sectionRef,
+    offset: ['start end', 'end start'],
   });
 
-  const words = text.split(" ");
-
-  if (isMobile) {
-    return (
-      <Reveal>
-        <h2 
-          ref={containerRef}
-          className="font-display text-white text-[28px] sm:text-[36px] md:text-[44px] lg:text-[48px] font-normal leading-[1.15] tracking-normal uppercase text-left flex flex-wrap"
-        >
-          {text}
-        </h2>
-      </Reveal>
-    );
-  }
+  // Floating orbs parallax
+  const orb1Y = useTransform(scrollYProgress, [0, 1], ['-20%', '20%']);
+  const orb2Y = useTransform(scrollYProgress, [0, 1], ['20%', '-20%']);
 
   return (
-    <h2 
-      ref={containerRef}
-      className="font-display text-white text-[28px] sm:text-[36px] md:text-[44px] lg:text-[48px] font-normal leading-[1.15] tracking-normal uppercase text-left flex flex-wrap"
+    <section
+      id="about"
+      ref={sectionRef}
+      className="relative py-28 md:py-40 px-6 bg-black overflow-hidden border-t border-[#575757]/10"
     >
-      {words.map((word, i) => {
-        const start = i / words.length;
-        const end = (i + 1) / words.length;
-        return (
-          <Word key={i} progress={scrollYProgress} range={[start, end]}>
-            {word}
-          </Word>
-        );
-      })}
-    </h2>
-  );
-}
+      {/* ── Floating ambient orbs ── */}
+      <motion.div
+        style={{ y: orb1Y }}
+        className="absolute top-1/4 left-[-200px] w-[500px] h-[500px] bg-[#33FF0A]/4 blur-[160px] rounded-full pointer-events-none"
+      />
+      <motion.div
+        style={{ y: orb2Y }}
+        className="absolute bottom-1/4 right-[-200px] w-[400px] h-[400px] bg-[#0000EE]/6 blur-[140px] rounded-full pointer-events-none"
+      />
 
-export function AboutSection() {
-  const [activeIndex, setActiveIndex] = useState(1); // "OUR MISSION" is index 1
-  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+      <div className="max-w-[1200px] mx-auto relative z-10">
 
-  const cards = [
-    {
-      title: "OUR GOALS",
-      image: "/assets/bg/about_nature_goals.jpg",
-      gradient: "from-[#1E3040] via-[#0E1520] to-[#070A0F]",
-      content: "Build websites that serve a clear business purpose. Every milestone, layout, and interaction is measured against one question: does this help our client communicate better and convert more?",
-      label: "01 · PURPOSE",
-      footerRight: "CLEAR OUTCOMES"
-    },
-    {
-      title: "OUR MISSION",
-      image: "/assets/bg/about_nature_mission.jpg",
-      gradient: "from-[#3D7899] via-[#122A3C] to-[#0A0F17]",
-      content: "Help businesses communicate clearly online. We define messaging and structure before touching design, because a website that doesn't communicate doesn't convert.",
-      label: "02 · MISSION",
-      footerRight: "STRATEGIC DESIGN"
-    },
-    {
-      title: "OUR VISION",
-      image: "/assets/bg/about_nature_vision.jpg",
-      gradient: "from-[#4B2F7D] via-[#18112C] to-[#090712]",
-      content: "A future where every business, regardless of size, has a website that earns trust, communicates its value clearly, and actively supports its growth.",
-      label: "03 · VISION",
-      footerRight: "BUSINESS GROWTH"
-    }
-  ];
+        {/* ── Section header ── */}
+        <div className="mb-20 md:mb-28">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="flex flex-col gap-6"
+          >
+            <span className="truvox-bracket">Who we are</span>
 
-  useEffect(() => {
-    if (!isAutoPlaying) return;
-    const timer = setInterval(() => {
-      setActiveIndex((prev) => (prev + 1) % 3);
-    }, 4500); // Auto-scroll every 4.5 seconds
-    return () => clearInterval(timer);
-  }, [isAutoPlaying]);
+            <h2 className="font-display text-white text-[36px] sm:text-[52px] md:text-[72px] lg:text-[88px] font-bold leading-[0.95] tracking-[-0.03em] uppercase max-w-4xl">
+              WE BUILD WITH{' '}
+              <span className="text-[#33FF0A]">PURPOSE.</span>
+            </h2>
 
-  const handleCardClick = (idx: number) => {
-    setActiveIndex(idx);
-  };
+            {/* Horizontal rule with label */}
+            <div className="truvox-line max-w-lg">Est. 2025 · Truvox Studio</div>
+          </motion.div>
+        </div>
 
-  return (
-    <section id="about" className="relative py-24 md:py-36 px-6 bg-black overflow-hidden border-t border-[#575757]/10">
-      
-
-      <div className="max-w-[1200px] mx-auto relative z-20">
+        {/* ── Main content: Timeline left + Stats right ── */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-start">
-          
-          {/* Left Column: Big statement & Signature & Ratings */}
-          <div className="lg:col-span-7 flex flex-col justify-between h-full space-y-12">
-            
-            {/* Mission Statement */}
-            <div className="space-y-6">
-              <ScrollRevealText text="Most websites fail because they focus on how they look before clarifying what they need to say. We start with your business goals and build backwards from there." />
-              
-              {/* Handwritten Signature */}
-              <div className="pt-4">
-                <span className="font-signature text-[32px] sm:text-[40px] text-[#33FF0D] block leading-none select-none">
-                  Truvox Team
-                </span>
-              </div>
-            </div>
 
-            {/* Agency Metrics Block */}
-            <div className="grid grid-cols-3 gap-4 sm:gap-6 pt-8 border-t border-[#575757]/20 w-full select-none">
-              {/* Metric 1: Founding */}
-              <div className="flex flex-col gap-2">
-                {/* Icon Badge */}
-                <div className="w-10 h-10 rounded-full bg-[#111111] border border-[#575757]/30 flex items-center justify-center">
-                  <svg viewBox="0 0 24 24" className="w-5 h-5 text-white" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="12" cy="12" r="10"></circle>
-                    <polyline points="12 6 12 12 16 14"></polyline>
-                  </svg>
-                </div>
-                {/* Header Tag */}
-                <span className="font-mono text-[#33FF0D] text-[9px] sm:text-[11px] uppercase tracking-wider block mt-2">
-                  // LAUNCH
-                </span>
-                {/* Value */}
-                <div className="flex items-baseline gap-2 mt-1">
-                  <span className="font-display text-[24px] sm:text-[36px] md:text-[40px] text-white leading-none font-bold">
-                    2025
-                  </span>
-                </div>
-                {/* Subtext */}
-                <span className="font-mono text-[8px] sm:text-[9.5px] text-[#505250] uppercase tracking-widest mt-2 leading-relaxed">
-                  Remote studio<br />founded
-                </span>
-              </div>
-
-              {/* Metric 2: Partners */}
-              <div className="flex flex-col gap-2 pl-4 sm:pl-6 border-l border-[#575757]/20">
-                {/* Icon Badge */}
-                <div className="w-10 h-10 rounded-full bg-[#111111] border border-[#575757]/30 flex items-center justify-center">
-                  <svg viewBox="0 0 24 24" className="w-5 h-5 text-white" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                    <circle cx="9" cy="7" r="4"></circle>
-                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                  </svg>
-                </div>
-                {/* Header Tag */}
-                <span className="font-mono text-[#33FF0D] text-[9px] sm:text-[11px] uppercase tracking-wider block mt-2">
-                  // TEAM
-                </span>
-                {/* Value */}
-                <div className="flex items-baseline gap-2 mt-1">
-                  <span className="font-display text-[24px] sm:text-[36px] md:text-[40px] text-white leading-none font-bold">
-                    02
-                  </span>
-                </div>
-                {/* Subtext */}
-                <span className="font-mono text-[8px] sm:text-[9.5px] text-[#505250] uppercase tracking-widest mt-2 leading-relaxed">
-                  Founding<br />Partners
-                </span>
-              </div>
-
-              {/* Metric 3: Projects */}
-              <div className="flex flex-col gap-2 pl-4 sm:pl-6 border-l border-[#575757]/20">
-                {/* Icon Badge */}
-                <div className="w-10 h-10 rounded-full bg-[#111111] border border-[#575757]/30 flex items-center justify-center">
-                  <svg viewBox="0 0 24 24" className="w-5 h-5 text-white" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" xmlns="http://www.w3.org/2000/svg">
-                    <polyline points="16 18 22 12 16 6"></polyline>
-                    <polyline points="8 6 2 12 8 18"></polyline>
-                  </svg>
-                </div>
-                {/* Header Tag */}
-                <span className="font-mono text-[#33FF0D] text-[9px] sm:text-[11px] uppercase tracking-wider block mt-2">
-                  // WORK
-                </span>
-                {/* Value */}
-                <div className="flex items-baseline gap-2 mt-1">
-                  <span className="font-display text-[24px] sm:text-[36px] md:text-[40px] text-white leading-none font-bold">
-                    05
-                  </span>
-                </div>
-                {/* Subtext */}
-                <span className="font-mono text-[8px] sm:text-[9.5px] text-[#505250] uppercase tracking-widest mt-2 leading-relaxed">
-                  Bespoke projects<br />designed &amp; built
-                </span>
-              </div>
-            </div>
-
+          {/* Timeline */}
+          <div className="lg:col-span-7">
+            {timeline.map((item, i) => (
+              <TimelineRow key={item.id} item={item} index={i} />
+            ))}
           </div>
 
-          {/* Right Column: Carousel Card stack & CTA button */}
-          <div className="lg:col-span-5 flex flex-col items-center lg:items-start space-y-12">
-            
-            {/* Interactive Card Carousel */}
-            <div 
-              onMouseEnter={() => setIsAutoPlaying(false)}
-              onMouseLeave={() => setIsAutoPlaying(true)}
-              className="relative w-full max-w-[340px] h-[340px] flex items-center justify-center"
+          {/* Sticky right panel */}
+          <div className="lg:col-span-5 lg:sticky lg:top-32 flex flex-col gap-10">
+
+            {/* Big statement */}
+            <motion.blockquote
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, delay: 0.15 }}
+              className="font-body text-[18px] md:text-[20px] text-white/80 leading-[1.5] border-l-2 border-[#33FF0A]/50 pl-6"
             >
-              <div className="absolute inset-0">
-                {cards.map((card, idx) => {
-                  const isActive = idx === activeIndex;
-                  // Calculate left and right based on cyclic indices
-                  const isLeft = idx === (activeIndex - 1 + cards.length) % cards.length;
-                  const isRight = idx === (activeIndex + 1) % cards.length;
+              Most websites fail because they focus on how they look before clarifying what they need to say. We start with your business goals and build backwards from there.
+            </motion.blockquote>
 
-                  return (
-                    <motion.div
-                      key={card.title}
-                      onClick={() => handleCardClick(idx)}
-                      animate={{
-                        x: isActive ? 0 : isLeft ? -45 : 45,
-                        y: isActive ? 0 : 10,
-                        scale: isActive ? 1.0 : 0.88,
-                        rotate: isActive ? 0 : isLeft ? -8 : 8,
-                        zIndex: isActive ? 20 : 10,
-                        opacity: isActive ? 1.0 : 0.35,
-                      }}
-                      transition={{ type: 'spring', stiffness: 260, damping: 24 }}
-                      className={`absolute w-full h-[300px] bg-gradient-to-b ${card.gradient} ${
-                        isActive ? 'border border-[#33FF0D]/20 shadow-[0_0_40px_rgba(51,255,13,0.05)]' : 'border border-white/10'
-                      } hover:border-[#33FF0D]/30 p-8 flex flex-col justify-between cursor-pointer select-none rounded-none overflow-hidden group transition-colors duration-500`}
-                      style={{
-                        pointerEvents: isActive ? 'auto' : 'all',
-                        transformOrigin: 'bottom center',
-                      }}
-                    >
-                      {/* Card Background Image & Gradient Overlay */}
-                      <div className="absolute inset-0 z-0 select-none pointer-events-none">
-                        <Image 
-                          src={card.image} 
-                          alt={card.title} 
-                          fill 
-                          className="object-cover opacity-35 transition-all duration-700 group-hover:scale-105 group-hover:opacity-50" 
-                          priority={isActive}
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/75 to-black/95" />
-                      </div>
-
-                      {/* Card Content */}
-                      <div className="relative z-10 space-y-3">
-                        <span className="font-mono text-[#A4A4A4] text-[9px] uppercase tracking-[0.25em] block">
-                          {card.label}
-                        </span>
-                        <h3 className="font-display text-[22px] tracking-wide text-white uppercase mb-2 leading-none">
-                          {card.title.replace("OUR ", "")}
-                        </h3>
-                        <p className="font-body text-[13px] sm:text-[14px] text-white/90 leading-[1.45]">
-                          {card.content}
-                        </p>
-                      </div>
-
-                      {/* Card Footer Details */}
-                      <div className="flex justify-between items-center w-full pt-4 border-t border-white/10 relative z-10">
-                        <span className="font-mono text-[9px] text-[#A4A4A4] uppercase tracking-[0.2em]">
-                          TRUVOX · STUDIO
-                        </span>
-                        <span className={`font-mono text-[9px] uppercase tracking-[0.2em] transition-colors duration-300 ${isActive ? 'text-[#33FF0D]' : 'text-[#A4A4A4]'}`}>
-                          {card.footerRight}
-                        </span>
-                      </div>
-                    </motion.div>
-                  );
-                })}
-              </div>
-            </div>
-
-            {/* Slider Dots/Dashes */}
-            <div className="flex gap-2 justify-center w-full max-w-[340px]">
-              {cards.map((_, i) => (
-                <button
-                  key={i}
-                  onClick={() => setActiveIndex(i)}
-                  className={`h-0.5 transition-all duration-300 rounded-none cursor-pointer border-none ${
-                    i === activeIndex ? 'w-10 bg-white' : 'w-6 bg-white/20 hover:bg-white/40'
-                  }`}
-                  aria-label={`Go to slide ${i + 1}`}
-                />
+            {/* Stats grid */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="grid grid-cols-3 border border-[#575757]/20"
+            >
+              {stats.map((s, i) => (
+                <div
+                  key={s.label}
+                  className={`flex flex-col gap-1 p-5 md:p-6 ${i > 0 ? 'border-l border-[#575757]/20' : ''}`}
+                >
+                  <span className="font-mono text-[9px] text-[#33FF0A] uppercase tracking-[0.2em]">
+                    [ {s.label} ]
+                  </span>
+                  <span className="font-display text-[32px] md:text-[40px] text-white font-bold leading-none tracking-[-0.02em] mt-1">
+                    {s.value}
+                  </span>
+                  <span className="font-mono text-[9px] text-[#505250] uppercase tracking-widest mt-1">
+                    {s.sub}
+                  </span>
+                </div>
               ))}
-            </div>
+            </motion.div>
 
-            {/* Bottom text block & CTA button */}
-            <div className="w-full max-w-[340px] sm:max-w-md space-y-6 pt-4">
-              <p className="font-body text-[#A4A4A4] text-[15px] sm:text-[16px] leading-[1.4] text-left">
-                We don't just build websites. We build strategic digital experiences designed to help businesses communicate clearly, build credibility, and grow.
-              </p>
-              
+            {/* Truvox indicator */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.45 }}
+            >
+              <span className="truvox-indicator mb-6 block">Available for new projects</span>
+            </motion.div>
+
+            {/* CTA */}
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.5 }}
+            >
               <Link href="/about" className="relative group block w-fit">
-                {/* Corner Crop Marks */}
                 <span className="absolute top-[-5px] left-[-5px] w-2 h-2 border-t border-l border-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
                 <span className="absolute top-[-5px] right-[-5px] w-2 h-2 border-t border-r border-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
                 <span className="absolute bottom-[-5px] left-[-5px] w-2 h-2 border-b border-l border-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
                 <span className="absolute bottom-[-5px] right-[-5px] w-2 h-2 border-b border-r border-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
-                
-                <div className="flex items-center bg-[#FFFFFF] text-[#000000] font-mono text-[12px] uppercase tracking-[0.1em] h-[57px] rounded-none hover:bg-[#33FF0D] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_20px_rgba(51,255,13,0.2)] cursor-pointer border-none pl-6 pr-0 w-fit relative z-10">
-                  <span className="mr-6 font-medium">Learn more about us</span>
-                  <span className="flex items-center justify-center w-[50px] h-[57px] border-l border-black/25 text-[18px]">
+                <div className="flex items-center bg-white text-black font-mono text-[12px] uppercase tracking-[0.12em] h-[52px] rounded-none hover:bg-[#33FF0A] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_20px_rgba(51,255,10,0.2)] cursor-pointer pl-7 pr-0 relative z-10 font-semibold">
+                  <span className="mr-6">Learn more about us</span>
+                  <span className="flex items-center justify-center w-[52px] h-[52px] border-l border-black/20 text-[18px]">
                     <span className="inline-block transform -rotate-45 group-hover:rotate-0 transition-transform duration-300 leading-none">
                       →
                     </span>
                   </span>
                 </div>
               </Link>
-            </div>
+            </motion.div>
 
           </div>
-
         </div>
       </div>
     </section>

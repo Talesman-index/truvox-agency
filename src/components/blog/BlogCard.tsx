@@ -13,13 +13,13 @@ export const BlogCard = ({ post, index }: { post: BlogPost; index: number }) => 
     <Reveal delay={index * 0.07}>
       <Link
         href={`/blog/${post.slug}`}
-        className="group block bg-black border border-[#575757]/20 hover:border-[#33FF0D]/40 transition-all duration-500 overflow-hidden relative"
+        className="group block bg-black border border-[#575757]/20 hover:border-[#33FF0A]/40 transition-all duration-500 overflow-hidden relative"
       >
         {/* Corner crop marks */}
-        <span className="absolute top-[-1px] left-[-1px] w-3 h-3 border-t border-l border-[#33FF0D] opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
-        <span className="absolute top-[-1px] right-[-1px] w-3 h-3 border-t border-r border-[#33FF0D] opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
-        <span className="absolute bottom-[-1px] left-[-1px] w-3 h-3 border-b border-l border-[#33FF0D] opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
-        <span className="absolute bottom-[-1px] right-[-1px] w-3 h-3 border-b border-r border-[#33FF0D] opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
+        <span className="absolute top-[-1px] left-[-1px] w-3 h-3 border-t border-l border-[#33FF0A] opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
+        <span className="absolute top-[-1px] right-[-1px] w-3 h-3 border-t border-r border-[#33FF0A] opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
+        <span className="absolute bottom-[-1px] left-[-1px] w-3 h-3 border-b border-l border-[#33FF0A] opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
+        <span className="absolute bottom-[-1px] right-[-1px] w-3 h-3 border-b border-r border-[#33FF0A] opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
 
         {/* Cover image */}
         <div className="relative aspect-[16/9] w-full overflow-hidden bg-[#0D0D0D]">
@@ -34,7 +34,7 @@ export const BlogCard = ({ post, index }: { post: BlogPost; index: number }) => 
 
           {/* Index number */}
           <div className="absolute top-4 left-4">
-            <span className="font-mono text-[11px] text-[#33FF0D] bg-black/70 backdrop-blur-sm border border-[#33FF0D]/20 px-2.5 py-1 tracking-[0.2em]">
+            <span className="font-mono text-[11px] text-[#33FF0A] bg-black/70 backdrop-blur-sm border border-[#33FF0A]/20 px-2.5 py-1 tracking-[0.2em]">
               [ {num} ]
             </span>
           </div>
@@ -52,9 +52,9 @@ export const BlogCard = ({ post, index }: { post: BlogPost; index: number }) => 
           {/* Meta */}
           <div className="flex items-center gap-4 font-mono text-[11px] text-[#505250] uppercase tracking-[0.15em]">
             <span>{post.date}</span>
-            <span className="w-1 h-1 bg-[#33FF0D] rotate-45 inline-block shrink-0" />
+            <span className="w-1 h-1 bg-[#33FF0A] rotate-45 inline-block shrink-0" />
             <span className="flex items-center gap-1.5">
-              <Clock size={11} className="text-[#33FF0D]" />
+              <Clock size={11} className="text-[#33FF0A]" />
               {post.readingTime}
             </span>
           </div>
@@ -71,10 +71,10 @@ export const BlogCard = ({ post, index }: { post: BlogPost; index: number }) => 
 
           {/* CTA row */}
           <div className="pt-4 border-t border-[#575757]/15 flex items-center justify-between">
-            <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-[#505250] group-hover:text-[#33FF0D] transition-colors duration-300">
+            <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-[#505250] group-hover:text-[#33FF0A] transition-colors duration-300">
               Read article
             </span>
-            <span className="text-[#33FF0D] opacity-0 group-hover:opacity-100 transition-all duration-300 transform -rotate-45 group-hover:rotate-0 text-[18px]">→</span>
+            <span className="text-[#33FF0A] opacity-0 group-hover:opacity-100 transition-all duration-300 transform -rotate-45 group-hover:rotate-0 text-[18px]">→</span>
           </div>
         </div>
       </Link>

@@ -22,7 +22,7 @@ function FaqAccordion({ question, answer }: { question: string; answer: string }
   return (
     <div 
       onClick={() => setIsOpen(!isOpen)}
-      className="p-7 bg-[#0D0D0D] rounded-none border border-[#1A1A1A] flex flex-col cursor-pointer group hover:border-brand-main transition-all duration-300 hover:shadow-[0_0_30px_rgba(51,255,13,0.08)]"
+      className="p-7 bg-[#0D0D0D] rounded-none border border-[#1A1A1A] flex flex-col cursor-pointer group hover:border-brand-main transition-all duration-300 hover:shadow-[0_0_30px_rgba(51,255,10,0.08)]"
     >
       <div className="flex items-center justify-between w-full gap-4">
         <span className="text-[16px] md:text-[18px] font-medium text-white/90 group-hover:text-white transition-colors">{question}</span>
@@ -228,7 +228,7 @@ export default function Home() {
                 <motion.path 
                   d="M278.292 59.2794C277.142 58.996 276.49 59.4109 275.765 60.8193C274.247 59.3946 273.4 56.243 275.03 54.1438C276.495 52.2591 278.562 51.7085 280.775 51.5314C281.658 51.4608 282.566 51.579 283.465 51.6099C283.318 51.0577 283.297 51.0465 281.773 50.712C282.089 49.7311 282.349 48.7457 282.718 47.8207C283.926 44.7855 285.196 41.783 286.399 38.7452C287.068 37.0576 287.609 35.3021 288.279 33.6154C289.033 31.7189 289.867 29.8658 290.673 27.9975C290.894 27.4837 290.959 27.0791 290.608 26.4441C289.168 23.8354 289.378 20.848 291.142 18.6397C292.112 17.4245 293.279 16.3997 294.254 15.1877C295.955 13.0725 296.852 10.5871 296.366 7.56526C296.313 7.2428 296.216 6.92449 296.232 6.44503C296.974 7.09743 297.827 7.64628 298.437 8.41881C301.94 12.8591 303.718 17.7516 302.394 23.2922C301.889 25.4086 300.549 26.8734 298.708 27.6003C297.497 28.0781 296.916 28.9537 296.606 30.1716C296.16 31.9206 295.757 33.6865 295.366 35.4559C295.332 35.6082 295.492 35.9385 295.634 36.0221C298.865 37.9183 301.365 40.6432 303.278 44.0202C305.596 48.1138 306.519 52.4895 305.884 56.9697C304.943 63.6122 301.546 68.1469 295.784 70.5022C292.95 71.6601 289.852 72.0023 288.068 71.8403C288.18 71.4573 288.286 71.0966 288.392 70.7379C288.838 69.2218 289.295 67.7092 289.725 66.1867C289.843 65.7713 290.009 65.5818 290.458 65.5333C293.81 65.1664 296.715 63.8639 298.698 60.945C301.186 57.2818 301.495 53.1201 299.837 48.6232C298.763 45.7099 296.977 43.3609 294.58 41.5427C294.442 41.4373 294.304 41.3358 294.164 41.2329C294.106 41.1905 294.047 41.1487 293.9 41.0442C293.759 41.7039 293.623 42.2848 293.51 42.871C292.833 46.3903 292.157 49.911 291.496 53.4355C291.426 53.8092 291.215 54.2635 291.787 54.5328C292.314 54.7794 292.799 54.8105 292.991 54.1862C293.4 52.8485 293.821 51.5074 294.103 50.1252C294.478 48.2827 294.726 46.4005 295.039 44.476C296.639 46.0562 297.598 47.9765 298.282 50.0585C299.046 52.3818 298.977 54.6295 298.222 56.816C297.028 60.2757 294.024 61.6597 290.653 60.9087C289.356 60.6205 289.373 60.5733 289.016 61.8975C286.268 72.0758 282.329 81.562 276.659 90.0339C276.203 90.7139 275.688 91.3555 275.134 91.9406C274.614 92.4913 274.131 92.266 273.946 91.4454C273.88 91.1503 273.851 90.8447 273.831 90.5454C273.371 84.0476 273.858 77.7083 275.062 71.4812C275.786 67.7377 276.731 64.0858 277.959 60.5404C278.098 60.1376 278.182 59.7064 278.294 59.2803L278.292 59.2794ZM275.373 56.2941C276.988 55.296 278.77 55.1629 280.634 55.3946C282.841 55.6692 284.913 56.5323 286.968 57.5308C288.223 58.1408 289.514 58.6909 290.824 59.0903C291.757 59.3744 292.747 59.3606 293.71 59.4791C292.928 59.1862 292.137 59.1421 291.374 58.9229C290.606 58.7009 289.855 58.3417 289.121 57.9776C288.081 57.4618 287.07 56.8659 286.032 56.3409C283.528 55.0732 280.971 54.2505 278.292 54.7596C277.171 54.9717 276.071 55.2515 275.373 56.2941ZM296.894 12.7102C296.842 12.6873 296.789 12.663 296.736 12.6401C296.505 13.2079 296.29 13.7871 296.038 14.3432C295.291 15.9941 294.059 17.1777 292.785 18.3135C291.82 19.1757 291.077 20.199 290.747 21.5566C290.507 22.5423 290.576 23.6497 290.992 24.3568C290.807 21.5433 292.086 19.6912 293.784 18.0946C294.763 17.1734 295.654 16.1679 296.186 14.8518C296.466 14.1608 296.661 13.4252 296.894 12.7102ZM283.309 48.9419C283.399 48.9859 283.488 49.0299 283.577 49.0725C285.081 45.5307 286.586 41.989 288.091 38.4468C288.052 38.3836 288.013 38.3199 287.973 38.2553C287.818 38.3668 287.589 38.436 287.519 38.5969C286.283 41.4304 285.055 44.2693 283.854 47.1216C283.612 47.6936 283.489 48.3311 283.309 48.9386L283.309 48.9419ZM295.948 18.3119C295.894 18.2699 295.838 18.2285 295.783 18.1865C294.899 19.5867 293.656 20.7199 293.292 22.5045C294.177 21.1072 295.063 19.7093 295.948 18.3119ZM299.65 19.4983C299.383 20.1528 299.167 20.8422 298.834 21.4523C298.493 22.0795 298.042 22.6294 297.638 23.213C298.85 22.359 299.465 21.0814 299.65 19.4983ZM277.555 67.6199C277.051 68.0075 276.603 69.4579 276.845 70.2015C277.068 69.3877 277.292 68.5752 277.555 67.6199Z" 
                   animate={{ 
-                    fill: isLogoHovered ? "#33FF0D" : "#FFFFFF" 
+                    fill: isLogoHovered ? "#33FF0A" : "#FFFFFF" 
                   }}
                   transition={{ duration: 0.3 }}
                 />
@@ -237,7 +237,7 @@ export default function Home() {
                 <motion.path 
                   d="M284.769 37.416C284.193 38.8987 283.569 40.1949 283.179 41.5875C282.743 43.1477 281.972 43.8687 280.408 44.2728C275.67 45.4972 272.859 48.9193 272.241 54.2308C271.894 57.2038 272.802 60.0306 274.626 62.5166C275.03 63.0764 275.121 63.527 274.942 64.1527C274.5 65.6901 274.126 67.2561 273.702 68.9012C271.881 67.2188 270.239 65.4634 269.13 63.2119C267.215 59.3298 266.317 55.3145 267.234 51.1892C268.516 45.4183 271.565 41.1827 276.581 38.8256C278.819 37.7742 281.227 37.2607 283.758 37.3061C284.05 37.3115 284.345 37.3691 284.769 37.416ZM279.115 39.886C274.927 39.8232 267.909 47.6192 268.555 51.6567C270.222 45.7577 273.847 41.9528 279.115 39.886Z" 
                   animate={{ 
-                    fill: isLogoHovered ? "#33FF0D" : "#FFFFFF" 
+                    fill: isLogoHovered ? "#33FF0A" : "#FFFFFF" 
                   }}
                   transition={{ duration: 0.3 }}
                 />
@@ -250,6 +250,15 @@ export default function Home() {
             We design and build <span className="text-white font-medium">strategic websites</span> that help businesses communicate clearly, <span className="text-white font-medium">build trust</span>, and convert visitors into clients.
           </p>
 
+          {/* Truvox Signature — Service Brackets */}
+          <div className="flex flex-wrap items-center justify-center gap-3 mb-10">
+            <span className="font-mono text-[11px] text-[#33FF0A] tracking-[0.2em] uppercase border border-[#33FF0A]/20 px-3 py-1.5 bg-[#33FF0A]/5">[ Strategy ]</span>
+            <span className="font-mono text-[11px] text-white/30">—</span>
+            <span className="font-mono text-[11px] text-[#33FF0A] tracking-[0.2em] uppercase border border-[#33FF0A]/20 px-3 py-1.5 bg-[#33FF0A]/5">[ Design ]</span>
+            <span className="font-mono text-[11px] text-white/30">—</span>
+            <span className="font-mono text-[11px] text-[#33FF0A] tracking-[0.2em] uppercase border border-[#33FF0A]/20 px-3 py-1.5 bg-[#33FF0A]/5">[ Development ]</span>
+          </div>
+
           {/* Action Buttons */}
           <div className="flex flex-col sm:flex-row gap-6 items-center justify-center mb-16 z-30 select-none">
             {/* See our work (Hover: neon green, crop marks, arrow rotate) */}
@@ -260,7 +269,7 @@ export default function Home() {
               <span className="absolute bottom-[-5px] left-[-5px] w-2 h-2 border-b border-l border-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
               <span className="absolute bottom-[-5px] right-[-5px] w-2 h-2 border-b border-r border-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
               
-              <div className="flex items-center bg-[#FFFFFF] text-[#000000] font-mono text-[12px] uppercase tracking-[0.1em] h-[57px] rounded-none hover:bg-[#33FF0D] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_20px_rgba(51,255,13,0.2)] cursor-pointer border-none pl-6 pr-0 relative z-10">
+              <div className="flex items-center bg-[#FFFFFF] text-[#000000] font-mono text-[12px] uppercase tracking-[0.1em] h-[57px] rounded-none hover:bg-[#33FF0A] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_20px_rgba(51,255,10,0.2)] cursor-pointer border-none pl-6 pr-0 relative z-10">
                 <span className="mr-6 font-medium">See our work</span>
                 <span className="flex items-center justify-center w-[50px] h-[57px] border-l border-black/25 text-[18px]">
                   <span className="inline-block transform -rotate-45 group-hover:rotate-0 transition-transform duration-300 leading-none">
@@ -300,8 +309,8 @@ export default function Home() {
         </motion.div>
 
         {/* Decorative background glows */}
-        <div className="absolute top-1/4 left-1/4 w-[400px] h-[400px] bg-[#33FF0D]/5 blur-[150px] rounded-full pointer-events-none" />
-        <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-[#33FF0D]/10 blur-[150px] rounded-full pointer-events-none" />
+        <div className="absolute top-1/4 left-1/4 w-[400px] h-[400px] bg-[#33FF0A]/5 blur-[150px] rounded-full pointer-events-none" />
+        <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-[#33FF0A]/10 blur-[150px] rounded-full pointer-events-none" />
       </section>
 
       {/* ADVERTISING VIDEO SECTION */}
@@ -394,14 +403,14 @@ export default function Home() {
             {Array(5).fill(blackRibbonItems).flat().map((text, idx) => (
               <div key={idx} className="flex items-center gap-12 shrink-0">
                 <span>{text}</span>
-                <div className="w-2.5 h-2.5 bg-[#33FF0D] rotate-45 shrink-0" />
+                <div className="w-2.5 h-2.5 bg-[#33FF0A] rotate-45 shrink-0" />
               </div>
             ))}
           </div>
         </div>
 
         {/* Green Ribbon (Slanted at 2.5deg) */}
-        <div className="absolute w-[120vw] min-w-[1500px] h-[52px] md:h-[64px] bg-[#33FF0D] flex items-center overflow-hidden rotate-[2.5deg] z-20 shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
+        <div className="absolute w-[120vw] min-w-[1500px] h-[52px] md:h-[64px] bg-[#33FF0A] flex items-center overflow-hidden rotate-[2.5deg] z-20 shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
           <div className="animate-marquee whitespace-nowrap flex items-center gap-12 text-black font-interDisplay text-[15px] md:text-[18px] font-semibold tracking-normal select-none">
             {Array(16).fill(null).map((_, idx) => {
               const avatars = ["/assets/team/aida.jpg", "/assets/team/shalom.jpg"];
@@ -494,7 +503,7 @@ export default function Home() {
                     src="/faq.png" 
                     alt="Truvox FAQ Info" 
                     fill 
-                    className="object-contain group-hover:scale-105 transition-transform duration-1000 filter drop-shadow-[0_20px_50px_rgba(51,255,13,0.12)]"
+                    className="object-contain group-hover:scale-105 transition-transform duration-1000 filter drop-shadow-[0_20px_50px_rgba(51,255,10,0.12)]"
                     priority
                   />
                   <div className="absolute bottom-4 left-4 sm:bottom-8 sm:left-8">
@@ -516,7 +525,7 @@ export default function Home() {
           <motion.div
             animate={{ y: [0, -10, 0] }}
             transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-            className="relative z-10 w-20 h-40 md:w-24 md:h-48 mx-auto overflow-hidden filter drop-shadow-[0_20px_40px_rgba(51,255,13,0.25)] -mb-12 md:-mb-18"
+            className="relative z-10 w-20 h-40 md:w-24 md:h-48 mx-auto overflow-hidden filter drop-shadow-[0_20px_40px_rgba(51,255,10,0.25)] -mb-12 md:-mb-18"
           >
             <Image 
               src="/truvox_pixel.png" 
@@ -542,7 +551,7 @@ export default function Home() {
                 <span className="absolute bottom-[-5px] left-[-5px] w-2 h-2 border-b border-l border-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
                 <span className="absolute bottom-[-5px] right-[-5px] w-2 h-2 border-b border-r border-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
                 
-                <div className="flex items-center bg-[#33FF0D] text-black font-mono text-[12px] uppercase tracking-[0.15em] h-[52px] px-8 hover:bg-[#2DD90D] hover:shadow-[0_8px_20px_rgba(51,255,13,0.2)] hover:-translate-y-0.5 transition-all duration-300 cursor-pointer border-none font-semibold rounded-none relative z-10 w-full justify-center sm:w-auto">
+                <div className="flex items-center bg-[#33FF0A] text-black font-mono text-[12px] uppercase tracking-[0.15em] h-[52px] px-8 hover:bg-[#33FF0A] hover:shadow-[0_8px_20px_rgba(51,255,10,0.2)] hover:-translate-y-0.5 transition-all duration-300 cursor-pointer border-none font-semibold rounded-none relative z-10 w-full justify-center sm:w-auto">
                   <span className="mr-4">Start your project</span>
                   <span className="inline-block transform -rotate-45 group-hover:rotate-0 transition-transform duration-300 text-[16px] leading-none">
                     →
@@ -556,10 +565,10 @@ export default function Home() {
                 <span className="absolute bottom-[-5px] left-[-5px] w-2 h-2 border-b border-l border-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
                 <span className="absolute bottom-[-5px] right-[-5px] w-2 h-2 border-b border-r border-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
                 
-                <div className="flex items-center gap-3 bg-white text-black font-mono text-[12px] uppercase tracking-[0.15em] h-[52px] px-8 hover:bg-[#33FF0D] hover:shadow-[0_8px_20px_rgba(51,255,13,0.2)] hover:-translate-y-0.5 transition-all duration-300 cursor-pointer border-none font-semibold rounded-none relative z-10 w-full justify-center sm:w-auto">
+                <div className="flex items-center gap-3 bg-white text-black font-mono text-[12px] uppercase tracking-[0.15em] h-[52px] px-8 hover:bg-[#33FF0A] hover:shadow-[0_8px_20px_rgba(51,255,10,0.2)] hover:-translate-y-0.5 transition-all duration-300 cursor-pointer border-none font-semibold rounded-none relative z-10 w-full justify-center sm:w-auto">
                   <span>Discuss your website</span>
                   {/* Green phone circle */}
-                  <div className="w-[18px] h-[18px] rounded-full bg-[#33FF0D] flex items-center justify-center text-black border border-black/10 shadow-[0_0_8px_rgba(51,255,13,0.3)] transition-all duration-300 group-hover:scale-110 group-hover:rotate-[15deg] group-hover:bg-[#2DD90D] shrink-0">
+                  <div className="w-[18px] h-[18px] rounded-full bg-[#33FF0A] flex items-center justify-center text-black border border-black/10 shadow-[0_0_8px_rgba(51,255,10,0.3)] transition-all duration-300 group-hover:scale-110 group-hover:rotate-[15deg] group-hover:bg-[#33FF0A] shrink-0">
                     <svg viewBox="0 0 24 24" className="w-[9px] h-[9px] fill-black text-black" xmlns="http://www.w3.org/2000/svg">
                       <path d="M20 15.5c-1.2 0-2.4-.2-3.6-.6-.3-.1-.7 0-1 .2l-2.2 2.2c-2.8-1.4-5.1-3.8-6.6-6.6l2.2-2.2c.3-.3.4-.7.2-1-.3-1.1-.5-2.3-.5-3.5 0-.6-.4-1-1-1H4c-.6 0-1 .4-1 1 0 9.4 7.6 17 17 17 .6 0 1-.4 1-1v-3.5c0-.6-.4-1-1-1z" fill="currentColor" />
                     </svg>

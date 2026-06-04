@@ -73,7 +73,7 @@ export function ProjectDetailContent({ project }: ProjectDetailContentProps) {
                   <span className="absolute bottom-[-5px] left-[-5px] w-2 h-2 border-b border-l border-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
                   <span className="absolute bottom-[-5px] right-[-5px] w-2 h-2 border-b border-r border-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
                   
-                  <div className="flex items-center bg-[#33FF0D] text-black font-mono text-[12px] uppercase tracking-[0.1em] h-[57px] rounded-none hover:bg-[#2DD90D] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_20px_rgba(51,255,13,0.2)] cursor-pointer border-none pl-6 pr-0 relative z-10 w-fit">
+                  <div className="flex items-center bg-[#33FF0A] text-black font-mono text-[12px] uppercase tracking-[0.1em] h-[57px] rounded-none hover:bg-[#33FF0A] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_20px_rgba(51,255,10,0.2)] cursor-pointer border-none pl-6 pr-0 relative z-10 w-fit">
                     <span className="mr-6 font-medium">Launch Live Project</span>
                     <span className="flex items-center justify-center w-[50px] h-[57px] border-l border-black/25 text-[18px]">
                       <span className="inline-block transform -rotate-45 group-hover:rotate-0 transition-transform duration-300 leading-none">
@@ -245,7 +245,7 @@ export function ProjectDetailContent({ project }: ProjectDetailContentProps) {
                   <span className="absolute bottom-[-5px] left-[-5px] w-2 h-2 border-b border-l border-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
                   <span className="absolute bottom-[-5px] right-[-5px] w-2 h-2 border-b border-r border-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
                   
-                  <div className="flex items-center justify-between bg-white text-black font-mono text-[12px] uppercase tracking-[0.1em] h-[48px] px-6 hover:bg-[#33FF0D] hover:shadow-[0_8px_20px_rgba(51,255,13,0.2)] hover:-translate-y-0.5 transition-all duration-300 w-full cursor-pointer border-none relative z-10">
+                  <div className="flex items-center justify-between bg-white text-black font-mono text-[12px] uppercase tracking-[0.1em] h-[48px] px-6 hover:bg-[#33FF0A] hover:shadow-[0_8px_20px_rgba(51,255,10,0.2)] hover:-translate-y-0.5 transition-all duration-300 w-full cursor-pointer border-none relative z-10">
                     <span>Get in Touch</span>
                     <span className="inline-block transform -rotate-45 group-hover:rotate-0 transition-transform duration-300 text-[16px] leading-none">
                       →

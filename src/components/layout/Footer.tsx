@@ -43,7 +43,7 @@ export const Footer = () => {
             <div className="space-y-6">
               <span className="font-mono text-[#A4A4A4] text-[12px] uppercase tracking-[0.2em] block">[ Main links ]</span>
               <ul className="space-y-3 font-body text-[14px]">
-                <li><Link href="/" className="font-medium text-[#33FF0D] hover:underline transition-all">Home</Link></li>
+                <li><Link href="/" className="font-medium text-[#33FF0A] hover:underline transition-all">Home</Link></li>
                 <li><Link href="/about" className="font-medium text-[#A4A4A4] hover:text-white transition-colors">About</Link></li>
                 <li><Link href="/services" className="font-medium text-[#A4A4A4] hover:text-white transition-colors">Services</Link></li>
                 <li><Link href="/projects" className="font-medium text-[#A4A4A4] hover:text-white transition-colors">Projects</Link></li>
@@ -66,7 +66,7 @@ export const Footer = () => {
               <div className="space-y-3 font-body text-[14px] text-white">
                 <div className="font-medium">+1 (515) 206-3535</div>
                 <div>
-                  <a href="mailto:hello@truvox.studio" className="font-medium hover:text-[#33FF0D] transition-colors">
+                  <a href="mailto:hello@truvox.studio" className="font-medium hover:text-[#33FF0A] transition-colors">
                     hello@truvox.studio
                   </a>
                 </div>
@@ -92,7 +92,7 @@ export const Footer = () => {
               <Link 
                 key={i} 
                 href={social.href}
-                className="w-10 h-10 border border-[#575757]/40 bg-white/5 flex items-center justify-center text-text-muted hover:bg-[#33FF0D] hover:text-black hover:border-[#33FF0D] transition-all duration-300 rounded-none"
+                className="w-10 h-10 border border-[#575757]/40 bg-white/5 flex items-center justify-center text-text-muted hover:bg-[#33FF0A] hover:text-black hover:border-[#33FF0A] transition-all duration-300 rounded-none"
               >
                 {social.icon}
               </Link>

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist_Mono, Inter as InterFont, Geist, Staatliches } from "next/font/google";
+import { Geist_Mono, Inter as InterFont, Geist, Space_Grotesk } from "next/font/google";
 import Script from 'next/script';
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
@@ -24,10 +24,10 @@ const geist = Geist({
   variable: "--font-geist",
 });
 
-const staatliches = Staatliches({
+const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
-  weight: ["400"],
-  variable: "--font-staatliches",
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-space-grotesk",
 });
 
 export const metadata: Metadata = {
@@ -38,10 +38,12 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
   icons: {
     icon: [
-      { url: '/truvox_pixel.png', type: 'image/png' }
+      { url: '/truvox_pixel.png', sizes: '32x32', type: 'image/png' },
+      { url: '/truvox_pixel.png', sizes: '16x16', type: 'image/png' },
+      { url: '/truvox_pixel.png', sizes: '512x512', type: 'image/png' },
     ],
-    shortcut: ['/truvox_pixel.png'],
-    apple: ['/truvox_pixel.png']
+    shortcut: [{ url: '/truvox_pixel.png', type: 'image/png' }],
+    apple: [{ url: '/truvox_pixel.png', sizes: '180x180', type: 'image/png' }],
   },
   openGraph: {
     title: "Truvox | Web Design Agency for Small Businesses",
@@ -62,7 +64,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${geistMono.variable} ${interDisplay.variable} ${geist.variable} ${staatliches.variable}`}>
+    <html lang="en" className={`${geistMono.variable} ${interDisplay.variable} ${geist.variable} ${spaceGrotesk.variable}`}>
       <body className={`${geist.className} antialiased min-h-screen flex flex-col overflow-x-hidden`}>
         <noscript>
           <iframe

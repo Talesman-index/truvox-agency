@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 :root {
-  /* Nuvara Inspired Palette */
-  --brand-main         : #33FF0D; /* Neon Green */
-  --brand-hover        : #2DD90D; /* Darker Neon Green */
+  /* Truvox Palette — Neon Green */
+  --brand-main         : #33FF0A; /* Neon Green */
+  --brand-hover        : #2DD90A; /* Deeper Neon Green */
   --brand-blue         : #0000EE; /* Electric Blue */
   --brand-light        : #F5F5F5; /* Off-White */
 
@@ -13,7 +13,7 @@
   --bg-section-alt     : #0D0D0D; /* Dark Charcoal */
   --bg-dark            : #000000; /* Pure Black */
   --bg-card            : #0D0D0D; /* Dark Charcoal */
-  --bg-card-tint       : rgba(51, 255, 13, 0.06); /* Neon Green tint */
+  --bg-card-tint       : rgba(51, 255, 10, 0.06); /* Neon Green tint */
 
   --text-heading       : #FFFFFF; /* Pure White */
   --text-body          : #A4A4A4; /* Medium Gray */
@@ -23,13 +23,13 @@
   --border-subtle      : #575757; /* Slate Gray */
   --border-brand       : #0000EE; /* Electric Blue */
 
-  --gradient-brand     : linear-gradient(135deg, #0000EE, #33FF0D);
-  --gradient-text      : linear-gradient(135deg, #0000EE, #33FF0D);
-  --gradient-hero      : radial-gradient(ellipse at 65% 40%, rgba(51, 255, 13, 0.08) 0%, transparent 65%);
+  --gradient-brand     : linear-gradient(135deg, #0000EE, #33FF0A);
+  --gradient-text      : linear-gradient(135deg, #0000EE, #33FF0A);
+  --gradient-hero      : radial-gradient(ellipse at 65% 40%, rgba(51, 255, 10, 0.08) 0%, transparent 65%);
   --gradient-separator : linear-gradient(90deg, transparent, #0000EE, transparent);
 
   /* Font variable aliases (values injected by next/font) */
-  --font-display       : var(--font-staatliches);
+  --font-display       : var(--font-space-grotesk);
   --font-body          : var(--font-geist);
   --font-mono          : var(--font-geist-mono);
 }
@@ -59,21 +59,21 @@ html, body {
   /* H1 — Hero principal */
   h1 {
     font-family    : var(--font-display);
-    font-size      : clamp(48px, 9vw, 172px);
-    font-weight    : 400;
-    line-height    : 1.0;
-    letter-spacing : normal;
+    font-size      : clamp(48px, 9vw, 152px);
+    font-weight    : 700;
+    line-height    : 0.95;
+    letter-spacing : -0.03em;
     color          : var(--text-heading);
     text-transform : uppercase;
   }
 
   /* H2 — Titres de section */
   h2 {
-    font-family    : var(--font-body);
+    font-family    : var(--font-display);
     font-size      : clamp(20px, 3vw, 24px);
-    font-weight    : 500;
+    font-weight    : 600;
     line-height    : 1.2;
-    letter-spacing : normal;
+    letter-spacing : -0.01em;
     color          : var(--text-heading);
   }
 
@@ -81,9 +81,9 @@ html, body {
   h3 {
     font-family    : var(--font-display);
     font-size      : clamp(24px, 4vw, 48px);
-    font-weight    : 400;
-    line-height    : 1.1;
-    letter-spacing : normal;
+    font-weight    : 700;
+    line-height    : 1.05;
+    letter-spacing : -0.02em;
     color          : var(--text-heading);
   }
 
@@ -91,9 +91,9 @@ html, body {
   h4 {
     font-family    : var(--font-display);
     font-size      : 28px;
-    font-weight    : 400;
+    font-weight    : 600;
     line-height    : 1.1;
-    letter-spacing : normal;
+    letter-spacing : -0.01em;
     color          : var(--text-heading);
   }
 
@@ -148,7 +148,7 @@ html, body {
 @layer components {
   /* Buttons as per Nuvara visual contract */
   .btn-primary {
-    @apply inline-flex items-center justify-center bg-[#33FF0D] text-[#000000] px-7 h-[57px] rounded-none transition-colors duration-200 text-[12px] font-normal border-none hover:bg-[#2DD90D] active:bg-[#1FA006] disabled:bg-[#A4A4A4] disabled:text-[#505250] disabled:cursor-not-allowed;
+    @apply inline-flex items-center justify-center bg-[#33FF0A] text-[#000000] px-7 h-[57px] rounded-none transition-colors duration-200 text-[12px] font-normal border-none hover:bg-[#2DD90A] active:bg-[#1FA006] disabled:bg-[#A4A4A4] disabled:text-[#505250] disabled:cursor-not-allowed;
     font-family: sans-serif;
     letter-spacing: normal;
   }
@@ -182,7 +182,7 @@ html, body {
   }
 
   .badge-lime {
-    @apply bg-[#33FF0D] text-[#000000] px-3 py-1 rounded-none text-[14px] font-medium font-mono;
+    @apply bg-[#33FF0A] text-[#000000] px-3 py-1 rounded-none text-[14px] font-medium font-mono;
     letter-spacing: normal;
   }
 
@@ -209,10 +209,109 @@ html, body {
   }
 
   .input-zailab {
-    @apply bg-transparent border-none border-b border-[#575757] h-[40px] px-0 py-1 text-[16px] text-white font-normal focus:outline-none focus:border-b-2 focus:border-[#33FF0D] placeholder-white/50 w-full rounded-none;
+    @apply bg-transparent border-none border-b border-[#575757] h-[40px] px-0 py-1 text-[16px] text-white font-normal focus:outline-none focus:border-b-2 focus:border-[#33FF0A] placeholder-white/50 w-full rounded-none;
   }
 
-  /* Animations */
+  /* ==============================================
+     TRUVOX VISUAL SIGNATURE SYSTEM
+     Crochets, coins, indicateurs, lignes tech
+  =============================================== */
+
+  /* Bracket label: [ LABEL ] */
+  .truvox-bracket {
+    font-family    : var(--font-mono);
+    font-size      : 11px;
+    font-weight    : 500;
+    letter-spacing : 0.2em;
+    text-transform : uppercase;
+    color          : #33FF0A;
+    display        : inline-flex;
+    align-items    : center;
+    gap            : 6px;
+  }
+  .truvox-bracket::before { content: '['; opacity: 0.7; }
+  .truvox-bracket::after  { content: ']'; opacity: 0.7; }
+
+  /* Corner markers (decorative UI corners) */
+  .truvox-corners {
+    position: relative;
+  }
+  .truvox-corners::before,
+  .truvox-corners::after {
+    content    : '';
+    position   : absolute;
+    width      : 12px;
+    height     : 12px;
+    border-color: #33FF0A;
+    border-style: solid;
+    opacity    : 0.5;
+    transition : opacity 0.3s;
+  }
+  .truvox-corners::before { top: -1px; left: -1px; border-width: 1px 0 0 1px; }
+  .truvox-corners::after  { bottom: -1px; right: -1px; border-width: 0 1px 1px 0; }
+  .truvox-corners:hover::before,
+  .truvox-corners:hover::after {
+    opacity: 1;
+  }
+
+  /* Technical separator line */
+  .truvox-line {
+    display        : flex;
+    align-items    : center;
+    gap            : 12px;
+    font-family    : var(--font-mono);
+    font-size      : 10px;
+    color          : #505250;
+    letter-spacing : 0.15em;
+    text-transform : uppercase;
+  }
+  .truvox-line::before,
+  .truvox-line::after {
+    content    : '';
+    flex       : 1;
+    height     : 1px;
+    background : #575757;
+    opacity    : 0.3;
+  }
+
+  /* Status indicator dot */
+  .truvox-indicator {
+    display     : inline-flex;
+    align-items : center;
+    gap         : 6px;
+    font-family : var(--font-mono);
+    font-size   : 10px;
+    color       : #33FF0A;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+  .truvox-indicator::before {
+    content       : '';
+    width         : 6px;
+    height        : 6px;
+    border-radius : 50%;
+    background    : #33FF0A;
+    box-shadow    : 0 0 8px rgba(51, 255, 10, 0.6);
+    animation     : pulse-dot 2s ease-in-out infinite;
+  }
+  @keyframes pulse-dot {
+    0%, 100% { opacity: 1; box-shadow: 0 0 8px rgba(51, 255, 10, 0.6); }
+    50%       { opacity: 0.6; box-shadow: 0 0 14px rgba(51, 255, 10, 0.3); }
+  }
+
+  /* Section annotations style */
+  .truvox-annotation {
+    font-family    : var(--font-mono);
+    font-size      : 10px;
+    color          : #505250;
+    letter-spacing : 0.2em;
+    text-transform : uppercase;
+    padding-left   : 1ch;
+    border-left    : 1px solid #575757;
+    opacity        : 0.6;
+  }
+
+
   .fade-up {
     animation: fadeUp 0.6s ease-out forwards;
   }

@@ -69,7 +69,7 @@ export default function AboutPage() {
                   <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-bg-card to-transparent" />
                   {/* Role badge */}
                   <div className="absolute bottom-4 left-4">
-                    <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-[#33FF0D] bg-black/70 backdrop-blur-sm border border-[#33FF0D]/20 px-3 py-1.5">
+                    <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-[#33FF0A] bg-black/70 backdrop-blur-sm border border-[#33FF0A]/20 px-3 py-1.5">
                       Strategy &amp; Client Experience
                     </span>
                   </div>
@@ -102,7 +102,7 @@ export default function AboutPage() {
                   <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-bg-card to-transparent" />
                   {/* Role badge */}
                   <div className="absolute bottom-4 left-4">
-                    <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-[#33FF0D] bg-black/70 backdrop-blur-sm border border-[#33FF0D]/20 px-3 py-1.5">
+                    <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-[#33FF0A] bg-black/70 backdrop-blur-sm border border-[#33FF0A]/20 px-3 py-1.5">
                       Design &amp; Development
                     </span>
                   </div>

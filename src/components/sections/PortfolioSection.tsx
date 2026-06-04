@@ -32,7 +32,7 @@ export const PortfolioSection = () => {
             <h2
               className="text-[40px] sm:text-[56px] md:text-[72px] lg:text-[86px] leading-[0.95] tracking-tight"
               style={{
-                fontFamily: 'var(--font-staatliches), Georgia, serif',
+                fontFamily: 'var(--font-space-grotesk), system-ui, sans-serif',
                 fontWeight: 400,
                 color: '#000',
                 textTransform: 'uppercase',
@@ -44,7 +44,7 @@ export const PortfolioSection = () => {
                 style={{
                   fontFamily: 'var(--font-geist-mono), monospace',
                   fontWeight: 600,
-                  color: '#33FF0D',
+                  color: '#33FF0A',
                 }}
               >
                 [{String(homeProjects.length).padStart(2, '0')}]
@@ -90,7 +90,7 @@ export const PortfolioSection = () => {
                   className="text-left py-4 px-6 transition-all duration-300 cursor-pointer text-[18px] sm:text-[20px] md:text-[22px] font-medium border-l-2 font-interDisplay"
                   style={{
                     color: activeIndex === i ? '#000000' : '#A4A4A4',
-                    borderLeftColor: activeIndex === i ? '#33FF0D' : 'transparent',
+                    borderLeftColor: activeIndex === i ? '#33FF0A' : 'transparent',
                     background: 'transparent',
                   }}
                 >
@@ -108,7 +108,7 @@ export const PortfolioSection = () => {
                 <span className="absolute bottom-[-5px] left-[-5px] w-2 h-2 border-b border-l border-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
                 <span className="absolute bottom-[-5px] right-[-5px] w-2 h-2 border-b border-r border-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
                 
-                <div className="flex items-center justify-between w-[150px] bg-[#33FF0D] text-black font-mono text-[12px] uppercase tracking-[0.1em] h-[48px] px-4 hover:bg-[#2DD90D] hover:shadow-[0_8px_20px_rgba(51,255,13,0.2)] hover:-translate-y-0.5 transition-all duration-300 cursor-pointer border-none relative z-10">
+                <div className="flex items-center justify-between w-[150px] bg-[#33FF0A] text-black font-mono text-[12px] uppercase tracking-[0.1em] h-[48px] px-4 hover:bg-[#33FF0A] hover:shadow-[0_8px_20px_rgba(51,255,10,0.2)] hover:-translate-y-0.5 transition-all duration-300 cursor-pointer border-none relative z-10">
                   <span>View all</span>
                   <span className="inline-block transform -rotate-45 group-hover:rotate-0 transition-transform duration-300 text-[16px] leading-none">
                     →
@@ -145,8 +145,8 @@ export const PortfolioSection = () => {
                   <div className="space-y-6">
                     {/* Project Logo/Title */}
                     <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 rounded-full bg-[#33FF0D]/20 flex items-center justify-center">
-                        <div className="w-3 h-3 rounded-full bg-[#33FF0D]" />
+                      <div className="w-8 h-8 rounded-full bg-[#33FF0A]/20 flex items-center justify-center">
+                        <div className="w-3 h-3 rounded-full bg-[#33FF0A]" />
                       </div>
                       <span className="text-[20px] font-display uppercase tracking-wide">
                         {activeProject.title}
@@ -195,7 +195,7 @@ export const PortfolioSection = () => {
                       <span className="absolute bottom-[-5px] left-[-5px] w-2 h-2 border-b border-l border-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
                       <span className="absolute bottom-[-5px] right-[-5px] w-2 h-2 border-b border-r border-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
                       
-                      <div className="flex items-center justify-between bg-white text-black font-mono text-[12px] uppercase tracking-[0.1em] h-[48px] px-6 hover:bg-[#33FF0D] hover:shadow-[0_8px_20px_rgba(51,255,13,0.2)] hover:-translate-y-0.5 transition-all duration-300 w-full cursor-pointer border-none relative z-10">
+                      <div className="flex items-center justify-between bg-white text-black font-mono text-[12px] uppercase tracking-[0.1em] h-[48px] px-6 hover:bg-[#33FF0A] hover:shadow-[0_8px_20px_rgba(51,255,10,0.2)] hover:-translate-y-0.5 transition-all duration-300 w-full cursor-pointer border-none relative z-10">
                         <span>View project</span>
                         <span className="inline-block transform -rotate-45 group-hover:rotate-0 transition-transform duration-300 text-[16px] leading-none">
                           →

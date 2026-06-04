@@ -42,7 +42,7 @@ export default {
         },
       },
       fontFamily: {
-        display: ["var(--font-staatliches)", "Georgia", "serif"],
+        display: ["var(--font-space-grotesk)", "system-ui", "sans-serif"],
         body: ["var(--font-geist)", "system-ui", "sans-serif"],
         archivo: ["var(--font-geist)", "system-ui", "sans-serif"],
         mono: ["var(--font-geist-mono)", "monospace"],
@@ -62,7 +62,7 @@ export default {
         ...require("tailwindcss/defaultConfig").theme.screens,
       },
       boxShadow: {
-        glow: "0px 8px 32px rgba(0, 255, 133, 0.20)",
+        glow: "0px 8px 32px rgba(51, 255, 10, 0.20)",
       },
     },
   },

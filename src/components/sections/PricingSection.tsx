@@ -87,7 +87,7 @@ export function PricingSection() {
   return (
     <section id="pricing" className="py-24 md:py-36 px-6 bg-black border-t border-white/5 relative overflow-hidden">
       {/* Background Glows */}
-      <div className="absolute top-1/4 right-1/4 w-[300px] h-[300px] bg-[#33FF0D]/5 blur-[120px] rounded-full pointer-events-none" />
+      <div className="absolute top-1/4 right-1/4 w-[300px] h-[300px] bg-[#33FF0A]/5 blur-[120px] rounded-full pointer-events-none" />
       <div className="absolute bottom-1/4 left-1/4 w-[300px] h-[300px] bg-[#0000EE]/5 blur-[120px] rounded-full pointer-events-none" />
 
       <div className="max-w-[1200px] mx-auto relative z-20">
@@ -106,7 +106,7 @@ export function PricingSection() {
 
         {/* Header Block */}
         <h2 className="font-display text-white text-[48px] sm:text-[64px] md:text-[80px] lg:text-[96px] text-center font-bold tracking-tight uppercase mb-4 leading-none">
-          SIMPLE <span className="text-[#33FF0D]">PRICING</span>
+          SIMPLE <span className="text-[#33FF0A]">PRICING</span>
         </h2>
         
         <p className="font-body text-[#A4A4A4] text-[16px] sm:text-[18px] max-w-xl mx-auto text-center leading-[1.4] mb-16">
@@ -119,7 +119,7 @@ export function PricingSection() {
             onClick={() => setActiveTab('fixed')}
             className={`flex-1 h-[50px] font-mono text-[12px] uppercase tracking-[0.15em] cursor-pointer transition-all duration-300 border-none rounded-none font-semibold ${
               activeTab === 'fixed' 
-                ? 'bg-[#33FF0D] text-black' 
+                ? 'bg-[#33FF0A] text-black' 
                 : 'bg-transparent text-[#A4A4A4] hover:text-white'
             }`}
           >
@@ -129,7 +129,7 @@ export function PricingSection() {
             onClick={() => setActiveTab('custom')}
             className={`flex-1 h-[50px] font-mono text-[12px] uppercase tracking-[0.15em] cursor-pointer transition-all duration-300 border-none rounded-none font-semibold ${
               activeTab === 'custom' 
-                ? 'bg-[#33FF0D] text-black' 
+                ? 'bg-[#33FF0A] text-black' 
                 : 'bg-transparent text-[#A4A4A4] hover:text-white'
             }`}
           >
@@ -154,12 +154,12 @@ export function PricingSection() {
                     key={plan.name}
                     className={`border transition-all duration-500 bg-[#0D0D0D] flex flex-col md:flex-row items-stretch rounded-none relative overflow-hidden group ${
                       plan.featured 
-                        ? 'border-[#33FF0D] border-2 shadow-[0_0_30px_rgba(51,255,13,0.12)]' 
-                        : 'border-[#575757]/30 hover:border-[#33FF0D] hover:shadow-[0_0_30px_rgba(51,255,13,0.08)]'
+                        ? 'border-[#33FF0A] border-2 shadow-[0_0_30px_rgba(51,255,10,0.12)]' 
+                        : 'border-[#575757]/30 hover:border-[#33FF0A] hover:shadow-[0_0_30px_rgba(51,255,10,0.08)]'
                     }`}
                   >
                     {plan.featured && (
-                      <div className="absolute top-0 right-0 bg-[#33FF0D] text-black text-[10px] font-bold font-mono tracking-widest px-4 py-1 select-none">
+                      <div className="absolute top-0 right-0 bg-[#33FF0A] text-black text-[10px] font-bold font-mono tracking-widest px-4 py-1 select-none">
                         RECOMMENDED
                       </div>
                     )}
@@ -169,7 +169,7 @@ export function PricingSection() {
                       <div>
                         {/* ID & Name */}
                         <div className="flex items-center gap-3 mb-4">
-                          <span className="font-mono text-[11px] text-[#33FF0D] bg-[#33FF0D]/5 border border-[#33FF0D]/10 px-2 py-0.5 select-none">
+                          <span className="font-mono text-[11px] text-[#33FF0A] bg-[#33FF0A]/5 border border-[#33FF0A]/10 px-2 py-0.5 select-none">
                             {plan.id}
                           </span>
                           <span className="font-mono text-[13px] font-bold uppercase tracking-[0.15em] text-[#A4A4A4] group-hover:text-white transition-colors">
@@ -199,7 +199,7 @@ export function PricingSection() {
                         <Link href="/contact" className="shrink-0">
                           <div className={`inline-flex items-center justify-center h-[50px] px-8 rounded-none text-[12px] font-bold uppercase tracking-widest transition-all cursor-pointer ${
                             plan.featured 
-                              ? 'btn-primary shadow-[0_0_20px_rgba(51,255,13,0.2)]' 
+                              ? 'btn-primary shadow-[0_0_20px_rgba(51,255,10,0.2)]' 
                               : 'bg-transparent border border-white/20 text-white hover:bg-white/5 hover:border-white/40'
                           }`}>
                             {plan.cta}
@@ -216,7 +216,7 @@ export function PricingSection() {
                       <ul className="space-y-4">
                         {plan.features.map((feature, j) => (
                           <li key={j} className="flex items-start">
-                            <div className="w-1.5 h-1.5 bg-[#33FF0D] shrink-0 mr-3 mt-2" />
+                            <div className="w-1.5 h-1.5 bg-[#33FF0A] shrink-0 mr-3 mt-2" />
                             <span className="text-[14px] font-medium text-white/90 leading-tight">
                               {feature}
                             </span>
@@ -235,13 +235,13 @@ export function PricingSection() {
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.4 }}
               >
-                <div className="border border-[#575757]/30 bg-[#0D0D0D] flex flex-col md:flex-row items-stretch rounded-none relative overflow-hidden group hover:border-[#33FF0D] hover:shadow-[0_0_30px_rgba(51,255,13,0.08)] transition-all duration-500">
+                <div className="border border-[#575757]/30 bg-[#0D0D0D] flex flex-col md:flex-row items-stretch rounded-none relative overflow-hidden group hover:border-[#33FF0A] hover:shadow-[0_0_30px_rgba(51,255,10,0.08)] transition-all duration-500">
                   {/* Left Column (Info) */}
                   <div className="flex-grow p-8 md:p-10 flex flex-col justify-between md:w-2/3">
                     <div>
                       {/* ID & Name */}
                       <div className="flex items-center gap-3 mb-4">
-                        <span className="font-mono text-[11px] text-[#33FF0D] bg-[#33FF0D]/5 border border-[#33FF0D]/10 px-2 py-0.5 select-none">
+                        <span className="font-mono text-[11px] text-[#33FF0A] bg-[#33FF0A]/5 border border-[#33FF0A]/10 px-2 py-0.5 select-none">
                           {customPlan.id}
                         </span>
                         <span className="font-mono text-[13px] font-bold uppercase tracking-[0.15em] text-[#A4A4A4] group-hover:text-white transition-colors">
@@ -284,7 +284,7 @@ export function PricingSection() {
                     <ul className="space-y-4">
                       {customPlan.features.map((feature, j) => (
                         <li key={j} className="flex items-start">
-                          <div className="w-1.5 h-1.5 bg-[#33FF0D] shrink-0 mr-3 mt-2" />
+                          <div className="w-1.5 h-1.5 bg-[#33FF0A] shrink-0 mr-3 mt-2" />
                           <span className="text-[14px] font-medium text-white/90 leading-tight">
                             {feature}
                           </span>

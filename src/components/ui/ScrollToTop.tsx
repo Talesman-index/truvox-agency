@@ -37,7 +37,7 @@ export const ScrollToTop = () => {
           exit={{ opacity: 0, scale: 0.8, y: 20 }}
           whileHover={{ scale: 1.05, y: -2 }}
           whileTap={{ scale: 0.95 }}
-          className="fixed bottom-6 right-6 z-40 flex items-center justify-center w-12 h-12 bg-black border border-[#575757] hover:border-[#33FF0D] text-white hover:text-[#33FF0D] shadow-[0_0_15px_rgba(0,0,0,0.5)] hover:shadow-[0_0_20px_rgba(51,255,13,0.25)] transition-all duration-300 cursor-pointer rounded-none group"
+          className="fixed bottom-6 right-6 z-40 flex items-center justify-center w-12 h-12 bg-black border border-[#575757] hover:border-[#33FF0A] text-white hover:text-[#33FF0A] shadow-[0_0_15px_rgba(0,0,0,0.5)] hover:shadow-[0_0_20px_rgba(51,255,10,0.25)] transition-all duration-300 cursor-pointer rounded-none group"
           aria-label="Scroll to top"
         >
           {/* Cyberpunk corner crop-marks (mini version) */}

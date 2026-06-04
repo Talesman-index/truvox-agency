@@ -47,10 +47,10 @@ export const Navbar = () => {
           >
             <span>{isOpen ? 'Close' : 'Menu'}</span>
             <div className="flex flex-wrap w-[10px] h-[10px] gap-[2px]">
-              <div className="w-[4px] h-[4px] bg-[#33FF0D]"></div>
-              <div className="w-[4px] h-[4px] bg-[#33FF0D]"></div>
-              <div className="w-[4px] h-[4px] bg-[#33FF0D]"></div>
-              <div className="w-[4px] h-[4px] bg-[#33FF0D]"></div>
+              <div className="w-[4px] h-[4px] bg-[#33FF0A]"></div>
+              <div className="w-[4px] h-[4px] bg-[#33FF0A]"></div>
+              <div className="w-[4px] h-[4px] bg-[#33FF0A]"></div>
+              <div className="w-[4px] h-[4px] bg-[#33FF0A]"></div>
             </div>
           </button>
 
@@ -62,7 +62,7 @@ export const Navbar = () => {
                 alt="Truvox"
                 width={36}
                 height={36}
-                className="w-[36px] h-[36px] object-contain opacity-90 group-hover:opacity-100 group-hover:drop-shadow-[0_0_8px_rgba(51,255,13,0.6)] transition-all duration-300"
+                className="w-[36px] h-[36px] object-contain opacity-90 group-hover:opacity-100 group-hover:drop-shadow-[0_0_8px_rgba(51,255,10,0.6)] transition-all duration-300"
                 priority
               />
             </Link>
@@ -70,11 +70,11 @@ export const Navbar = () => {
 
           {/* Right: Book a Call Button with Phone Icon */}
           <Link href="/contact">
-            <div className="flex items-center gap-4 px-4 py-2 border border-[#575757] hover:border-[#33FF0D] hover:shadow-[0_0_15px_rgba(51,255,13,0.15)] transition-all duration-300 bg-black/40 backdrop-blur-sm cursor-pointer select-none text-white font-mono text-[14px] tracking-normal rounded-none h-[44px] group">
-              <span className="hidden sm:inline group-hover:text-[#33FF0D] transition-colors duration-300">Book a call</span>
-              <span className="sm:hidden group-hover:text-[#33FF0D] transition-colors duration-300">Book</span>
+            <div className="flex items-center gap-4 px-4 py-2 border border-[#575757] hover:border-[#33FF0A] hover:shadow-[0_0_15px_rgba(51,255,10,0.15)] transition-all duration-300 bg-black/40 backdrop-blur-sm cursor-pointer select-none text-white font-mono text-[14px] tracking-normal rounded-none h-[44px] group">
+              <span className="hidden sm:inline group-hover:text-[#33FF0A] transition-colors duration-300">Book a call</span>
+              <span className="sm:hidden group-hover:text-[#33FF0A] transition-colors duration-300">Book</span>
               {/* Green phone circle */}
-              <div className="w-[20px] h-[20px] rounded-full bg-[#33FF0D] flex items-center justify-center text-black border border-black/10 shadow-[0_0_8px_rgba(51,255,13,0.3)] transition-all duration-300 group-hover:scale-110 group-hover:rotate-[15deg] group-hover:bg-[#2DD90D] shrink-0">
+              <div className="w-[20px] h-[20px] rounded-full bg-[#33FF0A] flex items-center justify-center text-black border border-black/10 shadow-[0_0_8px_rgba(51,255,10,0.3)] transition-all duration-300 group-hover:scale-110 group-hover:rotate-[15deg] group-hover:bg-[#33FF0A] shrink-0">
                 <svg viewBox="0 0 24 24" className="w-[10px] h-[10px] fill-black text-black" xmlns="http://www.w3.org/2000/svg">
                   <path d="M20 15.5c-1.2 0-2.4-.2-3.6-.6-.3-.1-.7 0-1 .2l-2.2 2.2c-2.8-1.4-5.1-3.8-6.6-6.6l2.2-2.2c.3-.3.4-.7.2-1-.3-1.1-.5-2.3-.5-3.5 0-.6-.4-1-1-1H4c-.6 0-1 .4-1 1 0 9.4 7.6 17 17 17 .6 0 1-.4 1-1v-3.5c0-.6-.4-1-1-1z" fill="currentColor" />
                 </svg>
@@ -99,13 +99,13 @@ export const Navbar = () => {
             <div className="flex flex-col gap-4 sm:gap-6">
               {navLinks.map((link, idx) => (
                 <div key={link.name} className="flex items-baseline gap-4 group">
-                  <span className="font-mono text-[14px] text-[#505250] group-hover:text-[#33FF0D] transition-colors">
+                  <span className="font-mono text-[14px] text-[#505250] group-hover:text-[#33FF0A] transition-colors">
                     0{idx + 1}
                   </span>
                   <Link 
                     href={link.href}
                     onClick={() => setIsOpen(false)}
-                    className="font-display text-[40px] sm:text-[56px] md:text-[68px] text-white group-hover:text-[#33FF0D] uppercase tracking-normal transition-colors duration-200"
+                    className="font-display text-[40px] sm:text-[56px] md:text-[68px] text-white group-hover:text-[#33FF0A] uppercase tracking-normal transition-colors duration-200"
                   >
                     {link.name}
                   </Link>
@@ -115,7 +115,7 @@ export const Navbar = () => {
 
             {/* Side Agency info */}
             <div className="flex flex-col gap-6 text-[14px] text-[#A4A4A4] max-w-sm pt-4 md:pt-12 border-t border-[#575757]/20 md:border-none">
-              <span className="font-mono text-[#33FF0D] uppercase tracking-[0.2em]">Contact</span>
+              <span className="font-mono text-[#33FF0A] uppercase tracking-[0.2em]">Contact</span>
               <p className="leading-relaxed">
                 We build strategic websites that help businesses communicate clearly and convert visitors into clients. Let's discuss yours.
               </p>
